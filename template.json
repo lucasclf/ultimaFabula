@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "monster"],
+    "types": ["character", "npc"],
     "templates": {
       "base": {
         "hp": {
@@ -19,10 +19,10 @@
           "notes": ""
         },
         "attributes": {
-          "dexterity": 6,
-          "insight": 6,
-          "might": 6,
-          "willpower": 6                    
+          "dexterity": "d6",
+          "insight": "d6",
+          "might": "d6",
+          "willpower": "d6"                    
         },
         "status": {
           "slow": false,
@@ -41,19 +41,19 @@
       "templates": ["base"],
       "classes": []
     },
-    "monster": {
+    "npc": {
       "templates": ["base"],
       "cr": 0
     }
   },
   "Item": {
-    "types": ["weapon", "job", "skill"],
+    "types": ["item", "feature"],
     "templates": {
       "base": {
         "description": ""
       }
     },
-    "weapon": {
+    "item": {
       "templates": ["base"],
       "isMartial": false,
       "accuracy": "",
@@ -66,12 +66,8 @@
       "cost": 0,
       "type": ""
     },
-    "job": {
+    "feature": {
       "templates": ["base"]
-    },
-    "skill": {
-      "templates": ["base"],
-      "type": ""
     }
   }
 }

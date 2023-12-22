@@ -7,9 +7,8 @@
   return loadTemplates([
 
     // Actor partials.
-    "systems/fabula-ultima/templates/actor/parts/actor-features.html",
-    "systems/fabula-ultima/templates/actor/parts/actor-items.html",
-    "systems/fabula-ultima/templates/actor/parts/actor-spells.html",
-    "systems/fabula-ultima/templates/actor/parts/actor-effects.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-features.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-items.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-effects.html",
   ]);
 };

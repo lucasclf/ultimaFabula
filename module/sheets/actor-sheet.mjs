@@ -4,22 +4,22 @@ import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/ef
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ufActorSheet extends ActorSheet {
+export class ultimaFabulaActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["fabula-ultima", "sheet", "actor"],
-      template: "systems/fabula-ultima/templates/actor/actor-sheet.html",
+      classes: ["ultimaFabula", "sheet", "actor"],
+      template: "systems/ultimaFabula/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "jobs" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
     });
   }
 
   /** @override */
   get template() {
-    return `systems/fabula-ultima/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/ultimaFabula/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -45,8 +45,8 @@ export class ufActorSheet extends ActorSheet {
       this._prepareCharacterData(context);
     }
 
-    // Prepare MONSTER data and items.
-    if (actorData.type == 'monster') {
+    // Prepare NPC data and items.
+    if (actorData.type == 'npc') {
       this._prepareItems(context);
     }
 
@@ -78,32 +78,26 @@ export class ufActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const weapon = [];
-    const job = [];
-    const skill = [];
+    const gear = [];
+    const features = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to weapon.
-      if (i.type === 'weapon') {
-        weapon.push(i);
+      // Append to gear.
+      if (i.type === 'item') {
+        gear.push(i);
       }
-      // Append to class.
-      else if (i.type === 'job') {
-        job.push(i);
-      }
-      // Append to skills.
-      else if (i.type === 'skill') {
-        skill.push(i)
+      // Append to features.
+      else if (i.type === 'feature') {
+        features.push(i);
       }
     }
 
     // Assign and return
-    context.weapon = weapon;
-    context.job = job;
-    context.skill = skill;
-  }
+    context.gear = gear;
+    context.features = features;
+   }
 
   /* -------------------------------------------- */
 

@@ -2,7 +2,7 @@
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class ufActor extends Actor {
+export class ultimaFabulaActor extends Actor {
 
   /** @override */
   prepareData() {
@@ -31,7 +31,7 @@ export class ufActor extends Actor {
   prepareDerivedData() {
     const actorData = this.data;
     const data = actorData.data;
-    const flags = actorData.flags.fabula - ultima || {};
+    const flags = actorData.flags.ultimaFabula || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
@@ -53,7 +53,7 @@ export class ufActor extends Actor {
    * Prepare NPC type specific data.
    */
   _prepareNpcData(actorData) {
-    if (actorData.type !== 'monster') return;
+    if (actorData.type !== 'npc') return;
 
     // Make modifications to data here. For example:
     const data = actorData.data;
@@ -89,7 +89,7 @@ export class ufActor extends Actor {
    * Prepare NPC roll data.
    */
   _getNpcRollData(data) {
-    if (this.data.type !== 'monster') return;
+    if (this.data.type !== 'npc') return;
 
     // Process additional NPC data here.
   }

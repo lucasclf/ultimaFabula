@@ -1,5 +1,6 @@
-{ "name": "fabula-ultima",
-  "title": "Fabula Ultima",
+{ 
+  "name": "ultimaFabula",
+  "title": "ultimaFabula",
   "description": "The non-official Fabula Ultima system for FoundryVTT!",
   "version": "1.0.0",
   "minimumCoreVersion": "0.8.6",
@@ -8,8 +9,8 @@
     "maximum": "11"
   },
   "author": "Cqn",
-  "esmodules": ["module/fabula-ultima.mjs"],
-  "styles": ["css/fabula-ultima.css"],
+  "esmodules": ["module/ultimaFabula.mjs"],
+  "styles": ["css/ultimaFabula.css"],
   "scripts": [],
   "packs": [],
   "languages": [

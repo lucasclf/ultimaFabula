@@ -1,9 +1,9 @@
 {
 
-  "FABULA-ULTIMA.EffectCreate": "Create Effect",
-  "FABULA-ULTIMA.EffectToggle": "Toggle Effect",
-  "FABULA-ULTIMA.EffectEdit": "Edit Effect",
-  "FABULA-ULTIMA.EffectDelete": "Delete Effect",
+  "ULTIMAFABULA.EffectCreate": "Create Effect",
+  "ULTIMAFABULA.EffectToggle": "Toggle Effect",
+  "ULTIMAFABULA.EffectEdit": "Edit Effect",
+  "ULTIMAFABULA.EffectDelete": "Delete Effect",
 
-  "FABULA-ULTIMA.Add": "Add"
+  "ULTIMAFABULA.Add": "Add"
 }

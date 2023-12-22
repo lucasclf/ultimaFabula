@@ -1,7 +1,7 @@
-export const FABULA_ULTIMA = {};
+export const ULTIMAFABULA = {};
 
 // Define constants here, such as:
-FABULA_ULTIMA.foobar = {
-  'bas': 'FABULA-ULTIMA.bas',
-  'bar': 'FABULA-ULTIMA.bar'
+ULTIMAFABULA.foobar = {
+  'bas': 'ULTIMAFABULA.bas',
+  'bar': 'ULTIMAFABULA.bar'
 };
