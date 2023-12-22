@@ -1,0 +1,77 @@
+{
+  "Actor": {
+    "types": ["character", "monster"],
+    "templates": {
+      "base": {
+        "hp": {
+          "max": 0,
+          "current": 0,
+          "crisis": 0
+        },
+        "mp": {
+          "max": 0,
+          "current": 0
+        },
+        "background":{
+          "biography": "",
+          "description": "",
+          "appearance": "",
+          "notes": ""
+        },
+        "attributes": {
+          "dexterity": 6,
+          "insight": 6,
+          "might": 6,
+          "willpower": 6                    
+        },
+        "status": {
+          "slow": false,
+          "dazed": false,
+          "weak": false,
+          "shaken": false,
+          "enraged": false,
+          "poisoned": false
+        },
+        "initiative": 0,
+        "defense": 0,
+        "mDefense": 0
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "classes": []
+    },
+    "monster": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
+    "types": ["weapon", "job", "skill"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "weapon": {
+      "templates": ["base"],
+      "isMartial": false,
+      "accuracy": "",
+      "damage": "",
+      "damageType": "",
+      "is2handed": false,
+      "isMeele": false,
+      "isRanged": false,
+      "special": "",
+      "cost": 0,
+      "type": ""
+    },
+    "job": {
+      "templates": ["base"]
+    },
+    "skill": {
+      "templates": ["base"],
+      "type": ""
+    }
+  }
+}
