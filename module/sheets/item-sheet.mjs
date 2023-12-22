@@ -21,7 +21,7 @@ export class ultimaFabulaItemSheet extends ItemSheet {
     // return `${path}/item-sheet.html`;
 
     // Alternatively, you could use the following return statement to do a
-    // unique item sheet by type, like `weapon-sheet.html`.
+    // unique item sheet by type, like `gears-sheet.html`.
     return `${path}/item-${this.item.data.type}-sheet.html`;
   }
 
@@ -34,6 +34,8 @@ export class ultimaFabulaItemSheet extends ItemSheet {
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item.data;
+
+    context.config = CONFIG.ULTIMAFABULA;
 
     // Retrieve the roll data for TinyMCE editors.
     context.rollData = {};

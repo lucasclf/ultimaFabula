@@ -10,10 +10,10 @@ export class ultimaFabulaActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["ultimaFabula", "sheet", "actor"],
-      template: "systems/ultimaFabula/templates/actor/actor-sheet.html",
+      template: "systems/ultimaFabula/templates/actor/actor-character-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "gears" }]
     });
   }
 
@@ -34,6 +34,8 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
     // Use a safe clone of the actor data for further operations.
     const actorData = this.actor.data.toObject(false);
+
+    context.config = CONFIG.ULTIMAFABULA;
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.data = actorData.data;
@@ -78,15 +80,24 @@ export class ultimaFabulaActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const gear = [];
+    
+    const weapon = [];
+    const defensive = [];
+    const accessory = [];
     const features = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
+      if (i.type === 'weapon') {
+        weapon.push(i);
+      }
+      if (i.type === 'defensive') {
+        defensive.push(i);
+      }
+      if (i.type === 'accessory') {
+        accessory.push(i);
       }
       // Append to features.
       else if (i.type === 'feature') {
@@ -95,9 +106,11 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     }
 
     // Assign and return
-    context.gear = gear;
+    context.weapon = weapon;
+    context.defensive = defensive;
+    context.accessory = accessory;
     context.features = features;
-   }
+  }
 
   /* -------------------------------------------- */
 

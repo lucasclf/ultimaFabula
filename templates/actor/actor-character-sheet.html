@@ -14,27 +14,109 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="data.health.value" class="resource-label">Health</label>
+          <label for="data.hp.value" class="resource-label">HP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
+          <input type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
           <span> / </span>
-          <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
+          <p>{{data.hp.max}}</p>
+          <!-- <input type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/> -->
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.power.value" class="resource-label">Power</label>
+          <label for="data.hp.crisis" class="resource-label">CRISIS</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
+          <p> {{data.hp.crisis}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes.level.value" class="resource-label">Level</label>
+          <label for="data.mp.value" class="resource-label">MP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.attributes.level.value" value="{{data.attributes.level.value}}" data-dtype="Number"/>
+          <input type="text" name="data.mp.value" value="{{data.mp.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <p>{{data.mp.max}}</p>
+          <!-- <input type="text" name="data.mp.max" value="{{data.mp.max}}" data-dtype="Number"/> -->
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">LEVEL</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <p> {{data.level}}</p>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="data.attributes.dexterity" class="resource-label">DEX</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <select name="data.attributes.dexterity">
+              {{#select data.attributes.dexterity}}
+              {{#each config.attributeDice as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+        </div>
+        
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">INS</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <select name="data.attributes.insight">
+              {{#select data.attributes.insight}}
+              {{#each config.attributeDice as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">MIG</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <select name="data.attributes.might">
+              {{#select data.attributes.might}}
+              {{#each config.attributeDice as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+        </div>
+        
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">WLP</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <select name="data.attributes.willpower">
+              {{#select data.attributes.willpower}}
+              {{#each config.attributeDice as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </div>
+        </div>   
+
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">INIT</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <p> {{data.initiative}}</p>
+          </div>
+        </div>
+                
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">DEF</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <p> {{data.defense}}</p>
+          </div>
+        </div>
+                
+        <div class="resource flex-group-center">
+          <label for="data.level" class="resource-label">M DEF.</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <p> {{data.mDefense}}</p>
           </div>
         </div>
 
@@ -45,10 +127,10 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="gears">Gears</a>
+    <a class="item" data-tab="features">Jobs</a>
+    <a class="item" data-tab="description">Skills</a>
+    <a class="item" data-tab="effects">Spells</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -79,9 +161,9 @@
       {{editor content=data.biography target="data.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/ultimaFabula/templates/actor/parts/actor-items.html"}}
+    {{!-- Owned Gears Tab --}}
+    <div class="tab items" data-group="primary" data-tab="gears">
+       {{> "systems/ultimaFabula/templates/actor/parts/actor-gears.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}

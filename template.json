@@ -1,16 +1,18 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "enemy", "npc", "villain"],
     "templates": {
       "base": {
         "hp": {
-          "max": 0,
-          "current": 0,
+          "max": 50,
+          "value": 0,
+          "min": 0,
           "crisis": 0
         },
         "mp": {
-          "max": 0,
-          "current": 0
+          "max": 50,
+          "value": 0,
+          "min": 0
         },
         "background":{
           "biography": "",
@@ -19,10 +21,10 @@
           "notes": ""
         },
         "attributes": {
-          "dexterity": "d6",
-          "insight": "d6",
-          "might": "d6",
-          "willpower": "d6"                    
+          "dexterity": "",
+          "insight": "",
+          "might": "",
+          "willpower": ""                    
         },
         "status": {
           "slow": false,
@@ -34,40 +36,87 @@
         },
         "initiative": 0,
         "defense": 0,
-        "mDefense": 0
+        "mDefense": 0,
+        "level": 0
       }
     },
     "character": {
       "templates": ["base"],
-      "classes": []
+      "ip": {
+        "max": 50,
+        "value": 0,
+        "min": 0
+      },
+      "traits": {
+        "origin": "",
+        "identity": "",
+        "theme": ""
+      },
+      "bonds": []
+    },
+    "enemy": {
+      "templates": ["base"],
+      "level": 0,
+      "typicalTraits": [],
+      "affinity":{
+        "physical": "", 
+        "air": "", 
+        "bolt": "", 
+        "dark": "", 
+        "earth": "", 
+        "fire": "", 
+        "ice": "", 
+        "light": "", 
+        "poison": ""
+      },
+      "attacks": [],
+      "specialRules": []
     },
     "npc": {
       "templates": ["base"],
+      "level": 0,
       "cr": 0
     }
   },
   "Item": {
-    "types": ["item", "feature"],
+    "types": ["weapon", "defensive", "accessory", "feature"],
     "templates": {
       "base": {
         "description": ""
+      },
+      "items": {
+        "isEquiped": false,
+        "cost": 0
+      },
+      "defense": {
+        "defense": "",
+        "mDefense": "",
+        "initiative": "",
+        "type": ""
       }
     },
-    "item": {
-      "templates": ["base"],
+    "weapon": {
+      "templates": ["base", "items"],
       "isMartial": false,
-      "accuracy": "",
-      "damage": "",
       "damageType": "",
-      "is2handed": false,
-      "isMeele": false,
-      "isRanged": false,
+      "gripType": "",
+      "attackType": "",
       "special": "",
-      "cost": 0,
-      "type": ""
+      "weaponType": "",
+      "accuracyFirst": "",
+      "accuracySecond": "",
+      "accuracyMod": 0,
+      "damage": 0
+    },
+    "defensive": {
+      "templates": ["base", "items", "defense"]
+    },
+    "accessory":{
+      "templates": ["base", "items"]
     },
     "feature": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "level": 0
     }
   }
 }
