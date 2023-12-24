@@ -14,44 +14,42 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="data.hp.value" class="resource-label">HP</label>
+          <label for="actor.system.hp.value" class="resource-label">HP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
+          <input type="text" name="actor.system.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
           <span> / </span>
-          <p>{{data.hp.max}}</p>
-          <!-- <input type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/> -->
+          <p>{{actor.system.hp.max}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.hp.crisis" class="resource-label">CRISIS</label>
+          <label for="actor.system.hp.crisis" class="resource-label">CRISIS</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.hp.crisis}}</p>
+          <p> {{actor.system.hp.crisis}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.mp.value" class="resource-label">MP</label>
+          <label for="actor.system.mp.value" class="resource-label">MP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.mp.value" value="{{data.mp.value}}" data-dtype="Number"/>
+          <input type="text" name="actor.system.mp.value" value="{{actor.system.mp.value}}" data-dtype="Number"/>
           <span> / </span>
-          <p>{{data.mp.max}}</p>
-          <!-- <input type="text" name="data.mp.max" value="{{data.mp.max}}" data-dtype="Number"/> -->
+          <p>{{actor.system.mp.max}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">LEVEL</label>
+          <label for="actor.system.level" class="resource-label">LEVEL</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.level}}</p>
+          <p> {{actor.system.level}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes.dexterity" class="resource-label">DEX</label>
+          <label for="actor.system.attributes.dexterity" class="resource-label">DEX</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.dexterity">
-              {{#select data.attributes.dexterity}}
+            <select name="actor.system.attributes.dexterity">
+              {{#select actor.system.attributes.dexterity}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -61,10 +59,10 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">INS</label>
+          <label for="actor.system.level" class="resource-label">INS</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.insight">
-              {{#select data.attributes.insight}}
+            <select name="actor.system.attributes.insight">
+              {{#select actor.system.attributes.insight}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -74,10 +72,10 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">MIG</label>
+          <label for="actor.system.level" class="resource-label">MIG</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.might">
-              {{#select data.attributes.might}}
+            <select name="actor.system.attributes.might">
+              {{#select actor.system.attributes.might}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -87,10 +85,10 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">WLP</label>
+          <label for="actor.system.level" class="resource-label">WLP</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.willpower">
-              {{#select data.attributes.willpower}}
+            <select name="actor.system.attributes.willpower">
+              {{#select actor.system.attributes.willpower}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -100,23 +98,23 @@
         </div>   
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">INIT</label>
+          <label for="actor.system.level" class="resource-label">INIT</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.initiative}}</p>
+          <p> {{actor.system.initiative}}</p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">DEF</label>
+          <label for="actor.system.level" class="resource-label">DEF</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.defense}}</p>
+          <p> {{actor.system.defense}}</p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">M DEF.</label>
+          <label for="actor.system.level" class="resource-label">M DEF.</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.mDefense}}</p>
+          <p> {{actor.system.mDefense}}</p>
           </div>
         </div>
 
@@ -158,7 +156,7 @@
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=data.biography target="data.biography" rollData=rollData button=true owner=owner editable=editable}}
+      {{editor content=system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
     {{!-- Owned Gears Tab --}}

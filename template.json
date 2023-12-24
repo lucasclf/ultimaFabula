@@ -100,13 +100,14 @@
       "isMartial": false,
       "damageType": "",
       "gripType": "",
-      "attackType": "",
+      "attackType": "physical",
       "special": "",
       "weaponType": "",
       "accuracyFirst": "",
       "accuracySecond": "",
       "accuracyMod": 0,
-      "damage": 0
+      "damage": 0,
+      "teste": "teste"
     },
     "defensive": {
       "templates": ["base", "items", "defense"]

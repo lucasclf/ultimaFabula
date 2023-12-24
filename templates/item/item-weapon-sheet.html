@@ -5,12 +5,35 @@
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="grid grid-2col">
         <div class="resource">
-          <label class="resource-label">Quantity</label>
-          <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+          <label class="resource-label">Accuracy</label>
+          <input type="text" name="item.system.accuracyMod" value="{{item.system.accuracyMod}}" data-dtype="Number" maxlength="2">
+          <span> + </span>
+          <select name="item.system.accuracyFirst">
+            {{#select item.system.accuracyFirst}}
+            {{#each config.attributesAbbreviation as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+          <span> + </span>
+          <select name="item.system.accuracySecond">
+            {{#select item.system.accuracySecond}}
+            {{#each config.attributesAbbreviation as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
         </div>
         <div class="resource">
-          <label class="resource-label">Weight</label>
-          <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
+          <label class="resource-label">Damage</label>
+          <input type="text" name="item.system.damage" value="{{item.system.damage}}" data-dtype="Number"/>
+          <select name="item.system.damageType">
+            {{#select item.system.damageType}}
+            {{#each config.elementType as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
         </div>
       </div>
     </div>
@@ -35,17 +58,16 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
       <div class="resource">
-
+        <input type="text" name="item.system.teste" value="{{item.system.teste}}">
         <table>
           <tr>
             <th>gripType</th>
             <th>attackType</th>
-            <th>Accuracy</th>
             <th>Martial?</th>
           </tr>
           <td>
-            <select name="data.gripType">
-              {{#select data.gripType}}
+            <select name="item.system.gripType">
+              {{#select item.system.gripType}}
               {{#each config.gripType as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -53,8 +75,8 @@
             </select>
           </td>
           <td>
-            <select name="data.attackType">
-              {{#select data.attackType}}
+            <select name="item.system.attackType">
+              {{#select item.system.attackType}}
               {{#each config.attackType as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -62,56 +84,23 @@
             </select>
           </td>
           <td>
-            <select name="data.accuracyFirst">
-              {{#select data.accuracyFirst}}
-              {{#each config.attributesAbbreviation as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-            <span> + </span>
-            <select name="data.accuracySecond">
-              {{#select data.accuracySecond}}
-              {{#each config.attributesAbbreviation as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-            <span> + </span>
-            <input type="text" name="data.accuracyMod" value="{{data.accuracyMod}}" data-dtype="Number" maxlength="2">
-          </td>
-          <td>
-            <input type="checkbox" name="data.isMartial" {{checked data.isMartial}}>
+            <input type="checkbox" name="item.system.isMartial" {{checked item.system.isMartial}}>
           </td>
 
         </table>
         
         <table>
           <tr>
-            <th>Damage</th>
-            <th>Damage Type</th>
             <th>Cost</th>
             <th>Type</th>
           </tr>
 
           <td>
-            <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="Number">
+            <input type="text" name="item.system.cost" value="{{item.system.cost}}" data-dtype="Number">
           </td>
           <td>
-            <select name="data.damageType">
-              {{#select data.damageType}}
-              {{#each config.elementType as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </td>
-          <td>
-            <input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number">
-          </td>
-          <td>
-            <select name="data.weaponType">
-              {{#select data.weaponType}}
+            <select name="item.system.weaponType">
+              {{#select item.system.weaponType}}
               {{#each config.weaponType as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -121,7 +110,7 @@
             
         </table>
 
-        <textarea name="data.special">{{data.special}}</textarea>
+        <textarea name="item.system.special">{{item.system.special}}</textarea>
 
       </div>
     </div>

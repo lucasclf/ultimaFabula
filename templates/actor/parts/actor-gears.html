@@ -19,10 +19,10 @@
         </div>
         <h4>{{item.name}}</h4>
       </div>
-      <div class="accuracy-formula item-prop">{{item.data.accuracy}}</div>
-      <div class="damage-formula item-prop">{{item.data.damage}}</div>
-      <div class="damage-type item-prop">{{item.data.damageType}}</div>
-      <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}></div>
+      <div class="accuracy-formula item-prop">{{item.system.accuracyMod}}</div>
+      <div class="damage-formula item-prop">{{item.system.damage}}</div>
+      <div class="damage-type item-prop">{{item.system.damageType}}</div>
+      <div class="equiped item-prop"><input type="checkbox" name="item.system.isEquiped" {{checked item.system.isEquiped}}></div>
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -50,10 +50,10 @@
         </div>
         <h4>{{item.name}}</h4>
       </div>
-      <div class="defense-formula item-prop">{{item.data.defense}}</div>
-      <div class="mdefense-formula item-prop">{{item.data.mDefense}}</div>
-      <div class="initiative item-prop">{{item.data.initiative}}</div>
-      <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}></div>
+      <div class="defense-formula item-prop">{{item.system.defense}}</div>
+      <div class="mdefense-formula item-prop">{{item.system.mDefense}}</div>
+      <div class="initiative item-prop">{{item.system.initiative}}</div>
+      <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.system.isEquiped}}></div>
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -79,9 +79,9 @@
       </div>
       <h4>{{item.name}}</h4>
     </div>
-    <div class="damage-formula item-prop">{{item.data.description}}</div>
+    <div class="damage-formula item-prop">{{item.system.description}}</div>
     <div class="equiped item-prop">
-      <input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}>
+      <input type="checkbox" name="item.system.isEquiped" {{checked item.system.isEquiped}}>
     </div>
     <div class="item-controls">
       <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>

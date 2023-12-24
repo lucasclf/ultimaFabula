@@ -19,7 +19,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/ultimaFabula/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/ultimaFabula/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -33,12 +33,12 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
-    const actorData = this.actor.data.toObject(false);
+    const actorData = this.actor.toObject(false);
 
     context.config = CONFIG.ULTIMAFABULA;
 
     // Add the actor's data to context.data for easier access, as well as flags.
-    context.data = actorData.data;
+    context.data = actorData.system;
     context.flags = actorData.flags;
 
     // Prepare character data and items.
@@ -116,7 +116,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
   /** @override */
   activateListeners(html) {
-    super.activateListeners(html);
+    super.activateListeners(html); //DESCOBRIR ONDE ESTÁ O ERRO!!!
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
