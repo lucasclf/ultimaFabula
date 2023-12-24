@@ -31,6 +31,7 @@ export class ultimaFabulaItem extends Item {
    * @private
    */
   async roll() {
+    console.log("CQN | Roll a item")
     const item = this.data;
 
     // Initialize chat data.
@@ -39,7 +40,7 @@ export class ultimaFabulaItem extends Item {
     const label = `[${item.type}] ${item.name}`;
 
     // If there's no roll data, send a chat message.
-    if (!this.data.data.formula) {
+    if (!this.system.formula) {
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,

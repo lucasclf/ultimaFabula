@@ -29,8 +29,8 @@ export class ultimaFabulaActor extends Actor {
    * is queried and has a roll executed directly from it).
    */
   prepareDerivedData() {
-    const actorData = this.data;
-    const data = actorData.data;
+    const actorData = this;
+    const data = actorData.system;
     const flags = actorData.flags.ultimaFabula || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
@@ -46,7 +46,7 @@ export class ultimaFabulaActor extends Actor {
     if (actorData.type !== 'character') return;
 
     // Make modifications to data here. For example:
-    const data = actorData.data;
+    const data = actorData.system;
   }
 
   /**
@@ -77,7 +77,7 @@ export class ultimaFabulaActor extends Actor {
    * Prepare character roll data.
    */
   _getCharacterRollData(data) {
-    if (this.data.type !== 'character') return;
+    if (this.system.type !== 'character') return;
 
     // Add level for easier access, or fall back to 0.
     if (data.attributes.level) {
@@ -89,7 +89,7 @@ export class ultimaFabulaActor extends Actor {
    * Prepare NPC roll data.
    */
   _getNpcRollData(data) {
-    if (this.data.type !== 'npc') return;
+    if (this.system.type !== 'npc') return;
 
     // Process additional NPC data here.
   }
