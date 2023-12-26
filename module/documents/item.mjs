@@ -31,13 +31,15 @@ export class ultimaFabulaItem extends Item {
    * @private
    */
   async roll() {
-    console.log("CQN | Roll a item")
+  
     const item = this.data;
+
+
 
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const rollMode = game.settings.get('core', 'rollMode');
-    const label = `[${item.type}] ${item.name}`;
+    const label = `[${item.type}] ${item.name} ${item.data.damage}`;
 
     // If there's no roll data, send a chat message.
     if (!this.data.data.formula) {

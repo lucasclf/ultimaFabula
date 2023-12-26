@@ -19,7 +19,6 @@
           <input type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
           <span> / </span>
           <p>{{data.hp.max}}</p>
-          <!-- <input type="text" name="data.hp.max" value="{{data.hp.max}}" data-dtype="Number"/> -->
           </div>
         </div>
 
@@ -48,7 +47,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes.dexterity" class="resource-label">DEX</label>
+          <label for="data.attributes.dexterity" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.dexterity}}" data-label="DEXTERITY">DEX</i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="data.attributes.dexterity">
               {{#select data.attributes.dexterity}}
@@ -61,7 +62,9 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">INS</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.insight}}" data-label="INSIGHT">INS</i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="data.attributes.insight">
               {{#select data.attributes.insight}}
@@ -74,7 +77,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">MIG</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.might}}" data-label="MIGHT">MIG</i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="data.attributes.might">
               {{#select data.attributes.might}}
@@ -87,7 +92,9 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">WLP</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.willpower}}" data-label="WILLPOWER">WLP</i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
             <select name="data.attributes.willpower">
               {{#select data.attributes.willpower}}
@@ -100,7 +107,9 @@
         </div>   
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">INIT</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{data.initiative}}" data-label="INITIATIVE">INIT</i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
           <p> {{data.initiative}}</p>
           </div>
@@ -109,14 +118,14 @@
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">DEF</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.defense}}</p>
+          <p> {{data.defense.value}}</p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">M DEF.</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.mDefense}}</p>
+          <p> {{data.mDefense.value}}</p>
           </div>
         </div>
 

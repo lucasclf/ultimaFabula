@@ -35,8 +35,16 @@
           "poisoned": false
         },
         "initiative": 0,
-        "defense": 0,
-        "mDefense": 0,
+        "defense": {
+          "value": 0,
+          "shield": "",
+          "armor": ""
+        },
+        "mDefense": {
+          "value": 0,
+          "shield": "",
+          "armor": ""
+        },
         "level": 0
       }
     },

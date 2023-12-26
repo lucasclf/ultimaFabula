@@ -19,7 +19,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/ultimaFabula/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/ultimaFabula/templates/actor/actor-${this.actor.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -33,12 +33,12 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
-    const actorData = this.actor.data.toObject(false);
+    const actorData = this.actor.toObject(false);
 
     context.config = CONFIG.ULTIMAFABULA;
 
     // Add the actor's data to context.data for easier access, as well as flags.
-    context.data = actorData.data;
+    context.data = actorData.system;
     context.flags = actorData.flags;
 
     // Prepare character data and items.
@@ -194,6 +194,8 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
+
+
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
@@ -205,15 +207,31 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[roll] ${dataset.label}` : '';
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
+      return this._roll(dataset);
+    }
+  }
+
+  _roll(dataset){
+    
+    let label = dataset.label ? `${dataset.label}` : '';
+    let roll = new Roll(dataset.roll, this.actor.getRollData());
+
+    if(label = "INITIATIVE"){
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
         rollMode: game.settings.get('core', 'rollMode'),
       });
-      return roll;
-    }
-  }
 
+    }
+    else {
+      roll.toMessage({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        flavor: label,
+        rollMode: game.settings.get('core', 'rollMode'),
+      });
+    }
+
+    return roll
+  }
 }
