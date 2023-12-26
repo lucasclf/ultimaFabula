@@ -67,6 +67,19 @@ Handlebars.registerHelper('toLowerCase', function(str) {
   return str.toLowerCase();
 });
 
+Handlebars.registerHelper('getAbbreviation', function(attr){
+  return ULTIMAFABULA.attributesAbbreviation[attr] || "";
+})
+
+Handlebars.registerHelper('getTotalValue', function(firstValue, secondValue){
+  return firstValue + secondValue;
+})
+
+Handlebars.registerHelper('getAttributeValue', function(attribute, charAttributes){
+
+  return charAttributes[attribute];
+})
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

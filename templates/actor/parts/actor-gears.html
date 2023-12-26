@@ -19,7 +19,7 @@
         </div>
         <h4>{{item.name}}</h4>
       </div>
-      <div class="accuracy-formula item-prop">{{item.data.accuracy}}</div>
+      <div class="accuracy-formula item-prop">{{getAbbreviation item.data.accuracyFirst}} {{getAbbreviation item.data.accuracySecond}}  {{item.data.accuracyMod}}</div>
       <div class="damage-formula item-prop">{{item.data.damage}}</div>
       <div class="damage-type item-prop">{{item.data.damageType}}</div>
       <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}></div>
@@ -37,6 +37,7 @@
     <div class="defense-formula">Defense</div>
     <div class="mdefense-formula">M. Defense</div>
     <div class="initiative">Initiative</div>
+    <div class="equiped">type</div>
     <div class="equiped">Equiped</div> 
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="defensive"><i class="fas fa-plus"></i> Add item</a>
@@ -50,10 +51,22 @@
         </div>
         <h4>{{item.name}}</h4>
       </div>
-      <div class="defense-formula item-prop">{{item.data.defense}}</div>
-      <div class="mdefense-formula item-prop">{{item.data.mDefense}}</div>
+
+      {{#if (eq item.data.type 'armor')}}
+        <div class="defense-formula item-prop">{{getAbbreviation item.data.defense.attr}} + {{item.data.defense.value}}</div>
+        <div class="mdefense-formula item-prop">{{getAbbreviation item.data.mDefense.attr}} + {{item.data.mDefense.value}}</div>
+      {{else if (eq item.data.type 'shield')}}
+        <div class="defense-formula item-prop">{{item.data.defense.value}}</div>
+        <div class="mdefense-formula item-prop">{{item.data.mDefense.value}}</div>
+      {{/if}}
+
+      <!-- <div class="defense-formula item-prop">{{getAbbreviation item.data.defense.attr}} + {{item.data.defense.value}}</div>
+      <div class="mdefense-formula item-prop">{{getAbbreviation item.data.mDefense.attr}} + {{item.data.mDefense.value}}</div> -->
       <div class="initiative item-prop">{{item.data.initiative}}</div>
-      <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}></div>
+      <div class="type">{{item.data.type}}</div>
+      <div class="item-prop">
+        <a class="item-equip">EQUIPAR</a>
+      </div>
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>

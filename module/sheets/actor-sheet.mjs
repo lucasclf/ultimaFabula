@@ -1,4 +1,5 @@
 import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import { equipGear } from "../helpers/equipment.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -132,6 +133,15 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
+    // html.find('.item-equip').click(ev => {
+    //   this._onEquipeItem(ev)
+    // });
+    html.find('.item-equip').click(ev => {
+      equipGear(ev, this.actor)
+    });
+
+    //html.find('.item-equip').click(ev => this._onRoll.bind(ev, this));
+
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
@@ -194,8 +204,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-
-
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
@@ -204,7 +212,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
         if (item) return item.roll();
       }
     }
-
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
       return this._roll(dataset);
@@ -212,25 +219,14 @@ export class ultimaFabulaActorSheet extends ActorSheet {
   }
 
   _roll(dataset){
-    
     let label = dataset.label ? `${dataset.label}` : '';
     let roll = new Roll(dataset.roll, this.actor.getRollData());
 
-    if(label = "INITIATIVE"){
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-
-    }
-    else {
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
-      });
-    }
+    roll.toMessage({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: label,
+      rollMode: game.settings.get('core', 'rollMode'),
+    });
 
     return roll
   }

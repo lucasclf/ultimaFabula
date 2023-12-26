@@ -108,24 +108,31 @@
 
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{data.initiative}}" data-label="INITIATIVE">INIT</i>
+            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{getTotalValue data.initiative.armorValue data.initiative.shieldValue}}" data-label="INITIATIVE">INIT</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.initiative}}</p>
+          <p> {{getTotalValue data.initiative.armorValue data.initiative.shieldValue}} </p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">DEF</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{getAttributeValue data.defense.armorAttr data.attributes}} + {{getTotalValue data.defense.armorValue data.defense.shieldValue}}" data-label="DEFENSE">
+              DEF
+            </i>
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.defense.value}}</p>
+            <p> {{data.defense.armorAttr}} + {{getTotalValue data.defense.armorValue data.defense.shieldValue}}</p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">M DEF.</label>
+          <label for="data.level" class="resource-label">
+            <i class="rollable" data-roll="{{getAttributeValue data.mDefense.armorAttr data.attributes}} + {{getTotalValue data.mDefense.armorValue data.mDefense.shieldValue}}" data-label="DEFENSE">
+            M.DEF
+          </i></label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.mDefense.value}}</p>
+          <p> {{data.mDefense.armorAttr}} + {{getTotalValue data.mDefense.armorValue data.mDefense.shieldValue}}</p>
           </div>
         </div>
 

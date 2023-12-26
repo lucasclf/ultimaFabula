@@ -34,22 +34,29 @@
           "enraged": false,
           "poisoned": false
         },
-        "initiative": 0,
+        "initiative": {
+          "armorValue": 0,
+          "shieldValue": 0
+        },
         "defense": {
-          "value": 0,
-          "shield": "",
-          "armor": ""
+          "armorValue": 0,
+          "shieldValue": 0,
+          "armorAttr": "dexterity"
         },
         "mDefense": {
-          "value": 0,
-          "shield": "",
-          "armor": ""
+          "armorValue": 0,
+          "shieldValue": 0,
+          "armorAttr": "insight"
         },
         "level": 0
       }
     },
     "character": {
       "templates": ["base"],
+      "gear":{
+        "armor": "",
+        "shield": ""
+      },
       "ip": {
         "max": 50,
         "value": 0,
@@ -97,10 +104,16 @@
         "cost": 0
       },
       "defense": {
-        "defense": "",
-        "mDefense": "",
-        "initiative": "",
-        "type": ""
+        "defense": {
+          "attr": "dexterity",
+          "value": 0
+        },
+        "mDefense": {
+          "attr": "insight",
+          "value": 0
+        },
+        "initiative": 0,
+        "type": "armor"
       }
     },
     "weapon": {
@@ -108,11 +121,11 @@
       "isMartial": false,
       "damageType": "",
       "gripType": "",
-      "attackType": "",
+      "attackType": "physical",
       "special": "",
       "weaponType": "",
-      "accuracyFirst": "",
-      "accuracySecond": "",
+      "accuracyFirst": "might",
+      "accuracySecond": "might",
       "accuracyMod": 0,
       "damage": 0
     },

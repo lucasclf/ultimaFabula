@@ -33,16 +33,19 @@ export class ultimaFabulaItem extends Item {
   async roll() {
   
     const item = this.data;
+    const actor = this.actor;
+    this.data.data.formula = this._defineRoll(item, actor);
 
-
-
+    
+    
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     const rollMode = game.settings.get('core', 'rollMode');
-    const label = `[${item.type}] ${item.name} ${item.data.damage}`;
+    const label = `[${item.type}] ${item.name}`;
 
     // If there's no roll data, send a chat message.
     if (!this.data.data.formula) {
+      console.log(this.data)
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,
@@ -66,5 +69,20 @@ export class ultimaFabulaItem extends Item {
       });
       return roll;
     }
+  }
+
+  _defineRoll(item, actor){
+    if(item.type == "weapon"){
+      let accuracyFirst = item.system.accuracyFirst;
+      let accuracySecond = item.system.accuracySecond;
+      let accuracyMod = item.system.accuracyMod;
+
+      let actorAccuracyFirst = actor.system.attributes[accuracyFirst];
+      let actorAccuracySecond = actor.system.attributes[accuracySecond];
+
+      return `${actorAccuracyFirst} + ${actorAccuracySecond} + ${accuracyMod}`
+    }
+
+    return;
   }
 }

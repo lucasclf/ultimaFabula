@@ -5,6 +5,22 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      <div class="grid grid-2col">
+        <div class="resource">
+          <label class="resource-label">Type</label>
+          <select name="data.type">
+            {{#select data.type}}
+            {{#each config.defeniveItemType as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </div>
+        <div class="resource">
+          <label class="resource-label">Cost</label>
+          <input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number">
+        </div>
+      </div>
     </div>
   </header>
 
@@ -24,7 +40,48 @@
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      {{!-- As you add new fields, add them in here! --}}
+      <div class="resource">
+        {{#if (eq data.type 'armor')}}
+          <table>
+            <tr>
+              <th>Defense</th>
+              <th>Magic Defense</th>
+            </tr>
+            <td>
+              <select name="data.defense.attr">
+                {{#select data.defense.attr}}
+                {{#each config.attributesAbbreviation as |name type|}}
+                <option value="{{type}}">{{name}}</option>
+                {{/each}}
+                {{/select}}
+              </select>
+              <span><input type="text" name="data.defense.value" value="{{data.defense.value}}" data-dtype="Number"></span>
+            </td>
+            <td>
+              <select name="data.mDefense.attr">
+                {{#select data.mDefense.attr}}
+                {{#each config.attributesAbbreviation as |name type|}}
+                <option value="{{type}}">{{name}}</option>
+                {{/each}}
+                {{/select}}
+              </select>
+              <span><input type="text" name="data.mDefense.value" value="{{data.mDefense.value}}" data-dtype="Number"></span>
+            </td>
+
+          </table>
+        {{/if}}
+
+        <table>
+          <tr>
+            <th>Initiative</th>
+          </tr>
+          <td>
+            <input type="text" name="data.initiative" value="{{data.initiative}}" data-dtype="Number">
+          </td>
+
+        </table>
+
+      </div>
     </div>
   </section>
 </form>

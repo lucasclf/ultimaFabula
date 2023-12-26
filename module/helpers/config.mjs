@@ -53,3 +53,8 @@ ULTIMAFABULA.attributesAbbreviation = {
   'insight': 'INS',
   'willpower': 'WLP'
 }
+
+ULTIMAFABULA.defeniveItemType = {
+  'armor': 'armor',
+  'shield': 'shield'
+}

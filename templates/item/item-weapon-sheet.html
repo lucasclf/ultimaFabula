@@ -5,12 +5,35 @@
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="grid grid-2col">
         <div class="resource">
-          <label class="resource-label">Quantity</label>
-          <input type="text" name="data.quantity" value="{{data.quantity}}" data-dtype="Number"/>
+          <label class="resource-label">Damage</label>
+          <input type="text" name="data.quantity" value="{{data.damage}}" data-dtype="Number"/>
+          <select name="data.damageType">
+            {{#select data.damageType}}
+            {{#each config.elementType as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
         </div>
         <div class="resource">
-          <label class="resource-label">Weight</label>
-          <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
+          <label class="resource-label">Accuracy</label>
+          <select name="data.accuracyFirst">
+            {{#select data.accuracyFirst}}
+            {{#each config.attributesAbbreviation as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+          <span> + </span>
+          <select name="data.accuracySecond">
+            {{#select data.accuracySecond}}
+            {{#each config.attributesAbbreviation as |name type|}}
+            <option value="{{type}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+          <span> + </span>
+          <input type="text" name="data.accuracyMod" value="{{data.accuracyMod}}" data-dtype="Number" maxlength="2">
         </div>
       </div>
     </div>
@@ -40,7 +63,6 @@
           <tr>
             <th>gripType</th>
             <th>attackType</th>
-            <th>Accuracy</th>
             <th>Martial?</th>
           </tr>
           <td>
@@ -62,25 +84,6 @@
             </select>
           </td>
           <td>
-            <select name="data.accuracyFirst">
-              {{#select data.accuracyFirst}}
-              {{#each config.attributesAbbreviation as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-            <span> + </span>
-            <select name="data.accuracySecond">
-              {{#select data.accuracySecond}}
-              {{#each config.attributesAbbreviation as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-            <span> + </span>
-            <input type="text" name="data.accuracyMod" value="{{data.accuracyMod}}" data-dtype="Number" maxlength="2">
-          </td>
-          <td>
             <input type="checkbox" name="data.isMartial" {{checked data.isMartial}}>
           </td>
 
@@ -88,24 +91,10 @@
         
         <table>
           <tr>
-            <th>Damage</th>
-            <th>Damage Type</th>
             <th>Cost</th>
             <th>Type</th>
           </tr>
 
-          <td>
-            <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="Number">
-          </td>
-          <td>
-            <select name="data.damageType">
-              {{#select data.damageType}}
-              {{#each config.elementType as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </td>
           <td>
             <input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number">
           </td>
