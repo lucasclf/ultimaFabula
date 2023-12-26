@@ -144,47 +144,38 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="gears">Gears</a>
-    <a class="item" data-tab="features">Jobs</a>
-    <a class="item" data-tab="description">Skills</a>
-    <a class="item" data-tab="effects">Spells</a>
+    <a class="item" data-tab="jobs">Jobs</a>
+    <a class="item" data-tab="skills">Skills</a>
+    <a class="item" data-tab="spells">Spells</a>
+    <a class="item" data-tab="actions">Actions</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-
-    {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
-      <section class="grid grid-3col">
-        <aside class="sidebar">
-
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
-        </aside>
-
-        {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/ultimaFabula/templates/actor/parts/actor-features.html"}}
-        </section>
-
-      </section>
-    </div>
-
-    {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor content=data.biography target="data.biography" rollData=rollData button=true owner=owner editable=editable}}
-    </div>
-
+    
     {{!-- Owned Gears Tab --}}
     <div class="tab items" data-group="primary" data-tab="gears">
        {{> "systems/ultimaFabula/templates/actor/parts/actor-gears.html"}}
     </div>
 
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+    {{!-- Active jobs Tab --}}
+    <div class="tab effects flexcol" data-group="primary" data-tab="jobs">
+      {{> "systems/ultimaFabula/templates/actor/parts/actor-features.html"}}
+    </div>
+
+    {{!-- Active Skills Tab --}}
+    <div class="tab skills flexcol" data-group="primary" data-tab="skills">
+      {{> "systems/ultimaFabula/templates/actor/parts/actor-skills.html"}}
+    </div>
+
+    {{!-- Active Spells Tab --}}
+    <div class="tab effects flexcol" data-group="primary" data-tab="spells">
       {{> "systems/ultimaFabula/templates/actor/parts/actor-effects.html"}}
+    </div>
+
+    {{!-- Active actions Tab --}}
+    <div class="tab actions flexcol" data-group="primary" data-tab="actions">
+      {{> "systems/ultimaFabula/templates/actor/parts/actor-actions.html"}}
     </div>
 
   </section>

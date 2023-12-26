@@ -10,5 +10,7 @@
     "systems/ultimaFabula/templates/actor/parts/actor-features.html",
     "systems/ultimaFabula/templates/actor/parts/actor-gears.html",
     "systems/ultimaFabula/templates/actor/parts/actor-effects.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-skills.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-actions.html",
   ]);
 };
