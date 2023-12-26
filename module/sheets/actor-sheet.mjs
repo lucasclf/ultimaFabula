@@ -85,8 +85,11 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const weapon = [];
     const defensive = [];
     const accessory = [];
-    const features = [];
     const job = [];
+    const skill = []
+
+    
+    const features = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -104,6 +107,9 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       if(i.type === 'job'){
         job.push(i);
       }
+      if(i.type === 'skill'){
+        skill.push(i);
+      }
 
       else if(i.type === 'feature') {
         features.push(i);
@@ -114,8 +120,10 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.weapon = weapon;
     context.defensive = defensive;
     context.accessory = accessory;
-    context.features = features;
     context.job = job;
+    context.skill = skill;
+
+    context.features = features;
   }
 
   /* -------------------------------------------- */
