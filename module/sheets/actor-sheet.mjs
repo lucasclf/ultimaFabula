@@ -86,22 +86,26 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const defensive = [];
     const accessory = [];
     const features = [];
+    const job = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'weapon') {
+      if(i.type === 'weapon') {
         weapon.push(i);
       }
-      if (i.type === 'defensive') {
+      if(i.type === 'defensive') {
         defensive.push(i);
       }
-      if (i.type === 'accessory') {
+      if(i.type === 'accessory') {
         accessory.push(i);
       }
-      // Append to features.
-      else if (i.type === 'feature') {
+      if(i.type === 'job'){
+        job.push(i);
+      }
+
+      else if(i.type === 'feature') {
         features.push(i);
       }
     }
@@ -111,6 +115,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.defensive = defensive;
     context.accessory = accessory;
     context.features = features;
+    context.job = job;
   }
 
   /* -------------------------------------------- */

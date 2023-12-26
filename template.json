@@ -94,10 +94,10 @@
     }
   },
   "Item": {
-    "types": ["weapon", "defensive", "accessory", "feature"],
+    "types": ["weapon", "defensive", "accessory", "feature", "job"],
     "templates": {
-      "base": {
-        "description": ""
+      "baseItem": {
+        "description": "description"
       },
       "items": {
         "isEquiped": false,
@@ -117,11 +117,11 @@
       }
     },
     "weapon": {
-      "templates": ["base", "items"],
+      "templates": ["baseItem", "items"],
       "isMartial": false,
-      "damageType": "",
-      "gripType": "",
-      "attackType": "physical",
+      "damageType": "physical",
+      "gripType": "one-handed",
+      "attackType": "meelee",
       "special": "",
       "weaponType": "",
       "accuracyFirst": "might",
@@ -130,13 +130,20 @@
       "damage": 0
     },
     "defensive": {
-      "templates": ["base", "items", "defense"]
+      "templates": ["baseItem", "items", "defense"],
+      "isMartial": false
     },
     "accessory":{
-      "templates": ["base", "items"]
+      "templates": ["baseItem", "items"]
+    },
+    "job": {
+      "templates": ["baseItem"],
+      "level": 0,
+      "benefits": [],
+      "questions": []
     },
     "feature": {
-      "templates": ["base"],
+      "templates": ["baseItem"],
       "level": 0
     }
   }

@@ -6,7 +6,7 @@
     <div class="accuracy-formula">Accuracy</div>
     <div class="damage-formula">Damage</div>
     <div class="damage-type">Type</div>
-    <div class="equiped">Equiped</div>
+    <div class="equiped">Distance</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i> Add item</a>
     </div>
@@ -22,7 +22,7 @@
       <div class="accuracy-formula item-prop">{{getAbbreviation item.data.accuracyFirst}} {{getAbbreviation item.data.accuracySecond}}  {{item.data.accuracyMod}}</div>
       <div class="damage-formula item-prop">{{item.data.damage}}</div>
       <div class="damage-type item-prop">{{item.data.damageType}}</div>
-      <div class="equiped item-prop"><input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}></div>
+      <div class="equiped item-prop">{{item.data.attackType}}</div>
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
