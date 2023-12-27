@@ -86,7 +86,9 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const defensive = [];
     const accessory = [];
     const job = [];
-    const skill = []
+    const skill = [];
+    const spell = [];
+    const arcana = [];
 
     
     const features = [];
@@ -110,6 +112,26 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       if(i.type === 'skill'){
         skill.push(i);
       }
+      if(i.type === 'spell'){
+        spell.push(i);
+
+        spell.sort((a, b) => {
+          const jobRelationA = String(a.system.jobRelation).toUpperCase();
+          const jobRelationB = String(b.system.jobRelation).toUpperCase();
+        
+          if (jobRelationA < jobRelationB) {
+            return -1;
+          }
+          if (jobRelationA > jobRelationB) {
+            return 1;
+          }
+          return 0;
+        });
+
+      }
+      if(i.type === 'arcana'){
+        arcana.push(i);
+      }
 
       else if(i.type === 'feature') {
         features.push(i);
@@ -122,6 +144,12 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.accessory = accessory;
     context.job = job;
     context.skill = skill;
+    context.spell = spell;
+    context.arcana = arcana;
+
+            
+    console.log("CQN | SPELL")
+    console.log(context.spell)
 
     context.features = features;
   }

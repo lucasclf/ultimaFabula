@@ -94,7 +94,7 @@
     }
   },
   "Item": {
-    "types": ["weapon", "defensive", "accessory", "feature", "job", "skill", "arcana"],
+    "types": ["weapon", "defensive", "accessory", "feature", "job", "skill", "spell", "arcana"],
     "templates": {
       "baseItem": {
         "description": "description"
@@ -140,7 +140,8 @@
       "templates": ["baseItem"],
       "level": 0,
       "benefits": [],
-      "questions": []
+      "questions": [],
+      "isCaster": false
     },
     "skill":{
       "templates": ["baseItem"],
@@ -152,6 +153,24 @@
     "feature": {
       "templates": ["baseItem"],
       "level": 0
+    },
+    "arcana": {
+      "templates": ["baseItem"],
+      "firstDomain": "",
+      "secondDomain": "",
+      "thirdDomain": "",
+      "merge": "",
+      "dismiss": ""
+    },
+    "spell": {
+      "templates": ["baseItem"],
+      "isOffensive": false,
+      "cost": 0,
+      "target": "1 creature",
+      "duration": "inst",
+      "jobRelation": "Elementalist",
+      "damage": "0",
+      "damageType": "physical"
     }
   }
 }

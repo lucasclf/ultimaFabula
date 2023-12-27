@@ -58,3 +58,19 @@ ULTIMAFABULA.defeniveItemType = {
   'armor': 'armor',
   'shield': 'shield'
 }
+
+ULTIMAFABULA.spellDuration = {
+  'instantaneous': 'inst',
+  'scene': 'scene'
+}
+
+ULTIMAFABULA.spellTarget = {
+  'one-equip': '1 equip',
+  'three-creatures': '3 creatures',
+  'one-creature': '1 creature',
+  'special': 'special',
+  'self': 'self',
+  'one-equiped-weapon': '1 equiped weapon',
+  'one-weapon': '1 weapon'
+
+}
