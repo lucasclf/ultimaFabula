@@ -1,5 +1,7 @@
-import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import { equipGear } from "../helpers/equipment.mjs";
+import { makeAction } from "../helpers/actions.mjs";
+
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -164,14 +166,13 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
-    // html.find('.item-equip').click(ev => {
-    //   this._onEquipeItem(ev)
-    // });
     html.find('.item-equip').click(ev => {
       equipGear(ev, this.actor)
     });
 
-    //html.find('.item-equip').click(ev => this._onRoll.bind(ev, this));
+    html.find('.action-choice').click(ev => {
+      makeAction(ev, this.actor)
+    })
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
