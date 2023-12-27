@@ -132,10 +132,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       if(i.type === 'arcana'){
         arcana.push(i);
       }
-
-      else if(i.type === 'feature') {
-        features.push(i);
-      }
     }
 
     // Assign and return
@@ -146,12 +142,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.skill = skill;
     context.spell = spell;
     context.arcana = arcana;
-
-            
-    console.log("CQN | SPELL")
-    console.log(context.spell)
-
-    context.features = features;
   }
 
   /* -------------------------------------------- */

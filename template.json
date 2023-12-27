@@ -94,7 +94,7 @@
     }
   },
   "Item": {
-    "types": ["weapon", "defensive", "accessory", "feature", "job", "skill", "spell", "arcana"],
+    "types": ["weapon", "defensive", "accessory", "job", "skill", "spell", "arcana"],
     "templates": {
       "baseItem": {
         "description": "description"
@@ -149,10 +149,6 @@
       "level": 1,
       "jobRelation": "Define"
 
-    },
-    "feature": {
-      "templates": ["baseItem"],
-      "level": 0
     },
     "arcana": {
       "templates": ["baseItem"],
