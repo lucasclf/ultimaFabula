@@ -496,3 +496,7 @@
   opacity: 1;
   visibility: visible;
  }
+
+ .item-toggle-true {
+  color: crimson
+ }

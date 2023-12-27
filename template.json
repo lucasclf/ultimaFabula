@@ -55,7 +55,8 @@
       "templates": ["base"],
       "gear":{
         "armor": "",
-        "shield": ""
+        "shield": "",
+        "weapon": ""
       },
       "ip": {
         "max": 50,
