@@ -108,10 +108,10 @@
 
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{getTotalValue data.initiative.armorValue data.initiative.shieldValue}}" data-label="INITIATIVE">INIT</i>
+            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{getInitiativeValue data.gear defensive}}" data-label="INITIATIVE">INIT</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{getTotalValue data.initiative.armorValue data.initiative.shieldValue}} </p>
+          <p> {{getInitiativeValue data.gear defensive}} </p>
           </div>
         </div>
                 

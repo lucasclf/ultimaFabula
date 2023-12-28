@@ -34,11 +34,20 @@
           "enraged": false,
           "poisoned": false
         },
-        "initiative": {
-          "armorValue": 0,
-          "shieldValue": 0
-        },
         "level": 0
+      },
+      "notChar": {
+        "defense": {        
+        "defense": {
+          "attr": "dexterity",
+          "value": 0
+        },
+        "mDefense": {
+          "attr": "insight",
+          "value": 0
+        }
+      },
+      "initiative": 0
       }
     },
     "character": {
@@ -61,7 +70,7 @@
       "bonds": []
     },
     "enemy": {
-      "templates": ["base"],
+      "templates": ["base", "notChar"],
       "level": 0,
       "typicalTraits": [],
       "affinity":{
@@ -79,7 +88,7 @@
       "specialRules": []
     },
     "npc": {
-      "templates": ["base"],
+      "templates": ["base", "notChar"],
       "level": 0,
       "cr": 0
     }
@@ -109,6 +118,7 @@
     },
     "weapon": {
       "templates": ["baseItem", "items"],
+      "type": "weapon",
       "isMartial": false,
       "damageType": "physical",
       "gripType": "one-handed",
