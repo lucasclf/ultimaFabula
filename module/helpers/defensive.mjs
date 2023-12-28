@@ -1,12 +1,11 @@
-export function calcDefenseRoll(char, defensive, defenseType){
-    let defenseAttr = _extractDefenseAttr(char, defensive, defenseType);
-    let defenseValue = _extractDefenseValue(char, defensive, defenseType);
-
-    return `${char.attributes[defenseAttr]} + ${defenseValue}`
-}
+import { extractAttrDiceValue } from "./calculateAttr.mjs";
 
 export function calcDefenseValue(char, defensive, defenseType){
-    return `${_extractDefenseAttr(char, defensive, defenseType)} + ${_extractDefenseValue(char, defensive, defenseType)}`;
+    let defenseAttr = _extractDefenseAttr(char, defensive, defenseType);
+    let defenseValue = _extractDefenseValue(char, defensive, defenseType);
+    let defenseAttrValue = extractAttrDiceValue(char.attributes[defenseAttr])
+
+    return +defenseAttrValue + +defenseValue;
 }
 
 function _extractDefenseAttr(char, defensive, defenseType){

@@ -21,10 +21,10 @@
           "notes": ""
         },
         "attributes": {
-          "dexterity": "",
-          "insight": "",
-          "might": "",
-          "willpower": ""                    
+          "dexterity": "d6",
+          "insight": "d6",
+          "might": "d6",
+          "willpower": "d6"                    
         },
         "status": {
           "slow": false,
@@ -58,7 +58,7 @@
         "weapon": ""
       },
       "ip": {
-        "max": 50,
+        "max": 6,
         "value": 0,
         "min": 0
       },
