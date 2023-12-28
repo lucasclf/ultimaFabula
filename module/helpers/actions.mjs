@@ -17,7 +17,7 @@ function _makeAttack(actor){
     
     console.log(attackRoll)
     
-    let label = _buildLabel(actor);
+    let label = _buildAttackLabel(actor);
     let roll = new Roll(attackRoll, actor.getRollData());
 
     roll.toMessage({
@@ -42,7 +42,7 @@ function _recoverWeapon(actor){
     return itemId ? actor.items.get(itemId) : "unnarmed attack";
 }
 
-function _buildLabel(actor){
+function _buildAttackLabel(actor){
     let equipedWeapon = _recoverWeapon(actor);
     let weaponName = equipedWeapon.name || "unnarmed attack";
     return `MAKE A ATTACK with ${weaponName}!!!`;

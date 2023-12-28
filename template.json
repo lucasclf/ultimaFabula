@@ -38,16 +38,6 @@
           "armorValue": 0,
           "shieldValue": 0
         },
-        "defense": {
-          "armorValue": 0,
-          "shieldValue": 0,
-          "armorAttr": "dexterity"
-        },
-        "mDefense": {
-          "armorValue": 0,
-          "shieldValue": 0,
-          "armorAttr": "insight"
-        },
         "level": 0
       }
     },

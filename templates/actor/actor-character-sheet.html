@@ -117,22 +117,22 @@
                 
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">
-            <i class="rollable" data-roll="{{getAttributeValue data.defense.armorAttr data.attributes}} + {{getTotalValue data.defense.armorValue data.defense.shieldValue}}" data-label="DEFENSE">
+            <i class="rollable" data-roll="{{getRollDefense data defensive 'defense'}}" data-label="DEFENSE">
               DEF
             </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <p> {{data.defense.armorAttr}} + {{getTotalValue data.defense.armorValue data.defense.shieldValue}}</p>
+            <p> {{getDefenseValue data defensive 'defense'}} </p>
           </div>
         </div>
                 
         <div class="resource flex-group-center">
           <label for="data.level" class="resource-label">
-            <i class="rollable" data-roll="{{getAttributeValue data.mDefense.armorAttr data.attributes}} + {{getTotalValue data.mDefense.armorValue data.mDefense.shieldValue}}" data-label="DEFENSE">
+            <i class="rollable" data-roll="{{getRollDefense data defensive 'mDefense'}}" data-label="DEFENSE">
             M.DEF
           </i></label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.mDefense.armorAttr}} + {{getTotalValue data.mDefense.armorValue data.mDefense.shieldValue}}</p>
+          <p> {{getDefenseValue data defensive 'mDefense'}} </p>
           </div>
         </div>
 

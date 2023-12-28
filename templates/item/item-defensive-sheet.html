@@ -71,6 +71,22 @@
           </table>
         {{/if}}
 
+        {{#if (eq data.type 'shield')}}
+          <table>
+            <tr>
+              <th>Defense</th>
+              <th>Magic Defense</th>
+            </tr>
+            <td>
+              <input type="text" name="data.defense.value" value="{{data.defense.value}}" data-dtype="Number">
+            </td>
+            <td>
+              <input type="text" name="data.mDefense.value" value="{{data.mDefense.value}}" data-dtype="Number">
+            </td>
+
+          </table>
+        {{/if}}
+
         <table>
           <tr>
             <th>Initiative</th>
