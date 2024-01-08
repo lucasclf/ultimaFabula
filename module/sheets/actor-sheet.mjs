@@ -1,7 +1,7 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import { equipGear } from "../helpers/equipment.mjs";
 import { makeAction } from "../helpers/actions.mjs";
-import { calcLevel, calcResouce, calcCrisis } from "../helpers/calculateAttr.mjs";
+import { calcLevel, calcMp, calcHp, calcIp, calcCrisis } from "../helpers/calculateAttr.mjs";
 
 
 /**
@@ -96,6 +96,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     let hpMax = 0;
     let crisis = 0;
     let mpMax = 0;
+    let ipMax = 0;
 
 
     // Iterate through items, allocating to containers
@@ -140,9 +141,10 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     }
 
     level = calcLevel(job);
-    hpMax = calcResouce(level, context.data.attributes.might);
+    hpMax = calcHp(level, context.data.attributes.might, job);
     crisis = calcCrisis(hpMax);
-    mpMax = calcResouce(level, context.data.attributes.willpower);
+    mpMax = calcMp(level, context.data.attributes.willpower, job);
+    ipMax = calcIp(job);
 
     // Assign and return
     context.weapon = weapon;
@@ -156,6 +158,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.data.hp.max = hpMax;
     context.data.hp.crisis = crisis;
     context.data.mp.max = mpMax;
+    context.data.ip.max = ipMax;
   }
 
   /* -------------------------------------------- */

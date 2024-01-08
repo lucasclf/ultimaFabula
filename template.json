@@ -34,6 +34,19 @@
           "enraged": false,
           "poisoned": false
         },
+        "benefitsBonus": {
+          "hp": 0,
+          "pm": 0,
+          "ip": 0,
+          "initiateProjects": false,
+          "rituals": [],
+          "martialItems": {
+            "meeleWeapon": false,
+            "rangedWeapon": false,
+            "armor": false,
+            "shield": false
+          }
+        },
         "level": 0
       },
       "notChar": {
@@ -140,9 +153,22 @@
     "job": {
       "templates": ["baseItem"],
       "level": 0,
-      "benefits": [],
-      "questions": [],
-      "isCaster": false
+      "benefitsDescription": "",
+      "benefitsBonus": {
+        "hp": 0,
+        "mp": 0,
+        "ip": 0,
+        "initiateProjects": false,
+        "martialItems": {
+          "meeleWeapon": false,
+          "rangedWeapon": false,
+          "armor": false,
+          "shield": false
+        }
+      },
+      "isCaster": false,
+      "magicAttr": "insight",
+      "magicSecondAttr": "willpower"
     },
     "skill":{
       "templates": ["baseItem"],

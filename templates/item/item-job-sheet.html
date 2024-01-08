@@ -32,14 +32,81 @@
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <div class="resource">
-        <h4>Free Benefits</h4>
-        <textarea name="data.benefits">{{data.benefits}}</textarea>
+        <h4>Free Benefits Description</h4>
+        <textarea name="data.benefitsDescription">{{data.benefitsDescription}}</textarea>
       </div>
 
       <div class="resource">
-        <h4>Questions?</h4>
-        <textarea name="data.questions">{{data.questions}}</textarea>
+        <table>
+          <tr>
+            <th>HP</th>
+            <th>MP</th>
+            <th>IP</th>
+            <th>Initiate Projects?</th>
+          </tr>
+          <td>
+            <span><input type="text" name="data.benefitsBonus.hp" value="{{data.benefitsBonus.hp}}" data-dtype="Number"></span>
+          </td>
+          <td>
+            <span><input type="text" name="data.benefitsBonus.mp" value="{{data.benefitsBonus.mp}}" data-dtype="Number"></span>
+          </td>
+          <td>
+            <span><input type="text" name="data.benefitsBonus.ip" value="{{data.benefitsBonus.ip}}" data-dtype="Number"></span>
+          </td>
+          <td>
+            <span><input type="checkbox" name="data.benefitsBonus.initiateProjects" {{checked data.benefitsBonus.initiateProjects}}></span>
+          </td>
+        </table>
       </div>
+      <h3>MARTIAL EQUIPEMENT</h3>
+      <div class="resource">
+        <table>
+          <tr>
+            <th>Meelee Weapon</th>
+            <th>Ranged Weapon</th>
+            <th>Armor</th>
+            <th>Shield</th>
+          </tr>
+          <td>
+            <span><input type="checkbox" name="data.benefitsBonus.martialItems.meeleWeapon" {{checked data.benefitsBonus.martialItems.meeleWeapon}}></span>
+          </td>
+          <td>
+            <span><input type="checkbox" name="data.benefitsBonus.martialItems.rangedWeapon" {{checked data.benefitsBonus.martialItems.rangedWeapon}}></span>
+          </td>
+          <td>
+            <span><input type="checkbox" name="data.benefitsBonus.martialItems.armor" {{checked data.benefitsBonus.martialItems.armor}}></span>
+          </td>
+          <td>
+            <span><input type="checkbox" name="data.benefitsBonus.martialItems.shield" {{checked data.benefitsBonus.martialItems.shield}}></span>
+          </td>
+        </table>
+      </div>
+
+      <div class="resource">
+        <label class="resource-label">Is Caster?</label>
+        <input type="checkbox" name="data.isCaster" {{checked data.isCaster}}>
+      </div>
+
+      <div class="resource">
+        <label class="resource-label">Caster Attributes</label>
+        <select name="data.magicAttr">
+          {{#select data.magicAttr}}
+          {{#each config.attributes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        <span> + </span>
+        <select name="data.magicSecondAttr">
+          {{#select data.magicSecondAttr}}
+          {{#each config.attributes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      
     </div>
   </section>
 </form>
