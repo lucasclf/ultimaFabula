@@ -1,7 +1,7 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import { equipGear } from "../helpers/equipment.mjs";
 import { makeAction } from "../helpers/actions.mjs";
-import { calcLevel, calcMp, calcHp, calcIp, calcCrisis } from "../helpers/calculateAttr.mjs";
+import { mountResources } from "../helpers/calculateResource.mjs";
 import { mountBenefit } from "../helpers/mountBenefits.mjs";
 import { mountSkill } from "../helpers/mountSkillBonus.mjs";
 
@@ -94,13 +94,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     const skill = [];
     const spell = [];
     const arcana = [];
-    let level = 0;
-    let hpMax = 0;
-    let crisis = 0;
-    let mpMax = 0;
-    let ipMax = 0;
-    let benefits = null;
-
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -143,14 +136,11 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       }
     }
 
-    benefits = mountBenefit(context.data.benefitsBonus, job);
+    mountBenefit(context.data.benefitsBonus, job);
     mountSkill(context.data.skillBonus, skill);
+    mountResources(context.data, job)
 
-    level = calcLevel(job);
-    hpMax = calcHp(level, context.data.attributes.might, job, context.data.skillBonus.hp);
-    crisis = calcCrisis(hpMax);
-    mpMax = calcMp(level, context.data.attributes.willpower, job, context.data.skillBonus.mp);
-    ipMax = calcIp(job);
+
 
 
     // Assign and return
@@ -161,11 +151,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.skill = skill;
     context.spell = spell;
     context.arcana = arcana;
-    context.data.level = level;
-    context.data.hp.max = hpMax;
-    context.data.hp.crisis = crisis;
-    context.data.mp.max = mpMax;
-    context.data.ip.max = ipMax;
+    console.log(context.data)
   }
 
   /* -------------------------------------------- */

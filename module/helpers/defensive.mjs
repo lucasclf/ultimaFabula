@@ -1,4 +1,4 @@
-import { extractAttrDiceValue } from "./calculateAttr.mjs";
+import { extractAttrDiceValue } from "./attrHelper.mjs";
 
 export function calcDefenseValue(char, defensive, defenseType){
     let defenseAttr = _extractDefenseAttr(char, defensive, defenseType);

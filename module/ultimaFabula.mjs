@@ -9,7 +9,7 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { calcDefenseValue } from "./helpers/defensive.mjs";
 import { calcInitiative } from "./helpers/initiative.mjs";
-import { extractAttrDiceValue } from "./helpers/calculateAttr.mjs";
+import { extractAttrDiceValue } from "./helpers/attrHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */

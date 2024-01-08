@@ -3,16 +3,19 @@
     "types": ["character", "enemy", "npc", "villain"],
     "templates": {
       "base": {
-        "hp": {
-          "max": 50,
-          "value": 0,
-          "min": 0,
-          "crisis": 0
-        },
-        "mp": {
-          "max": 50,
-          "value": 0,
-          "min": 0
+        "resources":{
+          "hp": {
+            "max": 0,
+            "value": 0,
+            "min": 0,
+            "crisis": 0
+          },
+          "mp": {
+            "max": 0,
+            "value": 0,
+            "min": 0
+          },
+          "level": 0
         },
         "background":{
           "biography": "",
@@ -33,8 +36,7 @@
           "shaken": false,
           "enraged": false,
           "poisoned": false
-        },
-        "level": 0
+        }
       },
       "notChar": {
         "defense": {        
@@ -52,15 +54,17 @@
     },
     "character": {
       "templates": ["base"],
+      "resources": {
+        "ip": {
+          "max": 0,
+          "value": 0,
+          "min": 0
+        }
+      },
       "gear":{
         "armor": "",
         "shield": "",
         "weapon": ""
-      },
-      "ip": {
-        "max": 6,
-        "value": 0,
-        "min": 0
       },
       "traits": {
         "origin": "",
@@ -69,6 +73,9 @@
       },
       "bonds": [],
       "benefitsBonus": {
+        "hp": 0,
+        "mp": 0,
+        "ip": 0,
         "initiateProjects": false,
         "rituals": [],
         "martialItems": {

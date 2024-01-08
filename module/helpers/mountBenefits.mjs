@@ -1,5 +1,8 @@
 export function mountBenefit(benefits, job){
 
+    benefits.hp = calcResource(job, "hp");
+    benefits.mp = calcResource(job, "mp");
+    benefits.ip = calcResource(job, "ip");
     benefits.initiateProjects = toogleProjects(job);
     benefits.rituals = toogleRituals(job);
     benefits.martialItems.meleeWeapon = toogleMartial(job, 'meleeWeapon');
@@ -22,4 +25,12 @@ function toogleRituals(job){
 
 function toogleMartial(job, type){
     return job.some(job => job.system.benefitsBonus.martialItems[type] === true && job.system.level > 0);
+}
+
+function calcResource(job, type){
+    return job.reduce(function(total, jobAtual) {
+        return total + (jobAtual.system.level > 0 && 
+            jobAtual.system.benefitsBonus && 
+            jobAtual.system.benefitsBonus[type] ? jobAtual.system.benefitsBonus[type] : 0);
+    }, 0);
 }

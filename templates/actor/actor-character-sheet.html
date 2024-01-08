@@ -14,43 +14,43 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="data.hp.value" class="resource-label">HP</label>
+          <label for="data.resources.hp.value" class="resource-label">HP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.hp.value" value="{{data.hp.value}}" data-dtype="Number"/>
+          <input type="text" name="data.resources.hp.value" value="{{data.resources.hp.value}}" data-dtype="Number"/>
           <span> / </span>
-          <p>{{data.hp.max}}</p>
+          <p>{{data.resources.hp.max}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.hp.crisis" class="resource-label">CRISIS</label>
+          <label for="data.resources.hp.crisis" class="resource-label">CRISIS</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.hp.crisis}}</p>
+          <p> {{data.resources.hp.crisis}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.mp.value" class="resource-label">MP</label>
+          <label for="data.resources.mp.value" class="resource-label">MP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.mp.value" value="{{data.mp.value}}" data-dtype="Number"/>
+          <input type="text" name="data.resources.mp.value" value="{{data.resources.mp.value}}" data-dtype="Number"/>
           <span> / </span>
-          <p>{{data.mp.max}}</p>
+          <p>{{data.resources.mp.max}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.mp.value" class="resource-label">IP</label>
+          <label for="data.resources.ip.value" class="resource-label">IP</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="data.ip.value" value="{{data.ip.value}}" data-dtype="Number"/>
+          <input type="text" name="data.resources.ip.value" value="{{data.resources.ip.value}}" data-dtype="Number"/>
           <span> / </span>
-          <p>{{data.ip.max}}</p>
+          <p>{{data.resources.ip.max}}</p>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">LEVEL</label>
+          <label for="data.resources.level" class="resource-label">LEVEL</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{data.level}}</p>
+          <p> {{data.resources.level}}</p>
           </div>
         </div>
 
@@ -70,7 +70,7 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.attributes" class="resource-label">
             <i class="rollable" data-roll="{{data.attributes.insight}}" data-label="INSIGHT">INS</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -85,7 +85,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.attributes" class="resource-label">
             <i class="rollable" data-roll="{{data.attributes.might}}" data-label="MIGHT">MIG</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -100,7 +100,7 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.attributes" class="resource-label">
             <i class="rollable" data-roll="{{data.attributes.willpower}}" data-label="WILLPOWER">WLP</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -115,7 +115,7 @@
         </div>   
 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.attributes" class="resource-label">
             <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{getInitiativeValue data.gear defensive}}" data-label="INITIATIVE">INIT</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -124,7 +124,7 @@
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.defense" class="resource-label">
             <i class="">
               DEF
             </i>
@@ -135,7 +135,7 @@
         </div>
                 
         <div class="resource flex-group-center">
-          <label for="data.level" class="resource-label">
+          <label for="data.magicDefense" class="resource-label">
             <i class="">
             M.DEF
           </i></label>
