@@ -34,19 +34,6 @@
           "enraged": false,
           "poisoned": false
         },
-        "benefitsBonus": {
-          "hp": 0,
-          "pm": 0,
-          "ip": 0,
-          "initiateProjects": false,
-          "rituals": [],
-          "martialItems": {
-            "meeleWeapon": false,
-            "rangedWeapon": false,
-            "armor": false,
-            "shield": false
-          }
-        },
         "level": 0
       },
       "notChar": {
@@ -80,7 +67,24 @@
         "identity": "",
         "theme": ""
       },
-      "bonds": []
+      "bonds": [],
+      "benefitsBonus": {
+        "initiateProjects": false,
+        "rituals": [],
+        "martialItems": {
+          "meeleWeapon": false,
+          "rangedWeapon": false,
+          "armor": false,
+          "shield": false
+        }
+      },
+      "skillBonus": {
+        "hp": 0,
+        "mp": 0,
+        "accuracyMelee": 0,
+        "accuracyRanged": 0,
+        "dualShield": false
+      }
     },
     "enemy": {
       "templates": ["base", "notChar"],
@@ -167,8 +171,7 @@
         }
       },
       "isCaster": false,
-      "magicAttr": "insight",
-      "magicSecondAttr": "willpower"
+      "magicAttr": "insight"
     },
     "skill":{
       "templates": ["baseItem"],

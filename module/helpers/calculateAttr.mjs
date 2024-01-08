@@ -31,12 +31,12 @@ export function calcMp(level, attr, job){
 }
 
 export function calcIp(job){
-    let ip = job.reduce(function(total, jobAtual) {
+    let ipBonus = job.reduce(function(total, jobAtual) {
         return total + (jobAtual.system.level > 0 && 
             jobAtual.system.benefitsBonus && 
             jobAtual.system.benefitsBonus.ip ? jobAtual.system.benefitsBonus.ip : 0);
     }, 0);
-    return ip
+    return 6 + ipBonus
 }
 
 export function calcResouce(level, attr) {
