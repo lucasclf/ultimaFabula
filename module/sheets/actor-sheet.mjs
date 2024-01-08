@@ -3,6 +3,7 @@ import { equipGear } from "../helpers/equipment.mjs";
 import { makeAction } from "../helpers/actions.mjs";
 import { calcLevel, calcMp, calcHp, calcIp, calcCrisis } from "../helpers/calculateAttr.mjs";
 import { mountBenefit } from "../helpers/mountBenefits.mjs";
+import { mountSkill } from "../helpers/mountSkillBonus.mjs";
 
 
 /**
@@ -142,12 +143,15 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       }
     }
 
-    level = calcLevel(job);
-    hpMax = calcHp(level, context.data.attributes.might, job);
-    crisis = calcCrisis(hpMax);
-    mpMax = calcMp(level, context.data.attributes.willpower, job);
-    ipMax = calcIp(job);
     benefits = mountBenefit(context.data.benefitsBonus, job);
+    mountSkill(context.data.skillBonus, skill);
+
+    level = calcLevel(job);
+    hpMax = calcHp(level, context.data.attributes.might, job, context.data.skillBonus.hp);
+    crisis = calcCrisis(hpMax);
+    mpMax = calcMp(level, context.data.attributes.willpower, job, context.data.skillBonus.mp);
+    ipMax = calcIp(job);
+
 
     // Assign and return
     context.weapon = weapon;

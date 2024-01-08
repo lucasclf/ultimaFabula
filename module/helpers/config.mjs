@@ -30,7 +30,7 @@ ULTIMAFABULA.gripType = {
 
 ULTIMAFABULA.attackType = {
   'ranged': 'ranged',
-  'meelee': 'meelee'
+  'melee': 'melee'
 }
 
 ULTIMAFABULA.attributeDice = {

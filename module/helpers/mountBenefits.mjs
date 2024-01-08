@@ -2,7 +2,7 @@ export function mountBenefit(benefits, job){
 
     benefits.initiateProjects = toogleProjects(job);
     benefits.rituals = toogleRituals(job);
-    benefits.martialItems.meeleWeapon = toogleMartial(job, 'meeleWeapon');
+    benefits.martialItems.meleeWeapon = toogleMartial(job, 'meleeWeapon');
     benefits.martialItems.rangedWeapon = toogleMartial(job, 'rangedWeapon');
     benefits.martialItems.armor = toogleMartial(job, 'armor');
     benefits.martialItems.shield = toogleMartial(job, 'shield');

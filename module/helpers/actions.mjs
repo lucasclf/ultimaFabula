@@ -11,11 +11,8 @@ export function makeAction(event, actor){
 }
 
 function _makeAttack(actor){
-    console.log("CQN | MAKE A ATTACK!")
-
     const attackRoll = _buildAttackRoll(actor);
-    
-    console.log(attackRoll)
+
     
     let label = _buildAttackLabel(actor);
     let roll = new Roll(attackRoll, actor.getRollData());

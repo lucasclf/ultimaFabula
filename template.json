@@ -72,7 +72,7 @@
         "initiateProjects": false,
         "rituals": [],
         "martialItems": {
-          "meeleWeapon": false,
+          "meleeWeapon": false,
           "rangedWeapon": false,
           "armor": false,
           "shield": false
@@ -81,8 +81,8 @@
       "skillBonus": {
         "hp": 0,
         "mp": 0,
-        "accuracyMelee": 0,
-        "accuracyRanged": 0,
+        "meleeAccuracy": 0,
+        "rangedAccuracy": 0,
         "dualShield": false
       }
     },
@@ -139,7 +139,7 @@
       "isMartial": false,
       "damageType": "physical",
       "gripType": "one-handed",
-      "attackType": "meelee",
+      "attackType": "melee",
       "special": "",
       "weaponType": "",
       "accuracyFirst": "might",
@@ -164,7 +164,7 @@
         "ip": 0,
         "initiateProjects": false,
         "martialItems": {
-          "meeleWeapon": false,
+          "meleeWeapon": false,
           "rangedWeapon": false,
           "armor": false,
           "shield": false
@@ -177,8 +177,18 @@
       "templates": ["baseItem"],
       "maxLevel": 1,
       "level": 1,
-      "jobRelation": "Define"
-
+      "jobRelation": "Define",
+      "bonus": {
+        "hp": 0,
+        "hpMultiply": 0,
+        "mp": 0,
+        "mpMultiply": 0,
+        "ip": 0,
+        "ipMultiply": 0,
+        "meleeAccuracy": false,
+        "rangedAccuracy": false,
+        "dualShield": false
+      }
     },
     "arcana": {
       "templates": ["baseItem"],

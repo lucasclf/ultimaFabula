@@ -1,6 +1,4 @@
 export function equipGear(event, actor){
-    console.log("CQN | EQUIP ITEM!")
-
     const li = $(event.currentTarget).parents(".item");
     const item = actor.items.get(li.data("itemId"));
 
@@ -30,7 +28,6 @@ function _equipDefensive(updateData, item, gear){
 
 function _equipWeapon(updateData, item, gear){
     let newEquipedItem = "";
-    console.log(gear);
     if(gear.weapon != item.id){
         newEquipedItem = item.id;
     }

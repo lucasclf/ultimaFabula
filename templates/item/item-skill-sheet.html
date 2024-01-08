@@ -36,13 +36,58 @@
       <table>
         <tr>
           <th>Job</th>
+          <th>Dual Shield?</th>
         </tr>
 
         <td>
           <input type="text" name="data.jobRelation" value="{{data.jobRelation}}">
         </td>
+        <td>
+          <span><input type="checkbox" name="data.bonus.dualShield" {{checked data.bonus.dualShield}}></span>
+        </td>
+      </table>
+
+      <table>
+        <tr>
+          <th>HP</th>
+          <th>HP Multiply</th>
+          <th>MP</th>
+          <th>MP multiply</th>
+        </tr>
+        <td>
+          <span><input type="text" name="data.bonus.hp" value="{{data.bonus.hp}}" data-dtype="Number"></span>
+        </td>
+        <td>
+          <span><input type="text" name="data.bonus.hpMultiply" value="{{data.bonus.hpMultiply}}" data-dtype="Number"></span>
+        </td>
+        <td>
+          <span><input type="text" name="data.bonus.mp" value="{{data.bonus.mp}}" data-dtype="Number"></span>
+        </td>
+        <td>
+          <span><input type="text" name="data.bonus.mpMultiply" value="{{data.bonus.mpMultiply}}" data-dtype="Number"></span>
+        </td>
+      </table>
+
+      <table>
+        <tr>
+          <th>IP</th>
+          <th>IP Multiply</th>
+          <th>Melee Accuracy</th>
+          <th>Ranged Accuracy</th>
+        </tr>
+        <td>
+          <span><input type="text" name="data.bonus.ip" value="{{data.bonus.ip}}" data-dtype="Number"></span>
+        </td>
+        <td>
+          <span><input type="text" name="data.bonus.ipMultiply" value="{{data.bonus.ipMultiply}}" data-dtype="Number"></span>
+        </td>
+        <td>
+          <span><input type="checkbox" name="data.bonus.meleeAccuracy" {{checked data.bonus.meleeAccuracy}}></span>
+        </td>
+        <td>
+          <span><input type="checkbox" name="data.bonus.rangedAccuracy" {{checked data.bonus.rangedAccuracy}}></span>
+        </td>
       </table>
     </div>
   </section>
 </form>
-

@@ -4,7 +4,7 @@ export function calcLevel(jobs) {
     return totalLevel;
 }
 
-export function calcHp(level, attr, job){
+export function calcHp(level, attr, job, skillBonus){
     let attrValue = extractAttrDiceValue(attr);
 
     let hpBonus = job.reduce(function(total, jobAtual) {
@@ -13,11 +13,11 @@ export function calcHp(level, attr, job){
             jobAtual.system.benefitsBonus.hp ? jobAtual.system.benefitsBonus.hp : 0);
     }, 0);
 
-    let hp = (attrValue * 5) + level + hpBonus;
+    let hp = (attrValue * 5) + level + hpBonus + skillBonus;
     return hp
 }
 
-export function calcMp(level, attr, job){
+export function calcMp(level, attr, job, skillBonus){
     let attrValue = extractAttrDiceValue(attr);
 
     let mpBonus = job.reduce(function(total, jobAtual) {
@@ -26,7 +26,7 @@ export function calcMp(level, attr, job){
             jobAtual.system.benefitsBonus.mp ? jobAtual.system.benefitsBonus.mp : 0);
     }, 0);
 
-    let mp = (attrValue * 5) + level + mpBonus;
+    let mp = (attrValue * 5) + level + mpBonus + skillBonus;
     return mp
 }
 
