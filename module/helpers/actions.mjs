@@ -27,6 +27,7 @@ function _makeAttack(actor){
 function _buildAttackRoll(actor){
 
     let equipedWeapon = _recoverWeapon(actor);
+
     let accuracyFirst = actor.system.attributes[equipedWeapon.system.accuracyFirst];
     let accuracySecond = actor.system.attributes[equipedWeapon.system.accuracySecond];
     let accuracyMod = equipedWeapon.system.accuracyMod;
@@ -36,11 +37,45 @@ function _buildAttackRoll(actor){
 
 function _recoverWeapon(actor){
     let itemId = actor.system.gear.weapon || "";
-    return itemId ? actor.items.get(itemId) : "unnarmed attack";
+    let weapon = itemId ? actor.items.get(itemId) : _mountUnnarmedWeapon();
+    
+    if(weapon.type === "defensive"){
+        return _mountShieldWeapon(actor);
+    }
+    return weapon;
+}
+
+function _mountUnnarmedWeapon(){
+    return {
+        name:"Unarmed Weapon",
+        type: "weapon",
+        system: {
+          accuracyFirst: "dexterity",
+          accuracySecond: "might",
+          accuracyMod: 0
+        }
+       };
+}
+
+function _mountShieldWeapon(actor){
+    let shield = actor.system.gear.shield;
+    if(shield != ""){
+        return {
+            name:"Twin Shield",
+            type: "weapon",
+            system: {
+              accuracyFirst: "might",
+              accuracySecond: "might",
+              accuracyMod: 0
+            }
+           };
+    }
+
+    return _mountUnnarmedWeapon();
 }
 
 function _buildAttackLabel(actor){
     let equipedWeapon = _recoverWeapon(actor);
-    let weaponName = equipedWeapon.name || "unnarmed attack";
-    return `MAKE A ATTACK with ${weaponName}!!!`;
+    let weaponName = equipedWeapon.name.toUpperCase();
+    return `MAKE A ATTACK WITH ${weaponName}!!!`;
 }
