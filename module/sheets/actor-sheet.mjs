@@ -151,7 +151,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     context.skill = skill;
     context.spell = spell;
     context.arcana = arcana;
-    console.log(context.data)
   }
 
   /* -------------------------------------------- */
@@ -175,7 +174,11 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
     html.find('.item-equip').click(ev => {
-      equipGear(ev, this.actor)
+      equipGear(ev, this.actor, false)
+    });
+
+    html.find('.item-equip-dual-shield').click(ev => {
+      equipGear(ev, this.actor, true)
     });
 
     html.find('.action-choice').click(ev => {

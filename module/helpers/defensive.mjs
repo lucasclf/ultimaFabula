@@ -31,9 +31,11 @@ function _extractDefenseAttr(char, defensive, defenseType){
 function _extractDefenseValue(char, defensive, defenseType){
     let armorId = char.gear.armor || "";
     let shieldId = char.gear.shield || "";
+    let weaponId = char.gear.weapon || "";
 
     let armor = defensive.find(a => a._id === armorId) || null;
     let shield = defensive.find(s => s._id === shieldId) || null;
+    let weapon = defensive.find(w => w._id === weaponId) || null;
     
     let defenseValue = 0; 
     if(defenseType == "defense"){
@@ -49,6 +51,15 @@ function _extractDefenseValue(char, defensive, defenseType){
         }
         if(shield != null){
             defenseValue += shield.system.mDefense.value;
+        }
+    }
+
+    if(char.skillBonus.dualShield === true && weapon != null){
+        console.log("CQN | DUALSHIELD");
+        if(defenseType == "defense"){
+            defenseValue += weapon.system.defense.value;
+        } else if(defenseType == "mDefense"){
+            defenseValue += weapon.system.mDefense.value;
         }
     }
 

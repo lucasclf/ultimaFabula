@@ -24,9 +24,19 @@
       <div class="damage-formula item-prop">{{item.data.damage}}</div>
       <div class="damage-type item-prop">{{item.data.damageType}}</div>
       <div class="equiped item-prop">{{item.data.attackType}}</div>
-      <div class="item-prop">
-        <a class="item-equip {{#if (eq @root.data.gear.weapon item._id)}} item-toggle-true {{/if}}">EQUIPAR</a>
-      </div>
+
+      {{#if (eq item.data.gripType "one-handed")}}
+      
+        <div class="item-prop">
+          <a class="item-equip {{#if (eq @root.data.gear.weapon item._id)}} item-toggle-true {{/if}} equip-symbol">&#9686</a>
+        </div>
+
+      {{else if (eq item.data.gripType "two-handed")}}
+        <div class="item-prop">
+          <a class="item-equip {{#if (eq @root.data.gear.weapon item._id)}} item-toggle-true {{/if}} equip-symbol"> &#x2B24</a>
+        </div>
+      {{/if}}
+
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
@@ -41,7 +51,6 @@
     <div class="defense-formula">Defense</div>
     <div class="mdefense-formula">M. Defense</div>
     <div class="initiative">Initiative</div>
-    <div class="equiped">type</div>
     <div class="equiped">Equiped</div> 
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="defensive"><i class="fas fa-plus"></i> Add item</a>
@@ -65,14 +74,23 @@
         <div class="mdefense-formula item-prop">{{item.data.mDefense.value}}</div>
       {{/if}}
 
-      <!-- <div class="defense-formula item-prop">{{getAbbreviation item.data.defense.attr}} + {{item.data.defense.value}}</div>
-      <div class="mdefense-formula item-prop">{{getAbbreviation item.data.mDefense.attr}} + {{item.data.mDefense.value}}</div> -->
       <div class="initiative item-prop">{{item.data.initiative}}</div>
-      <div class="type">{{item.data.type}}</div>
-      <div class="item-prop">
-        <a class="item-equip {{#if (eq @root.data.gear.armor item._id)}} item-toggle-true {{else if (eq @root.data.gear.shield item._id)}} item-toggle-true {{/if}}">EQUIPAR</a>
-      </div>
-
+      {{#if (eq item.data.type 'armor')}}
+        <div class="item-prop">
+          <a class="item-equip {{#if (eq @root.data.gear.armor item._id)}} item-toggle-true {{/if}} equip-symbol">&#9881;</a>
+        </div>
+      {{else if (eq item.data.type 'shield')}}
+        {{#if (eq @root.data.skillBonus.dualShield true)}}
+          <div class="item-prop">
+            <a class="item-equip-dual-shield {{#if (eq @root.data.gear.weapon item._id)}} item-toggle-true {{else if (eq @root.data.gear.shield item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
+            <a class="item-equip {{#if (eq @root.data.gear.shield item._id)}} item-toggle-true {{else if (eq @root.data.gear.weapon item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
+          </div>
+        {{else}}
+          <div class="item-prop">
+            <a class="item-equip {{#if (eq @root.data.gear.shield item._id)}} item-toggle-true {{/if}} equip-symbol">&#9930;</a>
+          </div>
+        {{/if}}
+      {{/if}}
       <div class="item-controls">
         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
