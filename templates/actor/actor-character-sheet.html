@@ -116,10 +116,10 @@
 
         <div class="resource flex-group-center">
           <label for="data.attributes" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{getInitiativeValue data.gear defensive}}" data-label="INITIATIVE">INIT</i>
+            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">INIT</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{getInitiativeValue data.gear defensive}} </p>
+          <p>{{data.gearStatus.initiative}}</p>
           </div>
         </div>
                 
@@ -130,7 +130,7 @@
             </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <p> {{getDefenseValue data defensive 'defense'}} </p>
+            <p>{{data.gearStatus.defense}}</p>
           </div>
         </div>
                 
@@ -140,7 +140,7 @@
             M.DEF
           </i></label>
           <div class="resource-content flexrow flex-center flex-between">
-          <p> {{getDefenseValue data defensive 'mDefense'}} </p>
+          <p>{{data.gearStatus.mDefense}}</p>
           </div>
         </div>
 

@@ -17,6 +17,11 @@
           },
           "level": 0
         },
+        "gearStatus":{
+          "defense": 0,
+          "mDefense": 0,
+          "initiative": 0
+        },
         "background":{
           "biography": "",
           "description": "",
@@ -37,19 +42,6 @@
           "enraged": false,
           "poisoned": false
         }
-      },
-      "notChar": {
-        "defense": {        
-        "defense": {
-          "attr": "dexterity",
-          "value": 0
-        },
-        "mDefense": {
-          "attr": "insight",
-          "value": 0
-        }
-      },
-      "initiative": 0
       }
     },
     "character": {
@@ -90,11 +82,13 @@
         "mp": 0,
         "meleeAccuracy": 0,
         "rangedAccuracy": 0,
-        "dualShield": false
+        "dualShield": false,
+        "defense": 0,
+        "mDefense": 0
       }
     },
     "enemy": {
-      "templates": ["base", "notChar"],
+      "templates": ["base"],
       "level": 0,
       "typicalTraits": [],
       "affinity":{
@@ -112,7 +106,7 @@
       "specialRules": []
     },
     "npc": {
-      "templates": ["base", "notChar"],
+      "templates": ["base"],
       "level": 0,
       "cr": 0
     }

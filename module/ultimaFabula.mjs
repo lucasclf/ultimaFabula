@@ -7,8 +7,6 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
-import { calcDefenseValue } from "./helpers/defensive.mjs";
-import { calcInitiative } from "./helpers/initiative.mjs";
 import { extractAttrDiceValue } from "./helpers/attrHelper.mjs";
 
 /* -------------------------------------------- */
@@ -78,21 +76,9 @@ Handlebars.registerHelper('getTotalValue', function(firstValue, secondValue){
   return firstValue + secondValue;
 })
 
-Handlebars.registerHelper('getDefenseValue', function(char, defensive, defenseType){
-  let defenseValue = calcDefenseValue(char, defensive, defenseType);
-
-  return defenseValue;
-})
-
 Handlebars.registerHelper('getAttributeValue', function(attribute, charAttributes){
   
   return charAttributes[attribute];
-})
-
-Handlebars.registerHelper('getInitiativeValue', function(gear, defensive){
-  let defensiveRoll = calcInitiative(gear, defensive);
-
-  return defensiveRoll;
 })
 
 Handlebars.registerHelper('getAttrDiceValue', function(attr){
