@@ -22,7 +22,7 @@ async function _makeAttack(actor){
 
     const templateData = {
         actor: actor,
-        image: equipedWeapon.image,
+        image: equipedWeapon.img,
         diceRoll: diceRoll,
         flavor: _buildAttackLabel(equipedWeapon),
         damage: _calcDamage(diceRoll.dice, equipedWeapon)
@@ -53,7 +53,7 @@ function _mountUnnarmedWeapon(){
     return {
         name:"Unarmed Weapon",
         type: "weapon",
-        image: "icons/svg/item-bag.svg",
+        img: "icons/svg/item-bag.svg",
         system: {
             accuracyFirst: "dexterity",
             accuracySecond: "might",
@@ -69,7 +69,7 @@ function _mountShieldWeapon(actor){
         return {
             name:"Twin Shield",
             type: "weapon",
-            image: "icons/svg/item-bag.svg",
+            img: "icons/svg/item-bag.svg",
             system: {
                 accuracyFirst: "might",
                 accuracySecond: "might",

@@ -509,3 +509,9 @@ color: crimson
   pointer-events: none;
   color: gray
  }
+
+ .item-img2 {
+  width: 50;
+  height: 50;
+  object-fit: contain;
+}
