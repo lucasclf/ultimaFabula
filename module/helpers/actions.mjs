@@ -1,4 +1,4 @@
-export function makeAction(event, actor){
+export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -7,27 +7,31 @@ export function makeAction(event, actor){
     switch(actionType){
         case "attack":
             _makeAttack(actor);
+            break;
     }
 }
 
-function _makeAttack(actor){
-    const attackRoll = _buildAttackRoll(actor);
-
-    
-    let label = _buildAttackLabel(actor);
-    let roll = new Roll(attackRoll, actor.getRollData());
-
-    roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: actor }),
-      flavor: label,
-      rollMode: game.settings.get('core', 'rollMode'),
-    });
-}
-
-function _buildAttackRoll(actor){
+async function _makeAttack(actor){
+    const template = 'systems/ultimaFabula/templates/chat/chat-message.html';
 
     let equipedWeapon = _recoverWeapon(actor);
+    let attackRoll = _buildAttackRoll(actor, equipedWeapon);
 
+    let roll = new Roll(attackRoll, actor.getRollData());
+    let diceRoll = await roll.roll({async: true}); 
+
+    const templateData = {
+        actor: actor,
+        image: equipedWeapon.image,
+        diceRoll: diceRoll,
+        flavor: _buildAttackLabel(equipedWeapon),
+        damage: _calcDamage(diceRoll.dice, equipedWeapon)
+    }
+
+    _renderMessage(template, templateData, actor);
+}
+
+function _buildAttackRoll(actor, equipedWeapon){
     let accuracyFirst = actor.system.attributes[equipedWeapon.system.accuracyFirst];
     let accuracySecond = actor.system.attributes[equipedWeapon.system.accuracySecond];
     let accuracyMod = equipedWeapon.system.accuracyMod;
@@ -49,12 +53,14 @@ function _mountUnnarmedWeapon(){
     return {
         name:"Unarmed Weapon",
         type: "weapon",
+        image: "icons/svg/item-bag.svg",
         system: {
-          accuracyFirst: "dexterity",
-          accuracySecond: "might",
-          accuracyMod: 0
+            accuracyFirst: "dexterity",
+            accuracySecond: "might",
+            accuracyMod: 0,
+            damage: 0
         }
-       };
+    };
 }
 
 function _mountShieldWeapon(actor){
@@ -63,19 +69,38 @@ function _mountShieldWeapon(actor){
         return {
             name:"Twin Shield",
             type: "weapon",
+            image: "icons/svg/item-bag.svg",
             system: {
-              accuracyFirst: "might",
-              accuracySecond: "might",
-              accuracyMod: 0
+                accuracyFirst: "might",
+                accuracySecond: "might",
+                accuracyMod: 0,
+                damage: 0
             }
-           };
+        };
     }
 
     return _mountUnnarmedWeapon();
 }
 
-function _buildAttackLabel(actor){
-    let equipedWeapon = _recoverWeapon(actor);
+function _buildAttackLabel(equipedWeapon){
     let weaponName = equipedWeapon.name.toUpperCase();
-    return `MAKE A ATTACK WITH ${weaponName}!!!`;
+    return `ATTACK WITH ${weaponName}!!!`;
+}
+
+function _calcDamage(dices, equipedWeapon){
+    let highRoll = dices.reduce((max, dice) => {
+        return (max.results[0].result > dice.results[0].result) ? max : dice;
+    }).results[0].result;
+
+    let weaponDamage = equipedWeapon.system.damage;
+    return highRoll + weaponDamage;
+}
+
+async function _renderMessage(template, templateData, actor){
+    const html = await renderTemplate(template, templateData);
+
+    ChatMessage.create({
+        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        content: html
+    });
 }

@@ -35,8 +35,6 @@ export class ultimaFabulaItem extends Item {
     const item = this.data;
     const actor = this.actor;
     this.data.data.formula = this._defineRoll(item, actor);
-
-    
     
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
