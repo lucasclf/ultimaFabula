@@ -147,7 +147,7 @@
       "accuracySecond": "might",
       "accuracyMod": 0,
       "damage": 0,
-      "quality": ""
+      "quality": "no-quality"
     },
     "defensive": {
       "templates": ["baseItem", "items", "defense"],

@@ -8,6 +8,7 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
+import { recoverQualityInfo } from "./helpers/genericHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -84,6 +85,11 @@ Handlebars.registerHelper('getAttributeValue', function(attribute, charAttribute
 Handlebars.registerHelper('getAttrDiceValue', function(attr){
 
   return extractAttrDiceValue(attr);
+})
+
+Handlebars.registerHelper('recoverQualityInfo', function(itemType, infoType, quality){
+
+  return recoverQualityInfo(itemType, infoType, quality);
 })
 
 /* -------------------------------------------- */

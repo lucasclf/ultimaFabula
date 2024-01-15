@@ -1,10 +1,5 @@
 export const ULTIMAFABULA = {};
 
-
-
-
-
-
 // Define constants here, such as:
 ULTIMAFABULA.foobar = {
   'bas': 'ULTIMAFABULA.bas',
@@ -80,6 +75,7 @@ ULTIMAFABULA.spellTarget = {
 }
 
 ULTIMAFABULA.weaponQualities = {
+  'no-quality': {name: 'No Qualities', cost: 0, effect: ''},
   'antistatus': {name: 'Antistatus', cost: 500, effect: 'You are immune to a single status effect.'},
   'resistance': {name: 'Resistance', cost: 700, effect: 'You have Resistance to a single damage type (not physical damage).'},
   'amulet': {name: 'Amulet', cost: 800, effect: 'You gain a +1 bonus to Magic Defense.'},

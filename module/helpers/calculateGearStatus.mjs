@@ -17,7 +17,7 @@ function _calculateDefense(char, defensive, type){
     let weaponValue = weapon?.system[type].value || 0;
 
     let armorAttr = _recoverAttr(char, armor, type);
-    let weaponQualityBonus = _recoverWeaponQualityBonus();
+    //let weaponQualityBonus = _recoverWeaponQualityBonus();
 
     let defenseTotal = +armorValue + +shieldValue + +armorAttr + +weaponValue;
 
