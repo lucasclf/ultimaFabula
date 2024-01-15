@@ -1,3 +1,5 @@
+import { captalizeFirstLetter } from "./genericHelper.mjs";
+
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
     const element = event.currentTarget;
@@ -12,7 +14,7 @@ export async function makeAction(event, actor){
 }
 
 async function _makeAttack(actor){
-    const template = 'systems/ultimaFabula/templates/chat/chat-message.html';
+    const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
     let equipedWeapon = _recoverWeapon(actor);
     let attackRoll = _buildAttackRoll(actor, equipedWeapon);
@@ -25,7 +27,9 @@ async function _makeAttack(actor){
         image: equipedWeapon.img,
         diceRoll: diceRoll,
         flavor: _buildAttackLabel(equipedWeapon),
-        damage: _calcDamage(diceRoll.dice, equipedWeapon)
+        attackType: captalizeFirstLetter(equipedWeapon.system.attackType),
+        damage: _calcDamage(diceRoll.dice, equipedWeapon),
+        damageType: equipedWeapon.system.damageType
     }
 
     _renderMessage(template, templateData, actor);
@@ -58,7 +62,10 @@ function _mountUnnarmedWeapon(){
             accuracyFirst: "dexterity",
             accuracySecond: "might",
             accuracyMod: 0,
-            damage: 0
+            attackType: "melee",
+            damage: 0,
+            damageType: "physical",
+
         }
     };
 }
@@ -74,7 +81,9 @@ function _mountShieldWeapon(actor){
                 accuracyFirst: "might",
                 accuracySecond: "might",
                 accuracyMod: 0,
-                damage: 0
+                attackType: "melee",
+                damage: 0,
+                damageType: "physical"
             }
         };
     }

@@ -1,4 +1,4 @@
-import { extractAttrDiceValue } from "./attrHelper.mjs";
+import { extractAttrDiceValue } from "./genericHelper.mjs";
 
 export function mountResources(character, jobs){
     character.resources.level = _calcLevel(jobs);

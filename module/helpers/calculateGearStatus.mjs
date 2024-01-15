@@ -1,4 +1,4 @@
-import { extractAttrDiceValue } from "./attrHelper.mjs";
+import { extractAttrDiceValue } from "./genericHelper.mjs";
 
 export function mountGearStatus(char, defensive){
     char.gearStatus.defense = _calculateDefense(char, defensive, "defense");
@@ -17,6 +17,7 @@ function _calculateDefense(char, defensive, type){
     let weaponValue = weapon?.system[type].value || 0;
 
     let armorAttr = _recoverAttr(char, armor, type);
+    let weaponQualityBonus = _recoverWeaponQualityBonus();
 
     let defenseTotal = +armorValue + +shieldValue + +armorAttr + +weaponValue;
 

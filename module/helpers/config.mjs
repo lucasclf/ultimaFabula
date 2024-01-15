@@ -77,5 +77,23 @@ ULTIMAFABULA.spellTarget = {
   'self': 'self',
   'one-equiped-weapon': '1 equiped weapon',
   'one-weapon': '1 weapon'
+}
 
+ULTIMAFABULA.weaponQualities = {
+  'antistatus': {name: 'Antistatus', cost: 500, effect: 'You are immune to a single status effect.'},
+  'resistance': {name: 'Resistance', cost: 700, effect: 'You have Resistance to a single damage type (not physical damage).'},
+  'amulet': {name: 'Amulet', cost: 800, effect: 'You gain a +1 bonus to Magic Defense.'},
+  'bulwark': {name: 'Bulwark', cost: 800, effect: 'You gain a +1 bonus to Defense.'},
+  'dual-resistance': {name: 'Dual Resistance', cost: 1000, effect: 'You have Resistance to two damage types (not physical damage).'},
+  'swordbreaker': {name: 'Swordbreaker', cost: 1000, effect: 'You have Resistance to physical damage.'},
+  'immunity': {name: 'Immunity', cost: 1500, effect: 'You have Immunity to a single damage type (not physical damage).'},
+  'omnishield': {name: 'Omnishield', cost: 2000, effect: 'You gain a +1 bonus to Defense and Magic Defense.'},
+  'perfect-health': {name: 'Perfect Health', cost: 2000, effect: 'You are immune to all status effects.'},
+  'magical': {name: 'Magical', cost: 100, effect: 'The weapon targets Magic Defense instead of Defense.'},
+  'hunter': {name: 'Hunter', cost: 300, effect: 'The weapon deals 5 extra damage to creatures of a particular Species.'},
+  'piercing': {name: 'Piercing', cost: 400, effect: 'Damage dealt by the weapon ignores Resistances.'},
+  'dual-hunter': {name: 'Dual Hunter', cost: 500, effect: 'The weapon deals 5 extra damage to creatures belonging to one of two particular Species.'},
+  'multi': {name: 'Multi', cost: 1000, effect: 'Attacks with the weapon have multi (2).'},
+  'status': {name: 'Status', cost: 1500, effect: 'Each target hit by the weapon suffers (choose one: dazed, shaken, slow, weak).'},
+  'status-plus': {name: 'Status Plus', cost: 2000, effect: 'Each target hit by the weapon suffers (choose one: enraged, poisoned).'}
 }

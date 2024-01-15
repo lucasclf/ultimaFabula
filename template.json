@@ -146,7 +146,8 @@
       "accuracyFirst": "might",
       "accuracySecond": "might",
       "accuracyMod": 0,
-      "damage": 0
+      "damage": 0,
+      "quality": ""
     },
     "defensive": {
       "templates": ["baseItem", "items", "defense"],

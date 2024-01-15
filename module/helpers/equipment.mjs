@@ -22,11 +22,9 @@ function _equipDefensive(updateData, item, actor){
     
     if(actor.system.gear[itemType] != item.id){
         updateData[`system.gear.${itemType}`] = item.id;
-        updateData[`system.initiative.${itemType}Value`] = item.system.initiative;
         _toogleTwoHandedWeapon(itemType, weapon, updateData)
     } else{
         updateData[`system.gear.${itemType}`] = "";
-        updateData[`system.initiative.${itemType}Value`] = 0;
     }
 }
 

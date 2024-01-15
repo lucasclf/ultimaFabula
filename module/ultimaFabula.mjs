@@ -7,7 +7,7 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
-import { extractAttrDiceValue } from "./helpers/attrHelper.mjs";
+import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
