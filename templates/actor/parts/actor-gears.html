@@ -102,7 +102,6 @@
   <li class="item flexrow items-header">
   
     <div class="item-name">Name</div>
-    <div class="damage-formula">Description</div>
     <div class="equiped">Equiped</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="accessory"><i class="fas fa-plus"></i> Add item</a>
@@ -116,9 +115,8 @@
       </div>
       <h4>{{item.name}}</h4>
     </div>
-    <div class="damage-formula item-prop">{{item.data.description}}</div>
-    <div class="equiped item-prop">
-      <input type="checkbox" name="item.data.isEquiped" {{checked item.data.isEquiped}}>
+    <div class="item-prop">
+      <a class="item-equip {{#if (eq @root.data.gear.accessory item._id)}} item-toggle-true {{/if}} equip-symbol">&#x23C4</a>
     </div>
     <div class="item-controls">
       <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>

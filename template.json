@@ -56,7 +56,8 @@
       "gear":{
         "armor": "",
         "shield": "",
-        "weapon": ""
+        "weapon": "",
+        "accessory": ""
       },
       "traits": {
         "origin": "",
@@ -119,7 +120,9 @@
       },
       "items": {
         "isEquiped": false,
-        "cost": 0
+        "cost": 0,
+        "quality": "no-quality",
+        "special": ""
       },
       "defense": {
         "defense": {
@@ -141,13 +144,11 @@
       "damageType": "physical",
       "gripType": "one-handed",
       "attackType": "melee",
-      "special": "",
       "weaponType": "",
       "accuracyFirst": "might",
       "accuracySecond": "might",
       "accuracyMod": 0,
-      "damage": 0,
-      "quality": "no-quality"
+      "damage": 0
     },
     "defensive": {
       "templates": ["baseItem", "items", "defense"],

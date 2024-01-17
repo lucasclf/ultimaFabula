@@ -101,6 +101,25 @@
 
         </table>
 
+        <table>
+          <tr>
+            <th>Quality</th>
+          </tr>
+          <td>
+            <select name="data.quality">
+              {{#select data.quality}}
+              {{#each config.armorQualities as |object type|}}
+              <option value="{{type}}">{{object.name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </td>
+        </table>
+        <p>{{recoverQualityInfo "armor" "name" data.quality}}</p>
+        <p>+ {{recoverQualityInfo "armor" "cost" data.quality}} Z</p>
+        <p>{{recoverQualityInfo "armor" "effect" data.quality}}</p>
+        <textarea name="data.special">{{data.special}}</textarea>
+
       </div>
     </div>
   </section>

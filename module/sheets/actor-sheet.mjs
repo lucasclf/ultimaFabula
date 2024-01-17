@@ -140,7 +140,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     mountBenefit(context.data.benefitsBonus, job);
     mountSkill(context.data.skillBonus, skill);
     mountResources(context.data, job);
-    mountGearStatus(context.data, defensive);
+    mountGearStatus(context.data, defensive, weapon, accessory);
 
     // Assign and return
     context.weapon = weapon;

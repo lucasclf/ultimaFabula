@@ -8,11 +8,14 @@ export function equipGear(event, actor, dualShield){
         _equipDualShield(updateData, item, actor.system.gear);
     } else if(item.type == 'weapon'){
         _equipWeapon(updateData, item, actor.system.gear);
+    } else if(item.type == 'accessory'){
+        _equipAccessory(updateData, item, actor);
     } else {
         _equipDefensive(updateData, item, actor);
     }
 
     actor.update(updateData);
+    console.log(actor.system.gear)
 }
 
 function _equipDefensive(updateData, item, actor){
@@ -42,6 +45,16 @@ function _equipWeapon(updateData, item, gear){
     }
 
     updateData[`system.gear.${item.type}`] = newEquipedItem;
+}
+
+function _equipAccessory(updateData, item, actor){
+
+    let newEquipedItem = "";
+    if(actor.system.gear.accessory != item.id){
+        newEquipedItem = item.id;
+    }
+
+    updateData["system.gear.accessory"] = newEquipedItem;
 }
 
 function _toogleShield(updateData, item){

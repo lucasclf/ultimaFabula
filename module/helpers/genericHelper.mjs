@@ -7,14 +7,17 @@ export function captalizeFirstLetter(text){
 }
 
 export function recoverQualityInfo(itemType, infoType, quality){
-    console.log("CQN")
-    console.log(itemType)
-    console.log(infoType)
-    console.log(quality)
-    if(itemType === "weapon"){
-        console.log(CONFIG.ULTIMAFABULA.weaponQualities)
-        let recoveredQuality = CONFIG.ULTIMAFABULA.weaponQualities[quality];
-        console.log(recoveredQuality)
-        return recoveredQuality[infoType];
+    let recoveredQuality;
+
+    switch(itemType){
+        case "weapon":
+            recoveredQuality = CONFIG.ULTIMAFABULA.weaponQualities[quality];
+            return recoveredQuality[infoType];
+        case "armor":
+            recoveredQuality = CONFIG.ULTIMAFABULA.armorQualities[quality];
+            return recoveredQuality[infoType];
+        case "accessory":
+            recoveredQuality = CONFIG.ULTIMAFABULA.accessoryQualities[quality];
+            return recoveredQuality[infoType];
     }
 }

@@ -24,7 +24,28 @@
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      {{!-- As you add new fields, add them in here! --}}
+      <table>
+        <tr>
+          <th>Quality</th>
+        </tr>
+        <td>
+          <select name="data.quality">
+            {{#select data.quality}}
+            {{#each config.accessoryQualities as |object type|}}
+            <option value="{{type}}">{{object.name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </table>
+      <p>{{recoverQualityInfo "accessory" "name" data.quality}}</p>
+      <p>+ {{recoverQualityInfo "accessory" "cost" data.quality}} Z</p>
+      <p>{{recoverQualityInfo "accessory" "effect" data.quality}}</p>
+      <textarea name="data.special">{{data.special}}</textarea>
     </div>
+
+    
+
+  </div>
   </section>
 </form>
