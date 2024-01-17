@@ -60,6 +60,8 @@ function _recoverAttr(char, armor, type){
 
 function _recoverQualityBonus(equipedItem){
     let quality = equipedItem?.system.quality || "";
+    console.log("CQN")
+    console.log(quality)
 
     let bonus = {
         "defense": 0,
