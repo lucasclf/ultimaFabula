@@ -1,11 +1,13 @@
 import { captalizeFirstLetter } from "./genericHelper.mjs";
+import { recoverWeapon, recoverAccessory, recoverArmor } from "./recoverEquipHelper.mjs";
 
 export async function makeAttack(actor){
     const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
-    let equipedWeapon = _recoverWeapon(actor);
-    let equipedAccessory = _recoverAccessory(actor);
-    let attackRoll = _buildAttackRoll(actor, equipedWeapon);
+    let equipedWeapon = recoverWeapon(actor);
+    let equipedAccessory = recoverAccessory(actor);
+    let equipedArmor = recoverArmor(actor);
+    let attackRoll = _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor);
 
     let roll = new Roll(attackRoll, actor.getRollData());
     let diceRoll = await roll.roll({async: true}); 
@@ -16,76 +18,51 @@ export async function makeAttack(actor){
         diceRoll: diceRoll,
         flavor: _buildAttackLabel(equipedWeapon),
         attackType: captalizeFirstLetter(equipedWeapon.system.attackType),
-        damage: _calcDamage(diceRoll.dice, equipedWeapon, equipedAccessory),
-        damageType: equipedWeapon.system.damageType,
+        damage: _calcDamage(diceRoll.dice, equipedWeapon, equipedAccessory, equipedArmor),
+        damageType: _recoverDamageType(equipedWeapon, equipedAccessory),
         qualityText: _recoverQualityText(equipedWeapon)
     }
 
     _renderMessage(template, templateData, actor);
 }
 
-function _buildAttackRoll(actor, equipedWeapon){
+function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
     let accuracyFirst = actor.system.attributes[equipedWeapon.system.accuracyFirst];
     let accuracySecond = actor.system.attributes[equipedWeapon.system.accuracySecond];
     let accuracyMod = equipedWeapon.system.accuracyMod;
 
+    let accessoryQuality = equipedAccessory?.system.quality || "no-qualites";
+    let armorQuality = equipedArmor?.system.quality || "no-qualities";
+    let qualityModify = 0;
+
+    console.log(accessoryQuality)
+
+    if(accessoryQuality === "accuracy-up"){
+        qualityModify += 1;
+    }
+    if(armorQuality === "accuracy-up"){
+        qualityModify += 1;
+    }
+
+    console.log(qualityModify);
+
+    if(qualityModify > 0){
+        return `${accuracyFirst} + ${accuracySecond} + ${accuracyMod} + ${qualityModify}`;
+    }
+
     return `${accuracyFirst} + ${accuracySecond} + ${accuracyMod}`;
 }
 
-function _recoverWeapon(actor){
-    let itemId = actor.system.gear.weapon || "";
-    let weapon = itemId ? actor.items.get(itemId) : _mountUnnarmedWeapon();
-    
-    if(weapon.type === "defensive"){
-        return _mountShieldWeapon(actor);
-    }
-    return weapon;
-}
+function _recoverDamageType(equipedWeapon, equipedAccessory){
+    let accessoryQuality = equipedAccessory?.system.quality || "no-qualites";
+    let damageType =  equipedWeapon.system.damageType;
 
-function _recoverAccessory(actor){
-    let itemId = actor.system.gear.accessory || "";
-    let accessory = itemId ? actor.items.get(itemId) : null;
-
-    return accessory;
-}
-
-function _mountUnnarmedWeapon(){
-    return {
-        name:"Unarmed Weapon",
-        type: "weapon",
-        img: "icons/svg/item-bag.svg",
-        system: {
-            accuracyFirst: "dexterity",
-            accuracySecond: "might",
-            accuracyMod: 0,
-            attackType: "melee",
-            damage: 0,
-            damageType: "physical",
-            quality: "no-quality"
-        }
-    };
-}
-
-function _mountShieldWeapon(actor){
-    let shield = actor.system.gear.shield;
-    if(shield != ""){
-        return {
-            name:"Twin Shield",
-            type: "weapon",
-            img: "icons/svg/item-bag.svg",
-            system: {
-                accuracyFirst: "might",
-                accuracySecond: "might",
-                accuracyMod: 0,
-                attackType: "melee",
-                damage: 0,
-                damageType: "physical",
-                quality: "no-quality"
-            }
-        };
+    if(accessoryQuality.includes("damage-change")){
+        let element = accessoryQuality.split("-").pop();
+        return element;
     }
 
-    return _mountUnnarmedWeapon();
+    return damageType;
 }
 
 function _buildAttackLabel(equipedWeapon){
@@ -93,13 +70,14 @@ function _buildAttackLabel(equipedWeapon){
     return `ATTACK WITH ${weaponName}!!!`;
 }
 
-function _calcDamage(dices, equipedWeapon, equipedAccessory){
+function _calcDamage(dices, equipedWeapon, equipedAccessory, equipedArmor){
     let highRoll = dices.reduce((max, dice) => {
         return (max.results[0].result > dice.results[0].result) ? max : dice;
     }).results[0].result;
 
     let weaponDamage = equipedWeapon.system.damage;
-    let accessoryQuality = equipedAccessory?.system.quality || "";
+    let accessoryQuality = equipedAccessory?.system.quality || "no-qualities";
+    let armorQuality = equipedArmor?.system.quality || "no-qualities"
 
     if(accessoryQuality === "weapon-up-melee" && equipedWeapon.system.attackType === "melee"){
         console.log("CQN || ++damage")
@@ -110,7 +88,14 @@ function _calcDamage(dices, equipedWeapon, equipedAccessory){
         weaponDamage += 5;
     }
 
-    console.log(weaponDamage);
+    if(armorQuality === "weapon-up-melee" && equipedWeapon.system.attackType === "melee"){
+        console.log("CQN || ++damage")
+        weaponDamage += 5;
+    }
+
+    if(armorQuality === "weapon-up-ranged" && equipedWeapon.system.attackType === "ranged"){
+        weaponDamage += 5;
+    }
 
     return highRoll + weaponDamage;
 }
