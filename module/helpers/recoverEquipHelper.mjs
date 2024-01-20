@@ -22,6 +22,13 @@ export function recoverWeapon(actor){
     return weapon;
 }
 
+export function recoverShield(actor){
+    let itemId = actor.system.gear.shield || "";
+    let shield = itemId ? actor.items.get(itemId) : null;
+
+    return shield;
+}
+
 function _mountUnnarmedWeapon(){
     return {
         name:"Unarmed Weapon",

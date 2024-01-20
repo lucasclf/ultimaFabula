@@ -1,9 +1,10 @@
 import { extractAttrDiceValue } from "./genericHelper.mjs";
+import { recoverArmor } from "./recoverEquipHelper.mjs";
 
 export function mountGearStatus(char, defensive, weapon, accessory){
     char.gearStatus.defense = _calculateDefense(char, defensive, weapon, accessory, "defense");
     char.gearStatus.mDefense = _calculateDefense(char, defensive, weapon, accessory, "mDefense");
-    char.gearStatus.initiative = _calculateInitiative(char, defensive);
+    char.gearStatus.initiative = _calculateInitiative(char, defensive, accessory);
 
 }
 
@@ -29,16 +30,20 @@ function _calculateDefense(char, defensive, weapon, accessory, type){
     return defenseTotal;
 };
 
-function _calculateInitiative(char, defensive){
-    let armor = _recoverItem(char, defensive, "armor");
-    let shield = _recoverItem(char, defensive, "shield");
-    let weapon = _recoverItem(char, defensive, "weapon");
+function _calculateInitiative(char, defensive, accessory){
+    let equipedArmor = _recoverItem(char, defensive, "armor");
+    let equipedShield = _recoverItem(char, defensive, "shield");
+    let equipedWeapon = _recoverItem(char, defensive, "weapon");
+    let equipedAccessory = _recoverItem(char, accessory, "accessory")
 
-    let armorInit = armor?.system.initiative || 0;
-    let shieldInit = shield?.system.initiative || 0;
-    let weaponInit = weapon?.system.initiative || 0;
+    let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory);
+    let armorQualityBonus = _recoverQualityBonus(equipedArmor);
 
-    let initiativeTotal = +armorInit + +shieldInit + +weaponInit;
+    let armorInit = equipedArmor?.system.initiative || 0;
+    let shieldInit = equipedShield?.system.initiative || 0;
+    let weaponInit = equipedWeapon?.system.initiative || 0;
+
+    let initiativeTotal = +armorInit + +shieldInit + +weaponInit + +accessoryQualityBonus.initiative + +armorQualityBonus.initiative;
 
     return initiativeTotal;
 };
@@ -65,7 +70,8 @@ function _recoverQualityBonus(equipedItem){
 
     let bonus = {
         "defense": 0,
-        "mDefense": 0
+        "mDefense": 0,
+        "initiative": 0
     };
 
     switch(quality){
@@ -78,6 +84,9 @@ function _recoverQualityBonus(equipedItem){
         case "omnishield":
             bonus.defense = 1;
             bonus.mDefense = 1;
+            break;
+        case "initiative-up":
+            bonus.initiative = 4;
             break;
     }
 
