@@ -15,7 +15,6 @@ export function equipGear(event, actor, dualShield){
     }
 
     actor.update(updateData);
-    console.log(actor.system.gear)
 }
 
 function _equipDefensive(updateData, item, actor){
@@ -25,41 +24,51 @@ function _equipDefensive(updateData, item, actor){
     
     if(actor.system.gear[itemType] != item.id){
         updateData[`system.gear.${itemType}`] = item.id;
+        updateData[`system.gear.${itemType}Quality`] = item.system.quality;
         _toogleTwoHandedWeapon(itemType, weapon, updateData)
     } else{
         updateData[`system.gear.${itemType}`] = "";
+        updateData[`system.gear.${itemType}Quality`] = "no-qualities";
     }
 }
 
 function _toogleTwoHandedWeapon(itemType, weapon, updateData){
     if(itemType === "shield" && weapon?.system.gripType === "two-handed"){
         updateData["system.gear.weapon"] = "";
+        updateData["system.gear.weaponQuality"] = "no-qualities";
     }
 }
 
 function _equipWeapon(updateData, item, gear){
     let newEquipedItem = "";
+    let newQuality = "no-qualities";
     if(gear.weapon != item.id){
         newEquipedItem = item.id;
+        newQuality = item.system.quality;
         _toogleShield(updateData, item);
     }
 
     updateData[`system.gear.${item.type}`] = newEquipedItem;
+    updateData[`system.gear.${item.type}Quality`] = newQuality;
 }
 
 function _equipAccessory(updateData, item, actor){
 
     let newEquipedItem = "";
+    let newQuality = "no-qualities";
     if(actor.system.gear.accessory != item.id){
         newEquipedItem = item.id;
+        newQuality = item.system.quality;
     }
 
     updateData["system.gear.accessory"] = newEquipedItem;
+    updateData[`system.gear.${item.type}Quality`] = newQuality;
 }
 
 function _toogleShield(updateData, item){
     if(item.system.gripType === "two-handed"){
         updateData[`system.gear.shield`] = "";
+        updateData['system.gear.shieldQuality'] = "no-qualities";
     }
 }
 
@@ -67,8 +76,10 @@ function _equipDualShield(updateData, item, gear){
     
     if(gear.weapon != item.id){
         updateData[`system.gear.weapon`] = item.id;
+        updateData['system.gear.weaponQuality'] = item.system.quality;
     } else{
         updateData[`system.gear.weapon`] = "";
+        updateData['system.gear.weaponQuality'] = "no-qualities";
     }
 
 }

@@ -162,27 +162,27 @@
   <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div style="margin: 10px;">
         <label for="data.status.dazed" class="resource-label">Dazed</label><br>
-        <input type="checkbox" name="data.status.dazed" {{checked data.status.dazed}}>
+        <input type="checkbox" {{#disableStatusCheck "dazed" data}} disabled {{/disableStatusCheck}} name="data.status.dazed" {{checked data.status.dazed}}>
     </div>
     <div style="margin: 10px;">
         <label for="data.status.shaken" class="resource-label">Shaken</label><br>
-        <input type="checkbox" name="data.status.shaken" {{checked data.status.shaken}}>
+        <input type="checkbox" {{#disableStatusCheck "shaken" data}} disabled {{/disableStatusCheck}} name="data.status.shaken" {{checked data.status.shaken}}>
     </div>
     <div style="margin: 10px;">
         <label for="data.status.slow" class="resource-label">Slow</label><br>
-        <input type="checkbox" name="data.status.slow" {{checked data.status.slow}}>
+        <input type="checkbox" {{#disableStatusCheck "slow" data}} disabled {{/disableStatusCheck}} name="data.status.slow" {{checked data.status.slow}}>
     </div>
     <div style="margin: 10px;">
         <label for="data.status.weak" class="resource-label">Weak</label><br>
-        <input type="checkbox" name="data.status.weak" {{checked data.status.weak}}>
+        <input type="checkbox" {{#disableStatusCheck "weak" data}} disabled {{/disableStatusCheck}} name="data.status.weak" {{checked data.status.weak}}>
     </div>
     <div style="margin: 10px;">
         <label for="data.status.enraged" class="resource-label">Enraged</label><br>
-        <input type="checkbox" name="data.status.enraged" {{checked data.status.enraged}}>
+        <input type="checkbox" {{#disableStatusCheck "enraged" data}} disabled {{/disableStatusCheck}} name="data.status.enraged" {{checked data.status.enraged}}>
     </div>
     <div style="margin: 10px;">
         <label for="data.status.poisoned" class="resource-label">Poisoned</label><br>
-        <input type="checkbox" name="data.status.poisoned" {{checked data.status.poisoned}}>
+        <input type="checkbox" {{#disableStatusCheck "poisoned" data}} disabled {{/disableStatusCheck}} name="data.status.poisoned" {{checked data.status.poisoned}}>
     </div>
   </div>
 

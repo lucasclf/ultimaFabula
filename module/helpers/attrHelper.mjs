@@ -1,7 +1,4 @@
 export function mountActualAttributes(character){
-    console.log("CQN || Mount Attr")
-    console.log(character)
-
     character.attributes.actual = _calcAttr(character.attributes.base, character.status);
 }
 

@@ -9,6 +9,7 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
+import { disableStatusCheck } from "./helpers/statusHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -90,6 +91,14 @@ Handlebars.registerHelper('getAttrDiceValue', function(attr){
 Handlebars.registerHelper('recoverQualityInfo', function(itemType, infoType, quality){
 
   return recoverQualityInfo(itemType, infoType, quality);
+})
+
+Handlebars.registerHelper('disableStatusCheck', function(statusType, char, options){
+
+  if(disableStatusCheck(statusType, char)){
+    return options.fn(this);
+  }
+  return "";
 })
 
 /* -------------------------------------------- */
