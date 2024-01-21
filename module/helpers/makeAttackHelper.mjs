@@ -27,15 +27,14 @@ export async function makeAttack(actor){
 }
 
 function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
-    let accuracyFirst = actor.system.attributes[equipedWeapon.system.accuracyFirst];
-    let accuracySecond = actor.system.attributes[equipedWeapon.system.accuracySecond];
+    let accuracyFirst = actor.system.attributes.actual[equipedWeapon.system.accuracyFirst];
+    let accuracySecond = actor.system.attributes.actual[equipedWeapon.system.accuracySecond];
     let accuracyMod = equipedWeapon.system.accuracyMod;
 
     let accessoryQuality = equipedAccessory?.system.quality || "no-qualites";
     let armorQuality = equipedArmor?.system.quality || "no-qualities";
     let qualityModify = 0;
 
-    console.log(accessoryQuality)
 
     if(accessoryQuality === "accuracy-up"){
         qualityModify += 1;
@@ -43,8 +42,6 @@ function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
     if(armorQuality === "accuracy-up"){
         qualityModify += 1;
     }
-
-    console.log(qualityModify);
 
     if(qualityModify > 0){
         return `${accuracyFirst} + ${accuracySecond} + ${accuracyMod} + ${qualityModify}`;
@@ -80,7 +77,6 @@ function _calcDamage(dices, equipedWeapon, equipedAccessory, equipedArmor){
     let armorQuality = equipedArmor?.system.quality || "no-qualities"
 
     if(accessoryQuality === "weapon-up-melee" && equipedWeapon.system.attackType === "melee"){
-        console.log("CQN || ++damage")
         weaponDamage += 5;
     }
 
@@ -89,7 +85,6 @@ function _calcDamage(dices, equipedWeapon, equipedAccessory, equipedArmor){
     }
 
     if(armorQuality === "weapon-up-melee" && equipedWeapon.system.attackType === "melee"){
-        console.log("CQN || ++damage")
         weaponDamage += 5;
     }
 

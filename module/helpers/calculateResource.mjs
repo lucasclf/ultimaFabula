@@ -2,9 +2,9 @@ import { extractAttrDiceValue } from "./genericHelper.mjs";
 
 export function mountResources(character, jobs){
     character.resources.level = _calcLevel(jobs);
-    character.resources.hp.max = _calcResource(character, character.attributes.might, "hp");
+    character.resources.hp.max = _calcResource(character, character.attributes.actual.might, "hp");
     character.resources.hp.crisis = _calcCrisisHp(character.resources.hp.max);
-    character.resources.mp.max = _calcResource(character, character.attributes.willpower, "mp");
+    character.resources.mp.max = _calcResource(character, character.attributes.actual.willpower, "mp");
     character.resources.ip.max = _calcIp(jobs)
 }
 

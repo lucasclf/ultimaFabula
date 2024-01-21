@@ -22,9 +22,6 @@ function _calculateDefense(char, defensive, weapon, accessory, type){
     let weaponQualityBonus = _recoverQualityBonus(equipedWeapon);
     let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory);
 
-    console.log(`CQN | CalcQuality ${type}`)
-    console.log(weaponQualityBonus[type]);
-
     let defenseTotal = +armorValue + +shieldValue + +armorAttr + +weaponValue + +weaponQualityBonus[type] + +accessoryQualityBonus[type];
 
     return defenseTotal;
@@ -57,7 +54,7 @@ function _recoverAttr(char, armor, type){
     let defaultAttr = type === "defense" ? "dexterity" : "insight";
 
     let armorAttr = armor?.system[type].attr || defaultAttr;
-    let attrDice = char.attributes[armorAttr];
+    let attrDice = char.attributes.actual[armorAttr];
     let attrValue = extractAttrDiceValue(attrDice);
 
     return attrValue;
@@ -65,8 +62,6 @@ function _recoverAttr(char, armor, type){
 
 function _recoverQualityBonus(equipedItem){
     let quality = equipedItem?.system.quality || "";
-    console.log("CQN")
-    console.log(quality)
 
     let bonus = {
         "defense": 0,

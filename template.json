@@ -29,10 +29,18 @@
           "notes": ""
         },
         "attributes": {
-          "dexterity": "d6",
-          "insight": "d6",
-          "might": "d6",
-          "willpower": "d6"                    
+          "base": {
+            "dexterity": "d6",
+            "insight": "d6",
+            "might": "d6",
+            "willpower": "d6" 
+          },
+          "actual":{
+            "dexterity": "d6",
+            "insight": "d6",
+            "might": "d6",
+            "willpower": "d6" 
+          }                  
         },
         "status": {
           "slow": false,

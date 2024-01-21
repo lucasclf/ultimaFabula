@@ -75,8 +75,8 @@ export class ultimaFabulaItem extends Item {
       let accuracySecond = item.system.accuracySecond;
       let accuracyMod = item.system.accuracyMod;
 
-      let actorAccuracyFirst = actor.system.attributes[accuracyFirst];
-      let actorAccuracySecond = actor.system.attributes[accuracySecond];
+      let actorAccuracyFirst = actor.system.attributes.actual[accuracyFirst];
+      let actorAccuracySecond = actor.system.attributes.actual[accuracySecond];
 
       return `${actorAccuracyFirst} + ${actorAccuracySecond} + ${accuracyMod}`
     }

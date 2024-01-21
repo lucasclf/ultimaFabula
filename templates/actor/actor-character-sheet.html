@@ -14,7 +14,9 @@
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="data.resources.hp.value" class="resource-label">HP</label>
+          <label for="data.resources.hp.value" class="resource-label">
+            HP {{#if data.status.poisoned}} &#129326 {{/if}}
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.hp.value" value="{{data.resources.hp.value}}" data-dtype="Number"/>
           <span> / </span>
@@ -30,7 +32,9 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.mp.value" class="resource-label">MP</label>
+          <label for="data.resources.mp.value" class="resource-label">
+            MP {{#if data.status.poisoned}} &#129326 {{/if}}
+          </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.mp.value" value="{{data.resources.mp.value}}" data-dtype="Number"/>
           <span> / </span>
@@ -55,12 +59,13 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes.dexterity" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.dexterity}}" data-label="DEXTERITY">DEX</i>
+          <label for="data.attributes.base.dexterity" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.actual.dexterity}}" data-label="DEXTERITY">
+              DEX {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.slow }} &#128012 {{/if}}</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.dexterity">
-              {{#select data.attributes.dexterity}}
+            <select name="data.attributes.base.dexterity">
+              {{#select data.attributes.base.dexterity}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -70,12 +75,14 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.attributes" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.insight}}" data-label="INSIGHT">INS</i>
+          <label for="data.attributes.base.insight" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.actual.insight}}" data-label="INSIGHT">
+              INS {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.dazed}} &#128565 {{/if}}
+            </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.insight">
-              {{#select data.attributes.insight}}
+            <select name="data.attributes.base.insight">
+              {{#select data.attributes.base.insight}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -85,12 +92,14 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.might}}" data-label="MIGHT">MIG</i>
+          <label for="data.attributes.base" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.actual.might}}" data-label="MIGHT">
+              MIG {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.weak}} &#128567 {{/if}}
+            </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.might">
-              {{#select data.attributes.might}}
+            <select name="data.attributes.base.might">
+              {{#select data.attributes.base.might}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -100,12 +109,14 @@
         </div>
         
         <div class="resource flex-group-center">
-          <label for="data.attributes" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.willpower}}" data-label="WILLPOWER">WLP</i>
+          <label for="data.attributes.base" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.actual.willpower}}" data-label="WILLPOWER">
+              WLP {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.shaken}} &#x1F62C {{/if}}
+            </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.willpower">
-              {{#select data.attributes.willpower}}
+            <select name="data.attributes.base.willpower">
+              {{#select data.attributes.base.willpower}}
               {{#each config.attributeDice as |name type|}}
               <option value="{{type}}">{{name}}</option>
               {{/each}}
@@ -115,8 +126,8 @@
         </div>   
 
         <div class="resource flex-group-center">
-          <label for="data.attributes" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.dexterity}} + {{data.attributes.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">INIT</i>
+          <label for="data.attributes.base" class="resource-label">
+            <i class="rollable" data-roll="{{data.attributes.actual.dexterity}} + {{data.attributes.actual.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">INIT</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <p>{{data.gearStatus.initiative}}</p>
@@ -147,6 +158,33 @@
       </div>
     </div>
   </header>
+
+  <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+    <div style="margin: 10px;">
+        <label for="data.status.dazed" class="resource-label">Dazed</label><br>
+        <input type="checkbox" name="data.status.dazed" {{checked data.status.dazed}}>
+    </div>
+    <div style="margin: 10px;">
+        <label for="data.status.shaken" class="resource-label">Shaken</label><br>
+        <input type="checkbox" name="data.status.shaken" {{checked data.status.shaken}}>
+    </div>
+    <div style="margin: 10px;">
+        <label for="data.status.slow" class="resource-label">Slow</label><br>
+        <input type="checkbox" name="data.status.slow" {{checked data.status.slow}}>
+    </div>
+    <div style="margin: 10px;">
+        <label for="data.status.weak" class="resource-label">Weak</label><br>
+        <input type="checkbox" name="data.status.weak" {{checked data.status.weak}}>
+    </div>
+    <div style="margin: 10px;">
+        <label for="data.status.enraged" class="resource-label">Enraged</label><br>
+        <input type="checkbox" name="data.status.enraged" {{checked data.status.enraged}}>
+    </div>
+    <div style="margin: 10px;">
+        <label for="data.status.poisoned" class="resource-label">Poisoned</label><br>
+        <input type="checkbox" name="data.status.poisoned" {{checked data.status.poisoned}}>
+    </div>
+  </div>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">

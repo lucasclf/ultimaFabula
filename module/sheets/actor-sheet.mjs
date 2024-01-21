@@ -5,6 +5,7 @@ import { mountResources } from "../helpers/calculateResource.mjs";
 import { mountBenefit } from "../helpers/mountBenefits.mjs";
 import { mountSkill } from "../helpers/mountSkillBonus.mjs";
 import { mountGearStatus } from "../helpers/calculateGearStatus.mjs";
+import { mountActualAttributes } from "../helpers/attrHelper.mjs";
 
 
 /**
@@ -76,6 +77,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
    * @return {undefined}
    */
   _prepareCharacterData(context) {
+
   }
 
   /**
@@ -137,10 +139,13 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       }
     }
 
+    mountActualAttributes(context.data);
     mountBenefit(context.data.benefitsBonus, job);
     mountSkill(context.data.skillBonus, skill);
     mountResources(context.data, job);
     mountGearStatus(context.data, defensive, weapon, accessory);
+
+    context.actor.system = context.data;
 
     // Assign and return
     context.weapon = weapon;
