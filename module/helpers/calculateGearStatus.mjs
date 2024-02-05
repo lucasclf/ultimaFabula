@@ -1,66 +1,80 @@
 import { extractAttrDiceValue } from "./genericHelper.mjs";
-import { recoverArmor } from "./recoverEquipHelper.mjs";
 
-export function mountGearStatus(char, defensive, weapon, accessory){
-    char.gearStatus.defense = _calculateDefense(char, defensive, weapon, accessory, "defense");
-    char.gearStatus.mDefense = _calculateDefense(char, defensive, weapon, accessory, "mDefense");
-    char.gearStatus.initiative = _calculateInitiative(char, defensive, accessory);
+export function mountGearStatus(actor) {
+    let updateData = {};
+
+    updateData[`system.gearStatus.defense`] = _calculateDefense(actor, "defense");
+    updateData[`system.gearStatus.mDefense`] = _calculateDefense(actor, "mDefense");
+    updateData[`system.gearStatus.initiative`] = _calculateInitiative(actor);
+
+    actor.update(updateData);
 
 }
 
-function _calculateDefense(char, defensive, weapon, accessory, type){
-    let equipedArmor = _recoverItem(char, defensive, "armor");
-    let equipedShield = _recoverItem(char, defensive, "shield");
-    let equipedWeapon = _recoverItem(char, weapon, "weapon") || _recoverItem(char, defensive, "weapon");
-    let equipedAccessory = _recoverItem(char, accessory, "accessory")
+function _calculateDefense(actor, type) {
+    let equipedArmor = _recoverItem(actor, "armor");
+    let equipedAccessory = _recoverItem(actor, "accessory")
+    let equipedOffHand = _recoverItem(actor, "offHand");
+    let equipedMainHand = _recoverItem(actor, "mainHand");
 
     let armorValue = equipedArmor?.system[type].value || 0;
-    let shieldValue = equipedShield?.system[type].value || 0;
-    let weaponValue = equipedWeapon?.system[type]?.value || 0;
+    let offHandValue = equipedOffHand?.system[type].value || 0;
+    let mainHandValue = equipedMainHand?.system[type]?.value || 0;
 
-    let armorAttr = _recoverAttr(char, equipedArmor, type);
-    let weaponQualityBonus = _recoverQualityBonus(equipedWeapon);
-    let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory);
+    let armorAttr = _recoverAttr(actor, equipedArmor, type);
 
-    let defenseTotal = +armorValue + +shieldValue + +armorAttr + +weaponValue + +weaponQualityBonus[type] + +accessoryQualityBonus[type];
+    let mainHandQualityBonus = _recoverQualityBonus(equipedMainHand)[type];
+    let offHandQualityBonus = _recoverQualityBonus(equipedOffHand)[type];
+    let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory)[type];
+
+    let gearBonus = +armorValue + +offHandValue + +mainHandValue + +armorAttr;
+    let qualityBonus = +mainHandQualityBonus + +offHandQualityBonus + +accessoryQualityBonus;
+
+    let defenseTotal = +gearBonus + +qualityBonus;
 
     return defenseTotal;
 };
 
-function _calculateInitiative(char, defensive, accessory){
-    let equipedArmor = _recoverItem(char, defensive, "armor");
-    let equipedShield = _recoverItem(char, defensive, "shield");
-    let equipedWeapon = _recoverItem(char, defensive, "weapon");
-    let equipedAccessory = _recoverItem(char, accessory, "accessory")
+function _calculateInitiative(actor) {
+    let equipedArmor = _recoverItem(actor, "armor");
+    let equipedAccessory = _recoverItem(actor, "accessory")
+    let equipedOffHand = _recoverItem(actor, "offHand");
+    let equipedMainHand = _recoverItem(actor, "mainHand");
 
-    let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory);
-    let armorQualityBonus = _recoverQualityBonus(equipedArmor);
+    let accessoryQualityBonus = _recoverQualityBonus(equipedAccessory).initiative;
+    let armorQualityBonus = _recoverQualityBonus(equipedArmor).initiative;
+    let offHandQualityBonus = _recoverQualityBonus(equipedOffHand).initiative;
+    let mainHandQualityBonus = _recoverQualityBonus(equipedMainHand).initiative;
+
+    let qualityBonus = +accessoryQualityBonus + +armorQualityBonus + +offHandQualityBonus + +mainHandQualityBonus;
 
     let armorInit = equipedArmor?.system.initiative || 0;
-    let shieldInit = equipedShield?.system.initiative || 0;
-    let weaponInit = equipedWeapon?.system.initiative || 0;
+    let offHandInit = equipedOffHand?.system.initiative || 0;
+    let mainHandInit = equipedMainHand?.system.initiative || 0;
 
-    let initiativeTotal = +armorInit + +shieldInit + +weaponInit + +accessoryQualityBonus.initiative + +armorQualityBonus.initiative;
+    let gearBonus = +armorInit + +offHandInit + +mainHandInit;
+
+    let initiativeTotal = +qualityBonus + +gearBonus;
 
     return initiativeTotal;
 };
 
-function _recoverItem(char, gear, type){
-    let id = char.gear[type];   
-    return gear.find(g => g._id === id) || null;
+function _recoverItem(actor, type) {
+    let itemId = actor.system.gear[type];
+    return actor.items.get(itemId) || null;
 }
 
-function _recoverAttr(char, armor, type){
+function _recoverAttr(actor, armor, type) {
     let defaultAttr = type === "defense" ? "dexterity" : "insight";
 
     let armorAttr = armor?.system[type].attr || defaultAttr;
-    let attrDice = char.attributes.actual[armorAttr];
+    let attrDice = actor.system.attributes.actual[armorAttr];
     let attrValue = extractAttrDiceValue(attrDice);
 
     return attrValue;
 }
 
-function _recoverQualityBonus(equipedItem){
+function _recoverQualityBonus(equipedItem) {
     let quality = equipedItem?.system.quality || "";
 
     let bonus = {
@@ -69,7 +83,7 @@ function _recoverQualityBonus(equipedItem){
         "initiative": 0
     };
 
-    switch(quality){
+    switch (quality) {
         case "amulet":
             bonus.mDefense = 1;
             break;

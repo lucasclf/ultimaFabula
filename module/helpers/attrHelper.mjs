@@ -1,5 +1,7 @@
-export function mountActualAttributes(character){
-    character.attributes.actual = _calcAttr(character.attributes.base, character.status);
+export function mountActualAttributes(actor){
+    let updateData = {}
+    updateData[`system.attributes.actual`] = _calcAttr(character.attributes.base, character.status);
+    actor.update(updateData);
 }
 
 function _calcAttr(attr, status){

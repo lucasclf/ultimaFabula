@@ -54,14 +54,14 @@ function _toggleTwoHandedWeapon(updateData, handType){
 
 function createUpdateData(item, slotType, currentItemId = "") {
     const updateData = {
-       [`system.gear.${slotType}`]: "",
-       [`system.gear.${slotType}Quality`]: "no-quality",
+        [`system.gear.${slotType}`]: "",
+        [`system.gear.${slotType}Quality`]: "no-quality",
     };
-     
+
     if (currentItemId !== item.id) {
-       updateData[`system.gear.${slotType}`] = item.id;
-       updateData[`system.gear.${slotType}Quality`] = item.system.quality;
+        updateData[`system.gear.${slotType}`] = item.id;
+        updateData[`system.gear.${slotType}Quality`] = item.system.quality;
     }
-     
+
     return updateData;
-   }
+}
