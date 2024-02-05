@@ -1,77 +1,67 @@
+const slotEquipmentFunctions = {
+    mainHand: _equipMainHand,
+    offHand: _equipOffHand,
+    default: _equipNotHand,
+};
+
 export function equipGear(event, actor, dualShield){
     const li = $(event.currentTarget).parents(".item");
     const item = actor.items.get(li.data("itemId"));
 
-
     let slotType = event.currentTarget.attributes.slot.value;
-    let updateData = {};
-    
-    switch(slotType){
-        case "mainHand":
-            updateData = _equipMainHand(item, actor);
-            break;
-        case "offHand":
-            updateData = _equipOffHand(item, actor);
-            break;
-        default:
-            updateData = _equipNotHand(item, actor, slotType);
-            break;
-    }
-
+    const equipFunction = slotEquipmentFunctions[slotType] || slotEquipmentFunctions.default;
+  
+    const updateData = equipFunction(item, actor, slotType);
+  
     actor.update(updateData);
 }
 
-function _equipNotHand(item, actor, itemType){
-    let actualGearId = actor.system.gear[itemType];
-    let updateData = {};
+function _equipNotHand(item, actor, slotType){
+    const currentItemId = actor.system.gear[slotType];
+    return createUpdateData(item, slotType, currentItemId);
+}
 
-    if(actualGearId != item.id){
-        updateData[`system.gear.${itemType}`] = item.id;
-        updateData[`system.gear.${itemType}Quality`] = item.system.quality;
-    } else{
-        updateData[`system.gear.${itemType}`] = "";
-        updateData[`system.gear.${itemType}Quality`] = "no-quality";
+function _equipMainHand(item, actor, slotType){
+    const currentItemId = actor.system.gear[slotType];
+
+    const updateData = createUpdateData(item, slotType, currentItemId);
+     
+    if (currentItemId !== item.id && item?.system.gripType === "two-handed") {
+       _toggleTwoHandedWeapon(updateData, "offHand");
     }
-
+     
     return updateData;
 }
 
-function _equipMainHand(item, actor){
-    let mainHandId = actor.system.gear.mainHand;
-    let updateData = {};
+function _equipOffHand(item, actor, slotType){
+    const currentItemId = actor.system.gear[slotType];
+    const mainHandId = actor.system.gear.mainHand;
+    const mainHand = actor.items.get(mainHandId);
 
-    if(mainHandId != item.id){
-        updateData[`system.gear.mainHand`] = item.id;
-        updateData[`system.gear.mainHandQuality`] = item.system.quality;
-        if(item?.system.gripType === "two-handed") _toogleTwoHandedWeapon(updateData, "offHand")
-    } else{
-        updateData[`system.gear.mainHand`] = "";
-        updateData[`system.gear.mainHandQuality`] = "no-quality";
+    const updateData = createUpdateData(item, slotType, currentItemId);
+  
+    if (currentItemId !== item.id && mainHand?.system.gripType === "two-handed") {  
+        _toggleTwoHandedWeapon(updateData, "mainHand");
     }
-
-    return updateData;
+  
+ return updateData;
 }
 
-function _equipOffHand(item, actor){
-    let offHandId = actor.system.gear.offHand;
-    let mainHandId = actor.system.gear.mainHand;
-    let mainHand = actor.items.get(mainHandId);
-    let updateData = {};
-
-    if(offHandId != item.id){
-        updateData[`system.gear.offHand`] = item.id;
-        updateData[`system.gear.offHandQuality`] = item.system.quality;
-        if(mainHand?.system.gripType === "two-handed") _toogleTwoHandedWeapon(updateData, "mainHand")
-        
-    } else{
-        updateData[`system.gear.offHand`] = "";
-        updateData[`system.gear.offHandQuality`] = "no-quality";
-    }
-
-    return updateData;
-}
-
-function _toogleTwoHandedWeapon(updateData, handType){
+function _toggleTwoHandedWeapon(updateData, handType){
     updateData[`system.gear.${handType}`] = "";
     updateData[`system.gear.${handType}Quality`] = "no-quality";
 }
+
+function createUpdateData(item, slotType, currentItemId = "") {
+    const updateData = {
+       [`system.gear.${slotType}`]: "",
+       [`system.gear.${slotType}Quality`]: "no-quality",
+    };
+     
+    if (currentItemId !== item.id) {
+       updateData[`system.gear.${slotType}`] = item.id;
+       updateData[`system.gear.${slotType}Quality`] = item.system.quality;
+    }
+     
+    return updateData;
+   }
