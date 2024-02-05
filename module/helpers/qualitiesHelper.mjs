@@ -4,6 +4,7 @@ export function recoverQualityInfo(itemType, infoType, quality){
 
     switch(itemType){
         case "weapon":
+            recoveredQuality = CONFIG.ULTIMAFABULA.weaponQualities;
             return recoveredQuality[infoType];
         case "armor":
             recoveredQuality = CONFIG.ULTIMAFABULA.armorQualities[quality];

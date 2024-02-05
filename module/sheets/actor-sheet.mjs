@@ -180,11 +180,11 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
     html.find('.item-equip').click(ev => {
-      equipGear(ev, this.actor, false)
+      equipGear(ev, this.actor, true)
     });
 
     html.find('.item-equip-dual-shield').click(ev => {
-      equipGear(ev, this.actor, true)
+      equipGear(ev, this.actor, false)
     });
 
     html.find('.action-choice').click(ev => {
