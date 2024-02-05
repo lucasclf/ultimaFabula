@@ -63,13 +63,13 @@
       },
       "gear":{
         "armor": "",
-        "armorQuality": "no-qualities",
-        "shield": "",
-        "shieldQuality": "no-qualities",
-        "weapon": "",
-        "weaponQuality": "no-qualities",
+        "armorQuality": "no-quality",
+        "offHand": "",
+        "offHanddQuality": "no-quality",
+        "mainHand": "",
+        "mainHandQuality": "no-quality",
         "accessory": "",
-        "accessoryQuality": "no-qualities"
+        "accessoryQuality": "no-quality"
       },
       "traits": {
         "origin": "",
@@ -133,7 +133,7 @@
       "items": {
         "isEquiped": false,
         "cost": 0,
-        "quality": "no-qualities",
+        "quality": "no-quality",
         "special": ""
       },
       "defense": {

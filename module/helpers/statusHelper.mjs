@@ -9,7 +9,7 @@ export function mountStatusResistances(char){
 }
 
 export function disableStatusCheck(statusType, char){
-    let qualities = [char.gear.weaponQuality, char.gear.armorQuality, char.gear.shieldQuality, char.gear.accessoryQuality];
+    let qualities = [char.gear.mainHandQuality, char.gear.armorQuality, char.gear.offHandQuality, char.gear.accessoryQuality];
     
     return qualities.some(quality => quality === `antistatus-${statusType}` || quality === "perfect-health");
 }
