@@ -1,11 +1,13 @@
-export function mountStatusResistances(char){
+export function mountStatusResistances(actor){
     const statusTypes = ["slow", "weak", "shaken", "dazed", "enraged", "poisoned"];
+    let updateData = {};
 
     statusTypes.forEach(statusType => {
-        if(disableStatusCheck(statusType, char)){
-            char.status[statusType] = false;
+        if(disableStatusCheck(statusType, actor.system)){
+            updateData[`system.status.${statusType}`] = false;
         }
     });
+    actor.update(updateData);
 }
 
 export function disableStatusCheck(statusType, char){

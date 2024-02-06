@@ -146,7 +146,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     mountResources(context.data, job);
     mountGearStatus(context.actor);
 
-    mountStatusResistances(context.data);
+    mountStatusResistances(context.actor);
 
     context.actor.system = context.data;
 
