@@ -6,6 +6,6 @@ export function captalizeFirstLetter(text){
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-export function extractJob(items){
-    return items.filter(obj => obj.type === 'job');
+export function extractItem(items, type){
+    return items.filter(obj => obj.type === type);
 }

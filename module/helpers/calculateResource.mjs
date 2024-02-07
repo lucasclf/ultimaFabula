@@ -1,4 +1,4 @@
-import { extractAttrDiceValue, extractJob } from "./genericHelper.mjs";
+import { extractAttrDiceValue, extractItem } from "./genericHelper.mjs";
 
 export function mountResources(actor, character, jobs){
     let updateData = {};
@@ -7,13 +7,13 @@ export function mountResources(actor, character, jobs){
     updateData["system.resources.hp.max"] = _calcResource(actor, "hp");
     updateData["system.resources.hp.crisis"] =_calcCrisisHp(updateData["system.resources.hp.max"]);
     updateData["system.resources.mp.max"] = _calcResource(actor, "mp");
-    updateData["system.resources.ip.max"] = _calcIp(extractJob(actor.items));
+    updateData["system.resources.ip.max"] = _calcIp(extractItem(actor.items, "job"));
 
     actor.update(updateData);
 }
 
 function _calcLevel(actor){
-    const jobs = extractJob(actor.items);
+    const jobs = extractItem(actor.items, "job");
     return jobs.reduce((total, job) => total + job.system.level, 0);
 }
 

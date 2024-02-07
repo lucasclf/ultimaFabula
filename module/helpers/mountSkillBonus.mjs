@@ -1,11 +1,20 @@
-export function mountSkill(actor, skillBonus, skills){
-    skillBonus.hp = calcHpBonus(skills);
-    skillBonus.mp = calcMpBonus(skills);
-    skillBonus.meleeAccuracy = calcAccuracyBonus(skills, "meleeAccuracy");
-    skillBonus.rangedAccuracy = calcAccuracyBonus(skills, "rangedAccuracy");
-    skillBonus.dualShield = toogleDualShield(skills);
+import { extractItem } from "./genericHelper.mjs";
 
-    return skillBonus;
+export function mountSkill(actor, skillBonus, skillsa){
+    let updateData = {};
+    const skills = extractItem(actor.items, "skill");
+    updateData["system.skillBonus.hp"] = calcHpBonus(skills);
+    updateData["system.skillBonus.mp"] = calcMpBonus(skills);
+    updateData["system.skillBonus.meleeAccuracy"] = calcAccuracyBonus(skills, "meleeAccuracy");
+    updateData["system.skillBonus.rangedAccuracy"] = calcAccuracyBonus(skills, "rangedAccuracy");
+    updateData["system.skillBonus.dualShield"] = toogleDualShield(skills);
+    // skillBonus.hp = calcHpBonus(skills);
+    // skillBonus.mp = calcMpBonus(skills);
+    // skillBonus.meleeAccuracy = calcAccuracyBonus(skills, "meleeAccuracy");
+    // skillBonus.rangedAccuracy = calcAccuracyBonus(skills, "rangedAccuracy");
+    // skillBonus.dualShield = toogleDualShield(skills);
+
+    actor.update(updateData);
 }
 
 function calcHpBonus(skills){
@@ -56,17 +65,3 @@ function calcVariableBonus(skills, type){
             skillAtual.system.bonus[type] ? skillAtual.system.bonus[type] * skillAtual.system.level : 0);
     }, 0);
 }
-
-// "maxLevel": 1,
-// "level": 1,
-// "jobRelation": "Define",
-// "bonus": {
-//   "hp": 0,
-//   "hpMultiply": 0,
-//   "mp": 0,
-//   "mpMultiply": 0,
-//   "ip": 0,
-//   "ipMultiply": 0,
-//   "meleeAcuracy": false,
-//   "rangedAccuracy": false,
-//   "dualShield": false
