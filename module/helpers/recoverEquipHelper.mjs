@@ -22,6 +22,29 @@ export function recoverWeapon(actor){
     return weapon;
 }
 
+export function recoverMainHand(actor){
+    const itemId = actor.system.gear.mainHand || "";
+    const mainHand = itemId ? actor.items.get(itemId) : null;
+    const offHand = recoverOffHand(actor);
+
+    if(mainHand === null && offHand === null){
+        return _mountUnnarmedWeapon();
+    }
+
+    if(mainHand?.type === "defensive" && offHand?.type === "defensive"){
+        return _mountShieldWeapon(actor);
+    }
+
+    return mainHand;
+}
+
+export function recoverOffHand(actor){
+    const itemId = actor.system.gear.offHand || "";
+    const offHand = itemId ? actor.items.get(itemId) : null;
+
+    return offHand;
+}
+
 export function recoverShield(actor){
     let itemId = actor.system.gear.offHand || "";
     let shield = itemId ? actor.items.get(itemId) : null;

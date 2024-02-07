@@ -16,6 +16,27 @@ export function equipGear(event, actor, dualShield){
     actor.update(updateData);
 }
 
+export function toogleGearButton(actor, item){
+    const isMartial = item.system.isMartial;
+    const itemType = _extractItemType(item);
+    const hasMartialBenefits = actor.benefitsBonus.martialItems[itemType];
+
+    if(isMartial && !hasMartialBenefits){
+        return "disabled-shield";
+    }
+
+}
+
+function _extractItemType(item){
+    switch(item.type){
+        case "defensive":
+            return item.system.type;
+        case "weapon":
+            return `${item.system.attackType}Weapon`
+    }
+}
+
+
 function _equipNotHand(item, actor, slotType){
     const currentItemId = actor.system.gear[slotType];
     return createUpdateData(item, slotType, currentItemId);

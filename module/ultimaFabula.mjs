@@ -10,6 +10,7 @@ import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
+import { toogleGearButton } from "./helpers/equipment.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -99,6 +100,10 @@ Handlebars.registerHelper('shouldDisableStatusCheck', function(statusType, char,
     return options.fn(this);
   }
   return "";
+})
+
+Handlebars.registerHelper('toogleGearButton', function(actor, item){
+  return toogleGearButton(actor, item)
 })
 
 /* -------------------------------------------- */
