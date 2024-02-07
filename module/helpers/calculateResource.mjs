@@ -18,12 +18,9 @@ function _calcLevel(actor){
 }
 
 function _calcResource(actor, type){
-    let attr = actor.system.attributes.actual.might;
-    if(type === "mp"){
-        attr = actor.system.attributes.actual.willpower;
-    }
+    const attrKey = type === "mp" ? "willpower" : "might";
 
-    let attrValue = extractAttrDiceValue(attr);
+    let attrValue = extractAttrDiceValue(actor.system.attributes.actual[attrKey]);
 
     let resource = (attrValue * 5) + actor.system.resources.level + actor.system.benefitsBonus[type] + actor.system.skillBonus[type];
     return resource;
