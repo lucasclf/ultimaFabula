@@ -5,36 +5,26 @@ export function mountActualAttributes(actor){
 }
 
 function _calcAttr(attr, status){
-    let attrCopy = JSON.parse(JSON.stringify(attr));
+    let attributesCopy = JSON.parse(JSON.stringify(attr));
 
-    if(status.dazed){
-        attrCopy.insight = _decreaseAttr(attrCopy.insight);
+    const affectedAttributes = {
+        dazed: ['insight'],
+        shaken: ['willpower'],
+        slow: ['dexterity'],
+        weak: ['might'],
+        enraged: ['dexterity', 'insight'],
+        poisoned: ['might', 'willpower']
+    };
+
+    for (const effect in affectedAttributes) {
+        if (status[effect]) {
+            affectedAttributes[effect].forEach(attribute => {
+                attributesCopy[attribute] = _decreaseAttr(attributesCopy[attribute]);
+            });
+        }
     }
 
-    if(status.shaken){
-        attrCopy.willpower = _decreaseAttr(attrCopy.willpower);
-    }
-
-    if(status.slow){
-        attrCopy.dexterity = _decreaseAttr(attrCopy.dexterity);
-    }
-
-    if(status.weak){
-        attrCopy.might = _decreaseAttr(attrCopy.might);
-
-    }
-
-    if(status.enraged){
-        attrCopy.dexterity = _decreaseAttr(attrCopy.dexterity);
-        attrCopy.insight = _decreaseAttr(attrCopy.insight);
-    }
-
-    if(status.poisoned){
-        attrCopy.might = _decreaseAttr(attrCopy.might);
-        attrCopy.willpower = _decreaseAttr(attrCopy.willpower);
-    }
-
-    return attrCopy;
+    return attributesCopy;
 }
 
 function _decreaseAttr(attr){
