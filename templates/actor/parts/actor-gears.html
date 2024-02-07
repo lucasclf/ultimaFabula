@@ -28,13 +28,13 @@
       {{#if (eq item.data.gripType "one-handed")}}
       
         <div class="item-prop">
-          <a slot="mainHand" class="item-equip {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.offHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9686</a>
-          <a slot="offHand" class="item-equip {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9687</a>
+          <a slot="mainHand" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.offHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9686</a>
+          <a slot="offHand" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9687</a>
         </div>
 
       {{else if (eq item.data.gripType "two-handed")}}
         <div class="item-prop">
-          <a slot="mainHand" class="item-equip {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{/if}} equip-symbol"> &#x2B24</a>
+          <a slot="mainHand" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{/if}} equip-symbol"> &#x2B24</a>
         </div>
       {{/if}}
 
@@ -78,17 +78,17 @@
       <div class="initiative item-prop">{{item.data.initiative}}</div>
       {{#if (eq item.data.type 'armor')}}
         <div class="item-prop">
-          <a slot="armor" class="item-equip {{#if (eq @root.data.gear.armor item._id)}} item-toggle-true {{/if}} equip-symbol" >&#9881;</a>
+          <a slot="armor" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.armor item._id)}} item-toggle-true {{/if}} equip-symbol" >&#9881;</a>
         </div>
       {{else if (eq item.data.type 'shield')}}
       {{#if (eq @root.data.skillBonus.dualShield true)}}
       <div class="item-prop">
-        <a slot="mainHand" class="item-equip-dual-shield {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.offHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
-        <a slot="offHand" class="item-equip {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
+        <a slot="mainHand" class="item-equip-dual-shield {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.mainHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.offHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
+        <a slot="offHand" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
       </div>
         {{else}}
           <div class="item-prop">
-            <a slot="offHand" class="item-equip {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
+            <a slot="offHand" class="item-equip {{toogleGearButton @root.data item}} {{#if (eq @root.data.gear.offHand item._id)}} item-toggle-true {{else if (eq @root.data.gear.mainHand item._id)}} disabled-shield {{/if}} equip-symbol">&#9930;</a>
           </div>
         {{/if}}
       {{/if}}

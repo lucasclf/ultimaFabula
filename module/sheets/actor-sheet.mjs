@@ -7,6 +7,7 @@ import { mountSkill } from "../helpers/mountSkillBonus.mjs";
 import { mountGearStatus } from "../helpers/calculateGearStatus.mjs";
 import { mountActualAttributes } from "../helpers/attrHelper.mjs";
 import { mountStatusResistances } from "../helpers/statusHelper.mjs";
+import { normalizeGear } from "../helpers/normalizeGearHelper.mjs";
 
 
 /**
@@ -145,8 +146,8 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     mountSkill(context.actor);
     mountResources(context.actor);
     mountGearStatus(context.actor);
-
     mountStatusResistances(context.actor);
+    normalizeGear(context.actor)
 
     context.actor.system = context.data;
 
