@@ -1,17 +1,30 @@
 export function mountStatusResistances(actor){
-    const statusTypes = ["slow", "weak", "shaken", "dazed", "enraged", "poisoned"];
+    const statusTypes = [
+        "slow", 
+        "weak", 
+        "shaken", 
+        "dazed", 
+        "enraged", 
+        "poisoned"
+    ];
+
     let updateData = {};
 
     statusTypes.forEach(statusType => {
-        if(disableStatusCheck(statusType, actor.system)){
+        if(shouldDisableStatusCheck(statusType, actor.system)){
             updateData[`system.status.${statusType}`] = false;
         }
     });
     actor.update(updateData);
 }
 
-export function disableStatusCheck(statusType, char){
-    let qualities = [char.gear.mainHandQuality, char.gear.armorQuality, char.gear.offHandQuality, char.gear.accessoryQuality];
+export function shouldDisableStatusCheck(statusType, actor){
+    const qualities = [
+        actor.gear.mainHandQuality, 
+        actor.gear.armorQuality, 
+        actor.gear.offHandQuality, 
+        actor.gear.accessoryQuality
+    ];
     
     return qualities.some(quality => quality === `antistatus-${statusType}` || quality === "perfect-health");
 }

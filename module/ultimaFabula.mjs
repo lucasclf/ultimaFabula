@@ -9,7 +9,7 @@ import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
-import { disableStatusCheck } from "./helpers/statusHelper.mjs";
+import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -93,9 +93,9 @@ Handlebars.registerHelper('recoverQualityInfo', function(itemType, infoType, qua
   return recoverQualityInfo(itemType, infoType, quality);
 })
 
-Handlebars.registerHelper('disableStatusCheck', function(statusType, char, options){
+Handlebars.registerHelper('shouldDisableStatusCheck', function(statusType, char, options){
 
-  if(disableStatusCheck(statusType, char)){
+  if(shouldDisableStatusCheck(statusType, char)){
     return options.fn(this);
   }
   return "";
