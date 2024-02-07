@@ -1,34 +1,38 @@
-export function mountBenefit(benefits, job){
+import { extractItem } from "./genericHelper.mjs";
 
-    benefits.hp = calcResource(job, "hp");
-    benefits.mp = calcResource(job, "mp");
-    benefits.ip = calcResource(job, "ip");
-    benefits.initiateProjects = toogleProjects(job);
-    benefits.rituals = toogleRituals(job);
-    benefits.martialItems.meleeWeapon = toogleMartial(job, 'meleeWeapon');
-    benefits.martialItems.rangedWeapon = toogleMartial(job, 'rangedWeapon');
-    benefits.martialItems.armor = toogleMartial(job, 'armor');
-    benefits.martialItems.shield = toogleMartial(job, 'shield');
+export function mountBenefit(actor){
+    let updateData = {};
+    const jobs = extractItem(actor.items, "job"); 
 
-    return benefits;
+    updateData["system.benefitsBonus.hp"] = _calcResource(jobs, "hp");
+    updateData["system.benefitsBonus.mp"] = _calcResource(jobs, "mp");
+    updateData["system.benefitsBonus.ip"] = _calcResource(jobs, "ip");
+    updateData["system.benefitsBonus.initiateProjects"] = _toogleProjects(jobs);
+    updateData["system.benefitsBonus.rituals"] = _toogleRituals(jobs);
+    updateData["system.benefitsBonus.martialItems.meleeWeapon"] = _toogleMartial(jobs, 'meleeWeapon');
+    updateData["system.benefitsBonus.martialItems.rangedWeapon"] = _toogleMartial(jobs, 'rangedWeapon');
+    updateData["system.benefitsBonus.martialItems.armor"] = _toogleMartial(jobs, 'armor');
+    updateData["system.benefitsBonus.martialItems.shield"] = _toogleMartial(jobs, 'shield');
+
+    actor.update(updateData);
 }
 
-function toogleProjects(job){
-    return job.some(job => job.system.benefitsBonus.initiateProjects === true && job.system.level > 0);
+function _toogleProjects(jobs){
+    return jobs.some(job => job.system.benefitsBonus.initiateProjects === true && job.system.level > 0);
 }
 
-function toogleRituals(job){
-    return job
+function _toogleRituals(jobs){
+    return jobs
             .filter(job => job.system.isCaster === true && job.system.level > 0)
             .map(job => job.name);
 }
 
-function toogleMartial(job, type){
+function _toogleMartial(job, type){
     return job.some(job => job.system.benefitsBonus.martialItems[type] === true && job.system.level > 0);
 }
 
-function calcResource(job, type){
-    return job.reduce(function(total, jobAtual) {
+function _calcResource(jobs, type){
+    return jobs.reduce(function(total, jobAtual) {
         return total + (jobAtual.system.level > 0 && 
             jobAtual.system.benefitsBonus && 
             jobAtual.system.benefitsBonus[type] ? jobAtual.system.benefitsBonus[type] : 0);

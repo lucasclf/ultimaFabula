@@ -1,18 +1,14 @@
 import { extractItem } from "./genericHelper.mjs";
 
-export function mountSkill(actor, skillBonus, skillsa){
+export function mountSkill(actor){
     let updateData = {};
     const skills = extractItem(actor.items, "skill");
+    
     updateData["system.skillBonus.hp"] = calcHpBonus(skills);
     updateData["system.skillBonus.mp"] = calcMpBonus(skills);
     updateData["system.skillBonus.meleeAccuracy"] = calcAccuracyBonus(skills, "meleeAccuracy");
     updateData["system.skillBonus.rangedAccuracy"] = calcAccuracyBonus(skills, "rangedAccuracy");
     updateData["system.skillBonus.dualShield"] = toogleDualShield(skills);
-    // skillBonus.hp = calcHpBonus(skills);
-    // skillBonus.mp = calcMpBonus(skills);
-    // skillBonus.meleeAccuracy = calcAccuracyBonus(skills, "meleeAccuracy");
-    // skillBonus.rangedAccuracy = calcAccuracyBonus(skills, "rangedAccuracy");
-    // skillBonus.dualShield = toogleDualShield(skills);
 
     actor.update(updateData);
 }

@@ -1,6 +1,6 @@
 import { extractAttrDiceValue, extractItem } from "./genericHelper.mjs";
 
-export function mountResources(actor, character, jobs){
+export function mountResources(actor){
     let updateData = {};
 
     updateData["system.resources.level"] = _calcLevel(actor);
