@@ -1,4 +1,4 @@
-export function mountSkill(skillBonus, skills){
+export function mountSkill(actor, skillBonus, skills){
     skillBonus.hp = calcHpBonus(skills);
     skillBonus.mp = calcMpBonus(skills);
     skillBonus.meleeAccuracy = calcAccuracyBonus(skills, "meleeAccuracy");

@@ -1,21 +1,31 @@
-import { extractAttrDiceValue } from "./genericHelper.mjs";
+import { extractAttrDiceValue, extractJob } from "./genericHelper.mjs";
 
-export function mountResources(character, jobs){
-    character.resources.level = _calcLevel(jobs);
-    character.resources.hp.max = _calcResource(character, character.attributes.actual.might, "hp");
-    character.resources.hp.crisis = _calcCrisisHp(character.resources.hp.max);
-    character.resources.mp.max = _calcResource(character, character.attributes.actual.willpower, "mp");
-    character.resources.ip.max = _calcIp(jobs)
+export function mountResources(actor, character, jobs){
+    let updateData = {};
+
+    updateData["system.resources.level"] = _calcLevel(actor);
+    updateData["system.resources.hp.max"] = _calcResource(actor, "hp");
+    updateData["system.resources.hp.crisis"] =_calcCrisisHp(updateData["system.resources.hp.max"]);
+    updateData["system.resources.mp.max"] = _calcResource(actor, "mp");
+    updateData["system.resources.ip.max"] = _calcIp(extractJob(actor.items));
+
+    actor.update(updateData);
 }
 
-function _calcLevel(jobs){
+function _calcLevel(actor){
+    const jobs = extractJob(actor.items);
     return jobs.reduce((total, job) => total + job.system.level, 0);
 }
 
-function _calcResource(character, attr, type){
+function _calcResource(actor, type){
+    let attr = actor.system.attributes.actual.might;
+    if(type === "mp"){
+        attr = actor.system.attributes.actual.willpower;
+    }
+
     let attrValue = extractAttrDiceValue(attr);
 
-    let resource = (attrValue * 5) + character.resources.level + character.benefitsBonus[type] + character.skillBonus[type];
+    let resource = (attrValue * 5) + actor.system.resources.level + actor.system.benefitsBonus[type] + actor.system.skillBonus[type];
     return resource;
 }
 
