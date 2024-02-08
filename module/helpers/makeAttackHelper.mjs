@@ -1,6 +1,6 @@
 import { captalizeFirstLetter } from "./genericHelper.mjs";
 import { recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand } from "./recoverEquipHelper.mjs";
-import AttackModal from "../apps/MakeAttackModal.mjs"
+import AttackModal from "../apps/RenderAttackModal.mjs"
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 

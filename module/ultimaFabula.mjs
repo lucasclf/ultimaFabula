@@ -11,7 +11,7 @@ import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
-import MakeAttack from "./apps/MakeAttackModal.mjs";
+import RenderAttack from "./apps/RenderAttackModal.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -23,7 +23,7 @@ Hooks.once('init', async function() {
   // accessible in global contexts.
   game.ultimaFabula = {
     applications: {
-      MakeAttack
+      MakeAttack: RenderAttack
     },
     ultimaFabulaActor,
     ultimaFabulaItem,

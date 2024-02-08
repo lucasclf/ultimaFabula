@@ -1,6 +1,6 @@
 import { renderAttackMessage } from "../helpers/makeAttackHelper.mjs";
 
-export default class MakeAttack extends FormApplication {
+export default class RenderAttack extends FormApplication {
 	static get defaultOptions() {
 		const options = super.defaultOptions;
 		options.id = "attack-modal";

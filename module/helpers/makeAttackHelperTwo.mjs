@@ -1,4 +1,4 @@
-import AttackModal from "../apps/MakeAttackModal.mjs";
+import RenderAttack from "../apps/RenderAttackModal.mjs";
 import { captalizeFirstLetter } from "./genericHelper.mjs";
 import { recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand } from "./recoverEquipHelper.mjs";
 
@@ -21,7 +21,7 @@ export async function mountAttack(actor){
         offHand: _mountAttackData(actor, equipedGear, "offHand")
         }
 
-        new AttackModal(possibleAttacks).render(true);
+        new RenderAttack(possibleAttacks).render(true);
         return ;
     }
 
