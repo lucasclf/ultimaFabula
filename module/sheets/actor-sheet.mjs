@@ -1,6 +1,6 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import { equipGear } from "../helpers/equipment.mjs";
-import { makeAction } from "../helpers/actions.mjs";
+import { makeAction } from "../helpers/actionsHelper.mjs";
 import { mountResources } from "../helpers/calculateResource.mjs";
 import { mountBenefit } from "../helpers/mountBenefits.mjs";
 import { mountSkill } from "../helpers/mountSkillBonus.mjs";
