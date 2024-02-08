@@ -6,9 +6,9 @@ export default class MakeAttack extends FormApplication {
 		options.id = "attack-modal";
 		options.template = "systems/ultimaFabula/templates/actionModals/attack-modal.html";
 		options.height = "auto";
-		options.width = 400;
+		options.width = 600;
 		options.minimizable = true;
-		options.title = "Modal for attack action."
+		options.title = "Attack action."
 		return options;
 	}
 

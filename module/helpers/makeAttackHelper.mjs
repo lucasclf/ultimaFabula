@@ -63,7 +63,7 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
             image: equipedGear[gearSlot].img,
             quality: equipedGear[gearSlot].system.quality,
             accuracy: `${equipedGear[gearSlot].system.accuracyFirst} + ${equipedGear[gearSlot].system.accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
-            name: equipedGear[gearSlot].name,
+            name: equipedGear[gearSlot].name.toUpperCase(),
             diceRoll: diceRoll,
             flavor: _buildAttackLabel(equipedGear[gearSlot]),
             attackType: captalizeFirstLetter(equipedGear[gearSlot].system.attackType),

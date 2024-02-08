@@ -1,56 +1,57 @@
-<style>
-    /* Estilo para o container das colunas */
-    .container {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    /* Estilo para as colunas individuais */
-    .column {
-        width: calc(100% /  3); /* Cada coluna ocupará um terço do espaço disponível */
-        padding:  1rem;
-        box-sizing: border-box;
-    }
-    
-    /* Estilo para a imagem dentro das colunas */
-    .image {
-        float: left;
-        margin-right:  10px;
-    }
-</style>
+
+
+
 <form>
-    <div class="container">
-        <!-- Primeira coluna -->
-        <div class="column">
-            <img src="{{object.mainHand.image}}" alt="{{object.mainHand.name}}" class="image">
-            <p>Name: {{object.mainHand.name}}</p>
-            <p>{{object.mainHand.attackType}} Weapon</p>
-            <p>Damage:  {{object.mainHand.damage}} {{object.mainHand.damageType}}</p>
-            <p>Accuracy: {{object.mainHand.accuracy}}</p>
-            <p>Quality: {{object.mainHand.quality}}</p>
+    <div class="container attack-model-form">
+
+        <div class="column attack-model-column">
+            <div class="attack-modal-header">
+                <h2>{{object.mainHand.name}}</h2>
+                <img src="{{object.mainHand.image}}" alt="{{object.mainHand.name}}" class="image">
+            </div>
+
+            <div class="attack-modal-body">
+                <p>{{object.mainHand.attackType}} Weapon</p>
+                <p>Damage:  {{object.mainHand.damage}} {{object.mainHand.damageType}}</p>
+                <p>Accuracy: {{object.mainHand.accuracy}}</p>
+                <p>{{object.mainHand.quality}}</p>
+            </div>
             
-            <input type="radio" id="weapon" name="weapon" value="mainHand"><br>
-           
+            <div class="attack-modal-radio">
+                <input type="radio" id="weapon" name="weapon" value="mainHand"><br>
+            </div>
         </div>
         
-        <!-- Segunda coluna -->
-        <div class="column">
-            <img src="{{object.offHand.image}}" alt="{{object.offHand.name}}" class="image">
-            <p>Name: {{object.offHand.name}}</p>
-            <p>{{object.offHand.attackType}} Weapon</p>
-            <p>Damage:  {{object.offHand.damage}} {{object.offHand.damageType}}</p>
-            <p>Accuracy: {{object.mainHand.accuracy}}</p>
-            <p>Quality: {{object.offHand.quality}}</p>
+        <div class="column attack-model-column">
+            <div class="attack-modal-header">
+                <h2>{{object.offHand.name}}</h2>
+                <img src="{{object.offHand.image}}" alt="{{object.offHand.name}}" class="image">
+            </div>
+            
+            <div class="attack-modal-body">
+                <p>{{object.offHand.attackType}} Weapon</p>
+                <p>Damage:  {{object.offHand.damage}} {{object.offHand.damageType}}</p>
+                <p>Accuracy: {{object.mainHand.accuracy}}</p>
+                <p>{{object.offHand.quality}}</p>
+            </div>
 
-            <input type="radio" id="weapon" name="weapon" value="offHand"><br>
+            <div class="attack-modal-radio">
+                <input type="radio" id="weapon" name="weapon" value="offHand"><br>
+            </div>
         </div>
-        
-        <!-- Terceira coluna -->
-        <div class="column">
-            <img src="systems/ultimaFabula/icons/x_blade.svg" alt="Arma  3" class="image">
-            <p>Name: Both</p>
 
-            <input type="radio" id="weapon" name="weapon" value="bothHands"><br>
+        <div class="column attack-model-column">
+            <div class="attack-modal-header">
+                <h2>BOTH WEAPONS</h2>
+                <img src="systems/ultimaFabula/icons/x_blade.svg" alt="Both Weapons" class="image">    
+            </div>
+            <div class="attack-modal-body">
+
+            </div>
+            
+            <div class="attack-modal-radio">
+                <input type="radio" id="weapon" name="weapon" value="bothHands"><br>
+            </div>
         </div>
     </div>
     <a>
