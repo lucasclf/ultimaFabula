@@ -11,6 +11,7 @@ import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
+import MakeAttack from "./apps/MakeAttackModal.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -21,6 +22,9 @@ Hooks.once('init', async function() {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.ultimaFabula = {
+    applications: {
+      MakeAttack
+    },
     ultimaFabulaActor,
     ultimaFabulaItem,
     rollItemMacro

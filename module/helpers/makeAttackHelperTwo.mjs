@@ -1,6 +1,6 @@
+import AttackModal from "../apps/MakeAttackModal.mjs";
 import { captalizeFirstLetter } from "./genericHelper.mjs";
 import { recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand } from "./recoverEquipHelper.mjs";
-import AttackModal from "../apps/MakeAttackModal.mjs"
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
@@ -11,44 +11,30 @@ export async function mountAttack(actor){
         armor: recoverArmor(actor),
         accessory: recoverAccessory(actor)
     }
-
-    const mainHandIsWeapon = equipedGear.mainHand?.type === "weapon";
+    
+    const mainHandIsWeapon = equipedGear.mainHand.type === "weapon";
     const offHandIsWeapon = equipedGear.offHand?.type === "weapon";
 
     if(mainHandIsWeapon && offHandIsWeapon){
-        const mainHandPromise = _mountAttackData(actor, equipedGear, "mainHand");
-        const offHandPromise = _mountAttackData(actor, equipedGear, "offHand");
-    
-        Promise.all([mainHandPromise, offHandPromise])
-        .then(([mainHandAttackData, offHandAttackData]) => {
-            const possibleAttacks = {
-                mainHand: mainHandAttackData,
-                offHand: offHandAttackData
-            };
-            
-            new AttackModal(possibleAttacks).render(true);
-        })
-        .catch(error => {
-            console.error(error);
-        });
-        return;
+        const possibleAttacks = {
+        mainHand: _mountAttackData(actor, equipedGear, "mainHand"),
+        offHand: _mountAttackData(actor, equipedGear, "offHand")
+        }
+
+        new AttackModal(possibleAttacks).render(true);
+        return ;
     }
 
-    let gearSlot;
+    let attackData;
+
     if(mainHandIsWeapon){
-        gearSlot = "mainHand";
+        attackData = _mountAttackData(actor, equipedGear, "mainHand");
     } else {
-        gearSlot = "offHand";
+        attackData = _mountAttackData(actor, equipedGear, "offHand");
     }
 
-    _mountAttackData(actor, equipedGear, gearSlot).then(data => {
-        renderAttackMessage(data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-
-    
+    console.log(attackData)
+    renderMessage(attackData);
 }
 
 async function _mountAttackData(actor, equipedGear, gearSlot){
@@ -61,9 +47,6 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
     const attack = {
             actor: actor,
             image: equipedGear[gearSlot].img,
-            quality: equipedGear[gearSlot].system.quality,
-            accuracy: `${equipedGear[gearSlot].system.accuracyFirst} + ${equipedGear[gearSlot].system.accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
-            name: equipedGear[gearSlot].name,
             diceRoll: diceRoll,
             flavor: _buildAttackLabel(equipedGear[gearSlot]),
             attackType: captalizeFirstLetter(equipedGear[gearSlot].system.attackType),
@@ -156,7 +139,7 @@ function _recoverQualityText(equipedWeapon) {
     return "";
 }
 
-export async function renderAttackMessage(templateData){
+async function renderMessage(templateData){
     const html = await renderTemplate(template, templateData);
 
     ChatMessage.create({

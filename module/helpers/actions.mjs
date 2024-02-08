@@ -1,5 +1,5 @@
 
-import { makeAttack } from "./makeAttackHelper.mjs";
+import { mountAttack } from "./makeAttackHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -9,7 +9,7 @@ export async function makeAction(event, actor){
     
     switch(actionType){
         case "attack":
-            makeAttack(actor);
+            mountAttack(actor);
             break;
     }
 }
