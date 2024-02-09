@@ -47,6 +47,15 @@ ULTIMAFABULA.attributes = {
   'willpower': 'willpower'
 }
 
+ULTIMAFABULA.basicConditions = {
+  'weak': {name: 'weak', attributes: [ULTIMAFABULA.attributes.might]},
+  'dazed': {name: 'dazed', attributes: [ULTIMAFABULA.attributes.insight]},
+  'shaken': {name: 'shaken', attributes: [ULTIMAFABULA.attributes.willpower]},
+  'slow': {name: 'slow', attributes: [ULTIMAFABULA.attributes.dexterity]},
+  'enraged': {name: 'slow', attributes: [ULTIMAFABULA.attributes.dexterity, ULTIMAFABULA.attributes.insight]},
+  'poisoned': {name: 'slow', attributes: [ULTIMAFABULA.attributes.willpower, ULTIMAFABULA.attributes.might]}
+}
+
 ULTIMAFABULA.attributesAbbreviation = {
   'might': 'MIG',
   'dexterity': 'DEX',

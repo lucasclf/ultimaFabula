@@ -1,13 +1,15 @@
 
 import { mountAttack } from "./actionsHelper/makeAttackHelper.mjs";
 import { mountGuard } from "./actionsHelper/makeGuardHelper.mjs";
+import { mountHinder } from "./actionsHelper/makeHinderHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
+
     const element = event.currentTarget;
     const dataset = element.dataset;
     const actionType = dataset.action;
-    
+
     switch(actionType){
         case "attack":
             mountAttack(actor);
@@ -18,14 +20,10 @@ export async function makeAction(event, actor){
             // mountAttack(actor);
             break;
         case "guard":
-            //TODO criar ação
-            //TODO lançar texto do guard
             mountGuard(actor);
             break;
         case "hinder":
-            //TODO criar ação
-            //TODO Abrir uma janela para escolha de atributos e bonus, mais rolagem e escolher a condição a ser inflingida
-            mountAttack(actor);
+            mountHinder(actor);
             break;
         case "objective":
             //TODO criar ação

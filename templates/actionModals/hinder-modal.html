@@ -1,0 +1,23 @@
+<form>
+    <div class="container hinder-model-form">
+        <select name="accuracyFirst">
+            {{#each object.attributes as |dice name|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select name="accuracySecond">
+            {{#each object.attributes as |dice name|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="text" name="accuracyMod" data-dtype="Number" maxlength="1">
+        <select name="condition">
+            {{#each object.conditions as |cond|}}
+            <option value="{{cond.name}}">{{cond.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <a>
+        <button class="hinder-choice">HINDER</button>
+    </a>
+</form>

@@ -1,6 +1,6 @@
-import { captalizeFirstLetter } from "../genericHelper.mjs";
-import { recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand } from "../recoverEquipHelper.mjs";
-import AttackModal from "../../apps/RenderAttackModal.mjs"
+import {captalizeFirstLetter} from "../genericHelper.mjs";
+import {recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand} from "../recoverEquipHelper.mjs";
+import RenderAttack from "../../apps/RenderAttackModal.mjs"
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
@@ -26,7 +26,7 @@ export async function mountAttack(actor){
                 offHand: offHandAttackData
             };
             
-            new AttackModal(possibleAttacks).render(true);
+            new RenderAttack(possibleAttacks).render(true);
         })
         .catch(error => {
             console.error(error);
@@ -56,23 +56,22 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
     let attackRoll = _buildAttackRoll(actor, equipedGear[gearSlot], equipedGear.accessory, equipedGear.armor);
 
     let roll = new Roll(attackRoll, actor.getRollData());
-    let diceRoll = await roll.roll({async: true}); 
+    let diceRoll = await roll.roll({async: true});
 
-    const attack = {
-            actor: actor,
-            image: equipedGear[gearSlot].img,
-            quality: equipedGear[gearSlot].system.quality,
-            accuracy: `${equipedGear[gearSlot].system.accuracyFirst} + ${equipedGear[gearSlot].system.accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
-            name: equipedGear[gearSlot].name.toUpperCase(),
-            diceRoll: diceRoll,
-            flavor: _buildAttackLabel(equipedGear[gearSlot]),
-            attackType: captalizeFirstLetter(equipedGear[gearSlot].system.attackType),
-            damage: _calcDamage(diceRoll.dice, equipedGear[gearSlot], equipedGear.accessory, equipedGear.armor),
-            damageType: _recoverDamageType(equipedGear[gearSlot], equipedGear.accessory),
-            qualityText: _recoverQualityText(equipedGear[gearSlot])
-    }
 
-    return attack;
+    return {
+        actor: actor,
+        image: equipedGear[gearSlot].img,
+        quality: equipedGear[gearSlot].system.quality,
+        accuracy: `${equipedGear[gearSlot].system.accuracyFirst} + ${equipedGear[gearSlot].system.accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
+        name: equipedGear[gearSlot].name.toUpperCase(),
+        diceRoll: diceRoll,
+        flavor: _buildAttackLabel(equipedGear[gearSlot]),
+        attackType: captalizeFirstLetter(equipedGear[gearSlot].system.attackType),
+        damage: _calcDamage(diceRoll.dice, equipedGear[gearSlot], equipedGear.accessory, equipedGear.armor),
+        damageType: _recoverDamageType(equipedGear[gearSlot], equipedGear.accessory),
+        qualityText: _recoverQualityText(equipedGear[gearSlot])
+    };
 }
 
 function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
@@ -104,8 +103,7 @@ function _recoverDamageType(equipedWeapon, equipedAccessory){
     let damageType =  equipedWeapon.system.damageType;
 
     if(accessoryQuality.includes("damage-change")){
-        let element = accessoryQuality.split("-").pop();
-        return element;
+        return accessoryQuality.split("-").pop();
     }
 
     return damageType;
