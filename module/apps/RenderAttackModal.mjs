@@ -1,4 +1,4 @@
-import { renderAttackMessage } from "../helpers/makeAttackHelper.mjs";
+import { renderAttackMessage } from "../helpers/actionsHelper/makeAttackHelper.mjs";
 
 export default class RenderAttack extends FormApplication {
 	static get defaultOptions() {

@@ -1,5 +1,6 @@
 
-import { mountAttack } from "./makeAttackHelper.mjs";
+import { mountAttack } from "./actionsHelper/makeAttackHelper.mjs";
+import { mountGuard } from "./actionsHelper/makeGuardHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -12,28 +13,49 @@ export async function makeAction(event, actor){
             mountAttack(actor);
             break;
         case "equipment":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO abrir janela para manusear os equipamentos
+            // mountAttack(actor);
             break;
         case "guard":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO lançar texto do guard
+            mountGuard(actor);
             break;
         case "hinder":
+            //TODO criar ação
+            //TODO Abrir uma janela para escolha de atributos e bonus, mais rolagem e escolher a condição a ser inflingida
             mountAttack(actor);
+            break;
+        case "objective":
+            //TODO criar ação
+            //TODO Abrir uma janela para escolha de atributos e bonus, mais rolagem
+            // mountAttack(actor);
             break;
         case "spell":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO abrir janela para escolha das spells e lançar ela no chat
+            // mountAttack(actor);
             break;
         case "study":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO abre a janela para escolha de atributos e bonus.
+            // mountAttack(actor);
             break;
         case "skill":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO abre a janela de escolha de skills e lança ela no chat
+            // mountAttack(actor);
             break;
         case "other":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO joga no chat o texto de outros
+            // mountAttack(actor);
             break;
         case "ritual":
-            mountAttack(actor);
+            //TODO criar ação
+            //TODO abre a janela para escolher a job que irá executar o ritual e roda o teste padrão, joga o texto de ritual no chat
+            // mountAttack(actor);
             break;
     }
 }
