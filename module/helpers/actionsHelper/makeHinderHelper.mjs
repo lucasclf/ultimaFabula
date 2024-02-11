@@ -38,7 +38,7 @@ export async function renderHinderMessage(hinderData){
     const html = await renderTemplate(template, templateData);
 
     ChatMessage.create({
-        speaker: ChatMessage.getSpeaker({ actor: actor }),
+        speaker: ChatMessage.getSpeaker({ actor: templateData.actor }),
         content: html
     });
 }

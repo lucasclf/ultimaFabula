@@ -3,7 +3,7 @@ import { renderHinderMessage } from "../helpers/actionsHelper/makeHinderHelper.m
 export default class RenderHinder extends FormApplication {
 	static get defaultOptions() {
 		const options = super.defaultOptions;
-		options.id = "attack-modal";
+		options.id = "hinder-modal";
 		options.template = "systems/ultimaFabula/templates/actionModals/hinder-modal.html";
 		options.height = "auto";
 		options.width = 600;

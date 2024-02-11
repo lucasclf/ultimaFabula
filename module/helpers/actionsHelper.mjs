@@ -2,6 +2,7 @@
 import { mountAttack } from "./actionsHelper/makeAttackHelper.mjs";
 import { mountGuard } from "./actionsHelper/makeGuardHelper.mjs";
 import { mountHinder } from "./actionsHelper/makeHinderHelper.mjs";
+import { mountObjective } from "./actionsHelper/makeObjectiveHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -9,6 +10,8 @@ export async function makeAction(event, actor){
     const element = event.currentTarget;
     const dataset = element.dataset;
     const actionType = dataset.action;
+
+    console.log
 
     switch(actionType){
         case "attack":
@@ -26,9 +29,7 @@ export async function makeAction(event, actor){
             mountHinder(actor);
             break;
         case "objective":
-            //TODO criar ação
-            //TODO Abrir uma janela para escolha de atributos e bonus, mais rolagem
-            // mountAttack(actor);
+            mountObjective(actor);
             break;
         case "spell":
             //TODO criar ação
