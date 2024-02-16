@@ -4,6 +4,7 @@ import { mountGuard } from "./actionsHelper/makeGuardHelper.mjs";
 import { mountHinder } from "./actionsHelper/makeHinderHelper.mjs";
 import { mountObjective } from "./actionsHelper/makeObjectiveHelper.mjs";
 import { mountStudy } from "./actionsHelper/makeStudyHelper.mjs";
+import { mountOther} from "./actionsHelper/makeOtherHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -46,9 +47,7 @@ export async function makeAction(event, actor){
             // mountAttack(actor);
             break;
         case "other":
-            //TODO criar ação
-            //TODO joga no chat o texto de outros
-            // mountAttack(actor);
+            mountOther(actor);
             break;
         case "ritual":
             //TODO criar ação
