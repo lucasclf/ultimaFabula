@@ -10,7 +10,7 @@
             <option value="{{name}}">{{name}}</option>
             {{/each}}
         </select>
-        <input type="text" name="accuracyMod" data-dtype="Number" maxlength="1">
+        <input type="number" value="0" name="accuracyMod" data-dtype="Number" maxlength="1">
         <select name="condition">
             {{#each object.conditions as |cond|}}
             <option value="{{cond.name}}">{{cond.name}}</option>
