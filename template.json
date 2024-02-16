@@ -186,7 +186,8 @@
         }
       },
       "isCaster": false,
-      "magicAttr": "insight"
+      "magicAttr": "insight",
+      "magicSecondAttr": "insight"
     },
     "skill":{
       "templates": ["baseItem"],

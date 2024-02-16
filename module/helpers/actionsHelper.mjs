@@ -5,6 +5,7 @@ import { mountHinder } from "./actionsHelper/makeHinderHelper.mjs";
 import { mountObjective } from "./actionsHelper/makeObjectiveHelper.mjs";
 import { mountStudy } from "./actionsHelper/makeStudyHelper.mjs";
 import { mountOther} from "./actionsHelper/makeOtherHelper.mjs";
+import { mountRitual } from "./actionsHelper/makeRitualHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -50,9 +51,7 @@ export async function makeAction(event, actor){
             mountOther(actor);
             break;
         case "ritual":
-            //TODO criar ação
-            //TODO abre a janela para escolher a job que irá executar o ritual e roda o teste padrão, joga o texto de ritual no chat
-            // mountAttack(actor);
+            mountRitual(actor);
             break;
     }
 }

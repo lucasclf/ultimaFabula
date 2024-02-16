@@ -10,14 +10,7 @@ export function extractItem(items, type){
     return items.filter(obj => obj.type === type);
 }
 
-export function manipuleStudyCss(resultTotal, minResult, maxResult){
-    console.log("CQN || manipulateStudy")
-    console.log(resultTotal)
-    console.log(minResult)
-    console.log(maxResult)
-    console.log(resultTotal < minResult)
-    console.log(resultTotal > maxResult)
-    
+export function manipuleStudyCss(resultTotal, minResult, maxResult){   
     if(resultTotal < minResult || resultTotal > maxResult){
         return "study-active";
     }

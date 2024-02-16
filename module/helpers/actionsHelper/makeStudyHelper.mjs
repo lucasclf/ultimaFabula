@@ -1,7 +1,6 @@
 import RenderStudy from "../../apps/RenderStudyModal.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/study-message.html';
-const flavor = 'Describe what you want to accomplish and how you intend to approach it.';  //TODO ATUALIZAR FLAVOR
 
 export function mountStudy(actor){
 
@@ -26,8 +25,7 @@ export async function renderStudyMessage(studyData){
     const templateData = {
         actor: actor,
         image: actor.img,
-        diceRoll: diceRoll,
-        flavor: flavor
+        diceRoll: diceRoll
     }
     const html = await renderTemplate(template, templateData);
 
