@@ -7,7 +7,7 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
-import { extractAttrDiceValue } from "./helpers/genericHelper.mjs";
+import { extractAttrDiceValue, manipuleStudyCss } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
@@ -109,6 +109,10 @@ Handlebars.registerHelper('shouldDisableStatusCheck', function(statusType, char,
 Handlebars.registerHelper('toogleGearButton', function(actor, item){
   return toogleGearButton(actor, item)
 })
+
+Handlebars.registerHelper('manipuleStudyCss', function(resultTotal, minResult, maxResult) {
+  return manipuleStudyCss(resultTotal, minResult, maxResult);
+});
 
 /* -------------------------------------------- */
 /*  Ready Hook                                  */

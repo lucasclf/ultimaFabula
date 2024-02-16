@@ -1,0 +1,18 @@
+<form>
+    <div class="container objective-model-form">
+        <select name="attributeFirst">
+            {{#each object.attributes as |dice name|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select name="attributeSecond">
+            {{#each object.attributes as |dice name|}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <input type="text" name="attributeMod" data-dtype="Number" maxlength="1">
+    </div>
+    <a>
+        <button class="objective-choice">STUDY</button>
+    </a>
+</form>

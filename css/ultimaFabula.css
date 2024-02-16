@@ -590,3 +590,15 @@ color: crimson
 }
 
 /* ATTACK MODAL STYLE END*/
+
+/* STUDY MODAL STYLE INIT */
+
+.study-inactive {
+  color: lightgrey
+}
+
+.study-inactive {
+  color: red
+}
+
+/* STUDY MODAL STYLE END */

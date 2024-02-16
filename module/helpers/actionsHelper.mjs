@@ -3,6 +3,7 @@ import { mountAttack } from "./actionsHelper/makeAttackHelper.mjs";
 import { mountGuard } from "./actionsHelper/makeGuardHelper.mjs";
 import { mountHinder } from "./actionsHelper/makeHinderHelper.mjs";
 import { mountObjective } from "./actionsHelper/makeObjectiveHelper.mjs";
+import { mountStudy } from "./actionsHelper/makeStudyHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -37,9 +38,7 @@ export async function makeAction(event, actor){
             // mountAttack(actor);
             break;
         case "study":
-            //TODO criar ação
-            //TODO abre a janela para escolha de atributos e bonus.
-            // mountAttack(actor);
+            mountStudy(actor);
             break;
         case "skill":
             //TODO criar ação
