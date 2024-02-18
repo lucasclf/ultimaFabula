@@ -40,7 +40,15 @@
         </tr>
 
         <td>
-          <input type="text" name="data.jobRelation" value="{{data.jobRelation}}">
+          <label class="resource-label">Job</label>
+          <select name="data.jobRelation">
+            {{#select data.jobRelation}}
+              <option value="Define">Define</option>
+              {{#each (recoverActorJobs item.parent) as |job name|}}
+              <option value="{{job.name}}">{{job.name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
         </td>
         <td>
           <span><input type="checkbox" name="data.bonus.dualShield" {{checked data.bonus.dualShield}}></span>

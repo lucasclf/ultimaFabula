@@ -17,3 +17,8 @@ export function manipuleStudyCss(resultTotal, minResult, maxResult){
 
     return "study-inactive";
 }
+
+export function recoverActorJobs(actor){
+
+    return actor.items.filter(item => item.type === 'job');
+}

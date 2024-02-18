@@ -8,7 +8,7 @@ export default class RenderRitual extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Ritual action."
+		options.title = "Ritual action.";
 		return options;
 	}
 
