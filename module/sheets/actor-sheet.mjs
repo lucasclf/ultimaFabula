@@ -94,6 +94,8 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     
     const weapon = [];
     const defensive = [];
+    const shield = [];
+    const armor = [];
     const accessory = [];
     const job = [];
     const skill = [];
@@ -109,6 +111,12 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       }
       if(i.type === 'defensive') {
         defensive.push(i);
+      }
+      if(i.type === 'shield') {
+        shield.push(i);
+      }
+      if(i.type === 'armor') {
+        armor.push(i);
       }
       if(i.type === 'accessory') {
         accessory.push(i);
@@ -154,6 +162,8 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     // Assign and return
     context.weapon = weapon;
     context.defensive = defensive;
+    context.shield = shield;
+    context.armor = armor;
     context.accessory = accessory;
     context.job = job;
     context.skill = skill;

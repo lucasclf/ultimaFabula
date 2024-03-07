@@ -10,9 +10,9 @@ export function equipGear(event, actor, dualShield){
 
     let slotType = event.currentTarget.attributes.slot.value;
     const equipFunction = slotEquipmentFunctions[slotType] || slotEquipmentFunctions.default;
-  
+
     const updateData = equipFunction(item, actor, slotType);
-  
+
     actor.update(updateData);
 }
 
@@ -24,18 +24,20 @@ export function toogleGearButton(actor, item){
     if(isMartial && !hasMartialBenefits){
         return "disabled-shield";
     }
-
 }
 
 function _extractItemType(item){
     switch(item.type){
         case "defensive":
             return item.system.type;
+        case "shield":
+            return item.type;
+        case "armor":
+            return item.type;
         case "weapon":
             return `${item.system.attackType}Weapon`
     }
 }
-
 
 function _equipNotHand(item, actor, slotType){
     const currentItemId = actor.system.gear[slotType];
@@ -64,7 +66,6 @@ function _equipOffHand(item, actor, slotType){
     if (currentItemId !== item.id && mainHand?.system.gripType === "two-handed") {  
         _toggleTwoHandedWeapon(updateData, "mainHand");
     }
-  
  return updateData;
 }
 

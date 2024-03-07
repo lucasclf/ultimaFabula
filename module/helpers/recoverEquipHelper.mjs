@@ -19,6 +19,11 @@ export function recoverWeapon(actor){
     if(weapon.type === "defensive"){
         return _mountShieldWeapon(actor);
     }
+
+    if(weapon.type === "shield"){
+        return _mountShieldWeapon(actor);
+    }
+
     return weapon;
 }
 
@@ -32,6 +37,10 @@ export function recoverMainHand(actor){
     }
 
     if(mainHand?.type === "defensive" && offHand?.type === "defensive"){
+        return _mountShieldWeapon(actor);
+    }
+
+    if(mainHand?.type === "shield" && offHand?.type === "shield"){
         return _mountShieldWeapon(actor);
     }
 

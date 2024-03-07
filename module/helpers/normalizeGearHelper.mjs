@@ -16,24 +16,30 @@ export function normalizeGear(actor){
     }
 
     const newData = {
-        "system.gear.mainHand": _validateHasIlegalGear(equipedGear.mainHand, hasMartial),
-        "system.gear.offHand": _validateHasIlegalGear(equipedGear.offHand, hasMartial),
-        "system.gear.armor": _validateHasIlegalGear(equipedGear.armor, hasMartial)
+        "system.gear.mainHand": _validateHasIlegalGear(equipedGear.mainHand, hasMartial, "mainHand"),
+        "system.gear.offHand": _validateHasIlegalGear(equipedGear.offHand, hasMartial, "offHand"),
+        "system.gear.armor": _validateHasIlegalGear(equipedGear.armor, hasMartial, "armor")
     }
 
     actor.update(newData);
 }
 
-function _validateHasIlegalGear(item, hasMartial){
+function _validateHasIlegalGear(item, hasMartial, type){
     const itemType = item?.type || null;
+
     switch(itemType){
         case "defensive":
             const defensiveType = item.system.type;
             return hasMartial[defensiveType] === false && item.system.isMartial === true ? "" : item._id;
+        case "shield":
+            return hasMartial.shield === false && item.system.isMartial === true ? "" : item._id;
+        case "armor":
+            return hasMartial.armor === false && item.system.isMartial === true ? "" : item._id;
         case "weapon":
             const weaponType = item.system.attackType;
             return hasMartial[weaponType] === false && item.system.isMartial === true ? "" : item._id;
         default:
             return "";
     }
+
 }

@@ -125,28 +125,25 @@
     }
   },
   "Item": {
-    "types": ["weapon", "defensive", "accessory", "job", "skill", "spell", "arcana"],
+    "types": ["weapon", "shield", "armor", "defensive", "accessory", "job", "skill", "spell", "arcana"],
     "templates": {
       "baseItem": {
         "description": "description"
       },
       "items": {
         "isEquiped": false,
+        "isMartial": false,
         "cost": 0,
         "quality": "no-quality",
         "special": ""
       },
       "defense": {
         "defense": {
-          "attr": "dexterity",
           "value": 0
         },
         "mDefense": {
-          "attr": "insight",
           "value": 0
-        },
-        "initiative": 0,
-        "type": "armor"
+        }
       }
     },
     "weapon": {
@@ -162,9 +159,18 @@
       "accuracyMod": 0,
       "damage": 0
     },
-    "defensive": {
+    "armor": {
       "templates": ["baseItem", "items", "defense"],
-      "isMartial": false
+      "defense": {
+        "attr": "dexterity"
+      },
+      "mDefense": {
+        "attr": "insight"
+      },
+      "initiative": 0
+    },
+    "shield": {
+      "templates": ["baseItem", "items", "defense"]
     },
     "accessory":{
       "templates": ["baseItem", "items"]

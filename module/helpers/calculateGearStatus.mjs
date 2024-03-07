@@ -42,6 +42,10 @@ function _validateHasIlegalGear(item, hasMartial){
         case "defensive":
             const defensiveType = item.system.type;
             return hasMartial[defensiveType] === false && item.system.isMartial === true ? "" : item._id;
+        case "shield":
+            return hasMartial.shield === false && item.system.isMartial === true ? "" : item._id;
+        case "armor":
+            return hasMartial.armor === false && item.system.isMartial === true ? "" : item._id;
         case "weapon":
             const weaponType = item.system.attackType;
             return hasMartial[weaponType] === false && item.system.isMartial === true ? "" : item._id;
