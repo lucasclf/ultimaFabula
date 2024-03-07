@@ -28,8 +28,6 @@ export function toogleGearButton(actor, item){
 
 function _extractItemType(item){
     switch(item.type){
-        case "defensive":
-            return item.system.type;
         case "shield":
             return item.type;
         case "armor":

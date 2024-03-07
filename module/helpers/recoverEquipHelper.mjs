@@ -15,10 +15,6 @@ export function recoverAccessory(actor){
 export function recoverWeapon(actor){
     let itemId = actor.system.gear.mainHand || "";
     let weapon = itemId ? actor.items.get(itemId) : _mountUnnarmedWeapon();
-    
-    if(weapon.type === "defensive"){
-        return _mountShieldWeapon(actor);
-    }
 
     if(weapon.type === "shield"){
         return _mountShieldWeapon(actor);
@@ -34,10 +30,6 @@ export function recoverMainHand(actor){
 
     if(mainHand === null && offHand === null){
         return _mountUnnarmedWeapon();
-    }
-
-    if(mainHand?.type === "defensive" && offHand?.type === "defensive"){
-        return _mountShieldWeapon(actor);
     }
 
     if(mainHand?.type === "shield" && offHand?.type === "shield"){

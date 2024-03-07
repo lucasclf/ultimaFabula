@@ -125,7 +125,7 @@
     }
   },
   "Item": {
-    "types": ["weapon", "shield", "armor", "defensive", "accessory", "job", "skill", "spell", "arcana"],
+    "types": ["weapon", "shield", "armor", "accessory", "job", "skill", "spell", "arcana"],
     "templates": {
       "baseItem": {
         "description": "description"

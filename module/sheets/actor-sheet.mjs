@@ -93,7 +93,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     // Initialize containers.
     
     const weapon = [];
-    const defensive = [];
     const shield = [];
     const armor = [];
     const accessory = [];
@@ -108,9 +107,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       // Append to gear.
       if(i.type === 'weapon') {
         weapon.push(i);
-      }
-      if(i.type === 'defensive') {
-        defensive.push(i);
       }
       if(i.type === 'shield') {
         shield.push(i);
@@ -161,7 +157,6 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
     // Assign and return
     context.weapon = weapon;
-    context.defensive = defensive;
     context.shield = shield;
     context.armor = armor;
     context.accessory = accessory;

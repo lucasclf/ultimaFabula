@@ -39,9 +39,6 @@ function _normalizeGear(actor){
 function _validateHasIlegalGear(item, hasMartial){
     const itemType = item?.type || null;
     switch(itemType){
-        case "defensive":
-            const defensiveType = item.system.type;
-            return hasMartial[defensiveType] === false && item.system.isMartial === true ? "" : item._id;
         case "shield":
             return hasMartial.shield === false && item.system.isMartial === true ? "" : item._id;
         case "armor":
