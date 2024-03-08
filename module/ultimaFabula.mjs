@@ -119,9 +119,11 @@ Handlebars.registerHelper('recoverActorJobs', function(actor){
 })
 
 Handlebars.registerHelper('console', function(item){
+
   console.log("CQN || CONSOLE")
+
+  console.log("ITEM")
   console.log(item)
-  console.log(item.parent)
 })
 
 

@@ -18,7 +18,7 @@ export default class RenderRitual extends FormApplication {
 
 	async _updateObject(event, formData) {
 		const selectedJob = this.object.jobs[formData.selectedJob];
-		console.log(formData.selectedJob)
+
 		const ritualData = {
 			actor: this.object.actor,
 			selectedJob: selectedJob,

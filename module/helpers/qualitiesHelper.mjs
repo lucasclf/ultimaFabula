@@ -1,5 +1,4 @@
 export function recoverQualityInfo(itemType, infoType, quality){
-    console.log(itemType, infoType, quality)
     let recoveredQuality;
 
     switch(itemType){
@@ -11,7 +10,6 @@ export function recoverQualityInfo(itemType, infoType, quality){
             return recoveredQuality[infoType];
         case "accessory":
             recoveredQuality = CONFIG.ULTIMAFABULA.accessoryQualities[quality];
-            console.log(recoveredQuality);
             return recoveredQuality[infoType];
     }
 }

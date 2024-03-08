@@ -6,6 +6,7 @@ import { mountObjective } from "./actionsHelper/makeObjectiveHelper.mjs";
 import { mountStudy } from "./actionsHelper/makeStudyHelper.mjs";
 import { mountOther} from "./actionsHelper/makeOtherHelper.mjs";
 import { mountRitual } from "./actionsHelper/makeRitualHelper.mjs";
+import { mountEquipment } from "./actionsHelper/makeEquipmentHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -14,16 +15,13 @@ export async function makeAction(event, actor){
     const dataset = element.dataset;
     const actionType = dataset.action;
 
-    console.log
-
     switch(actionType){
         case "attack":
             mountAttack(actor);
             break;
         case "equipment":
-            //TODO criar ação
             //TODO abrir janela para manusear os equipamentos
-            // mountAttack(actor);
+            mountEquipment(actor);
             break;
         case "guard":
             mountGuard(actor);

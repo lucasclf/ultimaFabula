@@ -53,6 +53,10 @@ export function recoverShield(actor){
     return shield;
 }
 
+export function recoverItemList(actor, itemType){
+    return actor.items.filter(item => item.type === itemType);
+}
+
 function _mountUnnarmedWeapon(){
     return {
         name:"Unarmed Weapon",
@@ -65,8 +69,10 @@ function _mountUnnarmedWeapon(){
             attackType: "melee",
             damage: 0,
             damageType: "physical",
-            quality: "no-quality"
-        }
+            quality: "no-quality",
+            gripType: "one-handed"
+        },
+        _id: ""
     };
 }
 
@@ -84,7 +90,8 @@ function _mountShieldWeapon(actor){
                 attackType: "melee",
                 damage: 0,
                 damageType: "physical",
-                quality: "no-quality"
+                quality: "no-quality",
+                gripType: "two-handed"
             }
         };
     }
