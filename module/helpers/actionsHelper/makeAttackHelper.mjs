@@ -3,7 +3,7 @@ import {recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand} from ".
 import RenderAttack from "../../apps/RenderAttackModal.mjs"
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
-//TODO resolver questão de atacar com um escudo na mainHand e nada na offHand
+//TODO resolver questão de atacar com armas de tipos diferentes
 export async function mountAttack(actor){
     const equipedGear = {
         mainHand: recoverMainHand(actor),

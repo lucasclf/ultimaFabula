@@ -32,6 +32,10 @@ export function recoverMainHand(actor){
         return _mountUnnarmedWeapon();
     }
 
+    if(mainHand === null && offHand.system.gripType != "two-handed"){
+        return _mountUnnarmedWeapon();
+    }
+
     if(mainHand?.type === "shield" && offHand?.type === "shield"){
         return _mountShieldWeapon(actor);
     }
@@ -42,6 +46,15 @@ export function recoverMainHand(actor){
 export function recoverOffHand(actor){
     const itemId = actor.system.gear.offHand || "";
     const offHand = itemId ? actor.items.get(itemId) : null;
+    const mainHand = itemId ? actor.items.get(itemId) : null;
+
+    if(mainHand === null && offHand === null){
+        return _mountUnnarmedWeapon();
+    }
+
+    if(offHand === null && mainHand.system.gripType != "two-handed"){
+        return _mountUnnarmedWeapon();
+    }
 
     return offHand;
 }
