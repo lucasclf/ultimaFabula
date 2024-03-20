@@ -148,7 +148,7 @@
     },
     "weapon": {
       "templates": ["baseItem", "items"],
-      "type": "weapon",
+      "type": "sword",
       "isMartial": false,
       "damageType": "physical",
       "gripType": "one-handed",
@@ -226,7 +226,7 @@
       "cost": 0,
       "target": "1 creature",
       "duration": "inst",
-      "jobRelation": "Elementalist",
+      "jobRelation": "No-Job",
       "damage": "0",
       "damageType": "physical"
     }

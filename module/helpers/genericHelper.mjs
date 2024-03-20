@@ -22,3 +22,12 @@ export function recoverActorJobs(actor){
 
     return actor.items.filter(item => item.type === 'job');
 }
+
+export function recoverJob(jobList, jobId){
+    const job = jobList.filter(item => item._id === jobId)[0];
+    if(job != undefined){
+        return job.name
+    }
+    
+    return "No-Job"
+}

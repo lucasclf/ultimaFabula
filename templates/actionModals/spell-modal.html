@@ -1,0 +1,57 @@
+<style>
+            
+    div.menu:hover {
+        height: 140px;
+        /* background: blueviolet;
+        color: aqua; */
+        transition: height 0.2s linear 0s, background 0.2s ease 0s, color 0.2s ease 0s;
+    }
+    
+    div.menu {
+        /* background: black;
+        color: white; */
+        padding: 5px 20px;
+        width: fit-content;
+        height: 45px;
+        transition: height 0.2s linear 0s, background 0.2s ease 0s, color 0.2s ease 0s;
+        overflow: hidden;
+    }
+</style>
+
+<form>
+    {{#each object.spells as |job name|}}
+        <div class='items-list'>
+            <p class="job-name">{{recoverJob ../object.actor.items name}}</p>
+            <li class="spell-header item flexrow items-header">
+                <div></div>
+                <div class="item-spell-header">Name</div>
+                <div class="item-spell-header">Ofensive</div>
+                <div class="item-spell-header">Cost</div>
+                <div class="item-spell-header">Target</div>
+                <div class="item-spell-header">Duration</div>
+                <div class="item-spell-header">Damage</div>
+                <div class="item-spell-header">DamageType</div>
+                <div class="item-spell-header">Select</div>
+                
+              </li>
+            {{#each job as |spell|}}
+                <li class="spell-body item flexrow">
+                    <div class="item-image">
+                        <img src="{{spell.img}}" title="{{spell.name}}" width="24" height="24"/>
+                    </div>
+                    <div class="item-spell-prop"><span>{{spell.name}}</span></div>
+                    <div class="item-spell-prop">{{spell.system.isOffensive}}</div>
+                    <div class="item-spell-prop">{{spell.system.cost}}</div>
+                    <div class="item-spell-prop">{{spell.system.target}}</div>
+                    <div class="item-spell-prop">{{spell.system.duration}}</div>
+                    <div class="item-spell-prop">{{spell.system.damage}}</div>
+                    <div class="item-spell-prop">{{spell.system.damageType}}</div>
+                    <div class="item-spell-prop"><input type="radio" id="spell" name="spell" value="{{spell._id}}"></div>
+                </li>
+            {{/each}}
+        </div>
+    {{/each}}
+    <a>
+        <button class="hinder-choice">CAST</button>
+    </a>
+</form>

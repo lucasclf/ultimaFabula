@@ -7,6 +7,7 @@ import { mountStudy } from "./actionsHelper/makeStudyHelper.mjs";
 import { mountOther} from "./actionsHelper/makeOtherHelper.mjs";
 import { mountRitual } from "./actionsHelper/makeRitualHelper.mjs";
 import { mountEquipment } from "./actionsHelper/makeEquipmentHelper.mjs";
+import { mountSpell } from "./actionsHelper/makeSpellHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -20,7 +21,6 @@ export async function makeAction(event, actor){
             mountAttack(actor);
             break;
         case "equipment":
-            //TODO abrir janela para manusear os equipamentos
             mountEquipment(actor);
             break;
         case "guard":
@@ -29,13 +29,18 @@ export async function makeAction(event, actor){
         case "hinder":
             mountHinder(actor);
             break;
+        case "inventory":
+            //TODO criar ação
+            //TODO abrir janela para escolha dos itens e lançar eles no chat
+            // mountInventory(actor);
+            break;
         case "objective":
             mountObjective(actor);
             break;
         case "spell":
             //TODO criar ação
             //TODO abrir janela para escolha das spells e lançar ela no chat
-            // mountAttack(actor);
+            mountSpell(actor);
             break;
         case "study":
             mountStudy(actor);

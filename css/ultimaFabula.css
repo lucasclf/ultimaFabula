@@ -698,3 +698,26 @@ color: crimson
 }
 
 /* gearChange MODAL STYLE END */
+
+/* spell MODAL STYLE INIT */
+.job-name {
+  text-align: center;
+  border: 3px solid green;
+  font-weight: bolder;
+  color: purple;
+}
+
+.spell-header {
+  font-weight: bolder
+}
+
+.item-spell-header, .item-spell-prop  {
+  border-right: 1px inset purple;
+  border-bottom: 1px inset purple;
+}
+
+.spell-modal-radio {
+  margin-top: auto;
+}
+
+/* spell MODAL STYLE END */
