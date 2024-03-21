@@ -59,73 +59,6 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.attributes.base.dexterity" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.actual.dexterity}}" data-label="DEXTERITY">
-              DEX {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.slow }} &#128012 {{/if}}</i>
-          </label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.base.dexterity">
-              {{#select data.attributes.base.dexterity}}
-              {{#each config.attributeDice as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </div>
-        </div>
-        
-        <div class="resource flex-group-center">
-          <label for="data.attributes.base.insight" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.actual.insight}}" data-label="INSIGHT">
-              INS {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.dazed}} &#128565 {{/if}}
-            </i>
-          </label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.base.insight">
-              {{#select data.attributes.base.insight}}
-              {{#each config.attributeDice as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="data.attributes.base" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.actual.might}}" data-label="MIGHT">
-              MIG {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.weak}} &#128567 {{/if}}
-            </i>
-          </label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.base.might">
-              {{#select data.attributes.base.might}}
-              {{#each config.attributeDice as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </div>
-        </div>
-        
-        <div class="resource flex-group-center">
-          <label for="data.attributes.base" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.actual.willpower}}" data-label="WILLPOWER">
-              WLP {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.shaken}} &#x1F62C {{/if}}
-            </i>
-          </label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <select name="data.attributes.base.willpower">
-              {{#select data.attributes.base.willpower}}
-              {{#each config.attributeDice as |name type|}}
-              <option value="{{type}}">{{name}}</option>
-              {{/each}}
-              {{/select}}
-            </select>
-          </div>
-        </div>   
-
-        <div class="resource flex-group-center">
           <label for="data.attributes.base" class="resource-label">
             <i class="rollable" data-roll="{{data.attributes.actual.dexterity}} + {{data.attributes.actual.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">INIT</i>
           </label>
@@ -189,6 +122,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="attributes">Attributes</a>
     <a class="item" data-tab="gears">Gears</a>
     <a class="item" data-tab="jobs">Jobs</a>
     <a class="item" data-tab="skills">Skills</a>
@@ -199,6 +133,11 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     
+    {{!-- Owned Gears Tab --}}
+    <div class="tab items" data-group="primary" data-tab="attributes">
+       {{> "systems/ultimaFabula/templates/actor/parts/actor-attributes.html"}}
+    </div>
+
     {{!-- Owned Gears Tab --}}
     <div class="tab items" data-group="primary" data-tab="gears">
        {{> "systems/ultimaFabula/templates/actor/parts/actor-gears.html"}}

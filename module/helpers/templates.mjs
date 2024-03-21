@@ -12,5 +12,6 @@
     "systems/ultimaFabula/templates/actor/parts/actor-spells.html",
     "systems/ultimaFabula/templates/actor/parts/actor-skills.html",
     "systems/ultimaFabula/templates/actor/parts/actor-actions.html",
+    "systems/ultimaFabula/templates/actor/parts/actor-attributes.html",
   ]);
 };

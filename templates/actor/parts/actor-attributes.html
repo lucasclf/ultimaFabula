@@ -1,0 +1,147 @@
+<ol class="items-list">
+  <div class="items-header">ATTRIBUTES</div>
+  <div class="resources grid grid-4col">
+    <div class="resource flex-group-center">
+      <label for="data.attributes.base.dexterity" class="resource-label">
+        <i class="rollable" data-roll="{{data.attributes.actual.dexterity}}" data-label="DEXTERITY">
+          DEX {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.slow }} &#128012 {{/if}}</i>
+      </label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="data.attributes.base.dexterity">
+          {{#select data.attributes.base.dexterity}}
+          {{#each config.attributeDice as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+    </div>
+    
+    <div class="resource flex-group-center">
+      <label for="data.attributes.base.insight" class="resource-label">
+        <i class="rollable" data-roll="{{data.attributes.actual.insight}}" data-label="INSIGHT">
+          INS {{#if data.status.enraged}} &#129324 {{/if}} {{#if data.status.dazed}} &#128565 {{/if}}
+        </i>
+      </label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="data.attributes.base.insight">
+          {{#select data.attributes.base.insight}}
+          {{#each config.attributeDice as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+    </div>
+
+    <div class="resource flex-group-center">
+      <label for="data.attributes.base" class="resource-label">
+        <i class="rollable" data-roll="{{data.attributes.actual.might}}" data-label="MIGHT">
+          MIG {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.weak}} &#128567 {{/if}}
+        </i>
+      </label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="data.attributes.base.might">
+          {{#select data.attributes.base.might}}
+          {{#each config.attributeDice as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+    </div>
+    
+    <div class="resource flex-group-center">
+      <label for="data.attributes.base" class="resource-label">
+        <i class="rollable" data-roll="{{data.attributes.actual.willpower}}" data-label="WILLPOWER">
+          WLP {{#if data.status.poisoned}} &#129326 {{/if}} {{#if data.status.shaken}} &#x1F62C {{/if}}
+        </i>
+      </label>
+      <div class="resource-content flexrow flex-center flex-between">
+        <select name="data.attributes.base.willpower">
+          {{#select data.attributes.base.willpower}}
+          {{#each config.attributeDice as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+    </div>   
+  </div>
+
+  <div class="items-header">RESISTANCES</div>
+    <div class="resources grid grid-4col">
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          AIR: {{data.resistances.air}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#9729;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          BOLT: {{data.resistances.bolt}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#128498;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          DARK: {{data.resistances.dark}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#128374;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          EARTH: {{data.resistances.earth}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#128142;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          FIRE: {{data.resistances.fire}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#128293;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          ICE: {{data.resistances.ice}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#129482;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          LIGHT: {{data.resistances.light}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#128161;</p>
+        </div>
+      </div>
+
+      <div class="resource-content flexrow flex-center flex-between">
+        <label for="data.resources.hp.value" class="resource-label">
+          POISON: {{data.resistances.poison}}
+        </label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <p>&#9760;</p>
+        </div>
+      </div>
+    </div>
+</ol>
+

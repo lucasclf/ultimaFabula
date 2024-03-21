@@ -49,6 +49,16 @@
           "shaken": false,
           "enraged": false,
           "poisoned": false
+        },
+        "resistances": {
+          "air": "Normal",
+          "bolt": "Normal",
+          "dark": "Normal",
+          "earth": "Normal",
+          "fire": "Normal",
+          "ice": "Normal",
+          "light": "Normal",
+          "poison": "Normal"
         }
       }
     },

@@ -8,6 +8,7 @@ import { mountGearStatus } from "../helpers/calculateGearStatus.mjs";
 import { mountActualAttributes } from "../helpers/attrHelper.mjs";
 import { mountStatusResistances } from "../helpers/statusHelper.mjs";
 import { normalizeGear } from "../helpers/normalizeGearHelper.mjs";
+import { mountElementalResistances } from "../helpers/resisancesHelper.mjs";
 
 
 /**
@@ -23,7 +24,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
       template: "systems/ultimaFabula/templates/actor/actor-character-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "gears" }]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "attributes" }]
     });
   }
 
@@ -146,6 +147,7 @@ export class ultimaFabulaActorSheet extends ActorSheet {
     }
 
     mountActualAttributes(context.actor);
+    mountElementalResistances(context.actor);
     mountBenefit(context.actor);
     mountSkill(context.actor);
     mountResources(context.actor);

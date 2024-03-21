@@ -1,6 +1,7 @@
 export function mountActualAttributes(actor){
     let updateData = {}
     updateData[`system.attributes.actual`] = _calcAttr(actor.system.attributes.base, actor.system.status);
+
     actor.update(updateData);
 }
 
