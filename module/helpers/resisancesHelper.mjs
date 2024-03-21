@@ -34,6 +34,7 @@ function _calcRes(gear){
             _updateResistance(resistances, element1, "Resistant");
             _updateResistance(resistances, element2, "Resistant");
         } else if (immunityMatch) {
+            const [, element] = immunityMatch;
             _updateResistance(resistances, element, "Immunity");
         }
     });

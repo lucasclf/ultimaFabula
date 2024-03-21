@@ -1,0 +1,22 @@
+<form>
+        <div class='items-list'>
+            <p class="inventory-title">Choose an item to use!</p>
+            <li class="inventory-header item flexrow items-header">
+                <div class="item-inventory-header">Name</div>
+                <div class="item-inventory-header">Cost</div>
+                <div class="item-inventory-header">Effect</div>
+                <div class="item-inventory-header">Select</div>                
+            </li>
+            {{#each object.itemList as |item value|}}
+                <li class="inventory-body item flexrow">
+                    <div class="item-inventory-prop"><span>{{item.name}}</span></div>
+                    <div class="item-inventory-prop">{{item.cost}}</div>
+                    <div class="item-inventory-prop">{{item.effect}}</div>
+                    <div class="item-inventory-prop"><input type="radio" id="selectedItem" name="selectedItem" value="{{value}}"></div>
+                </li>
+            {{/each}}
+        </div>
+    <a>
+        <button class="hinder-choice">USE</button>
+    </a>
+</form>

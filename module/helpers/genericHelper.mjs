@@ -6,6 +6,10 @@ export function captalizeFirstLetter(text){
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+export function captalizeText(text){
+    return text.toUpperCase();
+}
+
 export function extractItem(items, type){
     return items.filter(obj => obj.type === type);
 }

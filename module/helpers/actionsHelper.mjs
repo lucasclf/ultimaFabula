@@ -8,6 +8,7 @@ import { mountOther} from "./actionsHelper/makeOtherHelper.mjs";
 import { mountRitual } from "./actionsHelper/makeRitualHelper.mjs";
 import { mountEquipment } from "./actionsHelper/makeEquipmentHelper.mjs";
 import { mountSpell } from "./actionsHelper/makeSpellHelper.mjs";
+import { mountInventory } from "./actionsHelper/makeInventoryHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -30,16 +31,12 @@ export async function makeAction(event, actor){
             mountHinder(actor);
             break;
         case "inventory":
-            //TODO criar ação
-            //TODO abrir janela para escolha dos itens e lançar eles no chat
-            // mountInventory(actor);
+            mountInventory(actor);
             break;
         case "objective":
             mountObjective(actor);
             break;
         case "spell":
-            //TODO criar ação
-            //TODO abrir janela para escolha das spells e lançar ela no chat
             mountSpell(actor);
             break;
         case "study":

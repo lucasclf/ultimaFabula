@@ -7,7 +7,7 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
-import { extractAttrDiceValue, manipuleStudyCss, recoverActorJobs, recoverJob } from "./helpers/genericHelper.mjs";
+import { captalizeText, extractAttrDiceValue, manipuleStudyCss, recoverActorJobs, recoverJob } from "./helpers/genericHelper.mjs";
 import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
@@ -121,6 +121,10 @@ Handlebars.registerHelper('recoverActorJobs', function(actor){
 Handlebars.registerHelper('recoverJob', function(jobList, jobId){
   
   return recoverJob(jobList, jobId);
+})
+
+Handlebars.registerHelper('captalizeText', function(text){
+  return captalizeText(text);
 })
 
 Handlebars.registerHelper('console', function(item){

@@ -326,3 +326,15 @@ ULTIMAFABULA.accessoryQualities = {
   'weapon-up-melee': {name: 'Weapon Up Melee', cost: 2000, effect: 'Your attacks with melee weapons deal 5 extra damage.'},
   'weapon-up-ranged': {name: 'Weapon Up Ranged', cost: 2000, effect: 'Your attacks with ranged weapons deal 5 extra damage.'}
 }
+
+ULTIMAFABULA.inventoryItems = {
+  'elixir': {name: 'Elixir', cost: '3', effect: 'Recovers 50 MP from a creature.'},
+  'remedy': {name: 'Remedy', cost: '3', effect: 'Recovers 50 HP from a creature.'},
+  'tonic': {name: 'Tonic', cost: '2', effect: 'Recovers a creature from an status.'},
+  'fire-elemental-shard': {name: 'Fire Elemental Shard', cost: '2', effect: 'Deals 10 fire damage to a creature.'},
+  'air-elemental-shard': {name: 'Air Elemental Shard', cost: '2', effect: 'Deals 10 air damage to a creature.'},
+  'bolt-elemental-shard': {name: 'Bolt Elemental Shard', cost: '2', effect: 'Deals 10 bolt damage to a creature.'},
+  'earth-elemental-shard': {name: 'Earth Elemental Shard', cost: '2', effect: 'Deals 10 earth damage to a creature.'},
+  'ice-elemental-shard': {name: 'Ice Elemental Shard', cost: '2', effect: 'Deals 10 ice damage to a creature.'},
+  'magic-tent': {name: 'Magic Tent', cost: '4', effect: 'Allows an entire group to rest in a wild area.'}
+}

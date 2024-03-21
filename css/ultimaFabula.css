@@ -700,6 +700,7 @@ color: crimson
 /* gearChange MODAL STYLE END */
 
 /* spell MODAL STYLE INIT */
+
 .job-name {
   text-align: center;
   border: 3px solid green;
@@ -721,3 +722,28 @@ color: crimson
 }
 
 /* spell MODAL STYLE END */
+
+/* inventory MODAL STYLE INIT */
+
+.inventory-title {
+  text-align: center;
+  border: 3px solid green;
+  font-weight: bolder;
+  color: purple;
+}
+
+.inventory-header {
+  font-weight: bolder
+}
+
+.item-inventory-header, .item-inventory-prop  {
+  text-align: center;
+  border-right: 1px inset purple;
+  border-bottom: 1px inset purple;
+}
+
+.inventory-modal-radio {
+  margin-top: auto;
+}
+
+/* inventory MODAL STYLE END */
