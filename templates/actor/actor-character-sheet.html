@@ -15,7 +15,7 @@
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
           <label for="data.resources.hp.value" class="resource-label">
-            HP {{#if data.status.poisoned}} &#129326 {{/if}}
+            HP <a class="recover-resource" data-resource="hp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.hp.value" value="{{data.resources.hp.value}}" data-dtype="Number"/>
@@ -33,7 +33,7 @@
 
         <div class="resource flex-group-center">
           <label for="data.resources.mp.value" class="resource-label">
-            MP {{#if data.status.poisoned}} &#129326 {{/if}}
+            MP <a class="recover-resource" data-resource="mp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.mp.value" value="{{data.resources.mp.value}}" data-dtype="Number"/>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.ip.value" class="resource-label">IP</label>
+          <label for="data.resources.ip.value" class="resource-label">IP  <a class="recover-resource" data-resource="ip">&#128719;</a></label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.ip.value" value="{{data.resources.ip.value}}" data-dtype="Number"/>
           <span> / </span>

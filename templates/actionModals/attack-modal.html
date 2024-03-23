@@ -36,20 +36,21 @@
                 <input type="radio" id="weapon" name="weapon" value="offHand"><br>
             </div>
         </div>
+        {{#if object.isDualHand}}
+            <div class="column attack-model-column">
+                <div class="attack-modal-header">
+                    <h3>BOTH WEAPONS</h3>
+                    <img src="systems/ultimaFabula/icons/x_blade.svg" alt="Both Weapons" class="image">    
+                </div>
+                <div class="attack-modal-body">
 
-        <div class="column attack-model-column">
-            <div class="attack-modal-header">
-                <h3>BOTH WEAPONS</h3>
-                <img src="systems/ultimaFabula/icons/x_blade.svg" alt="Both Weapons" class="image">    
+                </div>
+                
+                <div class="attack-modal-radio">
+                    <input type="radio" id="weapon" name="weapon" value="bothHands"><br>
+                </div>
             </div>
-            <div class="attack-modal-body">
-
-            </div>
-            
-            <div class="attack-modal-radio">
-                <input type="radio" id="weapon" name="weapon" value="bothHands"><br>
-            </div>
-        </div>
+        {{/if}}
     </div>
     <a>
         <button class="attack-choice">ATTACK</button>

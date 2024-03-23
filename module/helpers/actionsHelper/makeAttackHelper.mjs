@@ -18,12 +18,14 @@ export async function mountAttack(actor){
     if(mainHandIsWeapon && offHandIsWeapon){
         const mainHandPromise = _mountAttackData(actor, equipedGear, "mainHand");
         const offHandPromise = _mountAttackData(actor, equipedGear, "offHand");
+        const isDualHandPromise = _validateIsDualHand(equipedGear)
     
-        Promise.all([mainHandPromise, offHandPromise])
-        .then(([mainHandAttackData, offHandAttackData]) => {
+        Promise.all([mainHandPromise, offHandPromise, isDualHandPromise])
+        .then(([mainHandAttackData, offHandAttackData, isDualHandData]) => {
             const possibleAttacks = {
                 mainHand: mainHandAttackData,
-                offHand: offHandAttackData
+                offHand: offHandAttackData,
+                isDualHand: isDualHandData
             };
             
             new RenderAttack(possibleAttacks).render(true);
@@ -161,4 +163,13 @@ export async function renderAttackMessage(templateData){
         speaker: ChatMessage.getSpeaker({ actor: templateData.actor }),
         content: html
     });
+}
+
+async function _validateIsDualHand(equipedGear){
+
+    if(equipedGear.mainHand.system.weaponType === equipedGear.offHand.system.weaponType){
+        return true
+    }
+
+    return false;
 }

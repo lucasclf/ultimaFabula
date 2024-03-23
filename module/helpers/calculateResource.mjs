@@ -10,6 +10,8 @@ export function mountResources(actor){
     updateData["system.resources.ip.max"] = _calcIp(extractItem(actor.items, "job"));
 
     actor.update(updateData);
+
+    console.log(actor)
 }
 
 function _calcLevel(actor){
@@ -37,4 +39,16 @@ function _calcIp(jobs){
             jobAtual.system.benefitsBonus.ip ? jobAtual.system.benefitsBonus.ip : 0);
     }, 0);
     return 6 + ipBonus
+}
+
+export function recoverResource(actor, resource){
+    const actualResource = actor.system.resources[resource].value;
+    const maxResource = actor.system.resources[resource].max;
+
+    if(actualResource < maxResource){
+        let updateData = {};
+        updateData[`system.resources.${resource}.value`] = maxResource;
+        actor.update(updateData);
+    }
+
 }

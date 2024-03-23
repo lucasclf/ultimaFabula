@@ -1,7 +1,7 @@
 import { onManageActiveEffect, prepareActiveEffectCategories } from "../helpers/effects.mjs";
 import { equipGear } from "../helpers/equipment.mjs";
 import { makeAction } from "../helpers/actionsHelper.mjs";
-import { mountResources } from "../helpers/calculateResource.mjs";
+import { mountResources, recoverResource } from "../helpers/calculateResource.mjs";
 import { mountBenefit } from "../helpers/mountBenefits.mjs";
 import { mountSkill } from "../helpers/mountSkillBonus.mjs";
 import { mountGearStatus } from "../helpers/calculateGearStatus.mjs";
@@ -198,6 +198,10 @@ export class ultimaFabulaActorSheet extends ActorSheet {
 
     html.find('.action-choice').click(ev => {
       makeAction(ev, this.actor)
+    })
+
+    html.find('.recover-resource').click(ev => {
+      recoverResource(this.actor, ev.currentTarget.dataset.resource);
     })
 
     // Delete Inventory Item

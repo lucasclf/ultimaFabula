@@ -158,7 +158,6 @@
     },
     "weapon": {
       "templates": ["baseItem", "items"],
-      "type": "sword",
       "isMartial": false,
       "damageType": "physical",
       "gripType": "one-handed",
