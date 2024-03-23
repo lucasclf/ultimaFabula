@@ -36,7 +36,7 @@ export async function mountMessageData(actor, selectedSpell){
             damage: _calcDamage(diceRoll.dice, selectedSpell.system.damage),
             damageType: selectedSpell.system.damageType,
             target: selectedSpell.system.target,
-            description: selectedSpell.system.description
+            effect: selectedSpell.system.effect
         }
         
         console.log(templateData)

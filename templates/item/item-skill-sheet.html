@@ -5,14 +5,14 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="grid grid-2col">
-        <div class="resource">
-          <label class="resource-label">Level</label>
+      <h4 class="resource-label">Level</h4>
+      <div class="grid grid-3col">
           <input type="number" name="data.level" value="{{data.level}}" min="1" max="{{data.maxLevel}}">
           <span> | </span>
           <input type="number" name="data.maxLevel" value="{{data.maxLevel}}" min="1" max="99">
-        </div>
       </div>
+      <h4 class="resource-label">Effect</h4>
+      <input type="text" name="data.effect" value="{{data.effect}}">
     </div>
   </header>
 
@@ -37,21 +37,25 @@
         <tr>
           <th>Job</th>
           <th>Dual Shield?</th>
+          <th>Passive?</th>
         </tr>
 
         <td>
           <label class="resource-label">Job</label>
           <select name="data.jobRelation">
             {{#select data.jobRelation}}
-              <option value="Define">Define</option>
+              <option value="No-Job">Define</option>
               {{#each (recoverActorJobs item.parent) as |job name|}}
-              <option value="{{job.name}}">{{job.name}}</option>
+              <option value="{{job._id}}">{{job.name}}</option>
               {{/each}}
             {{/select}}
           </select>
         </td>
         <td>
           <span><input type="checkbox" name="data.bonus.dualShield" {{checked data.bonus.dualShield}}></span>
+        </td>
+        <td>
+          <span><input type="checkbox" name="data.isPassive" {{checked data.isPassive}}></span>
         </td>
       </table>
 

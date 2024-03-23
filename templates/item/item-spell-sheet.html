@@ -5,12 +5,11 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <div class="grid grid-2col">
-        <div class="resource">
+      <div class="grid grid-4col">
           <label class="resource-label">Job</label>
           <select name="data.jobRelation">
             {{#select data.jobRelation}}
-              <option value="Define">Define</option>
+              <option value="No-Job">Define</option>
               {{#each (recoverActorJobs item.parent) as |job name|}}
               <option value="{{job._id}}">{{job.name}}</option>
               {{/each}}
@@ -18,8 +17,9 @@
           </select>
           <label class="resource-label">Ofensive?</label>
           <input type="checkbox" name="data.isOffensive" {{checked data.isOffensive}}>
-        </div>
       </div>
+      <h4 class="resource-label">Effect</h4>
+      <input type="text" name="data.effect" value="{{data.effect}}">
     </div>
   </header>
 

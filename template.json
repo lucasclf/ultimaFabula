@@ -208,7 +208,9 @@
       "templates": ["baseItem"],
       "maxLevel": 1,
       "level": 1,
-      "jobRelation": "Define",
+      "isPassive": true,
+      "jobRelation": "No-Job",
+      "effect": "Efeito da skill",
       "bonus": {
         "hp": 0,
         "hpMultiply": 0,
@@ -237,7 +239,8 @@
       "duration": "inst",
       "jobRelation": "No-Job",
       "damage": "0",
-      "damageType": "physical"
+      "damageType": "physical",
+      "effect": "Efeito da Spell!"
     }
   }
 }

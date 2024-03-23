@@ -1,0 +1,29 @@
+<form>
+    {{#each object.skills as |job name|}}
+        <div class='items-list'>
+            <p class="job-name">{{recoverJob ../object.actor.items name}}</p>
+            <li class="skill-header item flexrow items-header">
+                <div></div>
+                <div class="item-skill-header">Name</div>
+                <div class="item-skill-header">Level</div>
+                <div class="item-skill-header">Effect</div>
+                <div class="item-skill-header">Select</div>
+                
+            </li>
+            {{#each job as |skill|}}
+                <li class="skill-body item flexrow">
+                    <div class="item-image">
+                        <img src="{{skill.img}}" title="{{skill.name}}" width="24" height="24"/>
+                    </div>
+                    <div class="item-skill-prop"><span>{{skill.name}}</span></div>
+                    <div class="item-skill-prop">{{skill.system.level}} | {{skill.system.maxLevel}}</div>
+                    <div class="item-skill-prop">{{skill.system.effect}}</div>
+                    <div class="item-skill-prop"><input type="radio" id="skill" name="skill" value="{{skill._id}}"></div>
+                </li>
+            {{/each}}
+        </div>
+    {{/each}}
+    <a>
+        <button class="hinder-choice">SELECT</button>
+    </a>
+</form>

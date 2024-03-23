@@ -9,6 +9,7 @@ import { mountRitual } from "./actionsHelper/makeRitualHelper.mjs";
 import { mountEquipment } from "./actionsHelper/makeEquipmentHelper.mjs";
 import { mountSpell } from "./actionsHelper/makeSpellHelper.mjs";
 import { mountInventory } from "./actionsHelper/makeInventoryHelper.mjs";
+import { mountSkill } from "./actionsHelper/makeSkillHelper.mjs";
 
 export async function makeAction(event, actor){
     console.log("CQN | MAKE ACTION!")
@@ -43,9 +44,7 @@ export async function makeAction(event, actor){
             mountStudy(actor);
             break;
         case "skill":
-            //TODO criar ação
-            //TODO abre a janela de escolha de skills e lança ela no chat
-            // mountAttack(actor);
+            mountSkill(actor);
             break;
         case "other":
             mountOther(actor);

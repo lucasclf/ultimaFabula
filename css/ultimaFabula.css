@@ -723,6 +723,30 @@ color: crimson
 
 /* spell MODAL STYLE END */
 
+/* skill MODAL STYLE INIT */
+
+.job-name {
+  text-align: center;
+  border: 3px solid green;
+  font-weight: bolder;
+  color: purple;
+}
+
+.skill-header {
+  font-weight: bolder
+}
+
+.item-skill-header, .item-skill-prop  {
+  border-right: 1px inset purple;
+  border-bottom: 1px inset purple;
+}
+
+.skill-modal-radio {
+  margin-top: auto;
+}
+
+/* skill MODAL STYLE END */
+
 /* inventory MODAL STYLE INIT */
 
 .inventory-title {
