@@ -2,8 +2,6 @@ export function mountElementalResistances(actor){
     let updateData = {}
     updateData[`system.resistances`] = _calcRes(actor.system.gear);
     actor.update(updateData);
-
-    console.log(actor);
 }
 
 function _calcRes(gear){

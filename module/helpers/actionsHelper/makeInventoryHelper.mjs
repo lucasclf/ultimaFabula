@@ -15,7 +15,6 @@ export function mountInventory(actor){
 
 
 export async function renderInventoryMessage(inventoryData){
-    console.log(inventoryData)
     const actor = inventoryData.actor;
 
     const item = CONFIG.ULTIMAFABULA.inventoryItems[inventoryData.selectedItem];
@@ -25,8 +24,7 @@ export async function renderInventoryMessage(inventoryData){
         image: actor.img,
         selectedItem: item
     }
-
-    console.log(templateData);
+ 
     const html = await renderTemplate(template, templateData);
 
     ChatMessage.create({

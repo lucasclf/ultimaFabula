@@ -43,7 +43,6 @@ export class ultimaFabulaItem extends Item {
 
     // If there's no roll data, send a chat message.
     if (!this.data.data.formula) {
-      console.log(this.data)
       ChatMessage.create({
         speaker: speaker,
         rollMode: rollMode,

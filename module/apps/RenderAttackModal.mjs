@@ -14,7 +14,6 @@ export default class RenderAttack extends FormApplication {
 
 	getData() {
 		let data = super.getData()
-		console.log(this.object);
 		return data
 	}
 

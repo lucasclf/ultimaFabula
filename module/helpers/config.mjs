@@ -20,7 +20,16 @@ ULTIMAFABULA.elementType = {
 
 ULTIMAFABULA.weaponType = {
   'sword': 'sword',
-  'axe': 'axe'
+  'axe': 'axe',
+  'arcane': 'arcane',
+  'bow': 'bow',
+  'brawling': 'brawling',
+  'dagger': 'dagger',
+  'firearm': 'firearm',
+  'flail': 'flail',
+  'heavy': 'heavy',
+  'spear': 'spear',
+  'thrown': 'thrown'
 }
 
 ULTIMAFABULA.gripType = {

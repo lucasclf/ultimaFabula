@@ -10,8 +10,6 @@ export function mountResources(actor){
     updateData["system.resources.ip.max"] = _calcIp(extractItem(actor.items, "job"));
 
     actor.update(updateData);
-
-    console.log(actor)
 }
 
 function _calcLevel(actor){

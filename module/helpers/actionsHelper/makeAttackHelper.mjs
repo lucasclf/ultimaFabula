@@ -1,9 +1,10 @@
 import {captalizeFirstLetter} from "../genericHelper.mjs";
 import {recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand} from "../recoverEquipHelper.mjs";
 import RenderAttack from "../../apps/RenderAttackModal.mjs"
+import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
-//TODO resolver questão de atacar com armas de tipos diferentes
+
 export async function mountAttack(actor){
     const equipedGear = {
         mainHand: recoverMainHand(actor),
@@ -60,6 +61,7 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
     let roll = new Roll(attackRoll, actor.getRollData());
     let diceRoll = await roll.roll({async: true});
 
+    const qualities = recoverQualityInfoByActor(actor.system.gear);
 
     return {
         actor: actor,
@@ -71,7 +73,7 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
         flavor: _buildAttackLabel(equipedGear[gearSlot]),
         attackType: captalizeFirstLetter(equipedGear[gearSlot].system.attackType),
         damage: _calcDamage(diceRoll.dice, equipedGear[gearSlot], equipedGear.accessory, equipedGear.armor),
-        damageType: _recoverDamageType(equipedGear[gearSlot], equipedGear.accessory),
+        damageType: mountDamageType(equipedGear[gearSlot].system.damageType, qualities),
         qualityText: _recoverQualityText(equipedGear[gearSlot])
     };
 }
@@ -98,17 +100,6 @@ function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
     }
 
     return `${accuracyFirst} + ${accuracySecond} + ${accuracyMod}`;
-}
-
-function _recoverDamageType(equipedWeapon, equipedAccessory){
-    let accessoryQuality = equipedAccessory?.system.quality || "no-qualites";
-    let damageType =  equipedWeapon.system.damageType;
-
-    if(accessoryQuality.includes("damage-change")){
-        return accessoryQuality.split("-").pop();
-    }
-
-    return damageType;
 }
 
 function _buildAttackLabel(equipedWeapon){

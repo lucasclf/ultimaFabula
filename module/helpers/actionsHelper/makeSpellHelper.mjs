@@ -1,18 +1,17 @@
 import RenderSpell from "../../apps/RenderSpellModal.mjs"
 import { extractItem } from "../genericHelper.mjs";
+import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/spell-message.html';
 export async function mountSpell(actor){
-    const spellList = actor.items.filter(item => item.type === 'spell' && item.system.jobRelation != "No-Job");
-
-    const spellsOrganized = spellList.reduce((acc, spell) => {
-        const job = spell.system.jobRelation;
-        if (!acc[job]) {
-           acc[job] = [];
-        }
-        acc[job].push(spell);
-        return acc;
-       }, {});
+    const spellsOrganized = actor.items
+        .filter(item => item.type === 'spell' && item.system.jobRelation !== "No-Job")
+        .reduce((acc, spell) => {
+            const job = spell.system.jobRelation;
+            acc[job] = acc[job] || [];
+            acc[job].push(spell);
+            return acc;
+        }, {});
 
     const spellOpt = {
         actor: actor,
@@ -23,6 +22,8 @@ export async function mountSpell(actor){
 }
 
 export async function mountMessageData(actor, selectedSpell){
+    const qualities = recoverQualityInfoByActor(actor.system.gear);
+
     _mountSpellRoll(actor, selectedSpell).then(diceRoll => {
 
         const templateData = {
@@ -33,13 +34,12 @@ export async function mountMessageData(actor, selectedSpell){
             diceRoll: diceRoll,
             flavor: _buildSpellLabel(selectedSpell),
             duration: selectedSpell.system.duration,
-            damage: _calcDamage(diceRoll.dice, selectedSpell.system.damage),
-            damageType: selectedSpell.system.damageType,
+            damage: _calcDamage(diceRoll.dice, selectedSpell.system.damage, qualities),
+            damageType: mountDamageType(selectedSpell.system.damageType, qualities),
             target: selectedSpell.system.target,
             effect: selectedSpell.system.effect
         }
         
-        console.log(templateData)
         _renderSpellMessage(templateData);
     }).catch(error => {
         console.error(error);
@@ -49,7 +49,7 @@ export async function mountMessageData(actor, selectedSpell){
 
 async function _mountSpellRoll(actor, selectedSpell){
     const actorJobList = extractItem(actor.items, "job");
-    const selectedSpellJob = actorJobList.filter(job => job._id == selectedSpell.system.jobRelation)[0];
+    const selectedSpellJob = actorJobList.find(job => job._id === selectedSpell.system.jobRelation);
     const firsAttr = actor.system.attributes.actual[selectedSpellJob.system.magicAttr];
     const secondAttr = actor.system.attributes.actual[selectedSpellJob.system.magicSecondAttr];
     const spellRoll = `${firsAttr} + ${secondAttr}`;
@@ -64,12 +64,20 @@ function _buildSpellLabel(selectedSpell){
     return `CAST ${spellName}!!!`
 }
 
-function _calcDamage(dices, damage){
+function _calcDamage(dices, damage, qualities){
     let highRoll = dices.reduce((max, dice) => {
         return (max.results[0].result > dice.results[0].result) ? max : dice;
     }).results[0].result;
 
-    return Number(highRoll) + Number(damage);
+    let qualityDamage = 0;
+
+    qualities.forEach(quality =>{
+        if(Object.keys(quality) == 'spell-up'){
+            qualityDamage += 5;
+        }
+    })
+
+    return Number(highRoll) + Number(damage) + Number(qualityDamage);
 }
 
 
