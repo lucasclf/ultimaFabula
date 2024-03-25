@@ -37,7 +37,6 @@
         <tr>
           <th>Job</th>
           <th>Dual Shield?</th>
-          <th>Passive?</th>
         </tr>
 
         <td>
@@ -53,9 +52,6 @@
         </td>
         <td>
           <span><input type="checkbox" name="data.bonus.dualShield" {{checked data.bonus.dualShield}}></span>
-        </td>
-        <td>
-          <span><input type="checkbox" name="data.isPassive" {{checked data.isPassive}}></span>
         </td>
       </table>
 
@@ -99,6 +95,39 @@
         <td>
           <span><input type="checkbox" name="data.bonus.rangedAccuracy" {{checked data.bonus.rangedAccuracy}}></span>
         </td>
+      </table>
+
+      <table>
+        <div class="resource">
+          <tr>
+            <th>isOffensive?</th>
+            <th>First Attribute</th>
+            <th>Second Attribute</th>
+          </tr>
+
+          <td>
+            <span><input type="checkbox" name="data.isOffensive" {{checked data.isOffensive}}></span>
+          </td>
+          <td>
+            <select name="data.roll.firstAttr">
+              {{#select data.roll.firstAttr}}
+              {{#each config.attributes as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </td>
+          <td>
+            <select name="data.roll.secondAttr">
+              {{#select data.roll.secondAttr}}
+              {{#each config.attributes as |name type|}}
+              <option value="{{type}}">{{name}}</option>
+              {{/each}}
+              {{/select}}
+            </select>
+          </td>
+          
+        </div>
       </table>
     </div>
   </section>

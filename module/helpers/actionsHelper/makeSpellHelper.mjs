@@ -1,6 +1,7 @@
 import RenderSpell from "../../apps/RenderSpellModal.mjs"
 import { extractItem } from "../genericHelper.mjs";
 import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
+import { calcHighRoll, mountRoll } from "../rollHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/spell-message.html';
 export async function mountSpell(actor){
@@ -52,11 +53,9 @@ async function _mountSpellRoll(actor, selectedSpell){
     const selectedSpellJob = actorJobList.find(job => job._id === selectedSpell.system.jobRelation);
     const firsAttr = actor.system.attributes.actual[selectedSpellJob.system.magicAttr];
     const secondAttr = actor.system.attributes.actual[selectedSpellJob.system.magicSecondAttr];
-    const spellRoll = `${firsAttr} + ${secondAttr}`;
 
-    let roll = new Roll(spellRoll, actor.getRollData());
-    let diceRoll = await roll.roll({async: true});
-    return diceRoll;
+    return mountRoll(actor, firsAttr, secondAttr);
+
 };
 
 function _buildSpellLabel(selectedSpell){
@@ -65,9 +64,7 @@ function _buildSpellLabel(selectedSpell){
 }
 
 function _calcDamage(dices, damage, qualities){
-    let highRoll = dices.reduce((max, dice) => {
-        return (max.results[0].result > dice.results[0].result) ? max : dice;
-    }).results[0].result;
+    const highRoll = calcHighRoll(dices);
 
     let qualityDamage = 0;
 

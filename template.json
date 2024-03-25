@@ -208,7 +208,11 @@
       "templates": ["baseItem"],
       "maxLevel": 1,
       "level": 1,
-      "isPassive": true,
+      "isOffensive": true,
+      "roll": {
+        "firstAttr": "dexterity",
+        "secondAttr": "dexterity"
+      },
       "jobRelation": "No-Job",
       "effect": "Efeito da skill",
       "bonus": {

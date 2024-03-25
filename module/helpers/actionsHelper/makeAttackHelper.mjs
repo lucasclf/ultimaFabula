@@ -2,6 +2,7 @@ import {captalizeFirstLetter} from "../genericHelper.mjs";
 import {recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand} from "../recoverEquipHelper.mjs";
 import RenderAttack from "../../apps/RenderAttackModal.mjs"
 import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
+import { calcHighRoll } from "../rollHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
@@ -108,9 +109,7 @@ function _buildAttackLabel(equipedWeapon){
 }
 
 function _calcDamage(dices, equipedWeapon, equipedAccessory, equipedArmor){
-    let highRoll = dices.reduce((max, dice) => {
-        return (max.results[0].result > dice.results[0].result) ? max : dice;
-    }).results[0].result;
+    const highRoll = calcHighRoll(dices);
 
     let weaponDamage = equipedWeapon.system.damage;
     let accessoryQuality = equipedAccessory?.system.quality || "no-qualities";

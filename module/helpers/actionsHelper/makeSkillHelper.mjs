@@ -2,7 +2,7 @@ import RenderSkill from "../../apps/RenderSkillModal.mjs"
 
 const template = 'systems/ultimaFabula/templates/chat/skill-message.html';
 export async function mountSkill(actor){
-    const skillList = actor.items.filter(item => item.type === 'skill' && item.system.jobRelation != "No-Job" && !item.system.isPassive);
+    const skillList = actor.items.filter(item => item.type === 'skill' && item.system.jobRelation != "No-Job" && item.system.isOffensive);
 
     const skillsOrganized = skillList.reduce((acc, skill) => {
         const job = skill.system.jobRelation;
