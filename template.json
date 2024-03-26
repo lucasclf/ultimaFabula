@@ -208,11 +208,6 @@
       "templates": ["baseItem"],
       "maxLevel": 1,
       "level": 1,
-      "isOffensive": true,
-      "roll": {
-        "firstAttr": "dexterity",
-        "secondAttr": "dexterity"
-      },
       "jobRelation": "No-Job",
       "effect": "Efeito da skill",
       "bonus": {
@@ -224,6 +219,7 @@
         "ipMultiply": 0,
         "meleeAccuracy": false,
         "rangedAccuracy": false,
+        "ritualFlag": false,
         "dualShield": false
       }
     },

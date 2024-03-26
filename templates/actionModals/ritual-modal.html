@@ -1,19 +1,19 @@
 <form>
     {{#if (eq object.hasCasterJobs true)}}
     <div class="container ritual-model-form">
-        {{#each object.jobs as |job name|}}
+        {{#each object.skills as |skill name|}}
         <div class="column ritual-model-column">
             <div class="ritual-modal-header">
-                <h3>{{job.name}}</h3>
-                <img src="{{job.img}}" alt="{{job.name}}" class="image">
+                <h3>{{skill.ritualName}}</h3>
+                <img src="{{skill.img}}" alt="{{skill.name}}" class="image">
             </div>
 
             <div class="ritual-modal-body">
-                <p>Attributes: {{job.system.magicAttr}} + {{job.system.magicSecondAttr}}</p>
+                <p>Attributes: {{skill.magicAttr}} + {{skill.magicSecondAttr}}</p>
             </div>
             
             <div class="ritual-modal-radio">
-                <input type="radio" id="selectedJob" name="selectedJob" value="{{name}}"><br>
+                <input type="radio" id="selectedSkill" name="selectedSkill" value="{{name}}"><br>
             </div>
         </div>
         {{/each}}

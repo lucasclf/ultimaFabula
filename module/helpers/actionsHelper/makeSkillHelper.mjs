@@ -1,8 +1,9 @@
 import RenderSkill from "../../apps/RenderSkillModal.mjs"
+import { mountDamageType } from "../qualitiesHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/skill-message.html';
 export async function mountSkill(actor){
-    const skillList = actor.items.filter(item => item.type === 'skill' && item.system.jobRelation != "No-Job" && item.system.isOffensive);
+    const skillList = actor.items.filter(item => item.type === 'skill' && item.system.jobRelation != "No-Job");
 
     const skillsOrganized = skillList.reduce((acc, skill) => {
         const job = skill.system.jobRelation;
@@ -21,7 +22,9 @@ export async function mountSkill(actor){
     new RenderSkill(skillOpt).render(true);
 }
 
+
 export async function mountMessageData(actor, selectedSkill){
+
     const templateData = {
         actor: actor,
         image: selectedSkill.img,
@@ -30,6 +33,7 @@ export async function mountMessageData(actor, selectedSkill){
     }
 
     _renderSkillMessage(templateData);
+
 }
 
 function _buildSkillLabel(selectedSkill){

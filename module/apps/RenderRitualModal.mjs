@@ -17,16 +17,17 @@ export default class RenderRitual extends FormApplication {
 	}
 
 	async _updateObject(event, formData) {
-		const selectedJob = this.object.jobs[formData.selectedJob];
+		const selectedJob = this.object.jobs[formData.selectedSkill];
+		const selectedSkill = this.object.skills[formData.selectedSkill];
 
 		const ritualData = {
 			actor: this.object.actor,
-			selectedJob: selectedJob,
+			selectedSkill: selectedSkill.ritualName,
 			attrFirst: {
-				value: this.object.attributes[selectedJob.system.magicAttr]
+				value: this.object.attributes[selectedSkill.magicAttr]
 			},
 			attrSecond: {
-				value: this.object.attributes[selectedJob.system.magicSecondAttr]
+				value: this.object.attributes[selectedSkill.magicSecondAttr]
 			},
 			attrMod: formData.attributeMod || 0
 		}
