@@ -25,7 +25,7 @@ export async function mountSpell(actor){
 export async function mountMessageData(actor, selectedSpell){
     const qualities = recoverQualityInfoByActor(actor.system.gear);
 
-    _mountSpellRoll(actor, selectedSpell).then(diceRoll => {
+    _mountSpellRoll(actor, selectedSpell, qualities).then(diceRoll => {
 
         const templateData = {
             actor: actor,
@@ -48,13 +48,22 @@ export async function mountMessageData(actor, selectedSpell){
 
 }
 
-async function _mountSpellRoll(actor, selectedSpell){
+async function _mountSpellRoll(actor, selectedSpell, qualities){
     const actorJobList = extractItem(actor.items, "job");
     const selectedSpellJob = actorJobList.find(job => job._id === selectedSpell.system.jobRelation);
     const firsAttr = actor.system.attributes.actual[selectedSpellJob.system.magicAttr];
     const secondAttr = actor.system.attributes.actual[selectedSpellJob.system.magicSecondAttr];
+    let spellMod = 0;
 
-    return mountRoll(actor, firsAttr, secondAttr);
+    console.log(qualities);
+
+    qualities.forEach(quality => {
+        if(Object.keys(quality) == 'spell-up'){
+            spellMod += 1;
+        }
+    })
+
+    return mountRoll(actor, firsAttr, secondAttr, spellMod);
 
 };
 

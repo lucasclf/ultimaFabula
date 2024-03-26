@@ -189,11 +189,11 @@ ULTIMAFABULA.weaponQualities = {
   'dual-hunter-plants-undeads': {name: 'Dual Hunter(Plants/Undeads)', cost: 500, effect: 'The weapon deals 5 extra damage to Plants and Undeads.'},
   'multi': {name: 'Multi', cost: 1000, effect: 'Attacks with the weapon have multi (2).'},
   'status-dazed': {name: 'Status Dazed', cost: 1500, effect: 'Each target hit by the weapon suffers dazed.'},
-  'status-shaken': {name: 'Status Shaken', cost: 1500, effect: 'Each target hit by the weapon suffers shaken, slow, weak.'},
+  'status-shaken': {name: 'Status Shaken', cost: 1500, effect: 'Each target hit by the weapon suffers shaken.'},
   'status-slow': {name: 'Status Slow', cost: 1500, effect: 'Each target hit by the weapon suffers slow.'},
   'status-weak': {name: 'Status Weak', cost: 1500, effect: 'Each target hit by the weapon suffers weak.'},
-  'status-enraged': {name: 'Status Plus', cost: 2000, effect: 'Each target hit by the weapon suffers enraged.'},
-  'status-poisoned': {name: 'Status Plus', cost: 2000, effect: 'Each target hit by the weapon suffers poisoned).'}
+  'status-enraged': {name: 'Status Enraged', cost: 2000, effect: 'Each target hit by the weapon suffers enraged.'},
+  'status-poisoned': {name: 'Status Poisoned', cost: 2000, effect: 'Each target hit by the weapon suffers poisoned).'}
 }
 
 ULTIMAFABULA.armorQualities = {

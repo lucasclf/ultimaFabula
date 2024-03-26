@@ -1,5 +1,5 @@
-export async function mountRoll(actor, firstAttr, secondAttr){
-    const attrs = `${firstAttr} + ${secondAttr}`;
+export async function mountRoll(actor, firstAttr, secondAttr, modifier=0){
+    const attrs = `${firstAttr} + ${secondAttr} +${modifier}`;
 
     let roll = new Roll(attrs, actor.getRollData());
     let diceRoll = await roll.roll({async: true});
