@@ -58,7 +58,7 @@ async function _mountSpellRoll(actor, selectedSpell, qualities){
     console.log(qualities);
 
     qualities.forEach(quality => {
-        if(Object.keys(quality) == 'spell-up'){
+        if(Object.keys(quality) == 'magic-up'){
             spellMod += 1;
         }
     })
