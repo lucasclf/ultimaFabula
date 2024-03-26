@@ -58,7 +58,8 @@
           "fire": "Normal",
           "ice": "Normal",
           "light": "Normal",
-          "poison": "Normal"
+          "poison": "Normal",
+          "physical": "Normal"
         }
       }
     },

@@ -16,13 +16,15 @@ function _calcRes(gear){
         "fire": "Normal",
         "ice": "Normal",
         "light": "Normal",
-        "poison": "Normal"
+        "poison": "Normal",
+        "physical": "Normal"
     };
 
     qualities.forEach(str => {
         const resistanceMatch = str.match(/resistance-(\w+)/);
         const dualResistanceMatch = str.match(/dual-resistance-(\w+)-(\w+)/);
         const immunityMatch = str.match(/immunity-(\w+)/);
+        const physicalRes = str === "swordbreaker";
        
         if (resistanceMatch) {
             const [, element] = resistanceMatch;
@@ -34,6 +36,10 @@ function _calcRes(gear){
         } else if (immunityMatch) {
             const [, element] = immunityMatch;
             _updateResistance(resistances, element, "Immunity");
+        }
+
+        if(physicalRes) {
+            resistances.physical = "Resistant";
         }
     });
 
