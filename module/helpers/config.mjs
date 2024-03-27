@@ -89,7 +89,8 @@ ULTIMAFABULA.ui = {
   'jobs': 'ULTIMAFABULA.ui.jobs',
   'skills': 'ULTIMAFABULA.ui.skills',
   'spells': 'ULTIMAFABULA.ui.spells',
-  'actions': 'ULTIMAFABULA.ui.actions'
+  'actions': 'ULTIMAFABULA.ui.actions',
+  'resistances': 'ULTIMAFABULA.ui.resistances'
 }
 
 ULTIMAFABULA.defeniveItemType = {

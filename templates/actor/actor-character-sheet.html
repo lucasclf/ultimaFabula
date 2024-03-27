@@ -14,7 +14,7 @@
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
           <label for="data.resources.hp.value" class="resource-label">
-            {{localize config.resourceAbbreviation.HP}} <a class="recover-resource" data-resource="hp">&#128719;</a>
+            {{captalizeText (localize config.resourceAbbreviation.HP)}} <a class="recover-resource" data-resource="hp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.hp.value" value="{{data.resources.hp.value}}" data-dtype="Number"/>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.hp.crisis" class="resource-label">{{localize config.resourceAbbreviation.CRISIS}}</label>
+          <label for="data.resources.hp.crisis" class="resource-label">{{captalizeText (localize config.resourceAbbreviation.CRISIS)}}</label>
           <div class="resource-content flexrow flex-center flex-between">
           <p> {{data.resources.hp.crisis}}</p>
           </div>
@@ -32,7 +32,7 @@
 
         <div class="resource flex-group-center">
           <label for="data.resources.mp.value" class="resource-label">
-            {{localize config.resourceAbbreviation.MP}}<a class="recover-resource" data-resource="mp">&#128719;</a>
+            {{captalizeText (localize config.resourceAbbreviation.MP)}}<a class="recover-resource" data-resource="mp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.mp.value" value="{{data.resources.mp.value}}" data-dtype="Number"/>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.ip.value" class="resource-label">{{localize config.resourceAbbreviation.IP}}  <a class="recover-resource" data-resource="ip">&#128719;</a></label>
+          <label for="data.resources.ip.value" class="resource-label">{{captalizeText (localize config.resourceAbbreviation.IP)}}  <a class="recover-resource" data-resource="ip">&#128719;</a></label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.ip.value" value="{{data.resources.ip.value}}" data-dtype="Number"/>
           <span> / </span>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.level" class="resource-label">{{localize config.resourceAbbreviation.LEVEL}}</label>
+          <label for="data.resources.level" class="resource-label">{{captalizeText (localize config.resourceAbbreviation.LEVEL)}}</label>
           <div class="resource-content flexrow flex-center flex-between">
           <p> {{data.resources.level}}</p>
           </div>
@@ -69,7 +69,7 @@
         <div class="resource flex-group-center">
           <label for="data.defense" class="resource-label">
             <i class="">
-              {{localize config.resourceAbbreviation.DEF}}
+              {{captalizeText (localize config.resourceAbbreviation.DEF)}}
             </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -80,7 +80,7 @@
         <div class="resource flex-group-center">
           <label for="data.magicDefense" class="resource-label">
             <i class="">
-              {{localize config.resourceAbbreviation.MDEF}}
+              {{captalizeText (localize config.resourceAbbreviation.MDEF)}}
           </i></label>
           <div class="resource-content flexrow flex-center flex-between">
           <p>{{data.gearStatus.mDefense}}</p>
@@ -93,27 +93,27 @@
 
   <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div style="margin: 10px;">
-        <label for="data.status.dazed" class="resource-label">{{localize config.basicConditions.dazed.name}}</label><br>
+        <label for="data.status.dazed" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.dazed.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "dazed" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.dazed" {{checked data.status.dazed}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.shaken" class="resource-label">{{localize config.basicConditions.shaken.name}}</label><br>
+        <label for="data.status.shaken" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.shaken.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "shaken" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.shaken" {{checked data.status.shaken}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.slow" class="resource-label">{{localize config.basicConditions.slow.name}}</label><br>
+        <label for="data.status.slow" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.slow.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "slow" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.slow" {{checked data.status.slow}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.weak" class="resource-label">{{localize config.basicConditions.weak.name}}</label><br>
+        <label for="data.status.weak" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.weak.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "weak" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.weak" {{checked data.status.weak}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.enraged" class="resource-label">{{localize config.basicConditions.enraged.name}}</label><br>
+        <label for="data.status.enraged" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.enraged.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "enraged" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.enraged" {{checked data.status.enraged}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.poisoned" class="resource-label">{{localize config.basicConditions.poisoned.name}}</label><br>
+        <label for="data.status.poisoned" class="resource-label">{{captalizeFirstLetter (localize config.basicConditions.poisoned.name)}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "poisoned" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.poisoned" {{checked data.status.poisoned}}>
     </div>
   </div>

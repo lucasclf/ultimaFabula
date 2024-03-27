@@ -51,30 +51,30 @@
   },
 
   "ULTIMAFABULA.basicConditions": {
-    "weak": {"name": "Weak", "attributes": ["ULTIMAFABULA.attributes.might"]},
-    "dazed": {"name": "Dazed", "attributes": ["ULTIMAFABULA.attributes.insight"]},
-    "shaken": {"name": "Shaken", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
-    "slow": {"name": "Slow", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
-    "enraged": {"name": "Enraged", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
-    "poisoned": {"name": "Poisoned", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    "weak": {"name": "weak", "attributes": ["ULTIMAFABULA.attributes.might"]},
+    "dazed": {"name": "dazed", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+    "shaken": {"name": "shaken", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+    "slow": {"name": "slow", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+    "enraged": {"name": "enraged", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+    "poisoned": {"name": "poisoned", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
   },
 
   "ULTIMAFABULA.attributesAbbreviation": {
-    "might": "MIG",
-    "dexterity": "DEX",
-    "insight": "INS",
-    "willpower": "WLP"
+    "might": "mig",
+    "dexterity": "dex",
+    "insight": "ins",
+    "willpower": "wlp"
   },
 
   "ULTIMAFABULA.resourceAbbreviation": {
-    "HP": "HP",
-    "MP": "MP",
-    "IP": "IP",
-    "DEF": "DEF",
-    "MDEF": "M.DEF",
-    "INIT": "INIT.",
-    "LEVEL": "LEVEL",
-    "CRISIS": "CRISIS"
+    "HP": "hp",
+    "MP": "mp",
+    "IP": "ip",
+    "DEF": "def",
+    "MDEF": "m.def",
+    "INIT": "init.",
+    "LEVEL": "level",
+    "CRISIS": "crisis"
   },
   
   "ULTIMAFABULA.ui": {
@@ -83,7 +83,8 @@
     "jobs": "jobs",
     "skills": "skills",
     "spells": "spells",
-    "actions": "actions"
+    "actions": "actions",
+    "resistances": "resistances"
   },
   
   "ULTIMAFABULA.defeniveItemType": {

@@ -51,30 +51,30 @@
   },
 
   "ULTIMAFABULA.basicConditions": {
-    "weak": {"name": "Fraco", "attributes": ["ULTIMAFABULA.attributes.might"]},
-    "dazed": {"name": "Atordoado", "attributes": ["ULTIMAFABULA.attributes.insight"]},
-    "shaken": {"name": "Abalado", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
-    "slow": {"name": "Lento", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
-    "enraged": {"name": "Enfurecido", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
-    "poisoned": {"name": "Envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    "weak": {"name": "fraco", "attributes": ["ULTIMAFABULA.attributes.might"]},
+    "dazed": {"name": "atordoado", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+    "shaken": {"name": "abalado", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+    "slow": {"name": "lento", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+    "enraged": {"name": "enfurecido", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+    "poisoned": {"name": "envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
   },
 
   "ULTIMAFABULA.attributesAbbreviation": {
-    "might": "POD",
-    "dexterity": "DES",
-    "insight": "INT",
-    "willpower": "VON"
+    "might": "pod",
+    "dexterity": "des",
+    "insight": "int",
+    "willpower": "von"
   },
 
   "ULTIMAFABULA.resourceAbbreviation": {
-    "HP": "PV",
-    "MP": "PM",
-    "IP": "PI",
-    "DEF": "DEF",
-    "MDEF": "DEF M.",
-    "INIT": "INI.",
-    "LEVEL": "NIVEL",
-    "CRISIS": "CRISE"
+    "HP": "pv",
+    "MP": "pm",
+    "IP": "pi",
+    "DEF": "def",
+    "MDEF": "def m.",
+    "INIT": "ini.",
+    "LEVEL": "nivel",
+    "CRISIS": "crise"
   },
 
   
@@ -84,7 +84,8 @@
     "jobs": "classes",
     "skills": "habilidades",
     "spells": "feitiços",
-    "actions": "ações"
+    "actions": "ações",
+    "resistances": "resistências"
   },
   
   "ULTIMAFABULA.defeniveItemType": {
