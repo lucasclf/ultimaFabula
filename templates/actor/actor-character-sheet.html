@@ -9,13 +9,12 @@
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
       <div class="resources grid grid-3col">
-
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
         center all of its child elements content and text. --}}
         <div class="resource flex-group-center">
           <label for="data.resources.hp.value" class="resource-label">
-            HP <a class="recover-resource" data-resource="hp">&#128719;</a>
+            {{localize config.resourceAbbreviation.HP}} <a class="recover-resource" data-resource="hp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.hp.value" value="{{data.resources.hp.value}}" data-dtype="Number"/>
@@ -25,7 +24,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.hp.crisis" class="resource-label">CRISIS</label>
+          <label for="data.resources.hp.crisis" class="resource-label">{{localize config.resourceAbbreviation.CRISIS}}</label>
           <div class="resource-content flexrow flex-center flex-between">
           <p> {{data.resources.hp.crisis}}</p>
           </div>
@@ -33,7 +32,7 @@
 
         <div class="resource flex-group-center">
           <label for="data.resources.mp.value" class="resource-label">
-            MP <a class="recover-resource" data-resource="mp">&#128719;</a>
+            {{localize config.resourceAbbreviation.MP}}<a class="recover-resource" data-resource="mp">&#128719;</a>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.mp.value" value="{{data.resources.mp.value}}" data-dtype="Number"/>
@@ -43,7 +42,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.ip.value" class="resource-label">IP  <a class="recover-resource" data-resource="ip">&#128719;</a></label>
+          <label for="data.resources.ip.value" class="resource-label">{{localize config.resourceAbbreviation.IP}}  <a class="recover-resource" data-resource="ip">&#128719;</a></label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="data.resources.ip.value" value="{{data.resources.ip.value}}" data-dtype="Number"/>
           <span> / </span>
@@ -52,7 +51,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="data.resources.level" class="resource-label">LEVEL</label>
+          <label for="data.resources.level" class="resource-label">{{localize config.resourceAbbreviation.LEVEL}}</label>
           <div class="resource-content flexrow flex-center flex-between">
           <p> {{data.resources.level}}</p>
           </div>
@@ -60,7 +59,7 @@
 
         <div class="resource flex-group-center">
           <label for="data.attributes.base" class="resource-label">
-            <i class="rollable" data-roll="{{data.attributes.actual.dexterity}} + {{data.attributes.actual.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">INIT</i>
+            <i class="rollable" data-roll="{{data.attributes.actual.dexterity}} + {{data.attributes.actual.insight}} + {{data.gearStatus.initiative}}" data-label="INITIATIVE">{{localize config.resourceAbbreviation.INIT}}</i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
           <p>{{data.gearStatus.initiative}}</p>
@@ -70,7 +69,7 @@
         <div class="resource flex-group-center">
           <label for="data.defense" class="resource-label">
             <i class="">
-              DEF
+              {{localize config.resourceAbbreviation.DEF}}
             </i>
           </label>
           <div class="resource-content flexrow flex-center flex-between">
@@ -81,7 +80,7 @@
         <div class="resource flex-group-center">
           <label for="data.magicDefense" class="resource-label">
             <i class="">
-            M.DEF
+              {{localize config.resourceAbbreviation.MDEF}}
           </i></label>
           <div class="resource-content flexrow flex-center flex-between">
           <p>{{data.gearStatus.mDefense}}</p>
@@ -94,27 +93,27 @@
 
   <div style="display: flex; justify-content: center; flex-wrap: wrap;">
     <div style="margin: 10px;">
-        <label for="data.status.dazed" class="resource-label">Dazed</label><br>
+        <label for="data.status.dazed" class="resource-label">{{localize config.basicConditions.dazed.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "dazed" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.dazed" {{checked data.status.dazed}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.shaken" class="resource-label">Shaken</label><br>
+        <label for="data.status.shaken" class="resource-label">{{localize config.basicConditions.shaken.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "shaken" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.shaken" {{checked data.status.shaken}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.slow" class="resource-label">Slow</label><br>
+        <label for="data.status.slow" class="resource-label">{{localize config.basicConditions.slow.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "slow" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.slow" {{checked data.status.slow}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.weak" class="resource-label">Weak</label><br>
+        <label for="data.status.weak" class="resource-label">{{localize config.basicConditions.weak.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "weak" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.weak" {{checked data.status.weak}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.enraged" class="resource-label">Enraged</label><br>
+        <label for="data.status.enraged" class="resource-label">{{localize config.basicConditions.enraged.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "enraged" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.enraged" {{checked data.status.enraged}}>
     </div>
     <div style="margin: 10px;">
-        <label for="data.status.poisoned" class="resource-label">Poisoned</label><br>
+        <label for="data.status.poisoned" class="resource-label">{{localize config.basicConditions.poisoned.name}}</label><br>
         <input type="checkbox" {{#shouldDisableStatusCheck "poisoned" data}} disabled {{/shouldDisableStatusCheck}} name="data.status.poisoned" {{checked data.status.poisoned}}>
     </div>
   </div>
@@ -122,12 +121,12 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="attributes">Attributes</a>
-    <a class="item" data-tab="gears">Gears</a>
-    <a class="item" data-tab="jobs">Jobs</a>
-    <a class="item" data-tab="skills">Skills</a>
-    <a class="item" data-tab="spells">Spells</a>
-    <a class="item" data-tab="actions">Actions</a>
+    <a class="item" data-tab="attributes">{{captalizeFirstLetter (localize config.ui.attributes)}}</a>
+    <a class="item" data-tab="gears">{{captalizeFirstLetter (localize config.ui.gears)}}</a>
+    <a class="item" data-tab="jobs">{{captalizeFirstLetter (localize config.ui.jobs)}}</a>
+    <a class="item" data-tab="skills">{{captalizeFirstLetter (localize config.ui.skills)}}</a>
+    <a class="item" data-tab="spells">{{captalizeFirstLetter (localize config.ui.spells)}}</a>
+    <a class="item" data-tab="actions">{{captalizeFirstLetter (localize config.ui.actions)}}</a>
   </nav>
 
   {{!-- Sheet Body --}}

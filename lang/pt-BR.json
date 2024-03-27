@@ -1,0 +1,110 @@
+{
+
+  "ULTIMAFABULA.EffectCreate": "Create Effect",
+  "ULTIMAFABULA.EffectToggle": "Toggle Effect",
+  "ULTIMAFABULA.EffectEdit": "Edit Effect",
+  "ULTIMAFABULA.EffectDelete": "Delete Effect",
+
+  "ULTIMAFABULA.Add": "Add",
+
+  "ULTIMAFABULA.elementType": {
+    "physical": "físico", 
+    "air": "ar", 
+    "bolt": "raio", 
+    "dark": "trevas", 
+    "earth": "terra", 
+    "fire": "fogo", 
+    "ice": "gelo", 
+    "light": "luz", 
+    "poison": "veneno"
+  },
+
+  "ULTIMAFABULA.weaponType": {
+    "sword": "espada",
+    "axe": "machado",
+    "arcane": "arcana",
+    "bow": "arco",
+    "brawling": "contato",
+    "dagger": "adaga",
+    "firearm": "arma de fogo",
+    "flail": "maça",
+    "heavy": "pesada",
+    "spear": "lança",
+    "thrown": "arremesso"
+  },
+  
+  "ULTIMAFABULA.gripType": {
+    "one-handed": "Uma mão",
+    "two-handed": "Duas mãos"
+  },
+  
+  "ULTIMAFABULA.attackType": {
+    "ranged": "distância",
+    "melee": "corpo a corpo"
+  },
+  
+  "ULTIMAFABULA.attributes": {
+    "might": "poder",
+    "dexterity": "destreza",
+    "insight": "intuição",
+    "willpower": "vontade"
+  },
+
+  "ULTIMAFABULA.basicConditions": {
+    "weak": {"name": "Fraco", "attributes": ["ULTIMAFABULA.attributes.might"]},
+    "dazed": {"name": "Atordoado", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+    "shaken": {"name": "Abalado", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+    "slow": {"name": "Lento", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+    "enraged": {"name": "Enfurecido", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+    "poisoned": {"name": "Envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+  },
+
+  "ULTIMAFABULA.attributesAbbreviation": {
+    "might": "POD",
+    "dexterity": "DES",
+    "insight": "INT",
+    "willpower": "VON"
+  },
+
+  "ULTIMAFABULA.resourceAbbreviation": {
+    "HP": "PV",
+    "MP": "PM",
+    "IP": "PI",
+    "DEF": "DEF",
+    "MDEF": "DEF M.",
+    "INIT": "INI.",
+    "LEVEL": "NIVEL",
+    "CRISIS": "CRISE"
+  },
+
+  
+  "ULTIMAFABULA.ui": {
+    "attributes": "atributos",
+    "gears": "equipamentos",
+    "jobs": "classes",
+    "skills": "habilidades",
+    "spells": "feitiços",
+    "actions": "ações"
+  },
+  
+  "ULTIMAFABULA.defeniveItemType": {
+    "armor": "armadura",
+    "shield": "escudo"
+  },
+  
+  "ULTIMAFABULA.spellDuration": {
+    "instantaneous": "inst",
+    "scene": "cena"
+  },
+  
+  "ULTIMAFABULA.spellTarget": {
+    "one-equip": "1 equipamento",
+    "three-creatures": "3 criaturas",
+    "one-creature": "1 criatura",
+    "special": "especial",
+    "self": "você",
+    "one-equiped-weapon": "1 arma equipada",
+    "one-weapon": "1 arma"
+  }
+  
+}

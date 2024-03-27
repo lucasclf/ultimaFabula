@@ -2,12 +2,24 @@ export function extractAttrDiceValue(attr){
     return attr.match(/\d+/)[0] || 6;
 }
 
-export function captalizeFirstLetter(text){
+export function captalizeFirstLetterr(text){
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 export function captalizeText(text){
     return text.toUpperCase();
+}
+
+export function captalizeFirstLetter(text){
+    const words = text.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].substr(1);
+    }
+
+    const captalizedText = words.join(" ");
+
+    return captalizedText
 }
 
 export function extractItem(items, type){

@@ -7,39 +7,39 @@ ULTIMAFABULA.foobar = {
 };
 
 ULTIMAFABULA.elementType = {
-  'physical': 'physical', 
-  'air': 'air', 
-  'bolt': 'bolt', 
-  'dark': 'dark', 
-  'earth': 'earth', 
-  'fire': 'fire', 
-  'ice': 'ice', 
-  'light': 'light', 
-  'poison': 'poison'
+  'physical': 'ULTIMAFABULA.elementType.physical', 
+  'air': 'ULTIMAFABULA.elementType.air', 
+  'bolt': 'ULTIMAFABULA.elementType.bolt', 
+  'dark': 'ULTIMAFABULA.elementType.dark', 
+  'earth': 'ULTIMAFABULA.elementType.earth', 
+  'fire': 'ULTIMAFABULA.elementType.fire', 
+  'ice': 'ULTIMAFABULA.elementType.ice', 
+  'light': 'ULTIMAFABULA.elementType.light', 
+  'poison': 'ULTIMAFABULA.elementType.poison'
 }
 
 ULTIMAFABULA.weaponType = {
-  'sword': 'sword',
-  'axe': 'axe',
-  'arcane': 'arcane',
-  'bow': 'bow',
-  'brawling': 'brawling',
-  'dagger': 'dagger',
-  'firearm': 'firearm',
-  'flail': 'flail',
-  'heavy': 'heavy',
-  'spear': 'spear',
-  'thrown': 'thrown'
+  'sword': 'ULTIMAFABULA.weaponType.sword',
+  'axe': 'ULTIMAFABULA.weaponType.axe',
+  'arcane': 'ULTIMAFABULA.weaponType.arcane',
+  'bow': 'ULTIMAFABULA.weaponType.bow',
+  'brawling': 'ULTIMAFABULA.weaponType.brawling',
+  'dagger': 'ULTIMAFABULA.weaponType.dagger',
+  'firearm': 'ULTIMAFABULA.weaponType.firearm',
+  'flail': 'ULTIMAFABULA.weaponType.flail',
+  'heavy': 'ULTIMAFABULA.weaponType.heavy',
+  'spear': 'ULTIMAFABULA.weaponType.spear',
+  'thrown': 'ULTIMAFABULA.weaponType.thrown'
 }
 
 ULTIMAFABULA.gripType = {
-  'one-handed': 'One-handed',
-  'two-handed': 'Two-handed'
+  'one-handed': 'ULTIMAFABULA.gripType.One-handed',
+  'two-handed': 'ULTIMAFABULA.gripType.Two-handed'
 }
 
 ULTIMAFABULA.attackType = {
-  'ranged': 'ranged',
-  'melee': 'melee'
+  'ranged': 'ULTIMAFABULA.attackType.ranged',
+  'melee': 'ULTIMAFABULA.attackType.melee'
 }
 
 ULTIMAFABULA.attributeDice = {
@@ -50,46 +50,66 @@ ULTIMAFABULA.attributeDice = {
 }
 
 ULTIMAFABULA.attributes = {
-  'might': 'might',
-  'dexterity': 'dexterity',
-  'insight': 'insight',
-  'willpower': 'willpower'
+  'might': 'ULTIMAFABULA.attributes.might',
+  'dexterity': 'ULTIMAFABULA.attributes.dexterity',
+  'insight': 'ULTIMAFABULA.attributes.insight',
+  'willpower': 'ULTIMAFABULA.attributes.willpower'
 }
 
 ULTIMAFABULA.basicConditions = {
-  'weak': {name: 'weak', attributes: [ULTIMAFABULA.attributes.might]},
-  'dazed': {name: 'dazed', attributes: [ULTIMAFABULA.attributes.insight]},
-  'shaken': {name: 'shaken', attributes: [ULTIMAFABULA.attributes.willpower]},
-  'slow': {name: 'slow', attributes: [ULTIMAFABULA.attributes.dexterity]},
-  'enraged': {name: 'slow', attributes: [ULTIMAFABULA.attributes.dexterity, ULTIMAFABULA.attributes.insight]},
-  'poisoned': {name: 'slow', attributes: [ULTIMAFABULA.attributes.willpower, ULTIMAFABULA.attributes.might]}
+  'weak': {name: 'ULTIMAFABULA.basicConditions.weak.name', attributes: ULTIMAFABULA.attributes.might},
+  'dazed': {name: 'ULTIMAFABULA.basicConditions.dazed.name', attributes: [ULTIMAFABULA.attributes.insight]},
+  'shaken': {name: 'ULTIMAFABULA.basicConditions.shaken.name', attributes: [ULTIMAFABULA.attributes.willpower]},
+  'slow': {name: 'ULTIMAFABULA.basicConditions.slow.name', attributes: [ULTIMAFABULA.attributes.dexterity]},
+  'enraged': {name: 'ULTIMAFABULA.basicConditions.enraged.name', attributes: [ULTIMAFABULA.attributes.dexterity, ULTIMAFABULA.attributes.insight]},
+  'poisoned': {name: 'ULTIMAFABULA.basicConditions.poisoned.name', attributes: [ULTIMAFABULA.attributes.willpower, ULTIMAFABULA.attributes.might]}
 }
 
 ULTIMAFABULA.attributesAbbreviation = {
-  'might': 'MIG',
-  'dexterity': 'DEX',
-  'insight': 'INS',
-  'willpower': 'WLP'
+  'might': 'ULTIMAFABULA.attributesAbbreviation.might',
+  'dexterity': 'ULTIMAFABULA.attributesAbbreviation.dexterity',
+  'insight': 'ULTIMAFABULA.attributesAbbreviation.insight',
+  'willpower': 'ULTIMAFABULA.attributesAbbreviation.willpower'
+}
+
+ULTIMAFABULA.resourceAbbreviation = {
+  'HP': 'ULTIMAFABULA.resourceAbbreviation.HP',
+  'MP': 'ULTIMAFABULA.resourceAbbreviation.MP',
+  'IP': 'ULTIMAFABULA.resourceAbbreviation.IP',
+  'DEF': 'ULTIMAFABULA.resourceAbbreviation.DEF',
+  'MDEF': 'ULTIMAFABULA.resourceAbbreviation.MDEF',
+  'INIT': 'ULTIMAFABULA.resourceAbbreviation.INIT',
+  'LEVEL': 'ULTIMAFABULA.resourceAbbreviation.LEVEL',
+  'CRISIS': 'ULTIMAFABULA.resourceAbbreviation.CRISIS'
+}
+
+ULTIMAFABULA.ui = {
+  'attributes': 'ULTIMAFABULA.ui.attributes',
+  'gears': 'ULTIMAFABULA.ui.gears',
+  'jobs': 'ULTIMAFABULA.ui.jobs',
+  'skills': 'ULTIMAFABULA.ui.skills',
+  'spells': 'ULTIMAFABULA.ui.spells',
+  'actions': 'ULTIMAFABULA.ui.actions'
 }
 
 ULTIMAFABULA.defeniveItemType = {
-  'armor': 'armor',
-  'shield': 'shield'
+  'armor': 'ULTIMAFABULA.defeniveItemType.armor',
+  'shield': 'ULTIMAFABULA.defeniveItemType.shield'
 }
 
 ULTIMAFABULA.spellDuration = {
-  'instantaneous': 'inst',
-  'scene': 'scene'
+  'instantaneous': 'ULTIMAFABULA.spellDuration.instantaneous',
+  'scene': 'ULTIMAFABULA.spellDuration.scene'
 }
 
 ULTIMAFABULA.spellTarget = {
-  'one-equip': '1 equip',
-  'three-creatures': '3 creatures',
-  'one-creature': '1 creature',
-  'special': 'special',
-  'self': 'self',
-  'one-equiped-weapon': '1 equiped weapon',
-  'one-weapon': '1 weapon'
+  'one-equip': 'ULTIMAFABULA.spellTarget.one-equip',
+  'three-creatures': 'ULTIMAFABULA.spellTarget.three-creatures',
+  'one-creature': 'ULTIMAFABULA.spellTarget.one-creature',
+  'special': 'ULTIMAFABULA.spellTarget.special',
+  'self': 'ULTIMAFABULA.spellTarget.self',
+  'one-equiped-weapon': 'ULTIMAFABULA.spellTarget.one-equiped-weapon',
+  'one-weapon': 'ULTIMAFABULA.spellTarget.one-weapon'
 }
 
 ULTIMAFABULA.weaponQualities = {

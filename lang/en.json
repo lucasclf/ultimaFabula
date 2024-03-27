@@ -5,5 +5,106 @@
   "ULTIMAFABULA.EffectEdit": "Edit Effect",
   "ULTIMAFABULA.EffectDelete": "Delete Effect",
 
-  "ULTIMAFABULA.Add": "Add"
+  "ULTIMAFABULA.Add": "Add",
+
+  "ULTIMAFABULA.elementType": {
+    "physical": "phisycal",
+    "air": "air", 
+    "bolt": "bolt", 
+    "dark": "dark", 
+    "earth": "earth", 
+    "fire": "fire", 
+    "ice": "ice", 
+    "light": "light", 
+    "poison": "poison"
+  },
+
+  "ULTIMAFABULA.weaponType": {
+    "sword": "sword",
+    "axe": "axe",
+    "arcane": "arcane",
+    "bow": "bow",
+    "brawling": "brawling",
+    "dagger": "dagger",
+    "firearm": "firearm",
+    "flail": "flail",
+    "heavy": "heavy",
+    "spear": "spear",
+    "thrown": "thrown"
+  },
+  
+  "ULTIMAFABULA.gripType": {
+    "one-handed": "One-handed",
+    "two-handed": "Two-handed"
+  },
+  
+  "ULTIMAFABULA.attackType": {
+    "ranged": "ranged",
+    "melee": "melee"
+  },
+  
+  "ULTIMAFABULA.attributes": {
+    "might": "might",
+    "dexterity": "dexterity",
+    "insight": "insight",
+    "willpower": "willpower"
+  },
+
+  "ULTIMAFABULA.basicConditions": {
+    "weak": {"name": "Weak", "attributes": ["ULTIMAFABULA.attributes.might"]},
+    "dazed": {"name": "Dazed", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+    "shaken": {"name": "Shaken", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+    "slow": {"name": "Slow", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+    "enraged": {"name": "Enraged", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+    "poisoned": {"name": "Poisoned", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+  },
+
+  "ULTIMAFABULA.attributesAbbreviation": {
+    "might": "MIG",
+    "dexterity": "DEX",
+    "insight": "INS",
+    "willpower": "WLP"
+  },
+
+  "ULTIMAFABULA.resourceAbbreviation": {
+    "HP": "HP",
+    "MP": "MP",
+    "IP": "IP",
+    "DEF": "DEF",
+    "MDEF": "M.DEF",
+    "INIT": "INIT.",
+    "LEVEL": "LEVEL",
+    "CRISIS": "CRISIS"
+  },
+  
+  "ULTIMAFABULA.ui": {
+    "attributes": "attributes",
+    "gears": "gears",
+    "jobs": "jobs",
+    "skills": "skills",
+    "spells": "spells",
+    "actions": "actions"
+  },
+  
+  "ULTIMAFABULA.defeniveItemType": {
+    "armor": "armor",
+    "shield": "shield"
+  },
+  
+  "ULTIMAFABULA.spellDuration": {
+    "instantaneous": "inst",
+    "scene": "scene"
+  },
+  
+  "ULTIMAFABULA.spellTarget": {
+    "one-equip": "1 equip",
+    "three-creatures": "3 creatures",
+    "one-creature": "1 creature",
+    "special": "special",
+    "self": "self",
+    "one-equiped-weapon": "1 equiped weapon",
+    "one-weapon": "1 weapon"
+  }
+  
+
 }
