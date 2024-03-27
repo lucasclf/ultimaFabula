@@ -33,8 +33,8 @@ ULTIMAFABULA.weaponType = {
 }
 
 ULTIMAFABULA.gripType = {
-  'one-handed': 'ULTIMAFABULA.gripType.One-handed',
-  'two-handed': 'ULTIMAFABULA.gripType.Two-handed'
+  'one-handed': 'ULTIMAFABULA.gripType.one-handed',
+  'two-handed': 'ULTIMAFABULA.gripType.two-handed'
 }
 
 ULTIMAFABULA.attackType = {
@@ -90,7 +90,42 @@ ULTIMAFABULA.ui = {
   'skills': 'ULTIMAFABULA.ui.skills',
   'spells': 'ULTIMAFABULA.ui.spells',
   'actions': 'ULTIMAFABULA.ui.actions',
-  'resistances': 'ULTIMAFABULA.ui.resistances'
+  'resistances': 'ULTIMAFABULA.ui.resistances',
+  'weapons': 'ULTIMAFABULA.ui.weapons',
+  'shields': 'ULTIMAFABULA.ui.shields',
+  'armors': 'ULTIMAFABULA.ui.armors',
+  'accessories': 'ULTIMAFABULA.ui.accessories',
+  'name': 'ULTIMAFABULA.ui.name',
+  'accuracy': 'ULTIMAFABULA.ui.accuracy',
+  'damage': 'ULTIMAFABULA.ui.damage',
+  'type': 'ULTIMAFABULA.ui.type',
+  'distance': 'ULTIMAFABULA.ui.distance',
+  'equipped': 'ULTIMAFABULA.ui.equipped',
+  'add-item': 'ULTIMAFABULA.ui.add-item',
+  'defense': 'ULTIMAFABULA.ui.defense',
+  'mdefense': 'ULTIMAFABULA.ui.mdefense',
+  'initiative': 'ULTIMAFABULA.ui.initiative',
+  'benefits': 'ULTIMAFABULA.ui.benefits',
+  'job': 'ULTIMAFABULA.ui.job',
+  'arcanas': 'ULTIMAFABULA.ui.arcanas',
+  'domains': 'ULTIMAFABULA.ui.domains',
+  'cost': 'ULTIMAFABULA.ui.cost',
+  'target': 'ULTIMAFABULA.ui.target',
+  'duration': 'ULTIMAFABULA.ui.duration'
+}
+
+ULTIMAFABULA.actions = {
+  'attack' : {name: 'ULTIMAFABULA.actions.attack.name', description: 'ULTIMAFABULA.actions.attack.description'},
+  'equipment' : {name: 'ULTIMAFABULA.actions.equipment.name', description: 'ULTIMAFABULA.actions.equipment.description'},
+  'guard' : {name: 'ULTIMAFABULA.actions.guard.name', description: 'ULTIMAFABULA.actions.guard.description'},
+  'hinder' : {name: 'ULTIMAFABULA.actions.hinder.name', description: 'ULTIMAFABULA.actions.hinder.description'},
+  'inventory' : {name: 'ULTIMAFABULA.actions.inventory.name', description: 'ULTIMAFABULA.actions.inventory.description'},
+  'objective' : {name: 'ULTIMAFABULA.actions.objective.name', description: 'ULTIMAFABULA.actions.objective.description'},
+  'spell' : {name: 'ULTIMAFABULA.actions.spell.name', description: 'ULTIMAFABULA.actions.spell.description'},
+  'study' : {name: 'ULTIMAFABULA.actions.study.name', description: 'ULTIMAFABULA.actions.study.description'},
+  'skill' : {name: 'ULTIMAFABULA.actions.skill.name', description: 'ULTIMAFABULA.actions.skill.description'},
+  'ritual' : {name: 'ULTIMAFABULA.actions.ritual.name', description: 'ULTIMAFABULA.actions.ritual.description'},
+  'other' : {name: 'ULTIMAFABULA.actions.other.name', description: 'ULTIMAFABULA.actions.other.description'}
 }
 
 ULTIMAFABULA.defeniveItemType = {

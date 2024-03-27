@@ -1,9 +1,9 @@
 <ol class="items-list">
-  <div class="items-header">JOBS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.jobs)}}</div>
   <li class="item flexrow items-header">
-    <div class="item-name">Name</div>
-    <div class="benefits">Benefits</div>
-    <div class="level">Level</div>
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="benefits">{{captalizeFirstLetter (localize config.ui.benefits)}}</div>
+    <div class="level">{{captalizeFirstLetter (localize config.resourceAbbreviation.LEVEL)}}</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="job"><i class="fas fa-plus"></i> Add item</a>
     </div>

@@ -1,15 +1,15 @@
 <ol class="items-list">
-  <div class="items-header">WEAPONS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.weapons)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="accuracy-formula">Accuracy</div>
-    <div class="damage-formula">Damage</div>
-    <div class="damage-type">Type</div>
-    <div class="equiped">Distance</div>
-    <div class="equiped">Equiped</div>
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="accuracy-formula">{{captalizeFirstLetter (localize config.ui.accuracy)}}</div>
+    <div class="damage-formula">{{captalizeFirstLetter (localize config.ui.damage)}}</div>
+    <div class="damage-type">{{captalizeFirstLetter (localize config.ui.type)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.distance)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.equipped)}}</div>
     <div class="item-controls">
-      <a class="item-control item-create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i> Add item</a>
+      <a class="item-control item-create" title="Create item" data-type="weapon"><i class="fas fa-plus"></i>{{captalizeFirstLetter (localize config.ui.add-item)}}</a>
     </div>
   </li>
   {{#each weapon as |item id|}}
@@ -20,10 +20,10 @@
         </div>
         <h4>{{item.name}}</h4>
       </div>
-      <div class="accuracy-formula item-prop">{{getAbbreviation item.data.accuracyFirst}} + {{getAbbreviation item.data.accuracySecond}}  {{item.data.accuracyMod}}</div>
+      <div class="accuracy-formula item-prop">{{captalizeText (localize (getAbbreviation item.data.accuracyFirst))}} + {{captalizeText (localize (getAbbreviation item.data.accuracySecond))}} + {{item.data.accuracyMod}}</div>
       <div class="damage-formula item-prop">{{item.data.damage}}</div>
-      <div class="damage-type item-prop">{{item.data.damageType}}</div>
-      <div class="equiped item-prop">{{item.data.attackType}}</div>
+      <div class="damage-type item-prop">{{localize item.data.damageType}}</div>
+      <div class="equiped item-prop">{{localize item.data.attackType}}</div>
 
       {{#if (eq item.data.gripType "one-handed")}}
       
@@ -45,13 +45,13 @@
     </li>
   {{/each}}
 
-  <div class="items-header">SHIELDS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.shields)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="defense-formula">Defense</div>
-    <div class="mdefense-formula">M. Defense</div>
-    <div class="equiped">Equiped</div> 
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="defense-formula">{{captalizeFirstLetter (localize config.ui.defense)}}</div>
+    <div class="mdefense-formula">{{captalizeFirstLetter (localize config.ui.mdefense)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.equipped)}}</div> 
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="shield"><i class="fas fa-plus"></i> Add item</a>
     </div>
@@ -87,14 +87,14 @@
     </li>
   {{/each}}
 
-  <div class="items-header">ARMORS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.armors)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="defense-formula">Defense</div>
-    <div class="mdefense-formula">M. Defense</div>
-    <div class="initiative">Initiative</div>
-    <div class="equiped">Equiped</div> 
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="defense-formula">{{captalizeFirstLetter (localize config.ui.defense)}}</div>
+    <div class="mdefense-formula">{{captalizeFirstLetter (localize config.ui.mdefense)}}</div>
+    <div class="initiative">{{captalizeFirstLetter (localize config.ui.initiative)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.equipped)}}</div> 
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="armor"><i class="fas fa-plus"></i> Add item</a>
     </div>
@@ -109,8 +109,8 @@
         <h4>{{item.name}}</h4>
       </div>
 
-        <div class="defense-formula item-prop">{{getAbbreviation item.data.defense.attr}} + {{item.data.defense.value}}</div>
-        <div class="mdefense-formula item-prop">{{getAbbreviation item.data.mDefense.attr}} + {{item.data.mDefense.value}}</div>
+        <div class="defense-formula item-prop">{{captalizeText (localize (getAbbreviation item.data.defense.attr))}} + {{item.data.defense.value}}</div>
+        <div class="mdefense-formula item-prop">{{captalizeText (localize (getAbbreviation item.data.mDefense.attr))}} + {{item.data.mDefense.value}}</div>
 
       <div class="initiative item-prop">{{item.data.initiative}}</div>
         <div class="item-prop">
@@ -124,11 +124,11 @@
     </li>
   {{/each}}
 
-  <div class="items-header">ACCESSORIES</div>
+  <div class="items-header">{{captalizeText (localize config.ui.accessories)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="equiped">Equiped</div>
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.equipped)}}</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="accessory"><i class="fas fa-plus"></i> Add item</a>
     </div>

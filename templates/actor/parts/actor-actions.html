@@ -2,68 +2,50 @@
   ACTIONS
   <div class="action-container">
     <a class="action-card action">
-      <h2 class="action-choice" data-action="attack">Attack</h2>
-      <div class="action-description">You perform a melee or ranged attack.</div>
+      <h2 class="action-choice" data-action="attack">{{captalizeFirstLetter (localize config.actions.attack.name)}}</h2>
+      <div class="action-description">{{localize config.actions.attack.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="equipment">Equipment</h2>
-      <div class="action-description">You switch any number of equipped items with any number of 
-        items in your backpack. <br>
-        * This action doesn't apply to armor.</div>
+      <h2 class="action-choice" data-action="equipment">{{captalizeFirstLetter (localize config.actions.equipment.name)}}</h2>
+      <div class="action-description">{{localize config.actions.equipment.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="guard">Guard</h2>
-      <div class="action-description">Only once per turn. Until the start of your next turn: <br>
-        * You gain Resistance to all damage types.<br>
-        * You gain a +2 bonus to Opposed Checks.<br>
-        * You may cover another creature and prevent foes from
-        performing melee attacks against them.</div>
+      <h2 class="action-choice" data-action="guard">{{captalizeFirstLetter (localize config.actions.guard.name)}}</h2>
+      <div class="action-description">{{localize config.actions.guard.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="hinder">Hinder</h2>
-      <div class="action-description">You perform a Check (DL 10) against an opponent. If you succeed,
-        you inflict <strong>dazed, shaken, slow, or weak</strong> upon them.</div>
+      <h2 class="action-choice" data-action="hinder">{{captalizeFirstLetter (localize config.actions.hinder.name)}}</h2>
+      <div class="action-description">{{localize config.actions.hinder.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="inventory">Inventory</h2>
-      <div class="action-description">You spend Inventory Points to produce and immediately use a
-        consumable item.</div>
+      <h2 class="action-choice" data-action="inventory">{{captalizeFirstLetter (localize config.actions.inventory.name)}}</h2>
+      <div class="action-description">{{localize config.actions.inventory.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="objective">Objective</h2>
-      <div class="action-description">You work towards accomplishing an objective within the conflict.<br>
-        * This will require an Attribute Check or Opposed Check.<br>
-        * Complex goals will often require a Clock.</div>
+      <h2 class="action-choice" data-action="objective">{{captalizeFirstLetter (localize config.actions.objective.name)}}</h2>
+      <div class="action-description">{{localize config.actions.objective.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="spell">Spell</h2>
-      <div class="action-description">You cast one of the spells you have learned.</div>
+      <h2 class="action-choice" data-action="spell">{{captalizeFirstLetter (localize config.actions.spell.name)}}</h2>
+      <div class="action-description">{{localize config.actions.spell.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="study">Study</h2>
-      <div class="action-description">You attempt to gain information about someone or something.<br>
-        * This will generally require an<strong>【INS + INS】</strong> Open Check</div>
+      <h2 class="action-choice" data-action="study">{{captalizeFirstLetter (localize config.actions.study.name)}}</h2>
+      <div class="action-description">{{localize config.actions.study.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="skill">Skill</h2>
-      <div class="action-description">Some Skills require you to spend an action.</div>
+      <h2 class="action-choice" data-action="skill">{{captalizeFirstLetter (localize config.actions.skill.name)}}</h2>
+      <div class="action-description">{{localize config.actions.skill.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="other">Other</h2>
-      <div class="action-description">You perform an action that is not covered by any of the above,
-        negotiating its resolution and effects with the Game Master.</div>
+      <h2 class="action-choice" data-action="other">{{captalizeFirstLetter (localize config.actions.other.name)}}</h2>
+      <div class="action-description">{{localize config.actions.other.description}}</div>
     </a>
     <a class="action-card">
-      <h2 class="action-choice" data-action="ritual">Rituals</h2>
-      <div class="action-description">Ritual magic should never be able to accomplish any of the following:<br>
-        * Causing direct damage. The Ritual can still deal collateral damage — if you open a
-        chasm below your enemies' feet, they are bound to suffer some kind of harm.<br>
-        When establishing collateral damage dealt by a Ritual, use the table on page 93.<br>
-        * Inflicting or removing status effects.<br>
-        * Causing characters to lose or gain HP, MP, IP, Fabula Points or Ultima Points.<br>
-        * Replicating the mechanical benefits of an existing spell or Skill (however, narrative
-        effects such as teleportation of flight are okay, even if some Skills do grant them).<br>
-        * Generating creatures or equipment, or granting them permanent abilities.</div>
+      <h2 class="action-choice" data-action="ritual">{{captalizeFirstLetter (localize config.actions.ritual.name)}}</h2>
+      <div class="action-description">{{localize config.actions.ritual.description}}</div>
     </a>
    </div>
+    
+
 </ol>

@@ -1,9 +1,9 @@
 <ol class="items-list">
-  <div class="items-header">SKILLS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.skills)}}</div>
   <li class="item flexrow items-header">
-    <div class="item-name">Name</div>
-    <div class="benefits">Level</div>
-    <div class="level">Job</div>
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="benefits">{{captalizeFirstLetter (localize config.resourceAbbreviation.LEVEL)}}</div>
+    <div class="level">{{captalizeFirstLetter (localize config.ui.job)}}</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="skill"><i class="fas fa-plus"></i> Add item</a>
     </div>

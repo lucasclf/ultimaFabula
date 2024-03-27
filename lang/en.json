@@ -84,7 +84,42 @@
     "skills": "skills",
     "spells": "spells",
     "actions": "actions",
-    "resistances": "resistances"
+    "resistances": "resistances",
+    "weapons": "weapons",
+    "shields": "shields",
+    "armors": "armors",
+    "accessories": "accessories",
+    "name": "name",
+    "accuracy": "accuracy",
+    "damage": "damage",
+    "type": "type",
+    "distance": "distance",
+    "equipped": "equipped",
+    "add-item": "add-item",
+    "defense": "defense",
+    "mdefense": "m. defense",
+    "initiative": "initiative",
+    "benefits": "benefits",
+    "job": "job",
+    "arcanas": "arcanas",
+    "domains": "domains",
+    "cost": "cost",
+    "target": "target",
+    "duration": "duration"
+  },
+
+  "ULTIMAFABULA.actions": {
+    "attack" : {"name": "attack", "description": "You perform a melee or ranged attack."},
+    "equipment" : {"name": "equipment", "description": "You switch any number of equipped items with any number of items in your backpack. <br>* This action doesn't apply to armor.</div>"},
+    "guard" : {"name": "guard", "description": "Only once per turn. Until the start of your next turn: <br> * You gain Resistance to all damage types.<br> * You gain a +2 bonus to Opposed Checks.<br> * You may cover another creature and prevent foes from performing melee attacks against them."},
+    "hinder" : {"name": "hinder", "description": "You perform a Check (DL 10) against an opponent. If you succeed, you inflict <strong>dazed, shaken, slow, or weak</strong> upon them."},
+    "inventory" : {"name": "inventory", "description": "You spend Inventory Points to produce and immediately use a consumable item."},
+    "objective" : {"name": "objective", "description": "You work towards accomplishing an objective within the conflict.<br> * This will require an Attribute Check or Opposed Check.<br> * Complex goals will often require a Clock."},
+    "spell" : {"name": "spell", "description": "You cast one of the spells you have learned."},
+    "study" : {"name": "study", "description": "You attempt to gain information about someone or something.<br> * This will generally require an<strong>【INS + INS】</strong> Open Check"},
+    "skill" : {"name": "skill", "description": "Some Skills require you to spend an action."},
+    "ritual" : {"name": "ritual", "description": "Ritual magic should never be able to accomplish any of the following:<br> * Causing direct damage. The Ritual can still deal collateral damage — if you open a chasm below your enemies' feet, they are bound to suffer some kind of harm.<br> When establishing collateral damage dealt by a Ritual, use the table on page 93.<br> * Inflicting or removing status effects.<br> * Causing characters to lose or gain HP, MP, IP, Fabula Points or Ultima Points.<br> * Replicating the mechanical benefits of an existing spell or Skill (however, narrative effects such as teleportation of flight are okay, even if some Skills do grant them).<br> * Generating creatures or equipment, or granting them permanent abilities."},
+    "other" : {"name": "other", "description": "You perform an action that is not covered by any of the above, negotiating its resolution and effects with the Game Master."}
   },
   
   "ULTIMAFABULA.defeniveItemType": {

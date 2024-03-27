@@ -1,9 +1,9 @@
 <ol class="items-list">
-  <div class="items-header">ARCANAS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.arcanas)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="domains">Domains</div>
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="domains">{{captalizeFirstLetter (localize config.ui.domains)}}</div>
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="arcana"><i class="fas fa-plus"></i> Add item</a>
     </div>
@@ -26,15 +26,15 @@
     </li>
   {{/each}}
 
-  <div class="items-header">SPELLS</div>
+  <div class="items-header">{{captalizeText (localize config.ui.spells)}}</div>
   <li class="item flexrow items-header">
   
-    <div class="item-name">Name</div>
-    <div class="defense-formula">Job</div>
-    <div class="mdefense-formula">Cost</div>
-    <div class="initiative">Target</div>
-    <div class="equiped">Duration</div>
-    <div class="equiped">Damage</div> 
+    <div class="item-name">{{captalizeFirstLetter (localize config.ui.name)}}</div>
+    <div class="defense-formula">{{captalizeFirstLetter (localize config.ui.job)}}</div>
+    <div class="mdefense-formula">{{captalizeFirstLetter (localize config.ui.cost)}}</div>
+    <div class="initiative">{{captalizeFirstLetter (localize config.ui.target)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.duration)}}</div>
+    <div class="equiped">{{captalizeFirstLetter (localize config.ui.damage)}}</div> 
     <div class="item-controls">
       <a class="item-control item-create" title="Create item" data-type="spell"><i class="fas fa-plus"></i> Add item</a>
     </div>

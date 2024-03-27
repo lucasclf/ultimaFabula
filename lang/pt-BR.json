@@ -85,7 +85,42 @@
     "skills": "habilidades",
     "spells": "feitiços",
     "actions": "ações",
-    "resistances": "resistências"
+    "resistances": "resistências",
+    "weapons": "armas",
+    "shields": "escudos",
+    "armors": "armaduras",
+    "accessories": "acessórios",
+    "name": "nome",
+    "accuracy": "acerto",
+    "damage": "dano",
+    "type": "tipo",
+    "distance": "distancia",
+    "equipped": "equipado",
+    "add-item": "add-item",
+    "defense": "defesa",
+    "mdefense": "defesa m.",
+    "initiative": "iniciativa",
+    "benefits": "benefícios",
+    "job": "classe",
+    "arcanas": "arcanas",
+    "domains": "domínios",
+    "cost": "custo",
+    "target": "alvo",
+    "duration": "duração"
+  },
+  
+  "ULTIMAFABULA.actions": {
+    "attack" : {"name": "ataque", "description": "You perform a melee or ranged attack."},
+    "equipment" : {"name": "equipar", "description": "You switch any number of equipped items with any number of items in your backpack. <br>* This action doesn't apply to armor.</div>"},
+    "guard" : {"name": "defender", "description": ""},
+    "hinder" : {"name": "atrapalhar", "description": "You perform a Check (DL 10) against an opponent. If you succeed, you inflict <strong>dazed, shaken, slow, or weak</strong> upon them."},
+    "inventory" : {"name": "inventário", "description": "You spend Inventory Points to produce and immediately use a consumable item."},
+    "objective" : {"name": "objetivo", "description": "You work towards accomplishing an objective within the conflict.<br> * This will require an Attribute Check or Opposed Check.<br> * Complex goals will often require a Clock."},
+    "spell" : {"name": "feitiço", "description": "You cast one of the spells you have learned."},
+    "study" : {"name": "estudar", "description": "You attempt to gain information about someone or something.<br> * This will generally require an<strong>【INS + INS】</strong> Open Check"},
+    "skill" : {"name": "habilidade", "description": "Some Skills require you to spend an action."},
+    "ritual" : {"name": "ritual", "description": "Ritual magic should never be able to accomplish any of the following:<br> * Causing direct damage. The Ritual can still deal collateral damage — if you open a chasm below your enemies' feet, they are bound to suffer some kind of harm.<br> When establishing collateral damage dealt by a Ritual, use the table on page 93.<br> * Inflicting or removing status effects.<br> * Causing characters to lose or gain HP, MP, IP, Fabula Points or Ultima Points.<br> * Replicating the mechanical benefits of an existing spell or Skill (however, narrative effects such as teleportation of flight are okay, even if some Skills do grant them).<br> * Generating creatures or equipment, or granting them permanent abilities."},
+    "other" : {"name": "outras", "description": "You perform an action that is not covered by any of the above, negotiating its resolution and effects with the Game Master."}
   },
   
   "ULTIMAFABULA.defeniveItemType": {

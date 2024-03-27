@@ -9,8 +9,8 @@
           <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="Number"/>
           <select name="data.damageType">
             {{#select data.damageType}}
-            {{#each config.elementType as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            {{#each config.elementType as |element|}}
+            <option value="{{element}}">{{localize element}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -20,7 +20,7 @@
           <select name="data.accuracyFirst">
             {{#select data.accuracyFirst}}
             {{#each config.attributesAbbreviation as |name type|}}
-            <option value="{{type}}">{{name}}</option>
+            <option value="{{type}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -28,7 +28,7 @@
           <select name="data.accuracySecond">
             {{#select data.accuracySecond}}
             {{#each config.attributesAbbreviation as |name type|}}
-            <option value="{{type}}">{{name}}</option>
+            <option value="{{type}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -69,7 +69,7 @@
             <select name="data.gripType">
               {{#select data.gripType}}
               {{#each config.gripType as |name type|}}
-              <option value="{{type}}">{{name}}</option>
+              <option value="{{type}}">{{localize name}}</option>
               {{/each}}
               {{/select}}
             </select>
@@ -77,8 +77,8 @@
           <td>
             <select name="data.attackType">
               {{#select data.attackType}}
-              {{#each config.attackType as |name type|}}
-              <option value="{{type}}">{{name}}</option>
+              {{#each config.attackType as |type|}}
+              <option value="{{type}}">{{localize type}}</option>
               {{/each}}
               {{/select}}
             </select>
@@ -102,7 +102,7 @@
             <select name="data.weaponType">
               {{#select data.weaponType}}
               {{#each config.weaponType as |name type|}}
-              <option value="{{type}}">{{name}}</option>
+              <option value="{{type}}">{{localize name}}</option>
               {{/each}}
               {{/select}}
             </select>
