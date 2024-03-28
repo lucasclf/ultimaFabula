@@ -5,7 +5,7 @@
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="grid grid-2col">
         <div class="resource">
-          <label class="resource-label">Damage</label>
+          <label class="resource-label">{{captalizeFirstLetter (localize config.ui.damage)}}</label>
           <input type="text" name="data.damage" value="{{data.damage}}" data-dtype="Number"/>
           <select name="data.damageType">
             {{#select data.damageType}}
@@ -16,7 +16,7 @@
           </select>
         </div>
         <div class="resource">
-          <label class="resource-label">Accuracy</label>
+          <label class="resource-label">{{captalizeFirstLetter (localize config.ui.accuracy)}}</label>
           <select name="data.accuracyFirst">
             {{#select data.accuracyFirst}}
             {{#each config.attributesAbbreviation as |name type|}}
@@ -41,8 +41,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="description">{{captalizeFirstLetter (localize config.ui.description)}}</a>
+    <a class="item" data-tab="attributes">{{captalizeFirstLetter (localize config.ui.attributes)}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -61,9 +61,9 @@
 
         <table>
           <tr>
-            <th>gripType</th>
-            <th>attackType</th>
-            <th>Martial?</th>
+            <th>{{captalizeFirstLetter (localize config.ui.gripType)}}</th>
+            <th>{{captalizeFirstLetter (localize config.ui.attackType)}}</th>
+            <th>{{captalizeFirstLetter (localize config.ui.isMartial)}}?</th>
           </tr>
           <td>
             <select name="data.gripType">
@@ -91,8 +91,8 @@
         
         <table>
           <tr>
-            <th>Cost</th>
-            <th>Type</th>
+            <th>{{captalizeFirstLetter (localize config.ui.cost)}}</th>
+            <th>{{captalizeFirstLetter (localize config.ui.type)}}</th>
           </tr>
 
           <td>
@@ -112,13 +112,13 @@
 
         <table>
           <tr>
-            <th>Quality</th>
+            <th>{{captalizeFirstLetter (localize config.ui.quality)}}</th>
           </tr>
           <td>
             <select name="data.quality">
               {{#select data.quality}}
               {{#each config.weaponQualities as |object type|}}
-              <option value="{{type}}">{{object.name}}</option>
+              <option value="{{type}}">{{localize object.name}}</option>
               {{/each}}
               {{/select}}
             </select>

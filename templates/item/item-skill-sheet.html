@@ -5,21 +5,21 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <h4 class="resource-label">Level</h4>
+      <h4 class="resource-label">{{captalizeFirstLetter (localize config.resourceAbbreviation.LEVEL)}}</h4>
       <div class="grid grid-3col">
           <input type="number" name="data.level" value="{{data.level}}" min="1" max="{{data.maxLevel}}">
           <span> | </span>
           <input type="number" name="data.maxLevel" value="{{data.maxLevel}}" min="1" max="99">
       </div>
-      <h4 class="resource-label">Effect</h4>
+      <h4 class="resource-label">{{captalizeFirstLetter (localize config.ui.effect)}}</h4>
       <input type="text" name="data.effect" value="{{data.effect}}">
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="description">{{captalizeFirstLetter (localize config.ui.description)}}</a>
+    <a class="item" data-tab="attributes">{{captalizeFirstLetter (localize config.ui.attributes)}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -35,9 +35,9 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <table>
         <tr>
-          <th>Job</th>
-          <th>Dual Shield?</th>
-          <th>Allow Ritual?</th>
+          <th>{{captalizeFirstLetter (localize config.ui.job)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.dualShield)}}?</th>
+          <th>{{captalizeFirstLetter (localize config.ui.allowRitual)}}?</th>
         </tr>
 
         <td>
@@ -60,10 +60,10 @@
 
       <table>
         <tr>
-          <th>HP</th>
-          <th>HP Multiply</th>
-          <th>MP</th>
-          <th>MP multiply</th>
+          <th>{{captalizeText (localize config.resourceAbbreviation.HP)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.hpMultiply)}}</th>
+          <th>{{captalizeText (localize config.resourceAbbreviation.MP)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.mpMultiply)}}</th>
         </tr>
         <td>
           <span><input type="text" name="data.bonus.hp" value="{{data.bonus.hp}}" data-dtype="Number"></span>
@@ -81,10 +81,10 @@
 
       <table>
         <tr>
-          <th>IP</th>
-          <th>IP Multiply</th>
-          <th>Melee Accuracy</th>
-          <th>Ranged Accuracy</th>
+          <th>{{captalizeText (localize config.resourceAbbreviation.IP)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.ipMultiply)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.meleeAccuracy)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.rangedAccuracy)}}</th>
         </tr>
         <td>
           <span><input type="text" name="data.bonus.ip" value="{{data.bonus.ip}}" data-dtype="Number"></span>

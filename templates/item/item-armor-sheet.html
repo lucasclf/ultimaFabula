@@ -7,16 +7,6 @@
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="grid grid-2col">
         <div class="resource">
-          <label class="resource-label">{{captalizeFirstLetter (localize config.ui.type)}}</label>
-          <select name="data.type">
-            {{#select data.type}}
-            {{#each config.defeniveItemType as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-            {{/select}}
-          </select>
-        </div>
-        <div class="resource">
           <label class="resource-label">{{captalizeFirstLetter (localize config.ui.cost)}}</label>
           <input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number">
         </div>
@@ -96,7 +86,7 @@
             <select name="data.quality">
               {{#select data.quality}}
               {{#each config.armorQualities as |object type|}}
-              <option value="{{type}}">{{object.name}}</option>
+              <option value="{{type}}">{{localize object.name}}</option>
               {{/each}}
               {{/select}}
             </select>

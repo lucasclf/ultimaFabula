@@ -1,16 +1,22 @@
+import { localizeQuality } from "./localizeHelper.mjs";
+
 export function recoverQualityInfo(itemType, infoType, quality){
     let recoveredQuality;
+    let localizedQuality;
 
     switch(itemType){
         case "weapon":
-            recoveredQuality = CONFIG.ULTIMAFABULA.weaponQualities;
-            return recoveredQuality[infoType];
+            recoveredQuality = CONFIG.ULTIMAFABULA.weaponQualities[quality];
+            localizedQuality = localizeQuality(recoveredQuality);
+            return localizedQuality[infoType];
         case "armor":
             recoveredQuality = CONFIG.ULTIMAFABULA.armorQualities[quality];
-            return recoveredQuality[infoType];
+            localizedQuality = localizeQuality(recoveredQuality);
+            return localizedQuality[infoType];
         case "accessory":
             recoveredQuality = CONFIG.ULTIMAFABULA.accessoryQualities[quality];
-            return recoveredQuality[infoType];
+            localizedQuality = localizeQuality(recoveredQuality);
+            return localizedQuality[infoType];
     }
 }
 
@@ -23,6 +29,7 @@ export function recoverQualityInfoByActor(gear){
         _recoverQualityInfo(mainHandQuality), 
         _recoverQualityInfo(offHandQuality)
     ]
+
 
     return qualities;
 }

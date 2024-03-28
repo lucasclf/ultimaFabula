@@ -6,7 +6,7 @@
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
       <div class="grid grid-4col">
-          <label class="resource-label">Job</label>
+          <label class="resource-label">{{captalizeFirstLetter (localize config.ui.job)}}</label>
           <select name="data.jobRelation">
             {{#select data.jobRelation}}
               <option value="No-Job">Define</option>
@@ -15,18 +15,18 @@
               {{/each}}
             {{/select}}
           </select>
-          <label class="resource-label">Ofensive?</label>
+          <label class="resource-label">{{captalizeFirstLetter (localize config.ui.offensive)}}?</label>
           <input type="checkbox" name="data.isOffensive" {{checked data.isOffensive}}>
       </div>
-      <h4 class="resource-label">Effect</h4>
+      <h4 class="resource-label">{{captalizeFirstLetter (localize config.ui.effect)}}</h4>
       <input type="text" name="data.effect" value="{{data.effect}}">
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="description">{{captalizeFirstLetter (localize config.ui.description)}}</a>
+    <a class="item" data-tab="attributes">{{captalizeFirstLetter (localize config.ui.attributes)}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -42,11 +42,11 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <table>
         <tr>
-          <th>Cost</th>
-          <th>Target</th>
-          <th>Duration</th>
-          <th>Damage</th>
-          <th>Damage Type</th>
+          <th>{{captalizeFirstLetter (localize config.ui.cost)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.target)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.duration)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.damage)}}</th>
+          <th>{{captalizeFirstLetter (localize config.ui.damageType)}}</th>
         </tr>
         <td>
           <input type="text" name="data.cost" value="{{data.cost}}">
@@ -55,7 +55,7 @@
           <select name="data.target">
             {{#select data.target}}
             {{#each config.spellTarget as |name type|}}
-            <option value="{{name}}">{{name}}</option>
+            <option value="{{name}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -64,7 +64,7 @@
           <select name="data.duration">
             {{#select data.duration}}
             {{#each config.spellDuration as |name type|}}
-            <option value="{{name}}">{{name}}</option>
+            <option value="{{name}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -76,7 +76,7 @@
           <select name="data.damageType">
             {{#select data.damageType}}
             {{#each config.elementType as |name type|}}
-            <option value="{{name}}">{{name}}</option>
+            <option value="{{name}}">{{localize name}}</option>
             {{/each}}
             {{/select}}
           </select>

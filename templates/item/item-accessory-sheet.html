@@ -32,7 +32,7 @@
           <select name="data.quality">
             {{#select data.quality}}
             {{#each config.accessoryQualities as |object type|}}
-            <option value="{{type}}">{{object.name}}</option>
+            <option value="{{type}}">{{localize object.name}}</option>
             {{/each}}
             {{/select}}
           </select>
