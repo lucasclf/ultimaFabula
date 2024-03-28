@@ -110,17 +110,17 @@
   },
   
   "ULTIMAFABULA.actions": {
-    "attack" : {"name": "ataque", "description": "You perform a melee or ranged attack."},
-    "equipment" : {"name": "equipar", "description": "You switch any number of equipped items with any number of items in your backpack. <br>* This action doesn't apply to armor.</div>"},
-    "guard" : {"name": "defender", "description": ""},
-    "hinder" : {"name": "atrapalhar", "description": "You perform a Check (DL 10) against an opponent. If you succeed, you inflict <strong>dazed, shaken, slow, or weak</strong> upon them."},
-    "inventory" : {"name": "inventário", "description": "You spend Inventory Points to produce and immediately use a consumable item."},
-    "objective" : {"name": "objetivo", "description": "You work towards accomplishing an objective within the conflict.<br> * This will require an Attribute Check or Opposed Check.<br> * Complex goals will often require a Clock."},
-    "spell" : {"name": "feitiço", "description": "You cast one of the spells you have learned."},
-    "study" : {"name": "estudar", "description": "You attempt to gain information about someone or something.<br> * This will generally require an<strong>【INS + INS】</strong> Open Check"},
-    "skill" : {"name": "habilidade", "description": "Some Skills require you to spend an action."},
-    "ritual" : {"name": "ritual", "description": "Ritual magic should never be able to accomplish any of the following:<br> * Causing direct damage. The Ritual can still deal collateral damage — if you open a chasm below your enemies' feet, they are bound to suffer some kind of harm.<br> When establishing collateral damage dealt by a Ritual, use the table on page 93.<br> * Inflicting or removing status effects.<br> * Causing characters to lose or gain HP, MP, IP, Fabula Points or Ultima Points.<br> * Replicating the mechanical benefits of an existing spell or Skill (however, narrative effects such as teleportation of flight are okay, even if some Skills do grant them).<br> * Generating creatures or equipment, or granting them permanent abilities."},
-    "other" : {"name": "outras", "description": "You perform an action that is not covered by any of the above, negotiating its resolution and effects with the Game Master."}
+    "attack" : {"name": "ataque", "description": "Você executa um ataque corpo a corpo ou à distância."},
+    "equipment" : {"name": "equipar", "description": "Você troca qualquer número de itens equipados por qualquer número de itens em sua mochila. <br>* Esta ação não se aplica a armaduras."},
+    "guard" : {"name": "defender", "description": "Apenas uma vez por turno. Até o início do seu próximo turno: <br> * Você ganha Resistência a todos os tipos de dano.<br> * Você ganha +2 de bônus em Testes Resistidos.<br> * Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo. contra eles."},
+    "hinder" : {"name": "atrapalhar", "description": "Você realiza um Teste (ND 10) contra um oponente. Se tiver sucesso, você infligirá <strong>atordoamento, abalado, lentidão ou fraqueza</strong> a eles."},
+    "inventory" : {"name": "inventário", "description": "Você gasta Pontos de Inventário para produzir e usar imediatamente um item consumível."},
+    "objective" : {"name": "objetivo", "description": "Você trabalha para alcançar um objetivo dentro do conflito.<br> * Isso exigirá um Teste de Atributo ou Teste de Oposição.<br> * Metas complexas geralmente exigirão um Relógio."},
+    "spell" : {"name": "feitiço", "description": "Você lançou um dos feitiços que aprendeu."},
+    "study" : {"name": "estudar", "description": "Você tenta obter informações sobre alguém ou algo.<br> * Isso geralmente exigirá um Teste Aberto de<strong>【INT + INT】</strong>"},
+    "skill" : {"name": "habilidade", "description": "Algumas Habilidades exigem que você gaste uma ação."},
+    "ritual" : {"name": "ritual", "description": "Um ritual mágico nunca deve ser capaz de realizar qualquer um dos seguintes:<br> * Causar dano direto. O Ritual ainda pode causar dano colateral — se você abrir um abismo abaixo dos pés de seus inimigos, eles sofrerão algum tipo de dano.<br> Ao estabelecer o dano colateral causado por um Ritual, use a tabela na página 93.<br> > * Infligir ou remover efeitos de status.<br> * Fazer com que os personagens percam ou ganhem HP, MP, IP, Fabula Points ou Ultima Points.<br> * Replicar os benefícios mecânicos de um feitiço ou habilidade existente (no entanto, efeitos narrativos como como teletransporte de vôo são aceitáveis, mesmo que algumas habilidades os concedam).<br> * Gerar criaturas ou equipamentos, ou conceder-lhes habilidades permanentes."},
+    "other" : {"name": "outras", "description": "Você realiza uma ação que não está coberta por nenhuma das opções acima, negociando sua resolução e efeitos com o Mestre do Jogo."}
   },
   
   "ULTIMAFABULA.defeniveItemType": {

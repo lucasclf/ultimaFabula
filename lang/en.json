@@ -110,7 +110,7 @@
 
   "ULTIMAFABULA.actions": {
     "attack" : {"name": "attack", "description": "You perform a melee or ranged attack."},
-    "equipment" : {"name": "equipment", "description": "You switch any number of equipped items with any number of items in your backpack. <br>* This action doesn't apply to armor.</div>"},
+    "equipment" : {"name": "equipment", "description": "You switch any number of equipped items with any number of items in your backpack. <br>* This action doesn't apply to armor."},
     "guard" : {"name": "guard", "description": "Only once per turn. Until the start of your next turn: <br> * You gain Resistance to all damage types.<br> * You gain a +2 bonus to Opposed Checks.<br> * You may cover another creature and prevent foes from performing melee attacks against them."},
     "hinder" : {"name": "hinder", "description": "You perform a Check (DL 10) against an opponent. If you succeed, you inflict <strong>dazed, shaken, slow, or weak</strong> upon them."},
     "inventory" : {"name": "inventory", "description": "You spend Inventory Points to produce and immediately use a consumable item."},
