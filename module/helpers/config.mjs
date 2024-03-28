@@ -111,7 +111,20 @@ ULTIMAFABULA.ui = {
   'domains': 'ULTIMAFABULA.ui.domains',
   'cost': 'ULTIMAFABULA.ui.cost',
   'target': 'ULTIMAFABULA.ui.target',
-  'duration': 'ULTIMAFABULA.ui.duration'
+  'duration': 'ULTIMAFABULA.ui.duration',
+  'description': 'ULTIMAFABULA.ui.description',
+  'quality': 'ULTIMAFABULA.ui.quality',
+  'domains': 'ULTIMAFABULA.ui.domains',
+  'merge': 'ULTIMAFABULA.ui.merge',
+  'dismiss': 'ULTIMAFABULA.ui.dismiss',
+  'isMartial': 'ULTIMAFABULA.ui.isMartial',
+  'initiateProject': 'ULTIMAFABULA.ui.initiateProject',
+  'martialEquipment': 'ULTIMAFABULA.ui.martialEquipment',
+  'meleeWeapon': 'ULTIMAFABULA.ui.meleeWeapon',
+  'rangedWeapon': 'ULTIMAFABULA.ui.rangedWeapon',
+  'isCaster': 'ULTIMAFABULA.ui.isCaster',
+  'casterAttributes': 'ULTIMAFABULA.ui.casterAttributes',
+  'freeBenefits': 'ULTIMAFABULA.ui.freeBenefits'
 }
 
 ULTIMAFABULA.actions = {

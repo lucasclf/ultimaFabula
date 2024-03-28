@@ -106,7 +106,19 @@
     "domains": "domínios",
     "cost": "custo",
     "target": "alvo",
-    "duration": "duração"
+    "duration": "duração",
+    "description": "descrição",
+    "quality": "qualidade",
+    "merge": "fusão",
+    "dismiss": "dispensa",
+    "isMartial": "é marcial",
+    "initiateProject": "iniciar projetos",
+    "martialEquipment": "equipamentos marciais",
+    "meleeWeapon": "arma corpo a corpo",
+    "rangedWeapon": "arma a distância",
+    "isCaster": "usa feitiços",
+    "casterAttributes": "atributos de feiticeiro",
+    "freeBenefits": "descrição dos benefícios"
   },
   
   "ULTIMAFABULA.actions": {

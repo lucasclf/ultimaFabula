@@ -105,7 +105,19 @@
     "domains": "domains",
     "cost": "cost",
     "target": "target",
-    "duration": "duration"
+    "duration": "duration",
+    "description": "description",
+    "quality": "quality",
+    "merge": "merge",
+    "dismiss": "dismiss",
+    "isMartial": "is martial",
+    "initiateProject": "initiate projects",
+    "martialEquipment": "martial equipments",
+    "meleeWeapon": "melee weapon",
+    "rangedWeapon": "ranged weapon",
+    "isCaster": "is Caster",
+    "casterAttributes": "caster attributes",
+    "freeBenefits": "free benefits description"
   },
 
   "ULTIMAFABULA.actions": {
