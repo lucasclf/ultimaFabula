@@ -56,10 +56,15 @@
 
   "ULTIMAFABULA.modalActions": {
     "change": "change",
+    "cast": "cast",
     "guardHeader": "GUARD ACTION!",
     "guardBody": "<p>Only once per turn. Until the start of your next turn:</p><ul><li>You gain Resistance to all damage types.</li><li>You gain a +2 bonus to Opposed Checks.</li><li>You may cover another creature and prevent foes from performing melee attacks against them.</li><ul>",
     "hinderFlavor": "Inflict $$$ in the target!",
+    "spellFlavor": "Cast $$$!!!",
     "objectiveFlavor": "Describe what you want to accomplish and how you intend to approach it.",
+    "spellNegativeFlavor": "You have no spells.",
+    "skillNegativeFlavor": "You have no skills.",
+    "ritualNegativeFlavor": "You do not have jobs capable of performing rituals.",
     "attackTitle": "Attack action!",
     "equipmentTitle": "Equipment action!",
     "hinderTitle": "Hinder action!",
@@ -69,7 +74,14 @@
     "ritualTitle": "Ritual action!",
     "skillTitle": "Skill action!",
     "spellTitle": "Spell action!",
-    "studyTitle": "Study action!"
+    "studyTitle": "Study action!",
+    "studyResult": {
+      "header": "<tr><th>Result</th><th>Equates to...</th></tr>", 
+      "seven": "<td>7+</td><td>A subtle hint, useful but a bit too broad.</td>", 
+      "ten": "<td>10+</td><td>A complete answer, with no room for doubt.</td>", 
+      "thirteen": "<td>13+</td><td>A complete answer, and a useful detail related to it.</td>", 
+      "sixteen": "<td>16+</td><td>Literally everything one could possibly know about it.</td>"
+    }
   },
   
   "ULTIMAFABULA.attributes": {

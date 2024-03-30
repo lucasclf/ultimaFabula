@@ -13,10 +13,13 @@ export async function mountSkill(actor){
         acc[job].push(skill);
         return acc;
        }, {});
+    
+    const hasSkills = Object.keys(skillsOrganized).length > 0;
 
     const skillOpt = {
         actor: actor,
-        skills: skillsOrganized
+        skills: skillsOrganized,
+        hasSkills: hasSkills
     }
 
     new RenderSkill(skillOpt).render(true);

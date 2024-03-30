@@ -55,10 +55,15 @@ ULTIMAFABULA.equipmentSlot = {
 
 ULTIMAFABULA.modalActions = {
   'change': 'ULTIMAFABULA.modalActions.change',
+  'cast': 'ULTIMAFABULA.modalActions.cast',
   'guardHeader': 'ULTIMAFABULA.modalActions.guardHeader',
   'guardBody': 'ULTIMAFABULA.modalActions.guardBody',
   'hinderFlavor': 'ULTIMAFABULA.modalActions.hinderFlavor',
+  'spellFlavor': 'ULTIMAFABULA.modalActions.spellFlavor',
   'objectiveFlavor': 'ULTIMAFABULA.modalActions.objectiveFlavor',
+  'spellNegativeFlavor': 'ULTIMAFABULA.modalActions.spellNegativeFlavor',
+  'skillNegativeFlavor': 'ULTIMAFABULA.modalActions.skillNegativeFlavor',
+  'ritualNegativeFlavor': 'ULTIMAFABULA.modalActions.ritualNegativeFlavor',
   'attackTitle': 'ULTIMAFABULA.modalActions.attackTitle',
   'equipmentTitle': 'ULTIMAFABULA.modalActions.equipmentTitle',
   'hinderTitle': 'ULTIMAFABULA.modalActions.hinderTitle',
@@ -68,7 +73,8 @@ ULTIMAFABULA.modalActions = {
   'ritualTitle': 'ULTIMAFABULA.modalActions.ritualTitle',
   'skillTitle': 'ULTIMAFABULA.modalActions.skillTitle',
   'spellTitle': 'ULTIMAFABULA.modalActions.spellTitle',
-  'studyTitle': 'ULTIMAFABULA.modalActions.studyTitle'
+  'studyTitle': 'ULTIMAFABULA.modalActions.studyTitle',
+  'studyResult': {header: 'ULTIMAFABULA.modalActions.studyResult.header', seven: 'ULTIMAFABULA.modalActions.studyResult.seven', ten: 'ULTIMAFABULA.modalActions.studyResult.ten', thirteen: 'ULTIMAFABULA.modalActions.studyResult.thirteen', sixteen: 'ULTIMAFABULA.modalActions.studyResult.sixteen'}
 }
 
 ULTIMAFABULA.attributeDice = {

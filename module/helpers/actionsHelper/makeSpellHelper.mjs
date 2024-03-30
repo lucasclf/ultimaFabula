@@ -1,5 +1,6 @@
 import RenderSpell from "../../apps/RenderSpellModal.mjs"
 import { extractItem } from "../genericHelper.mjs";
+import { localize } from "../localizeHelper.mjs";
 import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
 import { calcHighRoll, mountRoll } from "../rollHelper.mjs";
 
@@ -13,10 +14,13 @@ export async function mountSpell(actor){
             acc[job].push(spell);
             return acc;
         }, {});
+    
+    const hasSpells = Object.keys(spellsOrganized).length > 0;
 
     const spellOpt = {
         actor: actor,
-        spells: spellsOrganized
+        spells: spellsOrganized,
+        hasSpells: hasSpells
     }
 
     new RenderSpell(spellOpt).render(true);
@@ -68,8 +72,13 @@ async function _mountSpellRoll(actor, selectedSpell, qualities){
 };
 
 function _buildSpellLabel(selectedSpell){
-    const spellName = selectedSpell.name.toUpperCase();
-    return `CAST ${spellName}!!!`
+    const spellName = selectedSpell.name;
+    
+    const defaultFlavor = localize(CONFIG.ULTIMAFABULA.modalActions.spellFlavor);
+    
+    const flavor = defaultFlavor.replace(/\$\$\$/g, spellName).toUpperCase();
+
+    return flavor;
 }
 
 function _calcDamage(dices, damage, qualities){

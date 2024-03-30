@@ -56,10 +56,15 @@
 
   "ULTIMAFABULA.modalActions": {
     "change": "equipar",
+    "cast": "lançar",
     "guardHeader": "AÇÃO DE DEFENDER!",
     "guardBody": "<p>Apenas uma vez por turno. Até o início do seu próximo turno:</p><ul><li>Você ganha Resistência a todos os tipos de dano.</li><li>Você ganha um bônus de +2 em Testes Opostos.</li><li> Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo contra ela.</li><ul>",
     "hinderFlavor": "Inflinge $$$ no alvo!",
+    "spellFlavor": "Lançou $$$!!!",
     "objectiveFlavor": "Descreva o que você deseja realizar e como pretende faze-lo.",
+    "spellNegativeFlavor": "Você não possui feitiços.",
+    "skillNegativeFlavor": "Você não possui habilidades.",
+    "ritualNegativeFlavor": "Você não possui classes capazes de executar rituais.",
     "attackTitle": "Ação de Atacar!",
     "equipmentTitle": "Ação de Equipamento!",
     "hinderTitle": "Ação de Atrapalhar!",
@@ -69,7 +74,14 @@
     "ritualTitle": "Ação de Ritual!",
     "skillTitle": "Ação de Habilidade!",
     "spellTitle": "Ação de Feitiço!",
-    "studyTitle": "Ação de Estudar!"
+    "studyTitle": "Ação de Estudar!",
+    "studyResult": {
+      "header": "<tr><th>Resultado</th><th>Igual a...</th></tr>", 
+      "seven": "<td>7+</td><td>Uma dica sutil, útil, mas um pouco ampla.</td>", 
+      "ten": "<td>10+</td><td>Uma resposta completa, sem margem para dúvidas.</td>", 
+      "thirteen": "<td>13+</td><td>Uma resposta completa e um detalhe útil relacionado a ela.</td>", 
+      "sixteen": "<td>16+</td><td>Literalmente tudo o que alguém poderia saber sobre isso.</td>"
+    }
   },
 
   "ULTIMAFABULA.attributes": {

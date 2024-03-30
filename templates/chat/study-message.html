@@ -35,30 +35,20 @@
 		<h4 class="dice-total">{{diceRoll.total}}</h4>
 
 	</div>
-
-			<table>
-				<tr>
-					<th>Result</th>
-					<th>Equates to...</th>
-				</tr>
-				<tr class="{{manipuleStudyCss diceRoll.total 7 9}}">
-					<td>7+</td>
-					<td>A subtle hint, useful but a bit too broad.</td>
-				</tr>
-				<tr class="{{manipuleStudyCss diceRoll.total 10 12}}">
-					<td>10+</td>
-					<td>A complete answer, with no room for doubt.</td>
-				</tr>
-				<tr class="{{manipuleStudyCss diceRoll.total 13 15}}">
-					<td>13+</td>
-					<td>A complete answer, and a useful detail related to it.</td>
-				</tr>
-				<tr class="{{manipuleStudyCss diceRoll.total 13 99}}">
-					<td>16+</td>
-					<td>Literally everything one could possibly know about it.</td>
-				</tr>
-			</table>
-
-	
+		<table>
+			{{{localize 'ULTIMAFABULA.modalActions.studyResult.header'}}}
+			<tr class="{{manipuleStudyCss diceRoll.total 7 9}}">
+				{{{localize 'ULTIMAFABULA.modalActions.studyResult.seven'}}}
+			</tr>
+			<tr class="{{manipuleStudyCss diceRoll.total 10 12}}">
+				{{{localize 'ULTIMAFABULA.modalActions.studyResult.ten'}}}
+			</tr>
+			<tr class="{{manipuleStudyCss diceRoll.total 13 15}}">
+				{{{localize 'ULTIMAFABULA.modalActions.studyResult.thirteen'}}}
+			</tr>
+			<tr class="{{manipuleStudyCss diceRoll.total 16 99}}">
+				{{{localize 'ULTIMAFABULA.modalActions.studyResult.sixteen'}}}
+			</tr>
+		</table>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 <form>
+    {{#if (eq object.hasSpells true)}}
     {{#each object.skills as |job name|}}
         <div class='items-list'>
             <p class="job-name">{{recoverJob ../object.actor.items name}}</p>
@@ -26,4 +27,9 @@
     <a>
         <button class="hinder-choice">SELECT</button>
     </a>
+    {{else}}
+    <div class="container ritual-model-form">
+        <p>{{localize 'ULTIMAFABULA.modalActions.skillNegativeFlavor'}}</p>
+    </div>
+    {{/if}}
 </form>
