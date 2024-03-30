@@ -1,8 +1,15 @@
+import { ULTIMAFABULA } from "./config.mjs";
+import { localize } from "./localizeHelper.mjs";
+
 export function mountActualAttributes(actor){
     let updateData = {}
     updateData[`system.attributes.actual`] = _calcAttr(actor.system.attributes.base, actor.system.status);
 
     actor.update(updateData);
+}
+
+export function recoverAttrNameByKey(key){
+    return localize(ULTIMAFABULA.attributes[key]);
 }
 
 function _calcAttr(attr, status){

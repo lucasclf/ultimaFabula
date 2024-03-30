@@ -42,6 +42,11 @@
     "ranged": "distância",
     "melee": "corpo a corpo"
   },
+
+  "ULTIMAFABULA.attackNames": {
+    "twinShield": "escudos duplos",
+    "unnarmedWeapon": "ataque desarmado"
+  },
   
   "ULTIMAFABULA.attributes": {
     "might": "poder",
@@ -130,7 +135,9 @@
     "offensive": "ofensivo",
     "damageType": "tipo de dano",
     "attackType": "tipo de ataque",
-    "gripType": "empunhadura"
+    "gripType": "empunhadura",
+    "weapon": "arma",
+    "bothWeapons": "ambas armas"
   },
   
   "ULTIMAFABULA.actions": {
@@ -145,6 +152,10 @@
     "skill" : {"name": "habilidade", "description": "Algumas Habilidades exigem que você gaste uma ação."},
     "ritual" : {"name": "ritual", "description": "Um ritual mágico nunca deve ser capaz de realizar qualquer um dos seguintes:<br> * Causar dano direto. O Ritual ainda pode causar dano colateral — se você abrir um abismo abaixo dos pés de seus inimigos, eles sofrerão algum tipo de dano.<br> Ao estabelecer o dano colateral causado por um Ritual, use a tabela na página 93.<br> > * Infligir ou remover efeitos de status.<br> * Fazer com que os personagens percam ou ganhem HP, MP, IP, Fabula Points ou Ultima Points.<br> * Replicar os benefícios mecânicos de um feitiço ou habilidade existente (no entanto, efeitos narrativos como como teletransporte de vôo são aceitáveis, mesmo que algumas habilidades os concedam).<br> * Gerar criaturas ou equipamentos, ou conceder-lhes habilidades permanentes."},
     "other" : {"name": "outras", "description": "Você realiza uma ação que não está coberta por nenhuma das opções acima, negocieo sua resolução e efeitos com o Mestre do Jogo."}
+  },
+
+  "ULTIMAFABULA.actionsLabels": {
+    "attackLabel": "atacou com"
   },
   
   "ULTIMAFABULA.defeniveItemType": {

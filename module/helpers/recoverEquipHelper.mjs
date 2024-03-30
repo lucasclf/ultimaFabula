@@ -1,3 +1,5 @@
+import { localize } from "./localizeHelper.mjs";
+
 export function recoverArmor(actor){
     let itemId = actor.system.gear.armor || "";
     let armor = itemId ? actor.items.get(itemId) : null;
@@ -72,16 +74,16 @@ export function recoverItemList(actor, itemType){
 
 function _mountUnnarmedWeapon(){
     return {
-        name:"Unarmed Weapon",
+        name: localize(CONFIG.ULTIMAFABULA.attackNames.unnarmedWeapon),
         type: "weapon",
         img: "icons/svg/item-bag.svg",
         system: {
             accuracyFirst: "dexterity",
             accuracySecond: "might",
             accuracyMod: 0,
-            attackType: "melee",
+            attackType: CONFIG.ULTIMAFABULA.attackType.melee,
             damage: 0,
-            damageType: "physical",
+            damageType: CONFIG.ULTIMAFABULA.elementType.physical,
             quality: "no-quality",
             gripType: "one-handed"
         },
@@ -93,16 +95,16 @@ function _mountShieldWeapon(actor){
     let shield = actor.system.gear.offHand;
     if(shield != ""){
         return {
-            name:"Twin Shield",
+            name:localize(CONFIG.ULTIMAFABULA.attackNames.twinShield),
             type: "weapon",
             img: "icons/svg/item-bag.svg",
             system: {
                 accuracyFirst: "might",
                 accuracySecond: "might",
                 accuracyMod: 0,
-                attackType: "melee",
+                attackType: CONFIG.ULTIMAFABULA.attackType.melee,
                 damage: 0,
-                damageType: "physical",
+                damageType: CONFIG.ULTIMAFABULA.elementType.physical,
                 quality: "no-quality",
                 gripType: "two-handed"
             }

@@ -42,6 +42,11 @@
     "ranged": "ranged",
     "melee": "melee"
   },
+
+  "ULTIMAFABULA.attackNames": {
+    "twinShield": "twin shield",
+    "unnarmedWeapon": "unnarmed attack"
+  },
   
   "ULTIMAFABULA.attributes": {
     "might": "might",
@@ -129,7 +134,9 @@
     "offensive": "offensive",
     "damageType": "damage type",
     "attackType": "attack type",
-    "gripType": "grip type"
+    "gripType": "grip type",
+    "weapon": "weapon",
+    "bothWeapons": "both weapons"
   },
 
   "ULTIMAFABULA.actions": {
@@ -144,6 +151,10 @@
     "skill" : {"name": "skill", "description": "Some Skills require you to spend an action."},
     "ritual" : {"name": "ritual", "description": "Ritual magic should never be able to accomplish any of the following:<br> * Causing direct damage. The Ritual can still deal collateral damage — if you open a chasm below your enemies' feet, they are bound to suffer some kind of harm.<br> When establishing collateral damage dealt by a Ritual, use the table on page 93.<br> * Inflicting or removing status effects.<br> * Causing characters to lose or gain HP, MP, IP, Fabula Points or Ultima Points.<br> * Replicating the mechanical benefits of an existing spell or Skill (however, narrative effects such as teleportation of flight are okay, even if some Skills do grant them).<br> * Generating creatures or equipment, or granting them permanent abilities."},
     "other" : {"name": "other", "description": "You perform an action that is not covered by any of the above, negotiating its resolution and effects with the Game Master."}
+  },
+
+  "ULTIMAFABULA.actionsLabels": {
+    "attackLabel": "attack with"
   },
   
   "ULTIMAFABULA.defeniveItemType": {

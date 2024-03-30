@@ -42,6 +42,11 @@ ULTIMAFABULA.attackType = {
   'melee': 'ULTIMAFABULA.attackType.melee'
 }
 
+ULTIMAFABULA.attackNames = {
+  'twinShield': 'ULTIMAFABULA.attackNames.twinShield',
+  'unnarmedWeapon': 'ULTIMAFABULA.attackNames.unnarmedWeapon'
+}
+
 ULTIMAFABULA.attributeDice = {
   'd6': 'd6',
   'd8': 'd8',
@@ -136,7 +141,9 @@ ULTIMAFABULA.ui = {
   'offensive': 'ULTIMAFABULA.ui.offensive',
   'damageType': 'ULTIMAFABULA.ui.damageType',
   'attackType': 'ULTIMAFABULA.ui.attackType',
-  'gripType': 'ULTIMAFABULA.ui.gripType'
+  'gripType': 'ULTIMAFABULA.ui.gripType',
+  'weapon': 'ULTIMAFABULA.ui.weapon',
+  'bothWeapons': 'ULTIMAFABULA.UI.bothWeapons'
 }
 
 ULTIMAFABULA.actions = {
@@ -151,6 +158,10 @@ ULTIMAFABULA.actions = {
   'skill' : {name: 'ULTIMAFABULA.actions.skill.name', description: 'ULTIMAFABULA.actions.skill.description'},
   'ritual' : {name: 'ULTIMAFABULA.actions.ritual.name', description: 'ULTIMAFABULA.actions.ritual.description'},
   'other' : {name: 'ULTIMAFABULA.actions.other.name', description: 'ULTIMAFABULA.actions.other.description'}
+}
+
+ULTIMAFABULA.actionsLabels = {
+  'attackLabel': 'ULTIMAFABULA.actionsLabels.attackLabel'
 }
 
 ULTIMAFABULA.defeniveItemType = {

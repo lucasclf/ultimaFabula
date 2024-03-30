@@ -3,6 +3,9 @@ import {recoverAccessory, recoverArmor, recoverMainHand, recoverOffHand} from ".
 import RenderAttack from "../../apps/RenderAttackModal.mjs"
 import { mountDamageType, recoverQualityInfoByActor } from "../qualitiesHelper.mjs";
 import { calcHighRoll } from "../rollHelper.mjs";
+import { localize } from "../localizeHelper.mjs";
+import { ULTIMAFABULA } from "../config.mjs";
+import { recoverAttrNameByKey } from "../attrHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/attack-message.html';
 
@@ -63,12 +66,14 @@ async function _mountAttackData(actor, equipedGear, gearSlot){
     let diceRoll = await roll.roll({async: true});
 
     const qualities = recoverQualityInfoByActor(actor.system.gear);
+    const accuracyFirst = recoverAttrNameByKey(equipedGear[gearSlot].system.accuracyFirst);
+    const accuracySecond = recoverAttrNameByKey(equipedGear[gearSlot].system.accuracySecond);
 
     return {
         actor: actor,
         image: equipedGear[gearSlot].img,
         quality: equipedGear[gearSlot].system.quality,
-        accuracy: `${equipedGear[gearSlot].system.accuracyFirst} + ${equipedGear[gearSlot].system.accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
+        accuracy: `${accuracyFirst} + ${accuracySecond} + ${equipedGear[gearSlot].system.accuracyMod}`,
         name: equipedGear[gearSlot].name.toUpperCase(),
         diceRoll: diceRoll,
         flavor: _buildAttackLabel(equipedGear[gearSlot]),
@@ -104,8 +109,9 @@ function _buildAttackRoll(actor, equipedWeapon, equipedAccessory, equipedArmor){
 }
 
 function _buildAttackLabel(equipedWeapon){
-    let weaponName = equipedWeapon.name.toUpperCase();
-    return `ATTACK WITH ${weaponName}!!!`;
+    const weaponName = equipedWeapon.name.toUpperCase();
+    const attackLabel = localize(ULTIMAFABULA.actionsLabels.attackLabel).toUpperCase();
+    return `${attackLabel} ${weaponName}!!!`;
 }
 
 function _calcDamage(dices, equipedWeapon, equipedAccessory, equipedArmor){

@@ -8,7 +8,7 @@ import { ultimaFabulaItemSheet } from "./sheets/item-sheet.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { ULTIMAFABULA } from "./helpers/config.mjs";
 import { captalizeFirstLetter, captalizeText, extractAttrDiceValue, manipuleStudyCss, recoverActorJobs, recoverJob } from "./helpers/genericHelper.mjs";
-import { recoverQualityInfo } from "./helpers/qualitiesHelper.mjs";
+import { recoverQualityInfo, recoverQualityNameByKey } from "./helpers/qualitiesHelper.mjs";
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
 import RenderAttack from "./apps/RenderAttackModal.mjs";
@@ -96,6 +96,10 @@ Handlebars.registerHelper('getAttrDiceValue', function(attr){
 Handlebars.registerHelper('recoverQualityInfo', function(itemType, infoType, quality){
 
   return recoverQualityInfo(itemType, infoType, quality);
+})
+
+Handlebars.registerHelper('recoverQualityNameByKey', function(key){
+  return recoverQualityNameByKey(key);
 })
 
 Handlebars.registerHelper('shouldDisableStatusCheck', function(statusType, char, options){

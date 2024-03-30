@@ -8,10 +8,10 @@
             </div>
 
             <div class="attack-modal-body">
-                <p>{{object.mainHand.attackType}} Weapon</p>
-                <p>Damage:  {{object.mainHand.damage}} {{object.mainHand.damageType}}</p>
-                <p>Accuracy: {{object.mainHand.accuracy}}</p>
-                <p>{{object.mainHand.quality}}</p>
+                <p>{{captalizeFirstLetter (localize object.mainHand.attackType)}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.damage')}}: {{object.mainHand.damage}} {{localize object.mainHand.damageType}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.accuracy')}}: {{object.mainHand.accuracy}}</p>
+                <p>{{recoverQualityNameByKey object.mainHand.quality}}</p>
             </div>
             
             <div class="attack-modal-radio">
@@ -26,10 +26,10 @@
             </div>
             
             <div class="attack-modal-body">
-                <p>{{object.offHand.attackType}} Weapon</p>
-                <p>Damage:  {{object.offHand.damage}} {{object.offHand.damageType}}</p>
-                <p>Accuracy: {{object.mainHand.accuracy}}</p>
-                <p>{{object.offHand.quality}}</p>
+                <p>{{captalizeFirstLetter (localize object.offHand.attackType)}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.damage')}}: {{object.offHand.damage}} {{localize object.offHand.damageType}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.accuracy')}}: {{object.mainHand.accuracy}}</p>
+                <p>{{recoverQualityNameByKey object.offHand.quality}}</p>
             </div>
 
             <div class="attack-modal-radio">
@@ -39,7 +39,7 @@
         {{#if object.isDualHand}}
             <div class="column attack-model-column">
                 <div class="attack-modal-header">
-                    <h3>BOTH WEAPONS</h3>
+                    <h3>{{captalizeText (localize 'ULTIMAFABULA.ui.bothWeapons')}}</h3>
                     <img src="systems/ultimaFabula/icons/x_blade.svg" alt="Both Weapons" class="image">    
                 </div>
                 <div class="attack-modal-body">
@@ -53,6 +53,6 @@
         {{/if}}
     </div>
     <a>
-        <button class="attack-choice">ATTACK</button>
+        <button class="attack-choice">{{captalizeText (localize 'ULTIMAFABULA.actions.attack.name')}}</button>
     </a>
 </form>

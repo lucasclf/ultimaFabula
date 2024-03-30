@@ -48,16 +48,27 @@ export function mountDamageType(originalDamageType, qualities){
     return damageType || originalDamageType;
 }
 
+export function recoverQualityNameByKey(key){
+    const qualitiesList = _mountQualitiesList();
+    const recoveredQuality = qualitiesList[key];
+    const localizedQuality = localizeQuality(recoveredQuality);
+    return localizedQuality.name;
+}
+
 function _recoverQualityInfo(qualityTitle){
-    const qualitiesList = {
-        ...CONFIG.ULTIMAFABULA.weaponQualities,
-        ...CONFIG.ULTIMAFABULA.armorQualities,
-        ...CONFIG.ULTIMAFABULA.accessoryQualities
-    };
+    const qualitiesList = _mountQualitiesList();
 
     const foundKey = Object.keys(qualitiesList).find(key => key === qualityTitle);
 
     const resultQuality = qualitiesList[foundKey] || qualitiesList['no-quality'];
 
     return { [foundKey]: resultQuality };
+}
+
+function _mountQualitiesList(){
+    return {
+        ...CONFIG.ULTIMAFABULA.weaponQualities,
+        ...CONFIG.ULTIMAFABULA.armorQualities,
+        ...CONFIG.ULTIMAFABULA.accessoryQualities
+    };
 }
