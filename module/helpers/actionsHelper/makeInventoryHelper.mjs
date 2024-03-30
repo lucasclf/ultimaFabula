@@ -1,4 +1,5 @@
 import RenderInventory from "../../apps/RenderInventoryModal.mjs";
+import { localize } from "../localizeHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/inventory-message.html';
 

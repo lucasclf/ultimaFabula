@@ -166,7 +166,8 @@ ULTIMAFABULA.ui = {
   'attackType': 'ULTIMAFABULA.ui.attackType',
   'gripType': 'ULTIMAFABULA.ui.gripType',
   'weapon': 'ULTIMAFABULA.ui.weapon',
-  'bothWeapons': 'ULTIMAFABULA.UI.bothWeapons'
+  'bothWeapons': 'ULTIMAFABULA.UI.bothWeapons',
+  'select': 'ULTIMAFABULA.ui.select'
 }
 
 ULTIMAFABULA.actions = {
@@ -184,7 +185,9 @@ ULTIMAFABULA.actions = {
 }
 
 ULTIMAFABULA.actionsLabels = {
-  'attackLabel': 'ULTIMAFABULA.actionsLabels.attackLabel'
+  'attackLabel': 'ULTIMAFABULA.actionsLabels.attackLabel',
+  'inventoryLabel': 'ULTIMAFABULA.actionsLabels.inventoryLabel',
+  'inventoryTitle': 'ULTIUMAFABULA.actionsLabels.inventoryTitle'
 }
 
 ULTIMAFABULA.defeniveItemType = {
@@ -452,13 +455,13 @@ ULTIMAFABULA.accessoryQualities = {
 }
 
 ULTIMAFABULA.inventoryItems = {
-  'elixir': {name: 'Elixir', cost: '3', effect: 'Recovers 50 MP from a creature.'},
-  'remedy': {name: 'Remedy', cost: '3', effect: 'Recovers 50 HP from a creature.'},
-  'tonic': {name: 'Tonic', cost: '2', effect: 'Recovers a creature from an status.'},
-  'fire-elemental-shard': {name: 'Fire Elemental Shard', cost: '2', effect: 'Deals 10 fire damage to a creature.'},
-  'air-elemental-shard': {name: 'Air Elemental Shard', cost: '2', effect: 'Deals 10 air damage to a creature.'},
-  'bolt-elemental-shard': {name: 'Bolt Elemental Shard', cost: '2', effect: 'Deals 10 bolt damage to a creature.'},
-  'earth-elemental-shard': {name: 'Earth Elemental Shard', cost: '2', effect: 'Deals 10 earth damage to a creature.'},
-  'ice-elemental-shard': {name: 'Ice Elemental Shard', cost: '2', effect: 'Deals 10 ice damage to a creature.'},
-  'magic-tent': {name: 'Magic Tent', cost: '4', effect: 'Allows an entire group to rest in a wild area.'}
+  'elixir': {name: 'ULTIMAFABULA.inventoryItems.elixir.name', cost: 'ULTIMAFABULA.inventoryItems.elixir.cost', effect: 'ULTIMAFABULA.inventoryItems.elixir.effect'},
+  'remedy': {name: 'ULTIMAFABULA.inventoryItems.remedy.name', cost: 'ULTIMAFABULA.inventoryItems.remedy.cost', effect: 'ULTIMAFABULA.inventoryItems.remedy.effect'},
+  'tonic': {name: 'ULTIMAFABULA.inventoryItems.tonic.name', cost: 'ULTIMAFABULA.inventoryItems.tonic.cost', effect: 'ULTIMAFABULA.inventoryItems.tonic.effect'},
+  'fire-elemental-shard': {name: 'ULTIMAFABULA.inventoryItems.fire-elemental-shard.name', cost: 'ULTIMAFABULA.inventoryItems.fire-elemental-shard.cost', effect: 'ULTIMAFABULA.inventoryItems.fire-elemental-shard.effect'},
+  'air-elemental-shard': {name: 'ULTIMAFABULA.inventoryItems.air-elemental-shard.name', cost: 'ULTIMAFABULA.inventoryItems.air-elemental-shard.cost', effect: 'ULTIMAFABULA.inventoryItems.air-elemental-shard.effect'},
+  'bolt-elemental-shard': {name: 'ULTIMAFABULA.inventoryItems.bolt-elemental-shard.name', cost: 'ULTIMAFABULA.inventoryItems.bolt-elemental-shard.cost', effect: 'ULTIMAFABULA.inventoryItems.bolt-elemental-shard.effect'},
+  'earth-elemental-shard': {name: 'ULTIMAFABULA.inventoryItems.earth-elemental-shard.name', cost: 'ULTIMAFABULA.inventoryItems.earth-elemental-shard.cost', effect: 'ULTIMAFABULA.inventoryItems.earth-elemental-shard.effect'},
+  'ice-elemental-shard': {name: 'ULTIMAFABULA.inventoryItems.ice-elemental-shard.name', cost: 'ULTIMAFABULA.inventoryItems.ice-elemental-shard.cost', effect: 'ULTIMAFABULA.inventoryItems.ice-elemental-shard.effect'},
+  'magic-tent': {name: 'ULTIMAFABULA.inventoryItems.magic-tent.name', cost: 'ULTIMAFABULA.inventoryItems.magic-tent.cost', effect: 'ULTIMAFABULA.inventoryItems.magic-tent.effect'}
 }

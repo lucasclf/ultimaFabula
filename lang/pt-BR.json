@@ -160,7 +160,8 @@
     "attackType": "tipo de ataque",
     "gripType": "empunhadura",
     "weapon": "arma",
-    "bothWeapons": "ambas armas"
+    "bothWeapons": "ambas armas",
+    "select": "escolha"
   },
   
   "ULTIMAFABULA.actions": {
@@ -178,7 +179,9 @@
   },
 
   "ULTIMAFABULA.actionsLabels": {
-    "attackLabel": "atacou com"
+    "attackLabel": "atacou com",
+    "inventoryLabel": "usar",
+    "inventoryTitle": "Escolha um item para usar!"
   },
   
   "ULTIMAFABULA.defeniveItemType": {
@@ -320,6 +323,18 @@
     "damage-change-light": {"name": "Mudança de Dano(Luz)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Luz."},
     "damage-change-poison": {"name": "Mudança de Dano(Veneno)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Veneno."},
     "damage-change-physical": {"name": "Mudança de Dano(Físico)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Físico."}
+  },
+
+  "ULTIMAFABULA.inventoryItems": {
+    "elixir": {"name": "Elixir", "cost": "3", "effect": "Recupera 50 PM de uma criatura."},
+    "remedy": {"name": "Remedio", "cost": "3", "effect": "Recupera 50 PV de uma criatura."},
+    "tonic": {"name": "Tônico", "cost": "2", "effect": "Recupera uma criatura de uma condição."},
+    "fire-elemental-shard": {"name": "Lasca Elemental de Fogo", "cost": "2", "effect": "Causa 10 de dano de fogo a uma criatura."},
+    "air-elemental-shard": {"name": "Lasca Elemental de Ar", "cost": "2", "effect": "Causa 10 de dano de ar a uma criatura."},
+    "bolt-elemental-shard": {"name": "Lasca Elemental de Raio", "cost": "2", "effect": "Causa 10 de dano de raio a uma criatura."},
+    "earth-elemental-shard": {"name": "Lasca Elemental de Terra", "cost": "2", "effect": "Causa 10 de dano de terra a uma criatura."},
+    "ice-elemental-shard": {"name": "Lasca Elemental de Gelo", "cost": "2", "effect": "Causa 10 de dano de gelo a uma criatura."},
+    "magic-tent": {"name": "Tenda Mágica", "cost": "4", "effect": "Permite que todo um grupo descance em uma área selvagem."}
   }
   
 }

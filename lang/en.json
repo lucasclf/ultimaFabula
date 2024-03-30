@@ -159,7 +159,8 @@
     "attackType": "attack type",
     "gripType": "grip type",
     "weapon": "weapon",
-    "bothWeapons": "both weapons"
+    "bothWeapons": "both weapons",
+    "select": "select"
   },
 
   "ULTIMAFABULA.actions": {
@@ -177,7 +178,9 @@
   },
 
   "ULTIMAFABULA.actionsLabels": {
-    "attackLabel": "attack with"
+    "attackLabel": "attack with",
+    "inventoryLabel": "use",
+    "inventoryTitle": "Choose an item to use!"
   },
   
   "ULTIMAFABULA.defeniveItemType": {
@@ -319,5 +322,17 @@
     "damage-change-light": {"name": "Damage Change(Light)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Light type."},
     "damage-change-poison": {"name": "Damage Change(Poison)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Poison type."},
     "damage-change-physical": {"name": "Damage Change(Physical)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Physical type."}
+  },
+
+  "ULTIMAFABULA.inventoryItems": {
+    "elixir": {"name": "Elixir", "cost": "3", "effect": "Recovers 50 MP from a creature."},
+    "remedy": {"name": "Remedy", "cost": "3", "effect": "Recovers 50 HP from a creature."},
+    "tonic": {"name": "Tonic", "cost": "2", "effect": "Recovers a creature from an status."},
+    "fire-elemental-shard": {"name": "Fire Elemental Shard", "cost": "2", "effect": "Deals 10 fire damage to a creature."},
+    "air-elemental-shard": {"name": "Air Elemental Shard", "cost": "2", "effect": "Deals 10 air damage to a creature."},
+    "bolt-elemental-shard": {"name": "Bolt Elemental Shard", "cost": "2", "effect": "Deals 10 bolt damage to a creature."},
+    "earth-elemental-shard": {"name": "Earth Elemental Shard", "cost": "2", "effect": "Deals 10 earth damage to a creature."},
+    "ice-elemental-shard": {"name": "Ice Elemental Shard", "cost": "2", "effect": "Deals 10 ice damage to a creature."},
+    "magic-tent": {"name": "Magic Tent", "cost": "4", "effect": "Allows an entire group to rest in a wild area."}
   }
 }
