@@ -54,7 +54,9 @@ ULTIMAFABULA.equipmentSlot = {
 }
 
 ULTIMAFABULA.modalActions = {
-  'change': 'ULTIMAFABULA.modalActions.change'
+  'change': 'ULTIMAFABULA.modalActions.change',
+  'guardHeader': 'ULTIMAFABULA.modalActions.guardHeader',
+  'guardBody': 'ULTIMAFABULA.modalActions.guardBody'
 }
 
 ULTIMAFABULA.attributeDice = {

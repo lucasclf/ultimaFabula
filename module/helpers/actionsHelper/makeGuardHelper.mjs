@@ -1,15 +1,12 @@
+import { localize } from "../localizeHelper.mjs";
+
 const template = 'systems/ultimaFabula/templates/chat/guard-message.html';
-const actionTitle = "Only once per turn. Until the start of your next turn:"
-const actionList = "You gain Resistance to all damage types.*You gain a +2 bonus to Opposed Checks.*You may cover another creature and prevent foes from performing melee attacks against them."
 
 export function mountGuard(actor){
-    const actionBody = actionList.split("*");
-
     const templateData = {
         actor: actor,
-        actionHeader: "GUARD ACTION!",
-        actionTitle: actionTitle,
-        actionBody: actionBody
+        actionHeader: localize(CONFIG.ULTIMAFABULA.modalActions.guardHeader),
+        actionBody: localize(CONFIG.ULTIMAFABULA.modalActions.guardBody)
     }
 
     renderGuardMessage(templateData);

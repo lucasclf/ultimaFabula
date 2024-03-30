@@ -53,10 +53,13 @@
     "offHand": "mão secundária",
     "accessory": "acessório"
   },
-  
+
   "ULTIMAFABULA.modalActions": {
-    "change": "equipar"
+    "change": "equipar",
+    "guardHeader": "AÇÃO DE DEFENDER!",
+    "guardBody": "<p>Apenas uma vez por turno. Até o início do seu próximo turno:</p><ul><li>Você ganha Resistência a todos os tipos de dano.</li><li>Você ganha um bônus de +2 em Testes Opostos.</li><li> Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo contra ela.</li><ul>"
   },
+
   "ULTIMAFABULA.attributes": {
     "might": "poder",
     "dexterity": "destreza",
