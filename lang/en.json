@@ -59,6 +59,7 @@
     "guardHeader": "GUARD ACTION!",
     "guardBody": "<p>Only once per turn. Until the start of your next turn:</p><ul><li>You gain Resistance to all damage types.</li><li>You gain a +2 bonus to Opposed Checks.</li><li>You may cover another creature and prevent foes from performing melee attacks against them.</li><ul>",
     "hinderFlavor": "Inflict $$$ in the target!",
+    "objectiveFlavor": "Describe what you want to accomplish and how you intend to approach it.",
     "attackTitle": "Attack action!",
     "equipmentTitle": "Equipment action!",
     "hinderTitle": "Hinder action!",

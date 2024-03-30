@@ -1,7 +1,7 @@
 import RenderObjective from "../../apps/RenderObjectiveModal.mjs";
+import { localize } from "../localizeHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/objective-message.html';
-const flavor = 'Describe what you want to accomplish and how you intend to approach it.';
 
 export function mountObjective(actor){
 
@@ -27,7 +27,7 @@ export async function renderObjectiveMessage(objectiveData){
         actor: actor,
         image: actor.img,
         diceRoll: diceRoll,
-        flavor: flavor
+        flavor: localize(CONFIG.ULTIMAFABULA.modalActions.objectiveFlavor)
     }
     const html = await renderTemplate(template, templateData);
 

@@ -58,6 +58,7 @@ ULTIMAFABULA.modalActions = {
   'guardHeader': 'ULTIMAFABULA.modalActions.guardHeader',
   'guardBody': 'ULTIMAFABULA.modalActions.guardBody',
   'hinderFlavor': 'ULTIMAFABULA.modalActions.hinderFlavor',
+  'objectiveFlavor': 'ULTIMAFABULA.modalActions.objectiveFlavor',
   'attackTitle': 'ULTIMAFABULA.modalActions.attackTitle',
   'equipmentTitle': 'ULTIMAFABULA.modalActions.equipmentTitle',
   'hinderTitle': 'ULTIMAFABULA.modalActions.hinderTitle',

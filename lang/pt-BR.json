@@ -59,6 +59,7 @@
     "guardHeader": "AÇÃO DE DEFENDER!",
     "guardBody": "<p>Apenas uma vez por turno. Até o início do seu próximo turno:</p><ul><li>Você ganha Resistência a todos os tipos de dano.</li><li>Você ganha um bônus de +2 em Testes Opostos.</li><li> Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo contra ela.</li><ul>",
     "hinderFlavor": "Inflinge $$$ no alvo!",
+    "objectiveFlavor": "Descreva o que você deseja realizar e como pretende faze-lo.",
     "attackTitle": "Ação de Atacar!",
     "equipmentTitle": "Ação de Equipamento!",
     "hinderTitle": "Ação de Atrapalhar!",
