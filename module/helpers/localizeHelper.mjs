@@ -8,6 +8,10 @@ export function localizeQuality(quality){
     return localizedQuality;
 }
 
+export function localizeAttrByName(name){
+    return game.i18n.localize(CONFIG.ULTIMAFABULA.attributes[name]);
+}
+
 export function localize(key){
     return game.i18n.localize(key);
 }

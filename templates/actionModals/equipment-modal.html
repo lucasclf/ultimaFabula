@@ -35,22 +35,22 @@
 
         <div class="column attack-model-column">
             <div class="attack-modal-header">
-                <h2>Main Hand</h2>
+                <h2>{{captalizeFirstLetter (localize 'ULTIMAFABULA.equipmentSlot.mainHand')}}</h2>
                 <h3>{{object.equipedGear.mainHand.name}}</h3>
                 <img src="{{object.equipedGear.mainHand.img}}" alt="{{object.equipedGear.mainHand.name}}" class="image">
             </div>
 
             {{#if (eq object.equipedGear.mainHand.type "weapon")}}
             <div class="attack-modal-body">
-                <p>{{object.equipedGear.mainHand.system.attackType}} Weapon</p>
-                <p>Damage:  {{object.equipedGear.mainHand.system.damage}} {{object.equipedGear.mainHand.system.damageType}}</p>
-                <p>Accuracy: {{object.equipedGear.mainHand.system.accuracy}}</p>
-                <p>{{object.equipedGear.mainHand.system.quality}}</p>
+                <p>{{captalizeFirstLetter (localize object.equipedGear.mainHand.system.attackType)}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.damage')}}:  {{object.equipedGear.mainHand.system.damage}} {{localize object.equipedGear.mainHand.system.damageType}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.accuracy')}}: {{localizeAttrByName object.equipedGear.mainHand.system.accuracyFirst}} + {{localizeAttrByName object.equipedGear.mainHand.system.accuracySecond}} + {{object.equipedGear.mainHand.system.accuracyMod}}</p>
+                <p>{{recoverQualityNameByKey object.equipedGear.mainHand.system.quality}}</p>
             </div>
             {{else if (eq object.equipedGear.mainHand.type "shield")}}
             <div class="attack-modal-body">
-                <p>Defense:  {{object.equipedGear.mainHand.system.defense.value}}</p>
-                <p>mDefense: {{object.equipedGear.mainHand.system.mDefense.value}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.defense')}}:  {{object.equipedGear.mainHand.system.defense.value}}</p>
+                <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.mDefense')}}: {{object.equipedGear.mainHand.system.mDefense.value}}</p>
                 <p>{{object.equipedGear.mainHand.quality}}</p>
             </div>
             {{/if}}
@@ -70,21 +70,21 @@
             <div class="column attack-model-column">
                 
                 <div class="attack-modal-header">
-                    <h2>Off Hand</h2>
+                    <h2>{{captalizeFirstLetter (localize 'ULTIMAFABULA.equipmentSlot.offHand')}}</h2>
                     <h3>{{object.equipedGear.mainHand.name}}</h3>
                     <img src="{{object.equipedGear.mainHand.img}}" alt="{{object.equipedGear.mainHand.name}}" class="image">
                 </div>
                     {{#if (eq object.equipedGear.mainHand.type "weapon")}}
                     <div class="attack-modal-body">
-                        <p>{{object.equipedGear.mainHand.system.attackType}} Weapon</p>
-                        <p>Damage:  {{object.equipedGear.mainHand.system.damage}} {{object.equipedGear.mainHand.system.damageType}}</p>
-                        <p>Accuracy: {{object.equipedGear.mainHand.system.accuracy}}</p>
-                        <p>{{object.equipedGear.mainHand.system.quality}}</p>
+                        <p>{{captalizeFirstLetter (localize object.equipedGear.mainHand.system.attackType)}}</p>
+                        <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.damage')}}:  {{object.equipedGear.mainHand.system.damage}} {{localize object.equipedGear.mainHand.system.damageType}}</p>
+                        <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.accuracy')}}: {{localizeAttrByName object.equipedGear.mainHand.system.accuracyFirst}} + {{localizeAttrByName object.equipedGear.mainHand.system.accuracySecond}} + {{object.equipedGear.mainHand.system.accuracyMod}}</p>
+                        <p>{{recoverQualityNameByKey object.equipedGear.mainHand.system.quality}}</p>
                     </div>
                     {{else }}
                     <div class="attack-modal-body">
-                        <p>Defense:  {{object.equipedGear.mainHand.system.defense.value}}</p>
-                        <p>mDefense: {{object.equipedGear.mainHand.system.mDefense.value}}</p>
+                        <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.defense')}}:  {{object.equipedGear.mainHand.system.defense.value}}</p>
+                        <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.mDefense')}}: {{object.equipedGear.mainHand.system.mDefense.value}}</p>
                         <p>{{object.equipedGear.mainHand.quality}}</p>
                     </div>
                     {{/if}}
@@ -100,16 +100,16 @@
         <div class="column attack-model-column">
             
             <div class="attack-modal-header">
-                <h2>Off Hand</h2>
+                <h2>{{captalizeFirstLetter (localize 'ULTIMAFABULA.equipmentSlot.offHand')}}</h2>
                 <h3>{{object.equipedGear.offHand.name}}</h3>
                 <img src="{{object.equipedGear.offHand.img}}" alt="{{object.equipedGear.offHand.name}}" class="image">
             </div>
                 {{#if (eq object.equipedGear.offHand.type "weapon")}}
                 <div class="attack-modal-body">
-                    <p>{{object.equipedGear.offHand.system.attackType}} Weapon</p>
-                    <p>Damage:  {{object.equipedGear.offHand.system.damage}} {{object.equipedGear.offHand.system.damageType}}</p>
-                    <p>Accuracy: {{object.equipedGear.offHand.system.accuracy}}</p>
-                    <p>{{object.equipedGear.offHand.system.quality}}</p>
+                    <p>{{captalizeFirstLetter (localize object.equipedGear.offHand.system.attackType)}}</p>
+                    <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.damage')}}:  {{object.equipedGear.offHand.system.damage}} {{localize object.equipedGear.offHand.system.damageType}}</p>
+                    <p>{{captalizeFirstLetter (localize 'ULTIMAFABULA.ui.accuracy')}}: {{localizeAttrByName object.equipedGear.offHand.system.accuracyFirst}} + {{localizeAttrByName object.equipedGear.offHand.system.accuracySecond}} + {{object.equipedGear.offHand.system.accuracyMod}}</p>
+                    <p>{{recoverQualityNameByKey object.equipedGear.offHand.system.quality}}</p>
                 </div>
                 {{else if (eq object.equipedGear.offHand.type "shield")}}
                 <div class="attack-modal-body">
@@ -133,13 +133,13 @@
 
         <div class="column attack-model-column">
             <div class="attack-modal-header">
-                <h2>Accessory</h2>
+                <h2>{{captalizeFirstLetter (localize 'ULTIMAFABULA.equipmentSlot.accessory')}}</h2>
                 <h3>{{object.equipedGear.accessory.name}}</h3>
                 <img src="{{object.equipedGear.accessory.img}}" alt="{{object.equipedGear.accessory.name}}" class="image">
             </div>
             
             <div class="attack-modal-body">
-                <p>{{object.equipedGear.accessory.system.quality}}</p>
+                <p>{{recoverQualityNameByKey object.equipedGear.accessory.system.quality}}</p>
             </div>
             
             <select name="accessory">
@@ -156,6 +156,6 @@
     
 
     <a>
-        <button class="gear-choice" >Change</button>
+        <button class="gear-choice" >{{captalizeFirstLetter (localize 'ULTIMAFABULA.modalActions.change')}}</button>
     </a>
 </form>

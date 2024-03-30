@@ -47,6 +47,16 @@
     "twinShield": "twin shield",
     "unnarmedWeapon": "unnarmed attack"
   },
+
+  "ULTIMAFABULA.equipmentSlot": {
+    "mainHand": "main hand",
+    "offHand": "off hand",
+    "accessory": "accessory"
+  },
+
+  "ULTIMAFABULA.modalActions": {
+    "change": "change"
+  },
   
   "ULTIMAFABULA.attributes": {
     "might": "might",

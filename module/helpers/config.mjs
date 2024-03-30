@@ -47,6 +47,16 @@ ULTIMAFABULA.attackNames = {
   'unnarmedWeapon': 'ULTIMAFABULA.attackNames.unnarmedWeapon'
 }
 
+ULTIMAFABULA.equipmentSlot = {
+  'mainHand': 'ULTIMAFABULA.equipmentSlot.mainHand',
+  'offHand': 'ULTIMAFABULA.equipmentSlot.offHand',
+  'accessory': 'ULTIMAFABULA.equipmentSlot.accessory'
+}
+
+ULTIMAFABULA.modalActions = {
+  'change': 'ULTIMAFABULA.modalActions.change'
+}
+
 ULTIMAFABULA.attributeDice = {
   'd6': 'd6',
   'd8': 'd8',

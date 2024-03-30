@@ -12,6 +12,7 @@ import { recoverQualityInfo, recoverQualityNameByKey } from "./helpers/qualities
 import { shouldDisableStatusCheck } from "./helpers/statusHelper.mjs";
 import { toogleGearButton } from "./helpers/equipment.mjs";
 import RenderAttack from "./apps/RenderAttackModal.mjs";
+import { localizeAttrByName } from "./helpers/localizeHelper.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -135,6 +136,9 @@ Handlebars.registerHelper('captalizeFirstLetter',function(text){
   return captalizeFirstLetter(text);
 })
 
+Handlebars.registerHelper('localizeAttrByName', function(name){
+  return localizeAttrByName(name);
+})
 
 Handlebars.registerHelper('console', function(item){
 

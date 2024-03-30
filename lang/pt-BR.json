@@ -34,8 +34,8 @@
   },
   
   "ULTIMAFABULA.gripType": {
-    "one-heed": "Uma mão",
-    "two-heed": "Duas mãos"
+    "one-handed": "Uma mão",
+    "two-handed": "Duas mãos"
   },
   
   "ULTIMAFABULA.attackType": {
@@ -47,7 +47,16 @@
     "twinShield": "escudos duplos",
     "unnarmedWeapon": "ataque desarmado"
   },
+
+  "ULTIMAFABULA.equipmentSlot": {
+    "mainHand": "mão principal",
+    "offHand": "mão secundária",
+    "accessory": "acessório"
+  },
   
+  "ULTIMAFABULA.modalActions": {
+    "change": "equipar"
+  },
   "ULTIMAFABULA.attributes": {
     "might": "poder",
     "dexterity": "destreza",

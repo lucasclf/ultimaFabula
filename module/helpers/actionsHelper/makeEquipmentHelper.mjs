@@ -37,6 +37,8 @@ export async function mountEquipment(actor){
         hasDualShield: hasDualShield
     }
 
+    console.log(equipmentOpt)
+
     new RenderEquipment(equipmentOpt).render(true);
 }
 
