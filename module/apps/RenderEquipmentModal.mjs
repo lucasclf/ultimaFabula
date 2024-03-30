@@ -1,4 +1,5 @@
 import { updateEquipment } from "../helpers/actionsHelper/makeEquipmentHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderEquipment extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderEquipment extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Equipment action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.equipmentTitle);
 		return options;
 	}
 

@@ -1,4 +1,5 @@
 import { renderRitualMessage } from "../helpers/actionsHelper/makeRitualHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderRitual extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderRitual extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Ritual action.";
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.ritualTitle);
 		return options;
 	}
 

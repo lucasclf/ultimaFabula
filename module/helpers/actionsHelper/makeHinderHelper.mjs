@@ -1,5 +1,6 @@
 import RenderHinder from "../../apps/RenderHinderModal.mjs"
 import {ULTIMAFABULA} from "../config.mjs";
+import { localize } from "../localizeHelper.mjs";
 
 const template = 'systems/ultimaFabula/templates/chat/hinder-message.html';
 export function mountHinder(actor){
@@ -27,7 +28,10 @@ export async function renderHinderMessage(hinderData){
     let roll = new Roll(hinderRoll, actor.getRollData());
     let diceRoll = await roll.roll({async: true});
 
-    const flavor = `Inflict ${hinderData.condition} in the target!`
+    const defaultFlavor = localize(CONFIG.ULTIMAFABULA.modalActions.hinderFlavor);
+    const localizedCondition = localize(hinderData.condition);
+    
+    const flavor = defaultFlavor.replace(/\$\$\$/g, localizedCondition);;
 
     const templateData = {
         actor: actor,

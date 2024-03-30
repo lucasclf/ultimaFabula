@@ -56,7 +56,18 @@ ULTIMAFABULA.equipmentSlot = {
 ULTIMAFABULA.modalActions = {
   'change': 'ULTIMAFABULA.modalActions.change',
   'guardHeader': 'ULTIMAFABULA.modalActions.guardHeader',
-  'guardBody': 'ULTIMAFABULA.modalActions.guardBody'
+  'guardBody': 'ULTIMAFABULA.modalActions.guardBody',
+  'hinderFlavor': 'ULTIMAFABULA.modalActions.hinderFlavor',
+  'attackTitle': 'ULTIMAFABULA.modalActions.attackTitle',
+  'equipmentTitle': 'ULTIMAFABULA.modalActions.equipmentTitle',
+  'hinderTitle': 'ULTIMAFABULA.modalActions.hinderTitle',
+  'inventoryTitle': 'ULTIMAFABULA.modalActions.inventoryTitle',
+  'objectiveTitle': 'ULTIMAFABULA.modalActions.objectiveTitle',
+  'otherTitle': 'ULTIMAFABULA.modalActions.otherTitle',
+  'ritualTitle': 'ULTIMAFABULA.modalActions.ritualTitle',
+  'skillTitle': 'ULTIMAFABULA.modalActions.skillTitle',
+  'spellTitle': 'ULTIMAFABULA.modalActions.spellTitle',
+  'studyTitle': 'ULTIMAFABULA.modalActions.studyTitle'
 }
 
 ULTIMAFABULA.attributeDice = {

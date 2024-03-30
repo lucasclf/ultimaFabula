@@ -57,7 +57,18 @@
   "ULTIMAFABULA.modalActions": {
     "change": "change",
     "guardHeader": "GUARD ACTION!",
-    "guardBody": "<p>Only once per turn. Until the start of your next turn:</p><ul><li>You gain Resistance to all damage types.</li><li>You gain a +2 bonus to Opposed Checks.</li><li>You may cover another creature and prevent foes from performing melee attacks against them.</li><ul>"
+    "guardBody": "<p>Only once per turn. Until the start of your next turn:</p><ul><li>You gain Resistance to all damage types.</li><li>You gain a +2 bonus to Opposed Checks.</li><li>You may cover another creature and prevent foes from performing melee attacks against them.</li><ul>",
+    "hinderFlavor": "Inflict $$$ in the target!",
+    "attackTitle": "Attack action!",
+    "equipmentTitle": "Equipment action!",
+    "hinderTitle": "Hinder action!",
+    "inventoryTitle": "Inventory action!",
+    "objectiveTitle": "Objective action!",
+    "otherTitle": "Other action!",
+    "ritualTitle": "Ritual action!",
+    "skillTitle": "Skill action!",
+    "spellTitle": "Spell action!",
+    "studyTitle": "Study action!"
   },
   
   "ULTIMAFABULA.attributes": {

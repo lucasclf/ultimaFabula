@@ -1,4 +1,5 @@
 import { mountMessageData } from "../helpers/actionsHelper/makeSpellHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderSpell extends FormApplication {
 	static get defaultOptions() {
@@ -9,7 +10,7 @@ export default class RenderSpell extends FormApplication {
 		options.width = 600;
 		options.minimizable = true;
 		options.resizable = true;
-		options.title = "Spell action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.spellTitle);
 		return options;
 	}
 

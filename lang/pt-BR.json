@@ -57,7 +57,18 @@
   "ULTIMAFABULA.modalActions": {
     "change": "equipar",
     "guardHeader": "AÇÃO DE DEFENDER!",
-    "guardBody": "<p>Apenas uma vez por turno. Até o início do seu próximo turno:</p><ul><li>Você ganha Resistência a todos os tipos de dano.</li><li>Você ganha um bônus de +2 em Testes Opostos.</li><li> Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo contra ela.</li><ul>"
+    "guardBody": "<p>Apenas uma vez por turno. Até o início do seu próximo turno:</p><ul><li>Você ganha Resistência a todos os tipos de dano.</li><li>Você ganha um bônus de +2 em Testes Opostos.</li><li> Você pode cobrir outra criatura e impedir que inimigos realizem ataques corpo a corpo contra ela.</li><ul>",
+    "hinderFlavor": "Inflinge $$$ no alvo!",
+    "attackTitle": "Ação de Atacar!",
+    "equipmentTitle": "Ação de Equipamento!",
+    "hinderTitle": "Ação de Atrapalhar!",
+    "inventoryTitle": "Ação de Inventário!",
+    "objectiveTitle": "Ação de Objetivo!",
+    "otherTitle": "Ação Outras!",
+    "ritualTitle": "Ação de Ritual!",
+    "skillTitle": "Ação de Habilidade!",
+    "spellTitle": "Ação de Feitiço!",
+    "studyTitle": "Ação de Estudar!"
   },
 
   "ULTIMAFABULA.attributes": {

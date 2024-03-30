@@ -1,4 +1,5 @@
 import { renderStudyMessage } from "../helpers/actionsHelper/makeStudyHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderObjective extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderObjective extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Study action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.studyTitle);
 		return options;
 	}
 

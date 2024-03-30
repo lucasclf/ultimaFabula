@@ -1,4 +1,5 @@
 import { renderHinderMessage } from "../helpers/actionsHelper/makeHinderHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderHinder extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderHinder extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Hinder action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.hinderTitle);
 		return options;
 	}
 

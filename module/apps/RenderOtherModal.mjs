@@ -1,4 +1,5 @@
 import { renderOtherMessage } from "../helpers/actionsHelper/makeOtherHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderObjective extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderObjective extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Other action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.otherTitle);
 		return options;
 	}
 

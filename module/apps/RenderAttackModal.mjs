@@ -1,4 +1,5 @@
 import { renderAttackMessage } from "../helpers/actionsHelper/makeAttackHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderAttack extends FormApplication {
 	static get defaultOptions() {
@@ -8,7 +9,7 @@ export default class RenderAttack extends FormApplication {
 		options.height = "auto";
 		options.width = 600;
 		options.minimizable = true;
-		options.title = "Attack action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.attackTitle);
 		return options;
 	}
 

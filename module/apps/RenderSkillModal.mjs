@@ -1,4 +1,5 @@
 import { mountMessageData } from "../helpers/actionsHelper/makeSkillHelper.mjs";
+import { localize } from "../helpers/localizeHelper.mjs";
 
 export default class RenderSkill extends FormApplication {
 	static get defaultOptions() {
@@ -9,7 +10,7 @@ export default class RenderSkill extends FormApplication {
 		options.width = 600;
 		options.minimizable = true;
 		options.resizable = true;
-		options.title = "Skill action."
+		options.title = localize(CONFIG.ULTIMAFABULA.modalActions.skillTitle);
 		return options;
 	}
 

@@ -2,18 +2,18 @@
     <div class="container hinder-model-form">
         <select name="accuracyFirst">
             {{#each object.attributes as |dice name|}}
-            <option value="{{name}}">{{name}}</option>
+            <option value="{{name}}">{{localizeAttrByName name}}</option>
             {{/each}}
         </select>
         <select name="accuracySecond">
             {{#each object.attributes as |dice name|}}
-            <option value="{{name}}">{{name}}</option>
+            <option value="{{name}}">{{localizeAttrByName name}}</option>
             {{/each}}
         </select>
         <input type="number" value="0" name="accuracyMod" data-dtype="Number" maxlength="1">
         <select name="condition">
             {{#each object.conditions as |cond|}}
-            <option value="{{cond.name}}">{{cond.name}}</option>
+            <option value="{{cond.name}}">{{localize cond.name}}</option>
             {{/each}}
         </select>
     </div>
