@@ -1,0 +1,51 @@
+{
+  "id": "fabula-ultima",
+  "title": "Fabula Ultima",
+  "description": "O sistema de Fabula Ultima para FoundryVTT!",
+  "authors": [
+    {
+      "name": "Lucas Coquenão"
+    }
+  ],
+  "url": "Replace this with a link to your public repository",
+  "license": "LICENSE.txt",
+  "readme": "README.md",
+  "bugs": "Replace this with a link to file issues or tickets",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/fabula-ultima/assets/anvil-impact.png",
+      "thumbnail": "systems/fabula-ultima/assets/anvil-impact.png"
+    }
+  ],
+  "version": "2.0.0",
+  "compatibility": {
+    "minimum": 11,
+    "verified": "11.315"
+  },
+  "esmodules": ["module/fabula-ultima.mjs"],
+  "styles": ["css/fabula-ultima.css"],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Portuguese",
+      "path": "lang/pt-BR.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/fabula-ultima/assets/anvil-impact.png",
+  "gridDistance": 1.5,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "vida",
+  "secondaryTokenAttribute": "mana"
+}

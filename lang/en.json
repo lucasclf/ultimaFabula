@@ -1,0 +1,61 @@
+{
+  "FABULA_ULTIMA": {
+    "Tabs": {
+      "attributes": {"name": "Attributes"},
+      "description": {"name": "Description"},
+      "gears": {"name": "Gears"},
+      "classes": {"name": "Classes"},
+      "abilities": {"name": "Abilities"},
+      "spells": {"name": "Spells"},
+      "actions": {"name": "Actions"}    
+    },
+    "Resources": {
+      "healthPoints": {"long": "Health", "abbr": "HP"},
+      "manaPoints": {"long": "Health", "abbr": "MP"},
+      "inventoryPoints": {"long": "Health", "abbr": "IP"},
+      "crises": {"name": "Crises"}
+    },
+    "Ability": {
+      "Dex": { "long": "Dexterity", "abbr": "dex" },
+      "Ins": { "long": "Insight", "abbr": "ins" },
+      "Mig": { "long": "Might", "abbr": "mig" },
+      "Wlp": { "long": "Willpower", "abbr": "wlp" }
+    },
+    "Attributes": {
+      "Defenses": {
+        "magical": {"name": "Magic Defense"},
+        "physical": {"name": "Physical Defense"}
+      },
+      "initiative": {"name": "Initiative"}
+    },
+    "SheetLabels": {
+      "Actor": "FabulaUltima Actor Sheet",
+      "Item": "FabulaUltima Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "attributes": "Attributes",
+      "feitico": "Spell"
+    }
+  }
+}
