@@ -26,17 +26,68 @@
       "magical": {"name": "Defesa Mágica"},
       "physical": {"name": "Defesa Física"}
     },
+
     "initiative": {"name": "Iniciativa"},
+
+    "ULTIMAFABULA.weaponType": {
+      "sword": "espada",
+      "axe": "machado",
+      "arcane": "arcana",
+      "bow": "arco",
+      "brawling": "contato",
+      "dagger": "adaga",
+      "firearm": "arma de fogo",
+      "flail": "maça",
+      "heavy": "pesada",
+      "spear": "lança",
+      "thrown": "arremesso"
+    },
+    
+    "ULTIMAFABULA.gripType": {
+      "one-handed": "Uma mão",
+      "two-handed": "Duas mãos"
+    },
+    
+    "ULTIMAFABULA.attackType": {
+      "ranged": "distância",
+      "melee": "corpo a corpo"
+    },
+
+    "ULTIMAFABULA.elementType": {
+      "physical": "físico", 
+      "air": "ar", 
+      "bolt": "raio", 
+      "dark": "trevas", 
+      "earth": "terra", 
+      "fire": "fogo", 
+      "ice": "gelo", 
+      "light": "luz", 
+      "poison": "veneno"
+    },
+
+    "ULTIMAFABULA.basicConditions": {
+      "weak": {"name": "fraco", "attributes": ["ULTIMAFABULA.attributes.might"]},
+      "dazed": {"name": "atordoado", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+      "shaken": {"name": "abalado", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+      "slow": {"name": "lento", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+      "enraged": {"name": "enfurecido", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+      "poisoned": {"name": "envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    },
+
+    
+    
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"
     },
+
     "Item": {
       "Spell": {
         "SpellLVL": "Level {level} Spells",
         "AddLVL": "Add LVL {level}"
       }
     },
+
     "Effect": {
       "Source": "Source",
       "Toggle": "Toggle Effect",

@@ -9,23 +9,79 @@
       "spells": {"name": "Spells"},
       "actions": {"name": "Actions"}    
     },
+
     "Resources": {
       "healthPoints": {"long": "Health", "abbr": "HP"},
       "manaPoints": {"long": "Health", "abbr": "MP"},
       "inventoryPoints": {"long": "Health", "abbr": "IP"},
       "crises": {"name": "Crises"}
     },
+
     "Attributes": {
       "Dex": { "long": "Dexterity", "abbr": "dex" },
       "Ins": { "long": "Insight", "abbr": "ins" },
       "Mig": { "long": "Might", "abbr": "mig" },
       "Wlp": { "long": "Willpower", "abbr": "wlp" }
     },
+
     "Defenses": {
       "magical": {"name": "Magic Defense"},
       "physical": {"name": "Physical Defense"}
     },
+
     "initiative": {"name": "Initiative"},
+
+    "ULTIMAFABULA.weaponType": {
+      "sword": "sword",
+      "axe": "axe",
+      "arcane": "arcane",
+      "bow": "bow",
+      "brawling": "brawling",
+      "dagger": "dagger",
+      "firearm": "firearm",
+      "flail": "flail",
+      "heavy": "heavy",
+      "spear": "spear",
+      "thrown": "thrown"
+    },  
+
+    "ULTIMAFABULA.gripType": {
+      "one-handed": "One-handed",
+      "two-handed": "Two-handed"
+    },
+    
+    "ULTIMAFABULA.attackType": {
+      "ranged": "ranged",
+      "melee": "melee"
+    },
+  
+    "ULTIMAFABULA.equipmentSlot": {
+      "mainHand": "main hand",
+      "offHand": "off hand",
+      "accessory": "accessory"
+    },
+
+    "ULTIMAFABULA.basicConditions": {
+      "weak": {"name": "weak", "attributes": ["ULTIMAFABULA.attributes.might"]},
+      "dazed": {"name": "dazed", "attributes": ["ULTIMAFABULA.attributes.insight"]},
+      "shaken": {"name": "shaken", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
+      "slow": {"name": "slow", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
+      "enraged": {"name": "enraged", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
+      "poisoned": {"name": "poisoned", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    },
+
+    "ULTIMAFABULA.elementType": {
+      "physical": "phisycal",
+      "air": "air", 
+      "bolt": "bolt", 
+      "dark": "dark", 
+      "earth": "earth", 
+      "fire": "fire", 
+      "ice": "ice", 
+      "light": "light", 
+      "poison": "poison"
+    },
+
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"

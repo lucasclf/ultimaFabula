@@ -23,19 +23,20 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     // Iterate over attribute names and create a new SchemaField for each.
     schema.attributes = new fields.SchemaField(Object.keys(CONFIG.FABULA_ULTIMA.attributes).reduce((obj, attribute) => {
       obj[attribute] = new fields.SchemaField({
-        value: new fields.StringField(),
+        value: new fields.StringField({initial: 'd6'})
       });
       return obj;
     }, {}));
-
     return schema;
   }
 
   prepareDerivedData() {
     // Loop through attribute scores, and add their modifiers to our sheet output.
+
     for (const key in this.attributes) {
-      // Calculate the modifier using d20 rules.
-      this.attributes[key].mod = Math.floor((this.attribute[key].value - 10) / 2);
+      //Calculate the modifier using d20 rules.     
+      this.attributes[key].mod = this.attributes[key].value;
+     
       // Handle ability label localization.
       this.attributes[key].label = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[key]) ?? key;
     }
