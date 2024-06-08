@@ -32,31 +32,32 @@ FABULA_ULTIMA.resourcesAbbreviations = {
   inventoryPoints: 'FABULA_ULTIMA.Resources.inventoryPoints.abbr'
 }
 
-FABULA_ULTIMA.abilities = {
-  dex: 'FABULA_ULTIMA.Ability.Dex.long',
-  ins: 'FABULA_ULTIMA.Ability.Ins.long',
-  mig: 'FABULA_ULTIMA.Ability.Mig.long',
-  von: 'FABULA_ULTIMA.Ability.Wlp.long',
+FABULA_ULTIMA.attributes = {
+  dex: 'FABULA_ULTIMA.Attributes.Dex.long',
+  ins: 'FABULA_ULTIMA.Attributes.Ins.long',
+  mig: 'FABULA_ULTIMA.Attributes.Mig.long',
+  von: 'FABULA_ULTIMA.Attributes.Wlp.long',
 };
 
 FABULA_ULTIMA.abilityAbbreviations = {
-  dex: 'FABULA_ULTIMA.Ability.Dex.abbr',
-  ins: 'FABULA_ULTIMA.Ability.Ins.abbr',
-  mig: 'FABULA_ULTIMA.Ability.Mig.abbr',
-  von: 'FABULA_ULTIMA.Ability.Wlp.abbr'
+  dex: 'FABULA_ULTIMA.Attributes.Dex.abbr',
+  ins: 'FABULA_ULTIMA.Attributes.Ins.abbr',
+  mig: 'FABULA_ULTIMA.Attributes.Mig.abbr',
+  von: 'FABULA_ULTIMA.Attributes.Wlp.abbr'
 };
 
-FABULA_ULTIMA.attributes = {
-  physical: 'FABULA_ULTIMA.Attributes.Defenses.physical.name',
-  magical: 'FABULA_ULTIMA.Attributes.Defenses.magical.name',
-  initiative: 'FABULA_ULTIMA.Attributes.initiative.name'
+FABULA_ULTIMA.defenses = {
+  physical: 'FABULA_ULTIMA.Defenses.physical.name',
+  magical: 'FABULA_ULTIMA.Defenses.magical.name'
 };
+
+FABULA_ULTIMA.initiative = 'FABULA_ULTIMA.initiative.name';
 
 //Utilitários
 
 FABULA_ULTIMA.attributeDice = {
-  'd6': 'd6',
-  'd8': 'd8',
-  'd10': 'd10',
-  'd12': 'd12'
+  'd6': 'D6',
+  'd8': 'D8',
+  'd10': 'D10',
+  'd12': 'D12'
 };

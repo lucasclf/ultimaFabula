@@ -67,26 +67,33 @@
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"/>
+          <div class="attributes flexcol">
+
+            {{#each system.attributes as |attribute key|}}
+            <div class="attribute flexrow flex-group-center">
+              <label for="system.attributes.{{key}}.value" class="resource-label rollable flexlarge align-left">
+                {{localize (lookup @root.config.attributes key)}}
+              </label>
+              <select name="system.attributes.{{key}}.value">
+                {{#select attribute.value}}
+                  {{#each  @root.config.attributeDice as |name type|}}
+                    <option value="{{type}}">{{name}}</option>  
+                  {{/each}}
+                {{/select}}
+              </select>
             </div>
             {{/each}}
 
-            {{#each system.attributes.defenses as |defense key|}}
+            {{#each system.defenses as |defense key|}}
             <div class="defense flexrow flex-group-center">
-              <label for="system.attributes.defenses.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{localize (lookup @root.config.attributes key)}}">{{localize (lookup @root.config.attributes key)}}</label>
+              <label for="system.defenses.{{key}}.value" class="resource-label flexlarge align-left" data-label="{{localize (lookup @root.config.defenses key)}}">{{localize (lookup @root.config.defenses key)}}</label>
               <p>{{defense.value}}</p>
             </div>
             {{/each}}
 
-
-
             <div class="initiative flexrow flex-group-center">
-              <label for="system.attributes.initiative.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.initiative.mod" data-label="{{localize @root.config.attributes.initiative}}">{{localize @root.config.attributes.initiative}}</label>
-              <input type="text" name="system.attributes.initiative.value" value="{{system.attributes.initiative.value}}"/>
+              <label for="system.initiative.value" class="resource-label rollable flexlarge align-left"  data-label="{{localize @root.config.initiative}}">{{localize @root.config.initiative}}</label>
+              <input type="text" name="system.initiative.value" value="{{system.initiative.value}}"/>
             </div>
           </div>
         </aside>

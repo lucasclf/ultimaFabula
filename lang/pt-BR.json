@@ -15,19 +15,18 @@
       "inventoryPoints": {"long": "Inventário", "abbr": "PI"},
       "crises": {"name": "Crise"}
     },
-    "Ability": {
+    "Attributes": {
       "Dex": { "long": "Destreza", "abbr": "des" },
       "Ins": { "long": "Intuição", "abbr": "int" },
       "Mig": { "long": "Poder", "abbr": "pod" },
       "Wlp": { "long": "Vontade", "abbr": "von" }
     },
-    "Attributes": {
-      "Defenses": {
-        "magical": {"name": "Defesa Mágica"},
-        "physical": {"name": "Defesa Física"}
-      },
-      "initiative": {"name": "Iniciativa"}
+
+    "Defenses": {
+      "magical": {"name": "Defesa Mágica"},
+      "physical": {"name": "Defesa Física"}
     },
+    "initiative": {"name": "Iniciativa"},
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"

@@ -1,5 +1,11 @@
 # CHANGELOG
 
-## 1.2.0
+## [1.0.0] | 2024-06-06
+### Changed
+- Reiniciado o sistema, para se adequar ao FoundryVtt 11;
+### BugFinded
+- #select não está funcionando para alterar os atributos do personagem em actor-character-sheet.hbs;
 
-- Add support for Foundry v10
+## [1.0.0] | 2024-06-
+### Fixed
+- #select arrumado, graças ao auxilio de @souowendel do discord do FoundryVTT Brasil;

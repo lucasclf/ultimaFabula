@@ -15,19 +15,17 @@
       "inventoryPoints": {"long": "Health", "abbr": "IP"},
       "crises": {"name": "Crises"}
     },
-    "Ability": {
+    "Attributes": {
       "Dex": { "long": "Dexterity", "abbr": "dex" },
       "Ins": { "long": "Insight", "abbr": "ins" },
       "Mig": { "long": "Might", "abbr": "mig" },
       "Wlp": { "long": "Willpower", "abbr": "wlp" }
     },
-    "Attributes": {
-      "Defenses": {
-        "magical": {"name": "Magic Defense"},
-        "physical": {"name": "Physical Defense"}
-      },
-      "initiative": {"name": "Initiative"}
+    "Defenses": {
+      "magical": {"name": "Magic Defense"},
+      "physical": {"name": "Physical Defense"}
     },
+    "initiative": {"name": "Initiative"},
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"
