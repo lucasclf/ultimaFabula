@@ -9,3 +9,7 @@
 ## [1.0.0] | 2024-06-
 ### Fixed
 - #select arrumado, graças ao auxilio de @souowendel do discord do FoundryVTT Brasil;
+### Changed
+- Inserida as condições no dataModel do jogador;
+- Inserido a lógica de alteração dos atributos com base nas condições;
+- Melhorada a leitura do getData do jogador;

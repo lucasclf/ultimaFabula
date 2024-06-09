@@ -4,7 +4,7 @@
       "attributes": {"name": "Atributos"},
       "description": {"name": "Descrição"},
       "gears": {"name": "Equipamentos"},
-      "classes": {"name": "Classes"},
+      "jobs": {"name": "Classes"},
       "abilities": {"name": "Habilidades"},
       "spells": {"name": "Feitiços"},
       "actions": {"name": "Ações"}    
@@ -74,7 +74,29 @@
       "poisoned": {"name": "envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
     },
 
-    
+    "FABULA_ULTIMA.jobs": {
+      "arcanist": {"name": "arcanista"},
+      "chimerist": {"name": "quimerista"},
+      "elementalist": {"name": "elementalista"},
+      "entropist": {"name": "entropista"},
+      "spiritist": {"name": "espiritualista"},
+      "necromancer": {"name": "necromante"},
+      "darkblade": {"name": "lâmina sombria"},
+      "fury": {"name": "fúria"},
+      "guardian": {"name": "guardião"},
+      "loremaster": {"name": "historiador"},
+      "orator": {"name": "orador"},
+      "rogue": {"name": "ladino"},
+      "sharpshooter": {"name": "atirador"},
+      "tinkerer": {"name": "inventora"},
+      "wayfarer": {"name": "desbravador"},
+      "weaponmaster": {"name": "mestre de armas"},
+      "chanter": {"name": "cantor"},
+      "commander": {"name": "comandante"},
+      "dancer": {"name": "dançarino"},
+      "symbolist": {"name": "simbolista"},
+      "ace": {"name": "ás"}
+    },
     
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",

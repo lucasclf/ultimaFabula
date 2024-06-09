@@ -4,7 +4,7 @@
       "attributes": {"name": "Attributes"},
       "description": {"name": "Description"},
       "gears": {"name": "Gears"},
-      "classes": {"name": "Classes"},
+      "jobs": {"name": "classes"},
       "abilities": {"name": "Abilities"},
       "spells": {"name": "Spells"},
       "actions": {"name": "Actions"}    
@@ -80,6 +80,30 @@
       "ice": "ice", 
       "light": "light", 
       "poison": "poison"
+    },
+
+    "FABULA_ULTIMA.jobs": {
+      "arcanist": {"name": "arcanist"},
+      "chimerist": {"name": "chimerist"},
+      "elementalist": {"name": "elementalist"},
+      "entropist": {"name": "entropist"},
+      "spiritist": {"name": "spiritist"},
+      "necromancer": {"name": "necromancer"},
+      "darkblade": {"name": "darkblade"},
+      "fury": {"name": "fury"},
+      "guardian": {"name": "guardian"},
+      "loremaster": {"name": "loremaster"},
+      "orator": {"name": "orator"},
+      "rogue": {"name": "rogue"},
+      "sharpshooter": {"name": "sharpshooter"},
+      "tinkerer": {"name": "tinkerer"},
+      "wayfarer": {"name": "wayfarer"},
+      "weaponmaster": {"name": "weaponmaster"},
+      "chanter": {"name": "chanter"},
+      "commander": {"name": "commander"},
+      "dancer": {"name": "dancer"},
+      "symbolist": {"name": "symbolist"},
+      "ace": {"name": "ace"}
     },
 
     "SheetLabels": {
