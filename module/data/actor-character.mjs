@@ -1,4 +1,5 @@
 import FabulaUltimaActorBase from "./base-actor.mjs";
+import { decreaseAttr, recoverFreeBenefits, recoverTotalLevel, extractDiceValor } from "../helpers/utils.mjs";
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
@@ -7,7 +8,9 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.defenses = this._defineDefensesSchema(fields, requiredInteger)
+    schema.resources = this._defineResourcesSchema(fields, requiredInteger);
+
+    schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
 
     schema.initiative = this._defineInitiativeSchema(fields);
 
@@ -23,16 +26,18 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   prepareDerivedData() {
-    // Loop through attribute scores, and add their modifiers to our sheet output.
+    const benefitsBonus = recoverFreeBenefits(this.jobs);
+    
     this._calculateAttributeRealValue();
+    this._calculateResourcesValue(benefitsBonus);
+    this._calculateProficiency(benefitsBonus);
+    
     console.log(this)
   }
 
   getRollData() {
     const data = {};
 
-    // Copy the ability scores to the top level, so that rolls can use
-    // formulas like `@str.mod + 4`.
     if (this.attributes) {
       for (let [k,v] of Object.entries(this.attributes)) {
         data[k] = foundry.utils.deepClone(v);
@@ -44,6 +49,20 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     data.initiative = this.initiative.value;
 
     return data
+  }
+
+  static _defineResourcesSchema(fields, requiredInteger){
+    return new fields.SchemaField({
+      health: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      }),
+      mana: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      }),
+      inventory: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      })
+    })
   }
 
   static _defineDefensesSchema(fields, requiredInteger){
@@ -113,28 +132,23 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     }
 
     for (const key in this.attributes) {   
-
       const counter = trueConditions.filter(attr => attr === key).length;
-
-      this.attributes[key].value = this._decreaseAttr(this.attributes[key].base, counter);
-
+      this.attributes[key].value = decreaseAttr(this.attributes[key].base, counter);
       this.attributes[key].label = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[key]) ?? key;
     }
   }
 
-  _decreaseAttr(attr, numberOfDecreases){
-    const decreaseMap = {
-        "d12": "d10",
-        "d10": "d8",
-        "d8": "d6",
-        "d6": "d6"
-    };
+  _calculateResourcesValue(benefitsBonus){
+    this.resources.level = recoverTotalLevel(this.jobs);
 
-    let currentAttr = attr;
-    for (let i = 0; i < numberOfDecreases; i++) {
-        currentAttr = decreaseMap[currentAttr];
-    }
+    this.resources.health.max = this.resources.level + (extractDiceValor(this.attributes.mig.base) * 5) + benefitsBonus.hp;
+    this.resources.health.crises = this.resources.health.max/2;
+    
+    this.resources.mana.max = this.resources.level + (extractDiceValor(this.attributes.wlp.base) * 5) + benefitsBonus.mp;
+    this.resources.inventory.max = 6 + benefitsBonus.ip;
+  }
 
-    return currentAttr;
+  _calculateProficiency(benefitsBonus){
+    this.martialProficiency = benefitsBonus.martialProficiency;
   }
 }

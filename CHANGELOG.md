@@ -13,3 +13,4 @@
 - Inserida as condições no dataModel do jogador;
 - Inserido a lógica de alteração dos atributos com base nas condições;
 - Melhorada a leitura do getData do jogador;
+- Criada lógica dos recursos e proficiências do jogador;
