@@ -9,30 +9,21 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     const schema = super.defineSchema();
 
     schema.resources = this._defineResourcesSchema(fields, requiredInteger);
-
     schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
-
     schema.initiative = this._defineInitiativeSchema(fields);
-
     schema.attributes = this._defineAttributesSchema(fields);
-
     schema.jobs = this._defineJobsSchema(fields, requiredInteger);
-
     schema.conditions = this._defineConditionsSchema(fields);
 
-    console.log(schema);
-    
     return schema;
   }
 
   prepareDerivedData() {
     const benefitsBonus = recoverFreeBenefits(this.jobs);
-    
+
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
     this._calculateProficiency(benefitsBonus);
-    
-    console.log(this)
   }
 
   getRollData() {
@@ -81,6 +72,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       value: new fields.NumberField({ ...requiredInteger, initial: 0 })
     })
   }
+
   static _defineAttributesSchema(fields){
     return new fields.SchemaField(Object.keys(CONFIG.FABULA_ULTIMA.attributes).reduce((obj, attribute) => {
       obj[attribute] = new fields.SchemaField({
@@ -124,12 +116,9 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   _calculateAttributeRealValue(){
-    const trueConditions = [];
-    for (const [key, value] of Object.entries(this.conditions)) {
-      if (value === true) {
-          trueConditions.push(...CONFIG.FABULA_ULTIMA.conditionsAttr[key]);
-      }
-    }
+    const trueConditions = Object.values(this.conditions)
+      .filter(condition => condition)
+      .map(key => CONFIG.FABULA_ULTIMA.conditionsAttr[key]);
 
     for (const key in this.attributes) {   
       const counter = trueConditions.filter(attr => attr === key).length;
