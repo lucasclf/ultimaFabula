@@ -231,7 +231,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-
+    
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {

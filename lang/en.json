@@ -31,7 +31,7 @@
 
     "initiative": {"name": "Initiative"},
 
-    "ULTIMAFABULA.weaponType": {
+    "weaponType": {
       "sword": "sword",
       "axe": "axe",
       "arcane": "arcane",
@@ -45,32 +45,32 @@
       "thrown": "thrown"
     },  
 
-    "ULTIMAFABULA.gripType": {
+    "gripType": {
       "one-handed": "One-handed",
       "two-handed": "Two-handed"
     },
     
-    "ULTIMAFABULA.attackType": {
+    "attackType": {
       "ranged": "ranged",
       "melee": "melee"
     },
   
-    "ULTIMAFABULA.equipmentSlot": {
+    "equipmentSlot": {
       "mainHand": "main hand",
       "offHand": "off hand",
       "accessory": "accessory"
     },
 
-    "ULTIMAFABULA.basicConditions": {
-      "weak": {"name": "weak", "attributes": ["ULTIMAFABULA.attributes.might"]},
-      "dazed": {"name": "dazed", "attributes": ["ULTIMAFABULA.attributes.insight"]},
-      "shaken": {"name": "shaken", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
-      "slow": {"name": "slow", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
-      "enraged": {"name": "enraged", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
-      "poisoned": {"name": "poisoned", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    "basicConditions": {
+      "weak": {"name": "weak", "attributes": ["FABULA_ULTIMA.attributes.might"]},
+      "dazed": {"name": "dazed", "attributes": ["FABULA_ULTIMA.attributes.insight"]},
+      "shaken": {"name": "shaken", "attributes": ["FABULA_ULTIMA.attributes.willpower"]},
+      "slow": {"name": "slow", "attributes": ["FABULA_ULTIMA.attributes.dexterity"]},
+      "enraged": {"name": "enraged", "attributes": ["FABULA_ULTIMA.attributes.dexterity", "FABULA_ULTIMA.attributes.insight"]},
+      "poisoned": {"name": "poisoned", "attributes": ["FABULA_ULTIMA.attributes.willpower", "FABULA_ULTIMA.attributes.might"]}
     },
 
-    "ULTIMAFABULA.elementType": {
+    "elementType": {
       "physical": "phisycal",
       "air": "air", 
       "bolt": "bolt", 
@@ -82,7 +82,7 @@
       "poison": "poison"
     },
 
-    "FABULA_ULTIMA.jobs": {
+    "jobs": {
       "arcanist": {"name": "arcanist"},
       "chimerist": {"name": "chimerist"},
       "elementalist": {"name": "elementalist"},
@@ -104,6 +104,10 @@
       "dancer": {"name": "dancer"},
       "symbolist": {"name": "symbolist"},
       "ace": {"name": "ace"}
+    },
+
+    "uiHeader": {
+      "conditions": "conditions"
     },
 
     "SheetLabels": {

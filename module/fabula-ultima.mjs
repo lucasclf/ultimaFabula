@@ -86,8 +86,8 @@ Handlebars.registerHelper('console', function (obj) {
   console.log(obj);
 });
 
-Handlebars.registerHelper('console', function (obj) {
-  console.log(obj);
+Handlebars.registerHelper('literal', function(value) {
+  return new Handlebars.SafeString(value);
 });
 
 /* -------------------------------------------- */

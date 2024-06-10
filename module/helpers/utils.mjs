@@ -58,3 +58,16 @@ export function recoverTotalLevel(jobs){
     }
     return total;
 }
+
+export function recoverAttrLoweredByCondition(conditions){
+    const trueConditions = {};
+    Object.keys(conditions)
+        .filter(key => conditions[key] === true)
+        .map(condition => trueConditions[condition] = conditions[condition]);
+
+    const attrLowered = [];
+    Object.keys(trueConditions)
+        .map(condition => attrLowered.push( ...CONFIG.FABULA_ULTIMA.conditionsAttr[condition]));
+
+    return attrLowered;
+}

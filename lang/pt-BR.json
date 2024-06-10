@@ -29,7 +29,7 @@
 
     "initiative": {"name": "Iniciativa"},
 
-    "ULTIMAFABULA.weaponType": {
+    "weaponType": {
       "sword": "espada",
       "axe": "machado",
       "arcane": "arcana",
@@ -43,17 +43,17 @@
       "thrown": "arremesso"
     },
     
-    "ULTIMAFABULA.gripType": {
+    "gripType": {
       "one-handed": "Uma mão",
       "two-handed": "Duas mãos"
     },
     
-    "ULTIMAFABULA.attackType": {
+    "attackType": {
       "ranged": "distância",
       "melee": "corpo a corpo"
     },
 
-    "ULTIMAFABULA.elementType": {
+    "elementType": {
       "physical": "físico", 
       "air": "ar", 
       "bolt": "raio", 
@@ -65,16 +65,16 @@
       "poison": "veneno"
     },
 
-    "ULTIMAFABULA.basicConditions": {
-      "weak": {"name": "fraco", "attributes": ["ULTIMAFABULA.attributes.might"]},
-      "dazed": {"name": "atordoado", "attributes": ["ULTIMAFABULA.attributes.insight"]},
-      "shaken": {"name": "abalado", "attributes": ["ULTIMAFABULA.attributes.willpower"]},
-      "slow": {"name": "lento", "attributes": ["ULTIMAFABULA.attributes.dexterity"]},
-      "enraged": {"name": "enfurecido", "attributes": ["ULTIMAFABULA.attributes.dexterity", "ULTIMAFABULA.attributes.insight"]},
-      "poisoned": {"name": "envenenado", "attributes": ["ULTIMAFABULA.attributes.willpower", "ULTIMAFABULA.attributes.might"]}
+    "basicConditions": {
+      "weak": {"name": "fraco", "attributes": ["FABULA_ULTIMA.attributes.might"]},
+      "dazed": {"name": "atordoado", "attributes": ["FABULA_ULTIMA.attributes.insight"]},
+      "shaken": {"name": "abalado", "attributes": ["FABULA_ULTIMA.attributes.willpower"]},
+      "slow": {"name": "lento", "attributes": ["FABULA_ULTIMA.attributes.dexterity"]},
+      "enraged": {"name": "enfurecido", "attributes": ["FABULA_ULTIMA.attributes.dexterity", "FABULA_ULTIMA.attributes.insight"]},
+      "poisoned": {"name": "envenenado", "attributes": ["FABULA_ULTIMA.attributes.willpower", "FABULA_ULTIMA.attributes.might"]}
     },
 
-    "FABULA_ULTIMA.jobs": {
+    "jobs": {
       "arcanist": {"name": "arcanista"},
       "chimerist": {"name": "quimerista"},
       "elementalist": {"name": "elementalista"},
@@ -96,6 +96,10 @@
       "dancer": {"name": "dançarino"},
       "symbolist": {"name": "simbolista"},
       "ace": {"name": "ás"}
+    },
+
+    "uiHeader": {
+      "conditions": "condições"
     },
     
     "SheetLabels": {

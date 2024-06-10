@@ -190,6 +190,21 @@ FABULA_ULTIMA.jobsMartialProficiency = {
   ace: {armor: false, shield: false, ranged: false, melee: false}
 }
 
+//UI
+FABULA_ULTIMA.uiHeader = {
+  conditions: 'FABULA_ULTIMA.uiHeader.conditions'
+}
+
+FABULA_ULTIMA.conditionSymbol = {
+  weak: '&#128567',
+  dazed: '&#128565',
+  shaken: '&#x1F62C',
+  slow: '&#128012',
+  enraged: '&#129324',
+  poisoned: '&#129326'
+}
+
+
 //Utilitários
 FABULA_ULTIMA.attributeDice = {
   d6: 'd6',
@@ -197,4 +212,6 @@ FABULA_ULTIMA.attributeDice = {
   d10: 'd10',
   d12: 'd12'
 };
+
+
 

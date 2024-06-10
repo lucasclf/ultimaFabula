@@ -1,5 +1,5 @@
 import FabulaUltimaActorBase from "./base-actor.mjs";
-import { decreaseAttr, recoverFreeBenefits, recoverTotalLevel, extractDiceValor } from "../helpers/utils.mjs";
+import { decreaseAttr, recoverFreeBenefits, recoverTotalLevel, extractDiceValor, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
@@ -24,6 +24,8 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
     this._calculateProficiency(benefitsBonus);
+
+    console.log(this);
   }
 
   getRollData() {
@@ -87,25 +89,33 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       obj[job] = new fields.SchemaField({
         level: new fields.NumberField({...requiredInteger, initial: 0, min: 0, max: 10}),
         caster: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobs[job].caster}),
-        martialProficiency: new fields.SchemaField({
-          armor: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].armor}),
-          shield: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].shield}),
-          melee: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].melee}),
-          ranged: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].ranged})
-        }),
-        jobsBenefits: new fields.SchemaField({
-          manaBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].mp}), 
-          healthBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].hp}),
-          inventoryBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ip}), 
-          canPerformRitual: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ritual}), 
-          canInitiateProjects: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].projects})
-        })
+        martialProficiency: this._defineMartialProficiencySchema(fields, job),
+        jobsBenefits: this._defineJobsBenefits(fields, requiredInteger, job)
       })
       if(obj[job].fields.caster){
         obj[job].casterAttr = new fields.StringField({initial: CONFIG.FABULA_ULTIMA.jobs[job].casterAttr})
       };
       return obj;
     }, {}));;
+  }
+
+  static _defineMartialProficiencySchema(fields, job){
+    return new fields.SchemaField({
+      armor: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].armor}),
+      shield: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].shield}),
+      melee: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].melee}),
+      ranged: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].ranged})
+    });
+  }
+
+  static _defineJobsBenefits(fields, requiredInteger, job){
+    return new fields.SchemaField({
+      manaBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].mp}), 
+      healthBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].hp}),
+      inventoryBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ip}), 
+      canPerformRitual: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ritual}), 
+      canInitiateProjects: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].projects})
+    })
   }
 
   static _defineConditionsSchema(fields){
@@ -116,12 +126,10 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   _calculateAttributeRealValue(){
-    const trueConditions = Object.values(this.conditions)
-      .filter(condition => condition)
-      .map(key => CONFIG.FABULA_ULTIMA.conditionsAttr[key]);
+    const attrLowered = recoverAttrLoweredByCondition(this.conditions);
 
     for (const key in this.attributes) {   
-      const counter = trueConditions.filter(attr => attr === key).length;
+      const counter = attrLowered.filter(attr => attr === key).length;
       this.attributes[key].value = decreaseAttr(this.attributes[key].base, counter);
       this.attributes[key].label = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[key]) ?? key;
     }

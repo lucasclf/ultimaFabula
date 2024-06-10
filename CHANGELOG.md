@@ -6,7 +6,7 @@
 ### BugFinded
 - #select não está funcionando para alterar os atributos do personagem em actor-character-sheet.hbs;
 
-## [1.0.0] | 2024-06-
+## [1.0.1] | 2024-06-10
 ### Fixed
 - #select arrumado, graças ao auxilio de @souowendel do discord do FoundryVTT Brasil;
 ### Changed
@@ -14,3 +14,4 @@
 - Inserido a lógica de alteração dos atributos com base nas condições;
 - Melhorada a leitura do getData do jogador;
 - Criada lógica dos recursos e proficiências do jogador;
+- Inserção dos checkbox de condição funcionais na ficha;

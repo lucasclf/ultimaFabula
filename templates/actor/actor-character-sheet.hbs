@@ -2,9 +2,16 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="image-level-container ">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+      <p>LEVEL: {{system.resources.level}}</p>
+    </div>
+
+
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+      </h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -41,8 +48,19 @@
         </div>
 
       </div>
+      <fieldset class="conditions-container">
+      <legend>{{localize @root.config.uiHeader.conditions}}</legend>
+      {{#each system.conditions as |condition key|}}
+        <div class="condition-checkbox">
+          <input type="checkbox" id="{{key}}" name="system.conditions.{{key}}" {{checked condition}}>
+          <label for="system.conditions.{{key}}" title="{{localize (lookup @root.config.conditions key)}}">{{literal (lookup @root.config.conditionSymbol key)}}</label>
+        </div>
+      {{/each}}
+    </fieldset>
     </div>
+
   </header>
+
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
@@ -68,14 +86,14 @@
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="attributes flexcol">
-
+            {{console system}}
             {{#each system.attributes as |attribute key|}}
             <div class="attribute flexrow flex-group-center">
-              <label for="system.attributes.{{key}}.value" class="resource-label rollable flexlarge align-left">
+              <label for="system.attributes.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="{{attribute.value}}">
                 {{localize (lookup @root.config.attributes key)}}
               </label>
-              <select name="system.attributes.{{key}}.value">
-                {{#select attribute.value}}
+              <select name="system.attributes.{{key}}.base">
+                {{#select attribute.base}}
                   {{#each  @root.config.attributeDice as |name type|}}
                     <option value="{{type}}">{{name}}</option>  
                   {{/each}}
