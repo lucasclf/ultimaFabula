@@ -18,5 +18,7 @@
 - Inserção dos checkbox de condição funcionais na ficha;
 
 ## [1.0.1] | 2024-06-10
+### Added
+- Inserção da lógica dos icones de condições ao lado dos atributos.
 ### Changed
 - Correção do changelog;

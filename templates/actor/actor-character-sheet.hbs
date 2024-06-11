@@ -86,21 +86,23 @@
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="attributes flexcol">
-            {{console system}}
-            {{#each system.attributes as |attribute key|}}
-            <div class="attribute flexrow flex-group-center">
-              <label for="system.attributes.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="{{attribute.value}}">
-                {{localize (lookup @root.config.attributes key)}}
-              </label>
-              <select name="system.attributes.{{key}}.base">
-                {{#select attribute.base}}
-                  {{#each  @root.config.attributeDice as |name type|}}
-                    <option value="{{type}}">{{name}}</option>  
-                  {{/each}}
-                {{/select}}
-              </select>
-            </div>
-            {{/each}}
+            {{console system.conditions}}
+            {{#with system}}
+              {{#each attributes as |attribute key|}}
+              <div class="attribute flexrow flex-group-center">
+                <label for="system.attributes.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="{{attribute.value}}">
+                  {{localize (lookup @root.config.attributes key)}} {{literal (insertIconIfAttrLowered key @root.system.conditions)}}
+                </label>
+                <select name="system.attributes.{{key}}.base">
+                  {{#select attribute.base}}
+                    {{#each  @root.config.attributeDice as |name type|}}
+                      <option value="{{type}}">{{name}}</option>  
+                    {{/each}}
+                  {{/select}}
+                </select>
+              </div>
+              {{/each}}
+            {{/with}}
 
             {{#each system.defenses as |defense key|}}
             <div class="defense flexrow flex-group-center">

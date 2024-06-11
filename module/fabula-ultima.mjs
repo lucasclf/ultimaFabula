@@ -9,6 +9,7 @@ import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { FABULA_ULTIMA } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
+import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -89,6 +90,11 @@ Handlebars.registerHelper('console', function (obj) {
 Handlebars.registerHelper('literal', function(value) {
   return new Handlebars.SafeString(value);
 });
+
+Handlebars.registerHelper('insertIconIfAttrLowered', function(attr, conditions) {
+  return insertIconIfAttrLowered(attr, conditions);
+});
+
 
 /* -------------------------------------------- */
 /*  Ready Hook                                  */

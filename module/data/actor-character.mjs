@@ -14,6 +14,9 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.attributes = this._defineAttributesSchema(fields);
     schema.jobs = this._defineJobsSchema(fields, requiredInteger);
     schema.conditions = this._defineConditionsSchema(fields);
+    schema.background = this._defineBackgroundSchema(fields);
+
+    console.log(schema);
 
     return schema;
   }
@@ -24,8 +27,6 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
     this._calculateProficiency(benefitsBonus);
-
-    console.log(this);
   }
 
   getRollData() {
@@ -33,7 +34,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
     if (this.attributes) {
       for (let [k,v] of Object.entries(this.attributes)) {
-        data[k] = foundry.utils.deepClone(v);
+        data[k] = foundry.utils.deepClone(v.value);
       }
     }
 
@@ -53,6 +54,12 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
       inventory: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      }),
+      fabula: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      }),
+      zenit: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       })
     })
@@ -123,6 +130,40 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       obj[condition] = new fields.BooleanField({initial: false});
       return obj;
     }, {}));
+  }
+
+  static _defineBackgroundSchema(fields){
+    return new fields.SchemaField({
+      identity: new fields.StringField({}),
+      theme: new fields.StringField({}),
+      origin: new fields.StringField({}),
+      bonds: new fields.SchemaField({
+        firstBond: this._defineBondSchema(fields),
+        secondBond: this._defineBondSchema(fields),
+        thirdBond: this._defineBondSchema(fields),
+        fourthBond: this._defineBondSchema(fields),
+        fifthBond: this._defineBondSchema(fields),
+        sixthBond: this._defineBondSchema(fields)
+      })
+    })
+  }
+
+  static _defineBondSchema(fields){
+    return new foundry.data.fields.SchemaField({
+      target: new fields.StringField({}),
+      respect: new foundry.data.fields.SchemaField({
+        admiration: new fields.BooleanField({initial: false}),
+        inferiority: new fields.BooleanField({initial: false})
+      }),
+      confiability:  new foundry.data.fields.SchemaField({
+        loyalty: new fields.BooleanField({initial: false}),
+        mistrust: new fields.BooleanField({initial: false})
+      }),
+      love:  new foundry.data.fields.SchemaField({
+        affection: new fields.BooleanField({initial: false}),
+        hatred: new fields.BooleanField({initial: false})
+      })
+    })
   }
 
   _calculateAttributeRealValue(){
