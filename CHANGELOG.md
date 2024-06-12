@@ -20,5 +20,6 @@
 ## [1.0.2] | 2024-06-10
 ### Added
 - Inserção da lógica dos icones de condições ao lado dos atributos.
+- Icones de dano elemental inseridos no sistema.
 ### Changed
 - Correção do changelog;
