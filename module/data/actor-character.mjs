@@ -1,5 +1,7 @@
 import FabulaUltimaActorBase from "./base-actor.mjs";
-import { decreaseAttr, recoverFreeBenefits, recoverTotalLevel, extractDiceValor, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
+import { decreaseAttr, extractDiceValor, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
+import { recoverFreeBenefits, recoverTotalLevel } from "../helpers/jobHelper.mjs";
+import { recoverTotalFreeBenefits } from "../helpers/jobHelper.mjs"; 
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
@@ -23,7 +25,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   prepareDerivedData() {
-    const benefitsBonus = recoverFreeBenefits(this.jobs);
+    const benefitsBonus = recoverTotalFreeBenefits(this.jobs);
 
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
@@ -100,11 +102,10 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
         level: new fields.NumberField({...requiredInteger, initial: 0, min: 0, max: 10}),
         caster: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobs[job].caster}),
         martialProficiency: this._defineMartialProficiencySchema(fields, job),
-        jobsBenefits: this._defineJobsBenefits(fields, requiredInteger, job)
+        jobsBenefits: this._defineJobsBenefits(fields, requiredInteger, job),
+        casterAttr: this._defineJobsCasterAttrSchame(fields, job)
       })
-      if(obj[job].fields.caster){
-        obj[job].casterAttr = new fields.StringField({initial: CONFIG.FABULA_ULTIMA.jobs[job].casterAttr})
-      };
+      
       return obj;
     }, {}));;
   }
@@ -126,6 +127,15 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       canPerformRitual: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ritual}), 
       canInitiateProjects: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].projects})
     })
+  }
+
+  static _defineJobsCasterAttrSchame(fields, job){
+    if(CONFIG.FABULA_ULTIMA.jobs[job].caster == true){
+      return new fields.StringField({required: false, nullable: true, initial: CONFIG.FABULA_ULTIMA.jobs[job].casterAttr})
+    }
+    else{
+      return new fields.StringField({required: false, nullable: true, initial: null});
+    }
   }
 
   static _defineConditionsSchema(fields){

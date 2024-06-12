@@ -11,6 +11,7 @@ import { FABULA_ULTIMA } from './helpers/config.mjs';
 import * as models from './data/_module.mjs';
 import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
+import { recoverFreeBenefits } from './helpers/jobHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -108,6 +109,9 @@ Handlebars.registerHelper('captalizeFirstLetterOfWords', function(text) {
   return captalizeFirstLetterOfWords(text);
 });
 
+Handlebars.registerHelper('recoverFreeBenefits', function(jobName, job) {
+  return recoverFreeBenefits(jobName, job);
+});
 
 
 /* -------------------------------------------- */

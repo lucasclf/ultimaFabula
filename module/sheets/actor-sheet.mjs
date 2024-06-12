@@ -155,6 +155,16 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
+    // -------------------------------------------------------------
+    // Altera valor do job
+    html.on('click', '.job-edit', async (ev) => {
+      const operator = ev.currentTarget.value;
+      const jobName = ev.currentTarget.dataset.job;
+      const job = this.actor.system.jobs[jobName]
+      const newLevel = operator === "+"? job.level + 1 : job.level - 1;
+
+      await this.actor.update({ [`system.jobs.${jobName}.level`]: newLevel });
+    })
 
     // -------------------------------------------------------------
     // Everything below here is only needed if the sheet is editable

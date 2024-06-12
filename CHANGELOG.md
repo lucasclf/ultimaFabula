@@ -21,5 +21,7 @@
 ### Added
 - Inserção da lógica dos icones de condições ao lado dos atributos.
 - Icones de dano elemental inseridos no sistema.
+- Finalizada lógica das resistências elementais.
+- Iniciada lógica das classes.
 ### Changed
 - Correção do changelog;

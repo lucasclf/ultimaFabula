@@ -204,6 +204,18 @@ FABULA_ULTIMA.uiHeader = {
   resistances: 'FABULA_ULTIMA.uiHeader.resistances'
 }
 
+FABULA_ULTIMA.uiJob = {
+  freeBenefits: 'FABULA_ULTIMA.uiJob.freeBenefits'
+}
+
+FABULA_ULTIMA.uiBenefits = {
+  manaBonus: 'FABULA_ULTIMA.uiBenefits.manaBonus',
+  inventoryBonus: 'FABULA_ULTIMA.uiBenefits.inventoryBonus',
+  healthBonus: 'FABULA_ULTIMA.uiBenefits.healthBonus',
+  canPerformRitual: 'FABULA_ULTIMA.uiBenefits.canPerformRitual',
+  canInitiateProjects: 'FABULA_ULTIMA.uiBenefits.canInitiateProjects'
+}
+
 FABULA_ULTIMA.conditionSymbol = {
   weak: '&#128567',
   dazed: '&#128565',

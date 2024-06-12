@@ -1,17 +1,13 @@
 <ol class='items-list'>
   <div class="items-header">{{captalizeText (localize @root.config.uiHeader.resistances)}}</div>
+  <div class="resistance-card-container">
   {{#each system.resistances as |resistance key|}}
-  <div class="resistance-card">
-      <h2>{{captalizeText (localize (lookup @root.config.resistancesName key))}}</h2>
-      <div class="resistance-image-container">
-        <img src="systems/fabula-ultima/assets/icons/elements/{{key}}.png" alt="Imagem descritiva">
-      </div>
-      <div class="resistance-divisions">
-        <div class="resistance-division">VU</div>
-        <div class="resistance-division">RE</div>
-        <div class="resistance-division">IM</div>
-        <div class="resistance-division">AB</div>
-      </div>
+    <div class="resistance-card">
+      <h3>{{captalizeText (localize (lookup @root.config.resistancesName key))}}</h1>
+      <img src="systems/fabula-ultima/assets/icons/elements/{{key}}.png" />
+        <p>{{localize (lookup @root.config.resistancesType resistance)}}</p>
     </div>
   {{/each}}
+  </div>
+
 </ol>

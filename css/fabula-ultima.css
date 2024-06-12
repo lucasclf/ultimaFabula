@@ -430,31 +430,44 @@ visibility: visible;
 }
 
 /*RESISTANCES CSS*/
-.element-card {
-  width: 300px;
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: auto;
-  text-align: center;
-}
-.element-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.element-image-container img {
-  max-width: 100%;
-  height: auto;
-}
-.element-divisions {
+.resistance-card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 10px;
+  overflow: hidden;
 }
-.element-division {
-  background-color: lightgrey;
-  padding: 5px;
+.resistance-card {
+  display: table-cell;
+}
+.resistance-card * {
+  margin: -2px 0;
   text-align: center;
+}
+.resistance-divisions {
+    display: flex;
+}
+
+.resistance-card img {
+  padding: 10px 0;
+  width: 50px;
+  border: 0; 
+  display: block;
+  margin: 0 auto;
+}
+
+/*JOB CSS*/
+.job-level-container {
+  display: flex; 
+  flex-direction:row;
+}
+
+.job-level-container button{
+  height: 15px;
+  width: 15px;
+}
+
+.check-img{
+  height: 15px;
+  width: 15px;
+  border: none;
 }

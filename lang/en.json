@@ -122,6 +122,18 @@
       "poison": "poison",
       "physical": "physical"
     },
+    
+    "uiJob": {
+      "freeBenefits": "free benefits"
+    },
+
+    "uiBenefits": {
+      "manaBonus": "Mana",
+      "inventoryBonus": "Inventory",
+      "healthBonus": "Health",
+      "canPerformRitual": "Ritual?",
+      "canInitiateProjects": "Projects?"
+    },
 
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",

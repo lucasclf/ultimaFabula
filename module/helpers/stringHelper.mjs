@@ -3,7 +3,6 @@ export function captalizeFirstLetter(text){
 }
 
 export function captalizeText(text){
-    console.log(text)
     return text.toUpperCase();
 }
 

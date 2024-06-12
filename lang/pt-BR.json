@@ -115,7 +115,19 @@
       "poison": "veneno",
       "physical": "físico"
     },
-    
+
+    "uiJob": {
+      "freeBenefits": "benefícios"
+    },
+
+    "uiBenefits": {
+      "manaBonus": "Mana",
+      "inventoryBonus": "Inventário",
+      "healthBonus": "Vida",
+      "canPerformRitual": "Ritual?",
+      "canInitiateProjects": "Projetos?"
+    },
+
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"

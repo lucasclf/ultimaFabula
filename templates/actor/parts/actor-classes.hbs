@@ -1,10 +1,18 @@
 <ol class='items-list'>
   <div class="job-container">
     {{#each system.jobs as |job key|}}
-      <a class="job-card action">
-        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}} {{job.level}}</h2>
+      <div class="job-card" >
+        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
+
+        <div class="job-level-container">
+          <button class="job-edit" value="-" data-job="{{key}}">-</button> 
+          <p data-job-name='job-level'>{{job.level}} | 10</p> 
+          <button class="job-edit" value="+" data-job="{{key}}">+</button>
+        </div>
+        {{literal (recoverFreeBenefits key job)}}
         <div class="job-description">JOB DESCRIPTION</div>
-      </a>
+      </div>
     {{/each}}
   </div>
 </ol>
+
