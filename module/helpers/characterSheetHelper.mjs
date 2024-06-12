@@ -1,6 +1,5 @@
 export function insertIconIfAttrLowered(attr, conditions){
   var iconString = "";
-  console.log(attr)
   const filteredKeys = Object.keys(conditions)
   .filter(key => conditions[key] === true && _filterAttrCondition(attr, key));
 

@@ -99,7 +99,21 @@
     },
 
     "uiHeader": {
-      "conditions": "condições"
+      "conditions": "condições",
+      "resistances": "resistances"
+
+    },
+    
+    "resistancesName": {
+      "air": "ar",
+      "bolt": "raio",
+      "dark": "trevas",
+      "earth": "terra",
+      "fire": "fogo",
+      "ice": "gelo",
+      "light": "luz",
+      "poison": "veneno",
+      "physical": "físico"
     },
     
     "SheetLabels": {

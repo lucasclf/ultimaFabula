@@ -67,7 +67,7 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="attributes">{{localize @root.config.tabName.attributes}}</a>
     <a class="item" data-tab="gears">{{localize @root.config.tabName.gears}}</a>
-    <a class="item" data-tab="classes">{{localize @root.config.tabName.classes}}</a>
+    <a class="item" data-tab="classes">{{localize @root.config.tabName.jobs}}</a>
     <a class="item" data-tab="abilities">{{localize @root.config.tabName.abilities}}</a>
     <a class="item" data-tab="spells">{{localize @root.config.tabName.spells}}</a>
     <a class="item" data-tab="actions">{{localize @root.config.tabName.actions}}</a>
@@ -86,9 +86,7 @@
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
           <div class="attributes flexcol">
-            {{console system.conditions}}
-            {{#with system}}
-              {{#each attributes as |attribute key|}}
+              {{#each system.attributes as |attribute key|}}
               <div class="attribute flexrow flex-group-center">
                 <label for="system.attributes.{{key}}.base" class="resource-label rollable flexlarge align-left" data-roll="{{attribute.value}}">
                   {{localize (lookup @root.config.attributes key)}} {{literal (insertIconIfAttrLowered key @root.system.conditions)}}
@@ -102,7 +100,6 @@
                 </select>
               </div>
               {{/each}}
-            {{/with}}
 
             {{#each system.defenses as |defense key|}}
             <div class="defense flexrow flex-group-center">

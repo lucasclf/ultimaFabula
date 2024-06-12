@@ -53,6 +53,14 @@ FABULA_ULTIMA.defenses = {
 
 FABULA_ULTIMA.initiative = 'FABULA_ULTIMA.initiative.name';
 
+FABULA_ULTIMA.resistancesType = {
+  normal: 'normal',
+  vulnerability: 'vulnerability',
+  resistance: 'resistance',
+  immunity: 'immunity',
+  absorption: 'absorption'
+}
+
 //Equipamentos
 
 FABULA_ULTIMA.weaponType = {
@@ -192,7 +200,8 @@ FABULA_ULTIMA.jobsMartialProficiency = {
 
 //UI
 FABULA_ULTIMA.uiHeader = {
-  conditions: 'FABULA_ULTIMA.uiHeader.conditions'
+  conditions: 'FABULA_ULTIMA.uiHeader.conditions',
+  resistances: 'FABULA_ULTIMA.uiHeader.resistances'
 }
 
 FABULA_ULTIMA.conditionSymbol = {
@@ -202,6 +211,18 @@ FABULA_ULTIMA.conditionSymbol = {
   slow: '&#128012',
   enraged: '&#129324',
   poisoned: '&#129326'
+}
+
+FABULA_ULTIMA.resistancesName = {
+  air: 'FABULA_ULTIMA.resistancesName.air',
+  bolt: 'FABULA_ULTIMA.resistancesName.bolt',
+  dark: 'FABULA_ULTIMA.resistancesName.dark',
+  earth: 'FABULA_ULTIMA.resistancesName.earth',
+  fire: 'FABULA_ULTIMA.resistancesName.fire',
+  ice: 'FABULA_ULTIMA.resistancesName.ice',
+  light: 'FABULA_ULTIMA.resistancesName.light',
+  poison: 'FABULA_ULTIMA.resistancesName.poison',
+  physical: 'FABULA_ULTIMA.resistancesName.physical'
 }
 
 

@@ -15,6 +15,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.jobs = this._defineJobsSchema(fields, requiredInteger);
     schema.conditions = this._defineConditionsSchema(fields);
     schema.background = this._defineBackgroundSchema(fields);
+    schema.resistances = this._defineResistancesSchema(fields);
 
     console.log(schema);
 
@@ -27,6 +28,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
     this._calculateProficiency(benefitsBonus);
+    console.log(this)
   }
 
   getRollData() {
@@ -94,6 +96,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   static _defineJobsSchema(fields, requiredInteger) {
     return new fields.SchemaField(Object.keys(CONFIG.FABULA_ULTIMA.jobs).reduce((obj, job) => {
       obj[job] = new fields.SchemaField({
+        label: new fields.StringField({initial: CONFIG.FABULA_ULTIMA.jobs[job].name}),
         level: new fields.NumberField({...requiredInteger, initial: 0, min: 0, max: 10}),
         caster: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobs[job].caster}),
         martialProficiency: this._defineMartialProficiencySchema(fields, job),
@@ -166,6 +169,13 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     })
   }
 
+  static _defineResistancesSchema(fields){
+    return new fields.SchemaField(Object.keys(CONFIG.FABULA_ULTIMA.resistancesName).reduce((obj, attribute) => {
+      obj[attribute] = new fields.StringField({initial: CONFIG.FABULA_ULTIMA.resistancesType.normal});
+      return obj;
+    }, {}));
+  }
+
   _calculateAttributeRealValue(){
     const attrLowered = recoverAttrLoweredByCondition(this.conditions);
 
@@ -189,4 +199,5 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   _calculateProficiency(benefitsBonus){
     this.martialProficiency = benefitsBonus.martialProficiency;
   }
+
 }

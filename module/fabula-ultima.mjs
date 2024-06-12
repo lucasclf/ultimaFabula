@@ -10,6 +10,7 @@ import { FABULA_ULTIMA } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
+import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -94,6 +95,19 @@ Handlebars.registerHelper('literal', function(value) {
 Handlebars.registerHelper('insertIconIfAttrLowered', function(attr, conditions) {
   return insertIconIfAttrLowered(attr, conditions);
 });
+
+Handlebars.registerHelper('captalizeFirstLetter', function(text) {
+  return captalizeFirstLetter(text);
+});
+
+Handlebars.registerHelper('captalizeText', function(text) {
+  return captalizeText(text);
+});
+
+Handlebars.registerHelper('captalizeFirstLetterOfWords', function(text) {
+  return captalizeFirstLetterOfWords(text);
+});
+
 
 
 /* -------------------------------------------- */
