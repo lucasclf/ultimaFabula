@@ -51,7 +51,7 @@ Hooks.once('init', function () {
   CONFIG.Item.documentClass = FabulaUltimaItem;
   CONFIG.Item.dataModels = {
     item: models.FabulaUltimaItem,
-    feature: models.FabulaUltimaFeature,
+    job: models.FabulaUltimaJob,
     spell: models.FabulaUltimaSpell
   }
 
