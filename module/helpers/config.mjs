@@ -127,7 +127,7 @@ FABULA_ULTIMA.elementType = {
 
 //jobs
 FABULA_ULTIMA.jobs = {
-  arcanist:  {name: 'FABULA_ULTIMA.jobs.arcanist.name', caster: true, casterAttr: 'wlp'},
+  arcanist:  {name: 'FABULA_ULTIMA.jobs.arcanist.name', caster: true, casterAttr: 'special', firstAttr: 'ins', secondAttr: 'mig'},
   chimerist: {name: 'FABULA_ULTIMA.jobs.chimerist.name', caster: true, casterAttr: 'ins'},
   elementalist: {name: 'FABULA_ULTIMA.jobs.elementalist.name', caster: true, casterAttr: 'ins'},
   entropist: {name: 'FABULA_ULTIMA.jobs.entropist.name', caster: true, casterAttr: 'ins'},

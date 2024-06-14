@@ -1,7 +1,7 @@
 <ol class='items-list'>
   {{#hasJobsType system.jobs 'mastered'}}
-  <div class="items-header">MASTERED {{recoverJobQuantity 'mastered'}}</div>
-  <div class="job-container">
+  <div class="job-header"><span>MASTERED {{recoverJobQuantity 'mastered'}}</span> <a class="hidden-job-button">></a></div>
+  <div class="job-container ">
     {{#each (groupJobs system.jobs 'mastered') as |job key|}}
       <div class="job-card mastered-card" >
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
@@ -11,17 +11,17 @@
           <p data-job-name='job-level'>{{job.level}} | 10</p> 
           <button class="job-edit" value="+" data-job="{{key}}">+</button>
         </div>
-        {{literal (recoverFreeBenefits key job)}}
+        {{literal (recoverFreeBenefits job)}}
         <div class="job-description">JOB DESCRIPTION</div>
       </div>
     {{/each}}
   </div>
   {{/hasJobsType}}
   {{#hasJobsType system.jobs 'trained'}}
-  <div class="items-header trained-card">TRAINED {{recoverJobQuantity 'trained'}}</div>
-  <div class="job-container">
+  <div class="job-header">TRAINED {{recoverJobQuantity 'trained'}} <a class="hidden-job-button">></a></div>
+  <div class="job-container ">
     {{#each (groupJobs system.jobs 'trained') as |job key|}}
-      <div class="job-card" >
+      <div class="job-card trained-card" >
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
 
         <div class="job-level-container">
@@ -29,17 +29,17 @@
           <p data-job-name='job-level'>{{job.level}} | 10</p> 
           <button class="job-edit" value="+" data-job="{{key}}">+</button>
         </div>
-        {{literal (recoverFreeBenefits key job)}}
+        {{literal (recoverFreeBenefits job)}}
         <div class="job-description">JOB DESCRIPTION</div>
       </div>
     {{/each}}
   </div>
   {{/hasJobsType}}
   {{#hasJobsType system.jobs 'untrained'}}
-  <div class="items-header">UNTRAINED {{recoverJobQuantity 'untrained'}}</div>
-  <div class="job-container untrained-card">
+  <div class="job-header">UNTRAINED {{recoverJobQuantity 'untrained'}} <a class="hidden-job-button">></a></div>
+  <div class="job-container ">
     {{#each (groupJobs system.jobs 'untrained') as |job key|}}
-      <div class="job-card" >
+      <div class="job-card untrained-card" >
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
 
         <div class="job-level-container">
@@ -47,7 +47,7 @@
           <p data-job-name='job-level'>{{job.level}} | 10</p> 
           <button class="job-edit" value="+" data-job="{{key}}">+</button>
         </div>
-        {{literal (recoverFreeBenefits key job)}}
+        {{literal (recoverFreeBenefits job)}}
         <div class="job-description">JOB DESCRIPTION</div>
       </div>
     {{/each}}

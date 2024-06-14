@@ -1,17 +1,26 @@
-export function recoverFreeBenefits(jobName, job){
+export function recoverFreeBenefits(job){
     const { jobsBenefits } = job;
+    const jobContainer = document.createElement("div");
     const benefitsContainer = document.createElement("div");
+    jobContainer.className = "full-benefits-container";
     benefitsContainer.className = "benefits-container";
 
-    benefitsContainer.appendChild(_generateCasterText(job));
-    benefitsContainer.appendChild(_generateCasterAttrText(job));
 
+    if(job.caster){
+        jobContainer.appendChild(_generateCasterText(job));    
+    }
 
     Object.entries(jobsBenefits).forEach(([key, value]) => {
-        benefitsContainer.appendChild(_generateBenefitText([key, value]));
+        if(value === true){
+            benefitsContainer.appendChild(_generateBooleanBenefitText([key, value]));
+        }else if(value !== false){
+            benefitsContainer.appendChild(_generateNumericalBenefitText([key, value]));
+        }
     });
 
-    return benefitsContainer.outerHTML;
+    jobContainer.appendChild(benefitsContainer);
+
+    return jobContainer.outerHTML;
 }
 
 export function recoverTotalFreeBenefits(jobs){
@@ -50,43 +59,52 @@ export function recoverTotalLevel(jobs){
     return Object.values(jobs).reduce((total, job) => total += job.level, 0);
 }
 
-function _generateBenefitText(benefit){
+function _generateBooleanBenefitText(benefit){
     const span = document.createElement("span");
-    const benefitName = game.i18n.localize(CONFIG.FABULA_ULTIMA.uiBenefits[benefit[0]]);
     let content;
+    const benefitName = game.i18n.localize(CONFIG.FABULA_ULTIMA.uiBenefits[benefit[0]]);
 
-    if(typeof benefit[1] === "boolean"){
-        const img = document.createElement("img");
-        img.src = `systems/fabula-ultima/assets/icons/check-${benefit[1]}.png`
-        img.className = "check-img"
-        content = document.createTextNode(`${benefitName}: `);
-        span.appendChild(content)
-        span.appendChild(img)
-    } else {
-        content = document.createTextNode(`${benefitName}: ${benefit[1]} `);
-        span.appendChild(content);
-    }
+    const img = document.createElement("img");
+    img.src = `systems/fabula-ultima/assets/icons/check-${benefit[1]}.png`
+    img.className = "check-img"
+    content = document.createTextNode(`${benefitName}: `);
+    span.appendChild(content)
+    span.appendChild(img)
+    return span;
+}
+
+function _generateNumericalBenefitText(benefit){
+    const span = document.createElement("span");
+    let content;
+    const benefitName = game.i18n.localize(CONFIG.FABULA_ULTIMA.uiBenefits[benefit[0]]);
+    content = document.createTextNode(`${benefitName}: ${benefit[1]} `);
+    span.appendChild(content);
     return span;
 }
 
 function _generateCasterText(job){
-    const { caster } = job;
+    let casterAttr;
     const casterImg = _createImageElement(
         'systems/fabula-ultima/assets/icons/properties/caster.png', 
         'caster-img'
     );
 
-    const checkImg = _createImageElement(
-        `systems/fabula-ultima/assets/icons/check-${caster}.png`, 
-        'check-img'
-    );
-    
     const casterSpan = document.createElement("span");
-    const casterContent = document.createTextNode(': ');
+
+    if(job.casterAttr == CONFIG.FABULA_ULTIMA.jobs.arcanist.casterAttr){
+        
+        let fistAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes.ins);
+        let secondAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes.mig);
+        casterAttr = `${fistAttr}||${secondAttr}`;
+    } else {
+        casterAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[job.casterAttr]);
+    }
+
+    casterSpan.className = "caster-span";
+    const casterContent = document.createTextNode(`: ${casterAttr}`);
 
     casterSpan.appendChild(casterImg);
     casterSpan.appendChild(casterContent);
-    casterSpan.appendChild(checkImg);
 
     return casterSpan;
 }
@@ -96,19 +114,6 @@ function _createImageElement(src, className) {
     img.src = src;
     img.className = className;
     return img;
-}
-
-function _generateCasterAttrText(job){
-    const attrSpan = document.createElement("span");
-
-    if(job.caster){
-        const casterAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[job.casterAttr]);
-        const attrContend = document.createTextNode(`${casterAttr}`)
-
-        attrSpan.appendChild(attrContend)
-    }
-
-    return attrSpan;
 }
 
 export function hasJobsType(jobs, jobType){

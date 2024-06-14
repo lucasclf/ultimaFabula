@@ -109,8 +109,8 @@ Handlebars.registerHelper('captalizeFirstLetterOfWords', function(text) {
   return captalizeFirstLetterOfWords(text);
 });
 
-Handlebars.registerHelper('recoverFreeBenefits', function(jobName, job) {
-  return recoverFreeBenefits(jobName, job);
+Handlebars.registerHelper('recoverFreeBenefits', function(job) {
+  return recoverFreeBenefits(job);
 });
 
 Handlebars.registerHelper('hasJobsType', function(jobs, jobType,options){

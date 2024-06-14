@@ -194,6 +194,21 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     // Rollable abilities.
     html.on('click', '.rollable', this._onRoll.bind(this));
 
+    // Hidden container.
+    html.on('click', '.hidden-job-button', (ev) => {
+
+      const hiddenJobButton = ev.currentTarget;
+      const jobContainer = hiddenJobButton.closest('.job-header').nextElementSibling;
+      if(jobContainer.classList.contains('hidden-container')){
+        jobContainer.classList.remove('hidden-container');
+        hiddenJobButton.textContent = '>'
+      } else {
+        jobContainer.classList.add('hidden-container');
+        hiddenJobButton.textContent = '<'
+      }
+      
+    })
+
     // Drag events for macros.
     if (this.actor.isOwner) {
       let handler = (ev) => this._onDragStart(ev);

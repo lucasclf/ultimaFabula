@@ -17,12 +17,14 @@
 - Criada lógica dos recursos e proficiências do jogador;
 - Inserção dos checkbox de condição funcionais na ficha;
 
-## [1.0.2] | 2024-06-10
+## [1.0.2] | 2024-06-14
 ### Added
-- Inserção da lógica dos icones de condições ao lado dos atributos.
-- Icones de dano elemental inseridos no sistema.
-- Finalizada lógica das resistências elementais.
-- Iniciada lógica das classes.
-- Criada lógica para separar as classes pelo lvl.
+- Inserção da lógica dos icones de condições ao lado dos atributos;
+- Icones de dano elemental inseridos no sistema;
+- Finalizada lógica das resistências elementais;
+- Iniciada lógica das classes;
+- Criada lógica para separar as classes pelo lvl;
+- Melhoria na visualização das classes na página de classes;
+- Finalizada lógica das jobs;
 ### Changed
 - Correção do changelog;
