@@ -129,7 +129,7 @@ FABULA_ULTIMA.elementType = {
 FABULA_ULTIMA.jobs = {
   arcanist:  {name: 'FABULA_ULTIMA.jobs.arcanist.name', caster: true, casterAttr: 'wlp'},
   chimerist: {name: 'FABULA_ULTIMA.jobs.chimerist.name', caster: true, casterAttr: 'ins'},
-  elementalist: {name: 'FABULA_ULTIMA.jobs.elementalist.name', caster: false, casterAttr: 'ins'},
+  elementalist: {name: 'FABULA_ULTIMA.jobs.elementalist.name', caster: true, casterAttr: 'ins'},
   entropist: {name: 'FABULA_ULTIMA.jobs.entropist.name', caster: true, casterAttr: 'ins'},
   spiritist: {name: 'FABULA_ULTIMA.jobs.spiritist.name', caster: true, casterAttr: 'ins'},
   necromancer: {name: 'FABULA_ULTIMA.jobs.necromancer.name', caster: false, casterAttr: null},
@@ -198,6 +198,18 @@ FABULA_ULTIMA.jobsMartialProficiency = {
   ace: {armor: false, shield: false, ranged: false, melee: false}
 }
 
+FABULA_ULTIMA.jobType = {
+  master: 'mastered',
+  trained: 'trained',
+  untrained: 'untrained'
+}
+
+FABULA_ULTIMA.jobTypeName = {
+  master: 'FABULA_ULTIMA.jobTypeName.mastered',
+  trained: 'FABULA_ULTIMA.jobTypeName.trained',
+  untrained: 'FABULA_ULTIMA.jobTypeName.untrained'
+}
+
 //UI
 FABULA_ULTIMA.uiHeader = {
   conditions: 'FABULA_ULTIMA.uiHeader.conditions',
@@ -213,7 +225,9 @@ FABULA_ULTIMA.uiBenefits = {
   inventoryBonus: 'FABULA_ULTIMA.uiBenefits.inventoryBonus',
   healthBonus: 'FABULA_ULTIMA.uiBenefits.healthBonus',
   canPerformRitual: 'FABULA_ULTIMA.uiBenefits.canPerformRitual',
-  canInitiateProjects: 'FABULA_ULTIMA.uiBenefits.canInitiateProjects'
+  canInitiateProjects: 'FABULA_ULTIMA.uiBenefits.canInitiateProjects',
+  caster: 'FABULA_ULTIMA.uiBenefits.caster',
+  attr: 'FABULA_ULTIMA.uiBenefits.attr'
 }
 
 FABULA_ULTIMA.conditionSymbol = {

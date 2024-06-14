@@ -23,5 +23,6 @@
 - Icones de dano elemental inseridos no sistema.
 - Finalizada lógica das resistências elementais.
 - Iniciada lógica das classes.
+- Criada lógica para separar as classes pelo lvl.
 ### Changed
 - Correção do changelog;

@@ -132,7 +132,15 @@
       "inventoryBonus": "Inventory",
       "healthBonus": "Health",
       "canPerformRitual": "Ritual?",
-      "canInitiateProjects": "Projects?"
+      "canInitiateProjects": "Projects?",
+      "caster": "Caster",
+      "attr": "Attribute"
+    },
+
+    "jobTypeName": {
+      "mastered": "mastered",
+      "trained": "trained",
+      "untrained": "untrained"
     },
 
     "SheetLabels": {

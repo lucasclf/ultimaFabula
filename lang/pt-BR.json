@@ -121,11 +121,19 @@
     },
 
     "uiBenefits": {
-      "manaBonus": "Mana",
-      "inventoryBonus": "Inventário",
-      "healthBonus": "Vida",
-      "canPerformRitual": "Ritual?",
-      "canInitiateProjects": "Projetos?"
+      "manaBonus": "PM",
+      "inventoryBonus": "PI",
+      "healthBonus": "PV",
+      "canPerformRitual": "Ritual",
+      "canInitiateProjects": "Projeto",
+      "caster": "Conjurador",
+      "attr": "Atributo"
+    },
+
+    "jobTypeName": {
+      "mastered": "masterizada",
+      "trained": "treinada",
+      "untrained": "não treinada"
     },
 
     "SheetLabels": {

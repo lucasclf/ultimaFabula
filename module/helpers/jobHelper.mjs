@@ -1,18 +1,17 @@
 export function recoverFreeBenefits(jobName, job){
     const benefits = job.jobsBenefits;
     const newDiv = document.createElement("div");
+    newDiv.className = "benefits-container";
 
-    if(job.caster === true){
-        newDiv.appendChild(_generateJobText(job));
-    }
+    newDiv.appendChild(_generateCasterText(job));
+    newDiv.appendChild(_generateCasterAttrText(job));
+
 
     for (const benefit of Object.entries(benefits)) {
-        if(benefit[1] > 0 || benefit[1] === true){
-            newDiv.appendChild(_generateBenefitText(benefit));
-        }
+        newDiv.appendChild(_generateBenefitText(benefit));
     }
 
-    return newDiv.innerHTML;
+    return newDiv.outerHTML;
 }
 
 export function recoverTotalFreeBenefits(jobs){
@@ -56,30 +55,91 @@ export function recoverTotalLevel(jobs){
 }
 
 function _generateBenefitText(benefit){
-    const p = document.createElement("p");
+    const span = document.createElement("span");
     const benefitsName = game.i18n.localize(CONFIG.FABULA_ULTIMA.uiBenefits[benefit[0]]);
 
     if(typeof benefit[1] === "boolean"){
         const img = document.createElement("img");
-        img.src = "systems/fabula-ultima/assets/icons/check.png"
+        img.src = `systems/fabula-ultima/assets/icons/check-${benefit[1]}.png`
         img.className = "check-img"
-        const conteudo = document.createTextNode(`${benefitsName}: `);
-        p.appendChild(conteudo)
-        p.appendChild(img)
-        return p;
+        const contend = document.createTextNode(`${benefitsName}: `);
+        span.appendChild(contend)
+        span.appendChild(img)
+        return span;
     }
     
-    const conteudo = document.createTextNode(`${benefitsName}: ${benefit[1]} `);
-    p.appendChild(conteudo)
-    return p;
+    const contend = document.createTextNode(`${benefitsName}: ${benefit[1]} `);
+    span.appendChild(contend)
+    return span;
 
 }
 
-function _generateJobText(job){
-    const casterAttr = job.casterAttr;
-    const paragraph = document.createElement("p");
-    const conteudo = document.createTextNode(`${casterAttr}`)
-    paragraph.appendChild(conteudo);
+function _generateCasterText(job){
+    const caster = job.caster;
+    const casterImg = document.createElement("img");
+    casterImg.src = `systems/fabula-ultima/assets/icons/properties/caster.png`;
+    casterImg.className = "caster-img"
+    
+    const img = document.createElement("img");
+    img.src = `systems/fabula-ultima/assets/icons/check-${caster}.png`
+    img.className = "check-img"
+    
+    const casterSpan = document.createElement("span");
+    const casterContend = document.createTextNode(': ')
+    casterSpan.appendChild(casterImg)
+    casterSpan.appendChild(casterContend)
+    casterSpan.appendChild(img)
 
-    return paragraph
+    return casterSpan
+}
+
+function _generateCasterAttrText(job){
+    const attrSpan = document.createElement("span");
+
+    if(job.caster){
+        const casterAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[job.casterAttr]);
+
+        const attrContend = document.createTextNode(`${casterAttr}`)
+        attrSpan.appendChild(attrContend)
+    }
+
+    return attrSpan;
+}
+
+export function hasJobsType(jobs, jobType){
+    for (const job of Object.values(jobs)) {
+        if(jobType === 'mastered'){
+            if(job.level === 10){
+                return true;
+            }
+        } else if(jobType === 'trained'){
+            if(job.level > 0 && job.level < 10){
+                return true;
+            }
+        } else if(jobType === 'untrained') {
+            if(job.level === 0){
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+export function groupJobs(jobs, groupType){
+    console.log(CONFIG.FABULA_ULTIMA.jobType.master)
+    console.log(groupType)
+    if(groupType == CONFIG.FABULA_ULTIMA.jobType.master){
+        const jobsReduced = Object.fromEntries(Object.entries(jobs).filter(([_, job]) => job.level === 10));
+        return jobsReduced;
+    }
+    if(groupType == CONFIG.FABULA_ULTIMA.jobType.trained){
+        const jobsReduced = Object.fromEntries(Object.entries(jobs).filter(([_, job]) => job.level > 0 && job.level < 10));
+        return jobsReduced;
+    }
+    if(groupType == CONFIG.FABULA_ULTIMA.jobType.untrained){
+        const jobsReduced = Object.fromEntries(Object.entries(jobs).filter(([_, job]) => job.level === 0));
+        return jobsReduced;
+    }
+    return;
 }

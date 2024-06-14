@@ -471,3 +471,23 @@ visibility: visible;
   width: 15px;
   border: none;
 }
+
+.caster-img{
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.benefits-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.benefits-container span:nth-child(odd) {
+  justify-self: start;
+}
+
+.benefits-container span:nth-child(even) {
+  justify-self: end;
+}
