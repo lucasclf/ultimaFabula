@@ -491,3 +491,7 @@ visibility: visible;
 .benefits-container span:nth-child(even) {
   justify-self: end;
 }
+
+.hidden-container{
+  display: none;
+}

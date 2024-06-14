@@ -1,9 +1,9 @@
 <ol class='items-list'>
   {{#hasJobsType system.jobs 'mastered'}}
-  <div class="items-header">MASTERED</div>
+  <div class="items-header">MASTERED {{recoverJobQuantity 'mastered'}}</div>
   <div class="job-container">
     {{#each (groupJobs system.jobs 'mastered') as |job key|}}
-      <div class="job-card" >
+      <div class="job-card mastered-card" >
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
 
         <div class="job-level-container">
@@ -18,7 +18,7 @@
   </div>
   {{/hasJobsType}}
   {{#hasJobsType system.jobs 'trained'}}
-  <div class="items-header">TRAINED</div>
+  <div class="items-header trained-card">TRAINED {{recoverJobQuantity 'trained'}}</div>
   <div class="job-container">
     {{#each (groupJobs system.jobs 'trained') as |job key|}}
       <div class="job-card" >
@@ -36,8 +36,8 @@
   </div>
   {{/hasJobsType}}
   {{#hasJobsType system.jobs 'untrained'}}
-  <div class="items-header">UNTRAINED</div>
-  <div class="job-container">
+  <div class="items-header">UNTRAINED {{recoverJobQuantity 'untrained'}}</div>
+  <div class="job-container untrained-card">
     {{#each (groupJobs system.jobs 'untrained') as |job key|}}
       <div class="job-card" >
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.label)}}</h2>
