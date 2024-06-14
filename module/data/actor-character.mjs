@@ -14,7 +14,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
     schema.initiative = this._defineInitiativeSchema(fields);
     schema.attributes = this._defineAttributesSchema(fields);
-    schema.jobs = this._defineJobsSchema(fields, requiredInteger);
+    schema.joobs = this._defineJobsSchema(fields, requiredInteger);
     schema.conditions = this._defineConditionsSchema(fields);
     schema.background = this._defineBackgroundSchema(fields);
     schema.resistances = this._defineResistancesSchema(fields);
@@ -25,7 +25,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   prepareDerivedData() {
-    const benefitsBonus = recoverTotalFreeBenefits(this.jobs);
+    const benefitsBonus = recoverTotalFreeBenefits(this.joobs);
 
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
@@ -197,7 +197,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   _calculateResourcesValue(benefitsBonus){
-    this.resources.level = recoverTotalLevel(this.jobs);
+    this.resources.level = recoverTotalLevel(this.joobs);
 
     this.resources.health.max = this.resources.level + (extractDiceValor(this.attributes.mig.base) * 5) + benefitsBonus.hp;
     this.resources.health.crises = this.resources.health.max/2;

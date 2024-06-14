@@ -127,7 +127,7 @@ Handlebars.registerHelper('groupJobs', function(jobs, groupType){
 })
 
 Handlebars.registerHelper('recoverJobQuantity', function(jobType){
-  return recoverJobQuantity(jobType, this.document.system.jobs);
+  return recoverJobQuantity(jobType, this.document.system.joobs);
 })
 
 /* -------------------------------------------- */

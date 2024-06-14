@@ -18,7 +18,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'features',
+          initial: 'jobs',
         },
       ],
     });
@@ -104,7 +104,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
+    const jobs = [];
     const spells = {
       0: [],
       1: [],
@@ -125,9 +125,9 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       if (i.type === 'item') {
         gear.push(i);
       }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      // Append to jobs.
+      else if (i.type === 'job') {
+        jobs.push(i);
       }
       // Append to spells.
       else if (i.type === 'spell') {
@@ -139,7 +139,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
+    context.jobs = jobs;
     context.spells = spells;
   }
 
@@ -163,7 +163,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       const job = this.actor.system.jobs[jobName]
       const newLevel = operator === "+"? job.level + 1 : job.level - 1;
 
-      await this.actor.update({ [`system.jobs.${jobName}.level`]: newLevel });
+      await this.actor.update({ [`system.joobs.${jobName}.level`]: newLevel });
     })
 
     // -------------------------------------------------------------
@@ -206,7 +206,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
         jobContainer.classList.add('hidden-container');
         hiddenJobButton.textContent = '<'
       }
-      
+
     })
 
     // Drag events for macros.
@@ -256,7 +256,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-    
+
     // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {

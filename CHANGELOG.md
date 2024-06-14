@@ -28,3 +28,6 @@
 - Finalizada lógica das jobs;
 ### Changed
 - Correção do changelog;
+## [1.0.3] | 2024-06-14
+### Changed
+- Iniciada migração das jobs para item;
