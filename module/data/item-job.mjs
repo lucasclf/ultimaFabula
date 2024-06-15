@@ -8,36 +8,32 @@ export default class FabulaUltimaJob extends FabulaUltimaItemBase {
     const requiredInteger = { ...requiredField, integer: true };
     const schema = super.defineSchema();
 
-    schema.caster = new fields.SchemaField({
-      isCaster: new fields.BooleanField({...requiredField, initial: false}),
-      canMakeRitual: new fields.BooleanField({...requiredField, initial: false}),
-      attrBase: new fields.StringField({ initial: ins})
+    schema.casterBenefits = new fields.SchemaField({
+      caster: new fields.BooleanField({...requiredField, initial: false}),
+      ritual: new fields.BooleanField({...requiredField, initial: false}),
+      attribute: new fields.StringField({ initial: "ins"})
     });
 
     schema.jobBenefits = new fields.SchemaField({
-      health: new fields.NumberField({...requiredInteger, initial: 0}),
-      mana: new fields.NumberField({...requiredInteger, initial: 0}),
-      inventory: new fields.NumberField({...requiredInteger, initial: 0})
+      healthPoints: new fields.NumberField({...requiredInteger, min: 0, initial: 0, min: 0}),
+      manaPoints: new fields.NumberField({...requiredInteger, initial: 0, min: 0}),
+      inventoryPoints: new fields.NumberField({...requiredInteger, initial: 0, min: 0})
     });
 
     schema.project = new fields.BooleanField({...requiredField, initial: false});
 
-    schema.martial = new fields.SchemaField({
+    schema.martialBenefits = new fields.SchemaField({
       armor: new fields.BooleanField({...requiredField, initial: false}), 
       shield: new fields.BooleanField({...requiredField, initial: false}), 
       ranged: new fields.BooleanField({...requiredField, initial: false}),
       melee: new fields.BooleanField({...requiredField, initial: false})
     });
 
-    schema.level = new fields.NumberField({...requiredInteger, initial: 0});
+    schema.level = new fields.NumberField({...requiredInteger, initial: 0, min: 0, max: 10});
 
     return schema;
   }
 
   prepareDerivedData() {
-    // Build the formula dynamically using string interpolation
-    const roll = this.roll;
-
-    this.formula = `${roll.diceNum}${roll.diceSize}${roll.diceBonus}`
   }
 }

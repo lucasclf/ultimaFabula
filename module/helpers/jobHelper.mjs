@@ -55,7 +55,7 @@ export function recoverTotalFreeBenefits(jobs){
     return benefits;
 }
 
-export function recoverTotalLevel(jobs){
+export function recoverLevel(jobs){
     return Object.values(jobs).reduce((total, job) => total += job.level, 0);
 }
 

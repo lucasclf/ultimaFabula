@@ -213,7 +213,11 @@ FABULA_ULTIMA.jobTypeName = {
 //UI
 FABULA_ULTIMA.uiHeader = {
   conditions: 'FABULA_ULTIMA.uiHeader.conditions',
-  resistances: 'FABULA_ULTIMA.uiHeader.resistances'
+  resistances: 'FABULA_ULTIMA.uiHeader.resistances',
+  resources: 'FABULA_ULTIMA.uiHeader.resources',
+  magic: 'FABULA_ULTIMA.uiHeader.caster',
+  martial: 'FABULA_ULTIMA.uiHeader.martial',
+  others: 'FABULA_ULTIMA.uiHeader.others'
 }
 
 FABULA_ULTIMA.uiJob = {
@@ -251,6 +255,19 @@ FABULA_ULTIMA.resistancesName = {
   physical: 'FABULA_ULTIMA.resistancesName.physical'
 }
 
+FABULA_ULTIMA.jobItemBenefits = {
+  caster: 'FABULA_ULTIMA.jobItemBenefits.caster',
+  ritual: 'FABULA_ULTIMA.jobItemBenefits.ritual',
+  attribute: 'FABULA_ULTIMA.jobItemBenefits.attribute',
+  project: 'FABULA_ULTIMA.jobItemBenefits.project'
+}
+
+FABULA_ULTIMA.martialGear = {
+  armor: 'FABULA_ULTIMA.martialGear.armor',
+  shield: 'FABULA_ULTIMA.martialGear.shield',
+  ranged: 'FABULA_ULTIMA.martialGear.ranged',
+  melee: 'FABULA_ULTIMA.martialGear.melee'
+}
 
 //Utilitários
 FABULA_ULTIMA.attributeDice = {

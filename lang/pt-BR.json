@@ -9,12 +9,14 @@
       "spells": {"name": "Feitiços"},
       "actions": {"name": "Ações"}    
     },
+
     "Resources": {
       "healthPoints": {"long": "Vida", "abbr": "PV"},
       "manaPoints": {"long": "Mana", "abbr": "PM"},
       "inventoryPoints": {"long": "Inventário", "abbr": "PI"},
       "crises": {"name": "Crise"}
     },
+
     "Attributes": {
       "Dex": { "long": "Destreza", "abbr": "des" },
       "Ins": { "long": "Intuição", "abbr": "int" },
@@ -100,8 +102,18 @@
 
     "uiHeader": {
       "conditions": "condições",
-      "resistances": "resistances"
+      "resistances": "resistances",
+      "resources": "recursos",
+      "caster": "magia",
+      "martial": "equipamento marcial",
+      "others": "outros"
+    },
 
+    "martialGear": {
+      "armor": "armadura",
+      "shield": "escudo",
+      "ranged": "arma a distância",
+      "melee": "arma corpo a corpo"
     },
     
     "resistancesName": {
@@ -136,6 +148,13 @@
       "untrained": "não treinada"
     },
 
+    "jobItemBenefits": {
+      "caster": "conjurador",
+      "ritual": "ritual",
+      "attribute": "atributo",
+      "project": "projeto"
+    },
+
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"
@@ -165,7 +184,8 @@
     "Item": {
       "item": "Item",
       "attributes": "Atributos",
-      "feitico": "Feitiço"
+      "feitico": "Feitiço",
+      "job": "Classes"
     }
   }
 }

@@ -1,0 +1,44 @@
+{
+  "folder": null,
+  "name": "Orator",
+  "type": "job",
+  "_id": "DCIEElxQWZvln7pK",
+  "img": "systems/fabula-ultima/assets/icons/jobs/orator.png",
+  "system": {
+    "description": "",
+    "casterBenefits": {
+      "caster": false,
+      "ritual": false,
+      "attribute": "ins"
+    },
+    "jobBenefits": {
+      "healthPoints": 0,
+      "manaPoints": 5,
+      "inventoryPoints": 0
+    },
+    "project": false,
+    "martialBenefits": {
+      "armor": false,
+      "shield": false,
+      "ranged": false,
+      "melee": false
+    },
+    "level": 0
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "fabula-ultima",
+    "systemVersion": "2.0.0",
+    "coreVersion": "11.307",
+    "createdTime": 1718397325579,
+    "modifiedTime": 1718405176781,
+    "lastModifiedBy": "hBGI1RfZa7LrWFMv"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "hBGI1RfZa7LrWFMv": 3
+  },
+  "_key": "!items!DCIEElxQWZvln7pK"
+}

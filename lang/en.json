@@ -108,7 +108,18 @@
 
     "uiHeader": {
       "conditions": "conditions",
-      "resistances": "resistances"
+      "resistances": "resistances",
+      "resources": "resources",
+      "caster": "magic",
+      "martial": "martial gear",
+      "others": "others"
+    },
+
+    "martialGear": {
+      "armor": "armor",
+      "shield": "shield",
+      "ranged": "ranged weapon",
+      "melee": "melee weapon"
     },
 
     "resistancesName": {
@@ -162,6 +173,13 @@
     }
   },
 
+  "jobItemBenefits": {
+    "caster": "caster",
+    "ritual": "ritual",
+    "attribute": "attribute",
+    "project": "project"
+  },
+
   "TYPES": {
     "Actor": {
       "character": "Character",
@@ -170,7 +188,8 @@
     "Item": {
       "item": "Item",
       "attributes": "Attributes",
-      "feitico": "Spell"
+      "feitico": "Spell",
+      "job": "Job"
     }
   }
 }

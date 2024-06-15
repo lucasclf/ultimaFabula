@@ -1,6 +1,6 @@
 import FabulaUltimaActorBase from "./base-actor.mjs";
 import { decreaseAttr, extractDiceValor, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
-import { recoverFreeBenefits, recoverTotalLevel } from "../helpers/jobHelper.mjs";
+import { recoverLevel } from "../helpers/jobHelper.mjs";
 import { recoverTotalFreeBenefits } from "../helpers/jobHelper.mjs"; 
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
@@ -9,6 +9,8 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
+
+    console.log(this.items);
 
     schema.resources = this._defineResourcesSchema(fields, requiredInteger);
     schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
@@ -19,8 +21,6 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.background = this._defineBackgroundSchema(fields);
     schema.resistances = this._defineResistancesSchema(fields);
 
-    console.log(schema);
-
     return schema;
   }
 
@@ -30,7 +30,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     this._calculateAttributeRealValue();
     this._calculateResourcesValue(benefitsBonus);
     this._calculateProficiency(benefitsBonus);
-    console.log(this)
+
   }
 
   getRollData() {
@@ -197,7 +197,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   _calculateResourcesValue(benefitsBonus){
-    this.resources.level = recoverTotalLevel(this.joobs);
+    this.resources.level = recoverLevel(this.joobs);
 
     this.resources.health.max = this.resources.level + (extractDiceValor(this.attributes.mig.base) * 5) + benefitsBonus.hp;
     this.resources.health.crises = this.resources.health.max/2;

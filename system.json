@@ -38,7 +38,13 @@
       "path": "lang/en.json"
     }
   ],
-  "packs": [],
+  "packs": [{
+    "name": "classes",
+    "label": "Classes",
+    "system": "fabula-ultima",
+    "type": "Item",
+    "path": "packs/classes"
+  }],
   "packFolders": [],
   "socket": false,
   "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
