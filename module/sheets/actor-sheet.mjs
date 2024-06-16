@@ -4,6 +4,7 @@ import {
 } from '../helpers/effects.mjs';
 import { recoverLevel, recoverTotalFreeBenefits } from '../helpers/jobHelper.mjs';
 import { extractDiceValor } from '../helpers/utils.mjs';
+import { recoverItemType } from '../helpers/utils/itemHelper.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -98,6 +99,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     // or setup anything else that's specific to this type
     let updateData = {};
     updateData[`system.resources`] = this._prepareResources(context);
+    updateData[`system.martialProficiency`] = this._prepareMartialProficiency(context);
 
     this.actor.update(updateData)
   }
@@ -287,9 +289,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
   }
 
   _prepareResources(context){
-
-    const items = context.items
-    let jobs = items.filter(job => job.type === "job");
+    let jobs = recoverItemType(context.items, "job");
 
     const benefitsBonus = recoverTotalFreeBenefits(jobs);
     const totalLevel = recoverLevel(jobs);
@@ -306,6 +306,20 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     }
 
     return resources
+  }
+
+  _prepareMartialProficiency(context){
+    let jobs = recoverItemType(context.items, "job");
+    const benefitsBonus = recoverTotalFreeBenefits(jobs);
+
+    const martialProficiency = {
+      "armor": benefitsBonus.martialProficiency.armor,
+      "ranged": benefitsBonus.martialProficiency.ranged,
+      "melee": benefitsBonus.martialProficiency.melee,
+      "shield": benefitsBonus.martialProficiency.shield
+    }
+
+    return martialProficiency;
   }
 
   _calcMaxAttribute(level, attr, bonus){

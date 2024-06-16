@@ -29,5 +29,8 @@
 ### Changed
 - Correção do changelog;
 ## [1.0.3] | 2024-06-14
+### Added
+- Iniciada lógica de recuperação das proficiências marciais.
 ### Changed
 - Iniciada migração das jobs para item;
+- Alterada lógica dos recursos vindo do job(item);

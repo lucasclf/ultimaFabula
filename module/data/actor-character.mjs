@@ -1,7 +1,5 @@
 import FabulaUltimaActorBase from "./base-actor.mjs";
-import { decreaseAttr, extractDiceValor, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
-import { recoverLevel } from "../helpers/jobHelper.mjs";
-import { recoverTotalFreeBenefits } from "../helpers/jobHelper.mjs"; 
+import { decreaseAttr, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
@@ -24,13 +22,8 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   }
 
   prepareDerivedData() {
-    //const benefitsBonus = recoverTotalFreeBenefits(this.joobs);
-    //const items = this.parent.items;
-    //const filteredJobs = items.filter(job => job.type === "job");
     
     this._calculateAttributeRealValue();
-    //this._calculateResourcesValue(benefitsBonus);
-    //this._calculateProficiency(benefitsBonus);
 
   }
 
@@ -210,19 +203,4 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       this.attributes[key].label = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[key]) ?? key;
     }
   }
-
-  _calculateResourcesValue(benefitsBonus){
-    this.resources.level = recoverLevel(this.joobs);
-
-    this.resources.health.max = this.resources.level + (extractDiceValor(this.attributes.mig.base) * 5) + benefitsBonus.hp;
-    this.resources.health.crises = this.resources.health.max/2;
-    
-    this.resources.mana.max = this.resources.level + (extractDiceValor(this.attributes.wlp.base) * 5) + benefitsBonus.mp;
-    this.resources.inventory.max = 6 + benefitsBonus.ip;
-  }
-
-  _calculateProficiency(benefitsBonus){
-    this.martialProficiency = benefitsBonus.martialProficiency;
-  }
-
 }
