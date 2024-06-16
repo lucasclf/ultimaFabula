@@ -10,8 +10,6 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    console.log(this.items);
-
     schema.resources = this._defineResourcesSchema(fields, requiredInteger);
     schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
     schema.initiative = this._defineInitiativeSchema(fields);
@@ -20,16 +18,19 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.conditions = this._defineConditionsSchema(fields);
     schema.background = this._defineBackgroundSchema(fields);
     schema.resistances = this._defineResistancesSchema(fields);
+    schema.martialProficiency = this._defineProficiencySchema(fields)
 
     return schema;
   }
 
   prepareDerivedData() {
-    const benefitsBonus = recoverTotalFreeBenefits(this.joobs);
-
+    //const benefitsBonus = recoverTotalFreeBenefits(this.joobs);
+    //const items = this.parent.items;
+    //const filteredJobs = items.filter(job => job.type === "job");
+    
     this._calculateAttributeRealValue();
-    this._calculateResourcesValue(benefitsBonus);
-    this._calculateProficiency(benefitsBonus);
+    //this._calculateResourcesValue(benefitsBonus);
+    //this._calculateProficiency(benefitsBonus);
 
   }
 
@@ -52,20 +53,25 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   static _defineResourcesSchema(fields, requiredInteger){
     return new fields.SchemaField({
       health: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+        max:  new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+        crises:  new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
       mana: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+        max:  new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
       inventory: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+        max:  new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
       fabula: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
       zenit: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
-      })
+      }),
+      level: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
     })
   }
 
@@ -184,6 +190,15 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       obj[attribute] = new fields.StringField({initial: CONFIG.FABULA_ULTIMA.resistancesType.normal});
       return obj;
     }, {}));
+  }
+
+  static _defineProficiencySchema(fields){
+    return new fields.SchemaField({
+      armor: new fields.BooleanField({initial: false}),
+      shield: new fields.BooleanField({initial: false}),
+      melee: new fields.BooleanField({initial: false}),
+      ranged: new fields.BooleanField({initial: false})
+    })
   }
 
   _calculateAttributeRealValue(){

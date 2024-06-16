@@ -1,0 +1,71 @@
+<ol class='items-list'>
+{{#hasJobsType jobs 'mastered'}}
+  <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.master)}}({{recoverJobQuantity jobs 'mastered'}})<a class="hidden-job-button">></a></div>
+  <div class="job-container ">
+    {{#each (groupJobs jobs 'mastered') as |job key|}}
+      <div class="job-card mastered-card" >
+        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.name)}}</h2>
+
+        <div class="job-level-container">
+          <button class="job-edit" value="-" data-job="{{job._id}}">-</button> 
+          <p data-job-name='job-level'>{{job.system.level}} | 10</p> 
+          <button class="job-edit" value="+" data-job="{{job._id}}">+</button>
+        </div>
+        {{literal (recoverFreeBenefits job)}}
+        <div class="job-description">JOB DESCRIPTION</div>
+      </div>
+    {{/each}}
+  </div>
+  {{/hasJobsType}}
+
+  {{#hasJobsType jobs 'trained'}}
+  <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.trained)}}({{recoverJobQuantity jobs 'trained'}})<a class="hidden-job-button">></a></div>
+  <div class="job-container ">
+    {{#each (groupJobs jobs 'trained') as |job key|}}
+      <div class="job-card trained-card" >
+        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.name)}}</h2>
+
+        <div class="job-level-container">
+          <button class="job-edit" value="-" data-job="{{job._id}}">-</button> 
+          <p data-job-name='job-level'>{{job.system.level}} | 10</p> 
+          <button class="job-edit" value="+" data-job="{{job._id}}">+</button>
+        </div>
+        {{literal (recoverFreeBenefits job)}}
+        <div class="job-description">JOB DESCRIPTION</div>
+      </div>
+    {{/each}}
+  </div>
+  {{/hasJobsType}}
+
+  {{#hasJobsType jobs 'untrained'}}
+  <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.untrained)}}({{recoverJobQuantity jobs 'untrained'}}) <a class="hidden-job-button">></a></div>
+  <div class="job-container ">
+    {{#each (groupJobs jobs 'untrained') as |job key|}}
+      <div class="job-card untrained-card item" data-item-id='{{job._id}}'>
+        <a
+          class='item-control item-edit'
+          title='{{localize "DOCUMENT.Update" type='Item'}}'
+        >
+          <i class='fas fa-edit'></i>
+        </a>
+        <a
+          class='item-control item-delete'
+          title='{{localize "DOCUMENT.Delete" type='Item'}}'
+        >
+          <i class='fas fa-trash'></i>
+        </a>
+        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.name)}}</h2>
+
+        <div class="job-level-container">
+          <button class="job-edit" value="-" data-job="{{job._id}}">-</button> 
+          <p data-job-name='job-level'>{{job.system.level}} | 10</p> 
+          <button class="job-edit" value="+" data-job="{{job._id}}">+</button>
+        </div>
+        {{literal (recoverFreeBenefits job)}}
+        <div class="job-description">JOB DESCRIPTION</div>
+      </div>
+    {{/each}}
+  </div>
+  {{/hasJobsType}}
+</ol>
+

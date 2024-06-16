@@ -67,7 +67,7 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="attributes">{{localize @root.config.tabName.attributes}}</a>
     <a class="item" data-tab="gears">{{localize @root.config.tabName.gears}}</a>
-    <a class="item" data-tab="classes">{{localize @root.config.tabName.jobs}}</a>
+    <a class="item" data-tab="jobs">{{localize @root.config.tabName.jobs}}</a>
     <a class="item" data-tab="abilities">{{localize @root.config.tabName.abilities}}</a>
     <a class="item" data-tab="spells">{{localize @root.config.tabName.spells}}</a>
     <a class="item" data-tab="actions">{{localize @root.config.tabName.actions}}</a>
@@ -130,8 +130,10 @@
     </div>
 
     {{!-- Active Classes Tab --}}
-    <div class="tab classes flexcol" data-group="primary" data-tab="classes">
-      {{> "systems/fabula-ultima/templates/actor/parts/actor-classes.hbs"}}
+
+    {{!-- Active Jobs Tab --}}
+    <div class="tab jobs flexcol" data-group="primary" data-tab="jobs">
+      {{> "systems/fabula-ultima/templates/actor/parts/actor-jobs.hbs"}}
     </div>
 
         {{!-- Owned Abilities Tab --}}

@@ -1,22 +1,23 @@
 export function recoverFreeBenefits(job){
-    const { jobsBenefits } = job;
+    const { jobBenefits } = job.system;
     const jobContainer = document.createElement("div");
     const benefitsContainer = document.createElement("div");
     jobContainer.className = "full-benefits-container";
     benefitsContainer.className = "benefits-container";
 
+    jobContainer.appendChild(_generateCasterText(job.system.casterBenefits));    
 
-    if(job.caster){
-        jobContainer.appendChild(_generateCasterText(job));    
-    }
 
-    Object.entries(jobsBenefits).forEach(([key, value]) => {
-        if(value === true){
-            benefitsContainer.appendChild(_generateBooleanBenefitText([key, value]));
-        }else if(value !== false){
-            benefitsContainer.appendChild(_generateNumericalBenefitText([key, value]));
-        }
+    Object.entries(jobBenefits).forEach(([key, value]) => {
+        benefitsContainer.appendChild(_generateNumericalBenefitText([key, value]));
     });
+
+    if(job.system.casterBenefits.ritual){
+        benefitsContainer.appendChild(_generateBooleanBenefitText(["ritual", job.system.casterBenefits.ritual]));
+    }
+    if(job.system.project){
+        benefitsContainer.appendChild(_generateBooleanBenefitText(["project", job.system.project]));
+    }
 
     jobContainer.appendChild(benefitsContainer);
 
@@ -39,16 +40,16 @@ export function recoverTotalFreeBenefits(jobs){
     }
 
     Object.values(jobs).forEach(job => {
-        if (job.level > 0) {
-            benefits.hp += job.jobsBenefits.healthBonus;
-            benefits.mp += job.jobsBenefits.manaBonus;
-            benefits.ip += job.jobsBenefits.inventoryBonus;
-            benefits.canInitiateProjects = benefits.canInitiateProjects || job.jobsBenefits.canInitiateProjects;
-            benefits.canPerformRituals = benefits.canPerformRituals || job.jobsBenefits.canPerformRituals;
-            benefits.martialProficiency.armor = benefits.martialProficiency.armor || job.martialProficiency.armor;
-            benefits.martialProficiency.shield = benefits.martialProficiency.shield || job.martialProficiency.shield;
-            benefits.martialProficiency.ranged = benefits.martialProficiency.ranged || job.martialProficiency.ranged;
-            benefits.martialProficiency.melee = benefits.martialProficiency.melee || job.martialProficiency.melee;
+        if (job.system.level > 0) {
+            benefits.hp += job.system.jobBenefits.healthPoints;
+            benefits.mp += job.system.jobBenefits.manaPoints;
+            benefits.ip += job.system.jobBenefits.inventoryPoints;
+            benefits.canInitiateProjects = benefits.canInitiateProjects || job.system.jobBenefits.canInitiateProjects;
+            benefits.canPerformRituals = benefits.canPerformRituals || job.system.jobBenefits.canPerformRituals;
+            benefits.martialProficiency.armor = benefits.martialProficiency.armor || job.system.martialBenefits.armor;
+            benefits.martialProficiency.shield = benefits.martialProficiency.shield || job.system.martialBenefits.shield;
+            benefits.martialProficiency.ranged = benefits.martialProficiency.ranged || job.system.martialBenefits.ranged;
+            benefits.martialProficiency.melee = benefits.martialProficiency.melee || job.system.martialBenefits.melee;
         }
     });
 
@@ -56,7 +57,7 @@ export function recoverTotalFreeBenefits(jobs){
 }
 
 export function recoverLevel(jobs){
-    return Object.values(jobs).reduce((total, job) => total += job.level, 0);
+    return Object.values(jobs).reduce((total, job) => total += job.system.level, 0);
 }
 
 function _generateBooleanBenefitText(benefit){
@@ -82,29 +83,30 @@ function _generateNumericalBenefitText(benefit){
     return span;
 }
 
-function _generateCasterText(job){
+function _generateCasterText(casterBenefits){
     let casterAttr;
     const casterImg = _createImageElement(
         'systems/fabula-ultima/assets/icons/properties/caster.png', 
         'caster-img'
     );
+    const casterFalse = _createImageElement(
+        'systems/fabula-ultima/assets/icons/check-false.png', 
+        'check-img'
+    );
 
     const casterSpan = document.createElement("span");
 
-    if(job.casterAttr == CONFIG.FABULA_ULTIMA.jobs.arcanist.casterAttr){
-        
-        let fistAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes.ins);
-        let secondAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes.mig);
-        casterAttr = `${fistAttr}||${secondAttr}`;
-    } else {
-        casterAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[job.casterAttr]);
-    }
+    casterAttr = game.i18n.localize(CONFIG.FABULA_ULTIMA.attributes[casterBenefits.attribute]);
+
 
     casterSpan.className = "caster-span";
     const casterContent = document.createTextNode(`: ${casterAttr}`);
-
     casterSpan.appendChild(casterImg);
-    casterSpan.appendChild(casterContent);
+    if(casterBenefits.caster){
+        casterSpan.appendChild(casterContent);
+    } else {
+        casterSpan.appendChild(casterFalse);
+    }
 
     return casterSpan;
 }
@@ -126,10 +128,24 @@ export function hasJobsType(jobs, jobType){
     const checker = jobCheckers[jobType];
     if (!checker) return false;
 
-    return Object.values(jobs).some(job => checker(job.level));
+    return Object.values(jobs).some(job => checker(job.system.level));
 }
 
 export function groupJobs(jobs, groupType){
+    const jobFilters = {
+        [CONFIG.FABULA_ULTIMA.jobType.master]: _isMastered,
+        [CONFIG.FABULA_ULTIMA.jobType.trained]: _isTrained,
+        [CONFIG.FABULA_ULTIMA.jobType.untrained]: _isUntrained
+    };
+
+    const filterFn = jobFilters[groupType];
+    if (!filterFn) return;
+    return Object.fromEntries(
+        Object.entries(jobs).filter(([_, job]) => filterFn(job.system.level))
+    );
+}
+
+export function groupJoobs(jobs, groupType){
     const jobFilters = {
         [CONFIG.FABULA_ULTIMA.jobType.master]: _isMastered,
         [CONFIG.FABULA_ULTIMA.jobType.trained]: _isTrained,
@@ -144,7 +160,8 @@ export function groupJobs(jobs, groupType){
     );
 }
 
-export function recoverJobQuantity(jobType, jobs){
+export function recoverJobQuantity(jobs, jobType){
+
     const jobCheckers = {
         [CONFIG.FABULA_ULTIMA.jobType.master]: _isMastered,
         [CONFIG.FABULA_ULTIMA.jobType.trained]: _isTrained,
@@ -153,8 +170,8 @@ export function recoverJobQuantity(jobType, jobs){
 
     const checker = jobCheckers[jobType];
     if (!checker) return 0;
-
-    return Object.values(jobs).filter(job => checker(job.level)).length;
+    
+    return Object.values(jobs).filter(job => checker(job.system.level)).length;
 }
 
 function _isMastered(level){

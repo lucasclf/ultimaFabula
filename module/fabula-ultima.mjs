@@ -11,7 +11,7 @@ import { FABULA_ULTIMA } from './helpers/config.mjs';
 import * as models from './data/_module.mjs';
 import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
-import { groupJobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
+import { groupJobs, groupJoobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -126,8 +126,13 @@ Handlebars.registerHelper('groupJobs', function(jobs, groupType){
   return groupJobs(jobs, groupType);
 })
 
-Handlebars.registerHelper('recoverJobQuantity', function(jobType){
-  return recoverJobQuantity(jobType, this.document.system.joobs);
+Handlebars.registerHelper('groupJoobs', function(jobs, groupType){
+  return groupJoobs(jobs, groupType);
+})
+
+Handlebars.registerHelper('recoverJobQuantity', function(jobs, jobType){
+
+  return recoverJobQuantity(jobs, jobType);
 })
 
 /* -------------------------------------------- */

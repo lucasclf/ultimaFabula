@@ -2,6 +2,8 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
+import { recoverLevel, recoverTotalFreeBenefits } from '../helpers/jobHelper.mjs';
+import { extractDiceValor } from '../helpers/utils.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -94,6 +96,10 @@ export class FabulaUltimaActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // This is where you can enrich character-specific editor fields
     // or setup anything else that's specific to this type
+    let updateData = {};
+    updateData[`system.resources`] = this._prepareResources(context);
+
+    this.actor.update(updateData)
   }
 
   /**
@@ -141,6 +147,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     context.gear = gear;
     context.jobs = jobs;
     context.spells = spells;
+
   }
 
   /* -------------------------------------------- */
@@ -159,11 +166,11 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     // Altera valor do job
     html.on('click', '.job-edit', async (ev) => {
       const operator = ev.currentTarget.value;
-      const jobName = ev.currentTarget.dataset.job;
-      const job = this.actor.system.jobs[jobName]
-      const newLevel = operator === "+"? job.level + 1 : job.level - 1;
+      const jobId = ev.currentTarget.dataset.job;
 
-      await this.actor.update({ [`system.joobs.${jobName}.level`]: newLevel });
+      const job = this.actor.items.get(jobId)
+      const newLevel = operator === "+"? job.system.level + 1 : job.system.level - 1;
+      await job.update({ [`system.level`]: newLevel })
     })
 
     // -------------------------------------------------------------
@@ -277,5 +284,31 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       });
       return roll;
     }
+  }
+
+  _prepareResources(context){
+
+    const items = context.items
+    let jobs = items.filter(job => job.type === "job");
+
+    const benefitsBonus = recoverTotalFreeBenefits(jobs);
+    const totalLevel = recoverLevel(jobs);
+    const healthMax = this._calcMaxAttribute(totalLevel, this.actor.system.attributes.mig.base, benefitsBonus.hp);
+    const manaMax = this._calcMaxAttribute(totalLevel, this.actor.system.attributes.wlp.base, benefitsBonus.mp);
+    const inventoryMax = this._calcMaxAttribute(6, "d0", benefitsBonus.ip);
+
+    const resources = {
+      "level": totalLevel,
+      "health.max": healthMax,
+      "health.crises": healthMax/2,
+      "mana.max": manaMax,
+      "inventory.max": inventoryMax
+    }
+
+    return resources
+  }
+
+  _calcMaxAttribute(level, attr, bonus){
+    return level + (extractDiceValor(attr) * 5) + bonus;
   }
 }

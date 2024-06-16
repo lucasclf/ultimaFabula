@@ -225,11 +225,11 @@ FABULA_ULTIMA.uiJob = {
 }
 
 FABULA_ULTIMA.uiBenefits = {
-  manaBonus: 'FABULA_ULTIMA.uiBenefits.manaBonus',
-  inventoryBonus: 'FABULA_ULTIMA.uiBenefits.inventoryBonus',
-  healthBonus: 'FABULA_ULTIMA.uiBenefits.healthBonus',
-  canPerformRitual: 'FABULA_ULTIMA.uiBenefits.canPerformRitual',
-  canInitiateProjects: 'FABULA_ULTIMA.uiBenefits.canInitiateProjects',
+  manaPoints: 'FABULA_ULTIMA.uiBenefits.manaBonus',
+  inventoryPoints: 'FABULA_ULTIMA.uiBenefits.inventoryBonus',
+  healthPoints: 'FABULA_ULTIMA.uiBenefits.healthBonus',
+  ritual: 'FABULA_ULTIMA.uiBenefits.canPerformRitual',
+  project: 'FABULA_ULTIMA.uiBenefits.canInitiateProjects',
   caster: 'FABULA_ULTIMA.uiBenefits.caster',
   attr: 'FABULA_ULTIMA.uiBenefits.attr'
 }
