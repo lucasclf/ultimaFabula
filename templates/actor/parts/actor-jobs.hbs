@@ -3,8 +3,14 @@
   <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.master)}}({{recoverJobQuantity jobs 'mastered'}})<a class="hidden-job-button">></a></div>
   <div class="job-container ">
     {{#each (groupJobs jobs 'mastered') as |job key|}}
-      <div class="job-card mastered-card" >
-        <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.name)}}</h2>
+      <div class="job-card mastered-card item-job" data-item-id='{{job._id}}'>
+        <a class='item-control item-edit'title='{{localize "DOCUMENT.Update" type='Item'}}'>
+          <i class='fas fa-edit'></i>
+        </a>
+        <h2 class="job-title">
+          {{captalizeFirstLetterOfWords (localize job.name)}}
+        </h2>
+
 
         <div class="job-level-container">
           <button class="job-edit" value="-" data-job="{{job._id}}">-</button> 
@@ -22,7 +28,13 @@
   <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.trained)}}({{recoverJobQuantity jobs 'trained'}})<a class="hidden-job-button">></a></div>
   <div class="job-container ">
     {{#each (groupJobs jobs 'trained') as |job key|}}
-      <div class="job-card trained-card" >
+      <div class="job-card trained-card item-job" data-item-id='{{job._id}}'>
+        <a
+          class='item-control item-edit'
+          title='{{localize "DOCUMENT.Update" type='Item'}}'
+        >
+          <i class='fas fa-edit'></i>
+        </a>
         <h2 class="job-title">{{captalizeFirstLetterOfWords (localize job.name)}}</h2>
 
         <div class="job-level-container">
@@ -41,7 +53,7 @@
   <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.untrained)}}({{recoverJobQuantity jobs 'untrained'}}) <a class="hidden-job-button">></a></div>
   <div class="job-container ">
     {{#each (groupJobs jobs 'untrained') as |job key|}}
-      <div class="job-card untrained-card item" data-item-id='{{job._id}}'>
+      <div class="job-card untrained-card item-job" data-item-id='{{job._id}}'>
         <a
           class='item-control item-edit'
           title='{{localize "DOCUMENT.Update" type='Item'}}'

@@ -160,10 +160,11 @@ export class FabulaUltimaActorSheet extends ActorSheet {
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.on('click', '.item-edit', (ev) => {
-      const li = $(ev.currentTarget).parents('.item');
+      const li = $(ev.currentTarget).parents('.item-job').length? $(ev.currentTarget).parents('.item-job') : $(ev.currentTarget).parents('.item');
       const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
+    
     // -------------------------------------------------------------
     // Altera valor do job
     html.on('click', '.job-edit', async (ev) => {

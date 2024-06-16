@@ -12,7 +12,6 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.defenses = this._defineDefensesSchema(fields, requiredInteger);
     schema.initiative = this._defineInitiativeSchema(fields);
     schema.attributes = this._defineAttributesSchema(fields);
-    schema.joobs = this._defineJobsSchema(fields, requiredInteger);
     schema.conditions = this._defineConditionsSchema(fields);
     schema.background = this._defineBackgroundSchema(fields);
     schema.resistances = this._defineResistancesSchema(fields);
@@ -92,49 +91,6 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       });
       return obj;
     }, {}));
-  }
-
-  static _defineJobsSchema(fields, requiredInteger) {
-    return new fields.SchemaField(Object.keys(CONFIG.FABULA_ULTIMA.jobs).reduce((obj, job) => {
-      obj[job] = new fields.SchemaField({
-        label: new fields.StringField({initial: CONFIG.FABULA_ULTIMA.jobs[job].name}),
-        level: new fields.NumberField({...requiredInteger, initial: 0, min: 0, max: 10}),
-        caster: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobs[job].caster}),
-        martialProficiency: this._defineMartialProficiencySchema(fields, job),
-        jobsBenefits: this._defineJobsBenefits(fields, requiredInteger, job),
-        casterAttr: this._defineJobsCasterAttrSchame(fields, job)
-      })
-      
-      return obj;
-    }, {}));;
-  }
-
-  static _defineMartialProficiencySchema(fields, job){
-    return new fields.SchemaField({
-      armor: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].armor}),
-      shield: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].shield}),
-      melee: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].melee}),
-      ranged: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsMartialProficiency[job].ranged})
-    });
-  }
-
-  static _defineJobsBenefits(fields, requiredInteger, job){
-    return new fields.SchemaField({
-      manaBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].mp}), 
-      healthBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].hp}),
-      inventoryBonus: new fields.NumberField({...requiredInteger, initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ip}), 
-      canPerformRitual: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].ritual}), 
-      canInitiateProjects: new fields.BooleanField({initial: CONFIG.FABULA_ULTIMA.jobsBenefits[job].projects})
-    })
-  }
-
-  static _defineJobsCasterAttrSchame(fields, job){
-    if(CONFIG.FABULA_ULTIMA.jobs[job].caster == true){
-      return new fields.StringField({required: false, nullable: true, initial: CONFIG.FABULA_ULTIMA.jobs[job].casterAttr})
-    }
-    else{
-      return new fields.StringField({required: false, nullable: true, initial: null});
-    }
   }
 
   static _defineConditionsSchema(fields){

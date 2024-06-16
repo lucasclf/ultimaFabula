@@ -1,4 +1,5 @@
 export function captalizeFirstLetter(text){
+    console.log()
     return text.charAt(0).toUpperCase() + text.slice(1);
 }
 

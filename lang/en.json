@@ -112,7 +112,8 @@
       "resources": "resources",
       "caster": "magic",
       "martial": "martial gear",
-      "others": "others"
+      "others": "others",
+      "proficiency": "martial proficiency"
     },
 
     "martialGear": {

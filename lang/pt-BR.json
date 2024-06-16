@@ -106,7 +106,8 @@
       "resources": "recursos",
       "caster": "magia",
       "martial": "equipamento marcial",
-      "others": "outros"
+      "others": "outros",
+      "proficiency": "proficiência marcial"
     },
 
     "martialGear": {

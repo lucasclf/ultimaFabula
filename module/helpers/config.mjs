@@ -217,7 +217,8 @@ FABULA_ULTIMA.uiHeader = {
   resources: 'FABULA_ULTIMA.uiHeader.resources',
   magic: 'FABULA_ULTIMA.uiHeader.caster',
   martial: 'FABULA_ULTIMA.uiHeader.martial',
-  others: 'FABULA_ULTIMA.uiHeader.others'
+  others: 'FABULA_ULTIMA.uiHeader.others',
+  proficiency: 'FABULA_ULTIMA.uiHeader.proficiency'
 }
 
 FABULA_ULTIMA.uiJob = {

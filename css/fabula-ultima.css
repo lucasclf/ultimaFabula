@@ -386,6 +386,16 @@
   flex-direction: column;
 }
 
+.martial-aside{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.proficiency-img{
+  height: 50px;
+  border: none;
+}
+
 /*JOB CSS*/
 .job-container {
   display: grid;

@@ -31,6 +31,7 @@
 ## [1.0.3] | 2024-06-14
 ### Added
 - Iniciada lógica de recuperação das proficiências marciais.
+- Inserido os icones de proficiência na tela de atributos.
 ### Changed
 - Iniciada migração das jobs para item;
 - Alterada lógica dos recursos vindo do job(item);

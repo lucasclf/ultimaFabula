@@ -12,6 +12,7 @@ import * as models from './data/_module.mjs';
 import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
 import { groupJobs, groupJoobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
+import { hasProficiency } from './helpers/utils/proficiencyHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -134,6 +135,10 @@ Handlebars.registerHelper('recoverJobQuantity', function(jobs, jobType){
 
   return recoverJobQuantity(jobs, jobType);
 })
+
+Handlebars.registerHelper('hasProficiency', function(proficiencies) {
+  return hasProficiency(proficiencies);
+});
 
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
