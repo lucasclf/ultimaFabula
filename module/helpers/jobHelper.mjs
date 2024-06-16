@@ -145,21 +145,6 @@ export function groupJobs(jobs, groupType){
     );
 }
 
-export function groupJoobs(jobs, groupType){
-    const jobFilters = {
-        [CONFIG.FABULA_ULTIMA.jobType.master]: _isMastered,
-        [CONFIG.FABULA_ULTIMA.jobType.trained]: _isTrained,
-        [CONFIG.FABULA_ULTIMA.jobType.untrained]: _isUntrained
-    };
-
-    const filterFn = jobFilters[groupType];
-    if (!filterFn) return;
-
-    return Object.fromEntries(
-        Object.entries(jobs).filter(([_, job]) => filterFn(job.level))
-    );
-}
-
 export function recoverJobQuantity(jobs, jobType){
 
     const jobCheckers = {
