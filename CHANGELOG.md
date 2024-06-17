@@ -32,6 +32,7 @@
 ### Added
 - Iniciada lógica de recuperação das proficiências marciais.
 - Inserido os icones de proficiência na tela de atributos.
+- Terminada ficha da arma.
 ### Changed
 - Iniciada migração das jobs para item;
 - Alterada lógica dos recursos vindo do job(item);
