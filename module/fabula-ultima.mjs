@@ -13,6 +13,7 @@ import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
 import { groupJobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
 import { hasProficiency } from './helpers/utils/proficiencyHelper.mjs';
+import { recoverQualityInfo, recoverQualityName } from './helpers/utils/qualityHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -136,6 +137,15 @@ Handlebars.registerHelper('recoverJobQuantity', function(jobs, jobType){
 
 Handlebars.registerHelper('hasProficiency', function(proficiencies) {
   return hasProficiency(proficiencies);
+});
+
+Handlebars.registerHelper('recoverQualityName', function(qualityName) {
+  return recoverQualityName(qualityName);
+});
+
+Handlebars.registerHelper('recoverQualityInfo', function(qualityName) {
+  console.log(qualityName)
+  return recoverQualityInfo(qualityName);
 });
 
 /* -------------------------------------------- */

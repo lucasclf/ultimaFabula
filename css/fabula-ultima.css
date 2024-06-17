@@ -545,3 +545,9 @@ visibility: visible;
   flex-direction: row;
   gap: 10px;
 }
+
+.container-2grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}

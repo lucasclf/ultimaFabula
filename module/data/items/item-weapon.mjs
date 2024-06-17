@@ -12,9 +12,9 @@ export default class FabulaUltimaWeapon extends FabulaUltimaItemBase {
     schema.quality = new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponQualities.NO_QUALITY});
 
     schema.qualifications = new fields.SchemaField({
-      grip: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponGrip.ONE_HAND}),
-      type: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponType.MELEE}),
-      category: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponCategory.ARCANE})
+      weaponGrip: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponGrip.ONE_HAND}),
+      weaponType: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponType.MELEE}),
+      weaponCategory: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponCategory.ARCANE})
     });
 
     schema.attack = new fields.SchemaField({

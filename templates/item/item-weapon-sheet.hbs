@@ -25,21 +25,58 @@
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      {{console system}}
-      <fieldset class="weapon-attributes-container">
-      <legend>{{captalizeText (localize @root.config.uiHeader.attack)}}</legend>
+      <div class="container-2grid">
+        <fieldset class="weapon-attributes-container">
+        <legend>{{captalizeText (localize @root.config.uiHeader.attack)}}</legend>
           {{#each system.attack.attr as |attr key|}}
           <select name="system.attack.attr.{{key}}">
             {{#select attr}}
               {{#each  @root.config.enums.attributes as |name type|}}
-                <option value="{{name}}">{{name}}</option>
+                <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.attributes name))}}</option>
               {{/each}}
             {{/select}}
           </select>
           {{/each}}
           <span> + </span>
           <input type="text" class="input-block" name="system.attack.atkBonus" value="{{system.attack.atkBonus}}" data-dtype="Number"/>
-      </fieldset>
+        </fieldset>
+        <fieldset class="weapon-attributes-container">
+        <legend>{{captalizeText (localize @root.config.uiHeader.damage)}}</legend>
+        <input type="text" class="input-block" name="system.damage.damageBonus" value="{{system.damage.damageBonus}}" data-dtype="Number"/>
+          <select name="system.damage.type">
+            {{#select system.damage.type}}
+              {{#each  @root.config.enums.weaponDamageType as |name type|}}
+                <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.elementType name))}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </fieldset>
+      </div>
+      <fieldset class="weapon-attributes-container">
+        <legend>{{captalizeText (localize @root.config.uiHeader.qualification)}}</legend>
+          {{#each system.qualifications as |qualification key|}}
+          <select name="system.qualifications.{{key}}">
+            {{#select qualification}}
+              {{#each  (lookup @root.config.enums key) as |name type|}}
+                <option value="{{name}}">{{captalizeFirstLetter (localize (lookup (lookup @root.config key) name))}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+          {{/each}}
+        </fieldset>
+        <fieldset class="weapon-quality-container">
+        <legend>{{captalizeText (localize @root.config.uiHeader.quality)}}</legend>
+          <select name="system.quality">
+            {{#select system.quality}}
+              {{#each  @root.config.enums.weaponQualities as |name key|}}
+                <option value="{{name}}">{{recoverQualityName name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+          {{#each (recoverQualityInfo system.quality) as |quality key|}}
+            <p>{{localize quality}}</p>
+          {{/each}}
+        </fieldset>
     </div>
   </section>
 
