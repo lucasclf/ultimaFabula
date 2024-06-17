@@ -1,4 +1,4 @@
-import FabulaUltimaActorBase from "./base-actor.mjs";
+import FabulaUltimaActorBase from "../base-actor.mjs";
 
 export default class FabulaUltimaNPC extends FabulaUltimaActorBase {
 

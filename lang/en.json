@@ -113,7 +113,12 @@
       "caster": "magic",
       "martial": "martial gear",
       "others": "others",
-      "proficiency": "martial proficiency"
+      "proficiency": "martial proficiency",
+      "cost": "cost",
+      "qualification": "qualification",
+      "quality": "quality",
+      "attack": "attack",
+      "damage": "damage"
     },
 
     "martialGear": {
@@ -190,7 +195,13 @@
       "item": "Item",
       "attributes": "Attributes",
       "feitico": "Spell",
-      "job": "Job"
+      "job": "Job",
+      "weapon": "Weapon",
+      "shield": "Shield",
+      "armor": "Armor",
+      "accessory": "Accessory",
+      "artefact": "Artefact",
+      "ability": "Ability"
     }
   }
 }

@@ -1,5 +1,5 @@
-import FabulaUltimaActorBase from "./base-actor.mjs";
-import { decreaseAttr, recoverAttrLoweredByCondition } from "../helpers/utils.mjs";
+import FabulaUltimaActorBase from "../base-actor.mjs";
+import { decreaseAttr, recoverAttrLoweredByCondition } from "../../helpers/utils.mjs";
 
 export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
 
@@ -16,7 +16,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.background = this._defineBackgroundSchema(fields);
     schema.resistances = this._defineResistancesSchema(fields);
     schema.martialProficiency = this._defineProficiencySchema(fields)
-
+    
     return schema;
   }
 

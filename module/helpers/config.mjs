@@ -1,3 +1,5 @@
+import { enums } from "../enums/enums.mjs"; 
+
 export const FABULA_ULTIMA = {};
 
 /**
@@ -218,7 +220,12 @@ FABULA_ULTIMA.uiHeader = {
   magic: 'FABULA_ULTIMA.uiHeader.caster',
   martial: 'FABULA_ULTIMA.uiHeader.martial',
   others: 'FABULA_ULTIMA.uiHeader.others',
-  proficiency: 'FABULA_ULTIMA.uiHeader.proficiency'
+  proficiency: 'FABULA_ULTIMA.uiHeader.proficiency',
+  cost: 'FABULA_ULTIMA.uiHeader.cost',
+  qualification: 'FABULA_ULTIMA.uiHeader.qualification',
+  quality: 'FABULA_ULTIMA.uiHeader.quality',
+  attack: 'FABULA_ULTIMA.uiHeader.attack',
+  damage: 'FABULA_ULTIMA.uiHeader.damage'
 }
 
 FABULA_ULTIMA.uiJob = {
@@ -278,5 +285,4 @@ FABULA_ULTIMA.attributeDice = {
   d12: 'd12'
 };
 
-
-
+FABULA_ULTIMA.enums = enums;

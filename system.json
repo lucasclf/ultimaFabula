@@ -15,8 +15,8 @@
   "media": [
     {
       "type": "setup",
-      "url": "systems/fabula-ultima/assets/anvil-impact.png",
-      "thumbnail": "systems/fabula-ultima/assets/anvil-impact.png"
+      "url": "systems/fabula-ultima/assets/fabula-ultima.png",
+      "thumbnail": "systems/fabula-ultima/assets/fabula-ultima.png"
     }
   ],
   "version": "2.0.0",
@@ -49,7 +49,7 @@
   "socket": false,
   "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
   "download": "This must link to a .zip file of the current version",
-  "background": "systems/fabula-ultima/assets/anvil-impact.png",
+  "background": "systems/fabula-ultima/assets/fabula-ultima.png",
   "gridDistance": 1.5,
   "gridUnits": "m",
   "primaryTokenAttribute": "vida",

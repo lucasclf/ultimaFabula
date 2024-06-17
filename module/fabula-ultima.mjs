@@ -53,6 +53,7 @@ Hooks.once('init', function () {
   CONFIG.Item.dataModels = {
     item: models.FabulaUltimaItem,
     job: models.FabulaUltimaJob,
+    weapon: models.FabulaUltimaWeapon,
     spell: models.FabulaUltimaSpell
   }
 

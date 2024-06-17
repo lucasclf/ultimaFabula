@@ -1,4 +1,4 @@
-import FabulaUltimaItemBase from "./base-item.mjs";
+import FabulaUltimaItemBase from "../base-item.mjs";
 
 export default class FabulaUltimaJob extends FabulaUltimaItemBase {
 

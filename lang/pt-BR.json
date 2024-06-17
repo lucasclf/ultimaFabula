@@ -107,7 +107,12 @@
       "caster": "magia",
       "martial": "equipamento marcial",
       "others": "outros",
-      "proficiency": "proficiência marcial"
+      "proficiency": "proficiência marcial",
+      "cost": "custo",
+      "qualification": "qualificação",
+      "quality": "qualidade",
+      "attack": "ataque",
+      "damage": "dano"
     },
 
     "martialGear": {
@@ -185,8 +190,14 @@
     "Item": {
       "item": "Item",
       "attributes": "Atributos",
-      "feitico": "Feitiço",
-      "job": "Classes"
+      "spell": "Feitiço",
+      "job": "Classe",
+      "weapon": "Arma",
+      "shield": "Escudo",
+      "armor": "Armadura",
+      "accessory": "Accessorio",
+      "artefact": "Artefato",
+      "ability": "Habilidade"
     }
   }
 }

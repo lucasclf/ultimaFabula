@@ -367,6 +367,10 @@
 
 /*actor-character-sheet.hbs*/
 
+.input-block{
+  display: inline-block;
+}
+
 .image-level-container{
   display: flex;
   flex-direction: column;
@@ -532,4 +536,12 @@ visibility: visible;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+}
+
+.weapon-attributes-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
 }
