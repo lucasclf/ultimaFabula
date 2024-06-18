@@ -30,9 +30,10 @@
 - Correção do changelog;
 ## [1.0.3] | 2024-06-14
 ### Added
-- Iniciada lógica de recuperação das proficiências marciais.
-- Inserido os icones de proficiência na tela de atributos.
-- Terminada ficha da arma.
+- Iniciada lógica de recuperação das proficiências marciais;
+- Inserido os icones de proficiência na tela de atributos;
+- Terminada ficha da arma;
+- Adcionada lógica de equipar e desequipar armas;
 ### Changed
 - Iniciada migração das jobs para item;
 - Alterada lógica dos recursos vindo do job(item);

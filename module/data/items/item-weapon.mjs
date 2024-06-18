@@ -8,6 +8,8 @@ export default class FabulaUltimaWeapon extends FabulaUltimaItemBase {
     const schema = super.defineSchema();
 
     schema.cost = new fields.NumberField({...requiredInteger, initial: 0, min: 0});
+    
+    schema.martial = new fields.BooleanField({initial: false});
 
     schema.quality = new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponQualities.NO_QUALITY});
 

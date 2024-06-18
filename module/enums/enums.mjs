@@ -126,6 +126,7 @@ export const enums = Object.freeze({
     DUAL_HUNTER_MONSTERS_UNDEADS: "dual_hunter_monsters_undeads", 
     DUAL_HUNTER_PLANTS_UNDEADS: "dual_hunter_plants_undeads",
     MULTI: "multi",
+    STATUS_DAZED: "status_dazed",
     STATUS_SHAKEN: "status_shaken",
     STATUS_SLOW: "status_slow",
     STATUS_WEAK: "status_weak",

@@ -159,6 +159,17 @@
       "trained": "trained",
       "untrained": "untrained"
     },
+
+    "uiGearHeader": {
+      "weapons": "weapons",
+      "name": "name",
+      "accuracy": "accuracy",
+      "damage": "damage",
+      "element": "element",
+      "type": "type",
+      "equipped": "equipped?",
+      "addItem": "add item"
+    },
     
     "qualities": {
       "no_quality": {"name": "No Qualities", "cost": "0", "effect": "No Effects."},

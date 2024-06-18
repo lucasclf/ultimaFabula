@@ -551,3 +551,22 @@ visibility: visible;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
+
+/*GEAR ACTOR SHEET*/
+.gear-prop{
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+
+.equip-symbol {
+  font-size: x-large;
+}
+
+.gear-equiped-true{
+  color: violet
+}
+
+.gear-equiped-false{
+  color: #444
+}

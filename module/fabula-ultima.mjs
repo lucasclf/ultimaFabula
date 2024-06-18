@@ -14,6 +14,7 @@ import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from
 import { groupJobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
 import { hasProficiency } from './helpers/utils/proficiencyHelper.mjs';
 import { recoverQualityInfo, recoverQualityName } from './helpers/utils/qualityHelper.mjs';
+import { isEquiped, recoverAccuracyWeapon } from './helpers/utils/gearHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -144,9 +145,18 @@ Handlebars.registerHelper('recoverQualityName', function(qualityName) {
 });
 
 Handlebars.registerHelper('recoverQualityInfo', function(qualityName) {
-  console.log(qualityName)
   return recoverQualityInfo(qualityName);
 });
+
+Handlebars.registerHelper('recoverAccuracyWeapon', function(weapon) {
+  return recoverAccuracyWeapon(weapon);
+  
+});
+
+Handlebars.registerHelper('isEquiped', function(gearId, actorGearId) {
+  return isEquiped(gearId, actorGearId);
+})
+
 
 /* -------------------------------------------- */
 /*  Ready Hook                                  */

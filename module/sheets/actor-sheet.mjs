@@ -4,6 +4,7 @@ import {
 } from '../helpers/effects.mjs';
 import { recoverLevel, recoverTotalFreeBenefits } from '../helpers/jobHelper.mjs';
 import { extractDiceValor } from '../helpers/utils.mjs';
+import { equipGear } from '../helpers/utils/gearHelper.mjs';
 import { recoverItemType } from '../helpers/utils/itemHelper.mjs';
 
 /**
@@ -21,7 +22,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'jobs',
+          initial: 'gears',
         },
       ],
     });
@@ -113,6 +114,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     // Initialize containers.
     const gear = [];
     const jobs = [];
+    const weapons = [];
     const spells = {
       0: [],
       1: [],
@@ -137,6 +139,10 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       else if (i.type === 'job') {
         jobs.push(i);
       }
+      // Append to weapons.
+      else if (i.type === 'weapon'){
+        weapons.push(i)
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -149,6 +155,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     context.gear = gear;
     context.jobs = jobs;
     context.spells = spells;
+    context.weapons = weapons;
 
   }
 
@@ -177,6 +184,17 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     })
 
     // -------------------------------------------------------------
+    // Equipa um equipamento
+    html.on('click', '.gear-equip', async (ev) => {
+      const gearSlot = ev.currentTarget.dataset.slotType;
+      const gearId = ev.currentTarget.dataset.itemId;
+      const newGear = this.actor.items.get(gearId);
+
+      const updateData = await equipGear(newGear, gearSlot, this.actor);
+
+      await this.actor.update(updateData);
+
+    })
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
@@ -215,6 +233,18 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       } else {
         jobContainer.classList.add('hidden-container');
         hiddenJobButton.textContent = '<'
+      }
+
+    })
+
+    html.on('click', '.hidden-gear-button', (ev) => {
+
+      const hiddenJobButton = ev.currentTarget;
+      const jobContainer = hiddenJobButton.closest('.gear-header').nextElementSibling;
+      if(jobContainer.classList.contains('hidden-container')){
+        jobContainer.classList.remove('hidden-container');
+      } else {
+        jobContainer.classList.add('hidden-container');
       }
 
     })

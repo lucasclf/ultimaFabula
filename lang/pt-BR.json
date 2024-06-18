@@ -161,6 +161,17 @@
       "project": "projeto"
     },
 
+    "uiGearHeader": {
+      "weapons": "armas",
+      "name": "name",
+      "accuracy": "precisão",
+      "damage": "dano",
+      "element": "elemento",
+      "type": "tipo",
+      "equipped": "equipado?",
+      "addItem": "adcionar item"
+    },
+
     "qualities": {
       "no_quality": {"name": "Sem Qualidades", "cost": "0", "effect": "Sem efeitos."},
       "antistatus_dazed": {"name": "Anti_condição(Atordoado)", "cost": "500", "effect": "Você se torna imune a condição atordoado."},
