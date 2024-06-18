@@ -143,5 +143,11 @@ export const enums = Object.freeze({
     ICE: "ice", 
     LIGHT: "light", 
     POISON: "poison"
+  },
+  weaponSlots: {
+    MAIN_HAND: 'mainHand',
+    OFF_HAND: 'offHand',
+    ARMOR: 'armor',
+    ACCESSORY: 'accessory'
   }
 });

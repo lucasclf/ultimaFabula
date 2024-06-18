@@ -28,7 +28,7 @@
 - Finalizada lógica das jobs;
 ### Changed
 - Correção do changelog;
-## [1.0.3] | 2024-06-14
+## [1.0.3] | 2024-06-18
 ### Added
 - Iniciada lógica de recuperação das proficiências marciais;
 - Inserido os icones de proficiência na tela de atributos;
@@ -37,3 +37,8 @@
 ### Changed
 - Iniciada migração das jobs para item;
 - Alterada lógica dos recursos vindo do job(item);
+## [1.0.4] | 2024-06-XX
+### Added
+- 
+### Changed
+- Refatorada a classe gearHelper para melhor legibilidade.
