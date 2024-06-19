@@ -166,13 +166,20 @@
 
     "uiGearHeader": {
       "weapons": "armas",
+      "hands": "mãos",
+      "shields": "escudos",
+      "armors": "armaduras",
+      "accessories": "acessorios",
       "name": "name",
       "accuracy": "precisão",
       "damage": "dano",
       "element": "elemento",
       "type": "tipo",
       "equipped": "equipado?",
-      "addItem": "adcionar item"
+      "addItem": "adcionar item",
+      "defense": "defesa",
+      "magicDefense": "defesa magica",
+      "initiative": "iniciativa"
     },
 
     "qualities": {

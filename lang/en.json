@@ -165,13 +165,20 @@
 
     "uiGearHeader": {
       "weapons": "weapons",
+      "hands": "hands",
+      "shields": "shields",
+      "armors": "armors",
+      "accessories": "accessories",
       "name": "name",
       "accuracy": "accuracy",
       "damage": "damage",
       "element": "element",
       "type": "type",
       "equipped": "equipped?",
-      "addItem": "add item"
+      "addItem": "add item",
+      "defense": "defense",
+      "magicDefense": "magic defense",
+      "initiative": "initiative"
     },
     
     "qualities": {

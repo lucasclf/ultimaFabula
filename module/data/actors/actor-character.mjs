@@ -17,6 +17,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
     schema.resistances = this._defineResistancesSchema(fields);
     schema.martialProficiency = this._defineProficiencySchema(fields)
     schema.gears = this._defineGearsSchema(fields);
+    schema.preferencesFlags = this._definePreferencesSchema(fields);
     
     return schema;
   }
@@ -170,6 +171,14 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       accessory: new fields.SchemaField({
         gearId: new fields.StringField({blank: true}),
         gearQuality: new fields.StringField({blankl: true})
+      })
+    })
+  }
+
+  static _definePreferencesSchema(fields){
+    return new fields.SchemaField({
+      sheetFlags: new fields.SchemaField({
+        gearTabFlag: new fields.StringField({ initial:"hands"})
       })
     })
   }

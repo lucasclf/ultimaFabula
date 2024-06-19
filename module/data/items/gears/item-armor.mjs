@@ -14,7 +14,6 @@ export default class FabulaUltimaArmor extends FabulaUltimaDefenseGearBase {
     })
 
     schema.initiative = new fields.NumberField({...requiredInteger, initial: 0});
-
     return schema;
   }
 

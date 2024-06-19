@@ -1,7 +1,7 @@
 <ol class='items-list'>
 {{#hasJobsType jobs 'mastered'}}
   <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.master)}}({{recoverJobQuantity jobs 'mastered'}})<a class="hidden-job-button">></a></div>
-  <div class="job-container ">
+  <div class="job-container hidden-container">
     {{#each (groupJobs jobs 'mastered') as |job key|}}
       <div class="job-card mastered-card item-job" data-item-id='{{job._id}}'>
         <a class='item-control item-edit'title='{{localize "DOCUMENT.Update" type='Item'}}'>
@@ -51,7 +51,7 @@
 
   {{#hasJobsType jobs 'untrained'}}
   <div class="job-header">{{captalizeText (localize @root.config.jobTypeName.untrained)}}({{recoverJobQuantity jobs 'untrained'}}) <a class="hidden-job-button">></a></div>
-  <div class="job-container ">
+  <div class="job-container hidden-container">
     {{#each (groupJobs jobs 'untrained') as |job key|}}
       <div class="job-card untrained-card item-job" data-item-id='{{job._id}}'>
         <a

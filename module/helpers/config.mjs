@@ -291,13 +291,20 @@ FABULA_ULTIMA.attributeDice = {
 //Equipamentos
 FABULA_ULTIMA.uiGearHeader = {
   weapons: 'FABULA_ULTIMA.uiGearHeader.weapons',
+  hands: 'FABULA_ULTIMA.uiGearHeader.hands',
+  shields: 'FABULA_ULTIMA.uiGearHeader.shields',
+  armors: 'FABULA_ULTIMA.uiGearHeader.armors',
+  accessories: 'FABULA_ULTIMA.uiGearHeader.accessories',
   name: 'FABULA_ULTIMA.uiGearHeader.name',
   accuracy: 'FABULA_ULTIMA.uiGearHeader.accuracy',
   damage: 'FABULA_ULTIMA.uiGearHeader.damage',
   element: 'FABULA_ULTIMA.uiGearHeader.element',
   type: 'FABULA_ULTIMA.uiGearHeader.type',
   equipped: 'FABULA_ULTIMA.uiGearHeader.equipped',
-  addItem: 'FABULA_ULTIMA.uiGearHeader.addItem'
+  addItem: 'FABULA_ULTIMA.uiGearHeader.addItem',
+  defense: 'FABULA_ULTIMA.uiGearHeader.defense',
+  magicDefense: 'FABULA_ULTIMA.uiGearHeader.magicDefense',
+  initiative: 'FABULA_ULTIMA.uiGearHeader.initiative'
 };
 
 FABULA_ULTIMA.qualities = {

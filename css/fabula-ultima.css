@@ -576,3 +576,7 @@ visibility: visible;
 .gear-equiped-false{
   color: #444
 }
+
+.visibility-false{
+  display: none
+}

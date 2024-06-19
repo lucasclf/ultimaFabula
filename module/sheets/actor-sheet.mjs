@@ -115,6 +115,9 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     const gear = [];
     const jobs = [];
     const weapons = [];
+    const shields = [];
+    const armors = [];
+    const accessories = [];
     const spells = {
       0: [],
       1: [],
@@ -143,6 +146,18 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       else if (i.type === 'weapon'){
         weapons.push(i)
       }
+      // Append to weapons.
+      else if (i.type === 'shield'){
+        shields.push(i)
+      }
+      // Append to weapons.
+      else if (i.type === 'armor'){
+        armors.push(i)
+      }
+      // Append to weapons.
+      else if (i.type === 'accessory'){
+        accessories.push(i)
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -156,6 +171,9 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     context.jobs = jobs;
     context.spells = spells;
     context.weapons = weapons;
+    context.shields = shields;
+    context.armors = armors;
+    context.accessories = accessories;
 
   }
 
@@ -239,14 +257,10 @@ export class FabulaUltimaActorSheet extends ActorSheet {
 
     html.on('click', '.hidden-gear-button', (ev) => {
 
-      const hiddenJobButton = ev.currentTarget;
-      const jobContainer = hiddenJobButton.closest('.gear-header').nextElementSibling;
-      if(jobContainer.classList.contains('hidden-container')){
-        jobContainer.classList.remove('hidden-container');
-      } else {
-        jobContainer.classList.add('hidden-container');
-      }
+      const hiddenGearButton = ev.currentTarget;
+      const gearData = hiddenGearButton.dataset.gear;
 
+      this.actor.update({'system.preferencesFlags.sheetFlags.gearTabFlag': gearData})
     })
 
     // Drag events for macros.
