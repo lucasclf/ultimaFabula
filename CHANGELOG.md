@@ -39,6 +39,6 @@
 - Alterada lógica dos recursos vindo do job(item);
 ## [1.0.4] | 2024-06-XX
 ### Added
-- 
+- Fichas de Escudo, Acessorio e Armadura criadas;
 ### Changed
-- Refatorada a classe gearHelper para melhor legibilidade.
+- Refatorada a classe gearHelper para melhor legibilidade;

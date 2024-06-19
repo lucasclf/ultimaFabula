@@ -1,6 +1,6 @@
-import FabulaUltimaItemBase from "../base-item.mjs";
+import FabulaUltimaGearBase from "../../base-gear.mjs";
 
-export default class FabulaUltimaWeapon extends FabulaUltimaItemBase {
+export default class FabulaUltimaWeapon extends FabulaUltimaGearBase {
 
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -8,10 +8,6 @@ export default class FabulaUltimaWeapon extends FabulaUltimaItemBase {
     const schema = super.defineSchema();
 
     schema.cost = new fields.NumberField({...requiredInteger, initial: 0, min: 0});
-    
-    schema.martial = new fields.BooleanField({initial: false});
-
-    schema.quality = new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponQualities.NO_QUALITY});
 
     schema.qualifications = new fields.SchemaField({
       weaponGrip: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.weaponGrip.ONE_HAND}),

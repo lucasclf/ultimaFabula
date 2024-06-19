@@ -112,7 +112,10 @@
       "qualification": "qualificação",
       "quality": "qualidade",
       "attack": "ataque",
-      "damage": "dano"
+      "damage": "dano",
+      "defense": "defesa",
+      "mDefense": "defese magica",
+      "initiative": "iniciativa"
     },
 
     "martialGear": {
@@ -327,7 +330,7 @@
       "weapon": "Arma",
       "shield": "Escudo",
       "armor": "Armadura",
-      "accessory": "Accessorio",
+      "accessory": "Acessorio",
       "artefact": "Artefato",
       "ability": "Habilidade"
     }

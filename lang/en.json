@@ -118,7 +118,10 @@
       "qualification": "qualification",
       "quality": "quality",
       "attack": "attack",
-      "damage": "damage"
+      "damage": "damage",
+      "defense": "defense",
+      "mDefense": "magic defense",
+      "initiative": "initiative"
     },
 
     "martialGear": {

@@ -1,5 +1,6 @@
 <ol class='items-list'>
   <div class="gear-header"><a class="hidden-gear-button">{{captalizeText (localize @root.config.uiGearHeader.weapons)}}</a></div>
+  {{> "systems/fabula-ultima/templates/actor/parts/actor-spells.hbs"}}
   <div class="weapon-container">
     <li class="item flexrow items-header">
     
@@ -63,4 +64,5 @@
       </li>
     {{/each}}
   </div>
+  
 </ol>

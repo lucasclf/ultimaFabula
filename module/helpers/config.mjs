@@ -225,7 +225,10 @@ FABULA_ULTIMA.uiHeader = {
   qualification: 'FABULA_ULTIMA.uiHeader.qualification',
   quality: 'FABULA_ULTIMA.uiHeader.quality',
   attack: 'FABULA_ULTIMA.uiHeader.attack',
-  damage: 'FABULA_ULTIMA.uiHeader.damage'
+  damage: 'FABULA_ULTIMA.uiHeader.damage',
+  defense: 'FABULA_ULTIMA.uiHeader.defense',
+  mDefense: 'FABULA_ULTIMA.uiHeader.mDefense',
+  initiative: 'FABULA_ULTIMA.uiHeader.initiative'
 }
 
 FABULA_ULTIMA.uiJob = {
