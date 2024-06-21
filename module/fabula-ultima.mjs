@@ -166,7 +166,6 @@ Handlebars.registerHelper('recoverDefense', function(defenseGear, defenseType) {
 })
 
 Handlebars.registerHelper('recoverGlobalJobList', function() {
-  console.log(recoverGlobalJobList())
   return recoverGlobalJobList();
 })
 

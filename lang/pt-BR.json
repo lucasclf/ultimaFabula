@@ -115,7 +115,9 @@
       "damage": "dano",
       "defense": "defesa",
       "mDefense": "defese magica",
-      "initiative": "iniciativa"
+      "initiative": "iniciativa",
+      "job": "classe",
+      "rollMethod": "método de rolagem"
     },
 
     "martialGear": {
@@ -305,6 +307,13 @@
 
     "utils": {
       "none": "nenhum"
+    },
+
+    "rollMethods": {
+      "none": "nenhum",
+      "level": "level",
+      "attr": "atributo",
+      "custom": "customizado"
     },
 
     "SheetLabels": {

@@ -293,7 +293,7 @@ export const enums = Object.freeze({
   },
   rollMethods: {
     ability: {
-      NOBODY: "nobody",
+      NONE: "none",
       LEVEL: "level",
       ATTR: "attr",
       CUSTOM: "custom"

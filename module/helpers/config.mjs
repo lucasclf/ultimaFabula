@@ -228,7 +228,9 @@ FABULA_ULTIMA.uiHeader = {
   damage: 'FABULA_ULTIMA.uiHeader.damage',
   defense: 'FABULA_ULTIMA.uiHeader.defense',
   mDefense: 'FABULA_ULTIMA.uiHeader.mDefense',
-  initiative: 'FABULA_ULTIMA.uiHeader.initiative'
+  initiative: 'FABULA_ULTIMA.uiHeader.initiative',
+  job: 'FABULA_ULTIMA.uiHeader.job',
+  rollMethod: 'FABULA_ULTIMA.uiHeader.rollMethod'
 }
 
 FABULA_ULTIMA.uiJob = {
@@ -430,6 +432,13 @@ FABULA_ULTIMA.qualities = {
 
 FABULA_ULTIMA.utils = {
   none: 'FABULA_ULTIMA.utils.none'
+}
+
+FABULA_ULTIMA.rollMethods = {
+  none: "FABULA_ULTIMA.rollMethods.none",
+  level: "FABULA_ULTIMA.rollMethods.level",
+  attr: "FABULA_ULTIMA.rollMethods.attr",
+  custom: "FABULA_ULTIMA.rollMethods.custom"
 }
 
 FABULA_ULTIMA.enums = enums;

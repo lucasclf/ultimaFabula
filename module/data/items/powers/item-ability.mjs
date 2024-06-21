@@ -15,9 +15,13 @@ export default class FabulaUltimaAbility extends FabulaUltimaItemBase {
 
     schema.rollInfo = new fields.SchemaField({
       method: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.rollMethods.ability.NOBODY }),
-      firstAttr: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.attributes.MIG }),
-      secondAttr: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.attributes.MIG }),
-      bonus: new fields.NumberField({ ...requiredInteger, initial: 1 })
+      attr: new fields.SchemaField({
+        firstAttr: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.attributes.MIG }),
+        secondAttr: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.attributes.MIG })
+      }),
+      attrBonus: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      levelBonus: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      free: new fields.StringField({ blank: true })
     });
 
     schema.job = new fields.StringField({ blank: true });

@@ -121,7 +121,9 @@
       "damage": "damage",
       "defense": "defense",
       "mDefense": "magic defense",
-      "initiative": "initiative"
+      "initiative": "initiative",
+      "job": "job",
+      "rollMethod": "roll method"
     },
 
     "martialGear": {
@@ -304,6 +306,13 @@
 
     "utils": {
       "none": "none"
+    },
+
+    "rollMethods": {
+      "none": "nobody",
+      "level": "level",
+      "attr": "attribute",
+      "custom": "custom"
     },
 
     "SheetLabels": {

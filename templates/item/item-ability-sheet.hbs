@@ -13,16 +13,21 @@
           value='{{item.name}}'
           placeholder='Name'
         /></h1>
-        <div class="container-1grid">
-        <div>
-          <select name="system.job">
-            {{#select system.job}}
-              <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
-              {{#each (recoverGlobalJobList) as |job key|}}
-                <option value="{{job._id}}">{{captalizeFirstLetter job.name}}</option>
-              {{/each}}
-            {{/select}}
-          </select>
+        <div class="container-2grid">
+          <div>
+            <select name="system.job">
+              {{#select system.job}}
+                <label>{{captalizeFirstLetter (localize @root.config.uiHeader.job)}}</label>
+                <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
+                {{#each (recoverGlobalJobList) as |job key|}}
+                  <option value="{{job._id}}">{{captalizeFirstLetter job.name}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <p>LEVEL: {{system.level.actual}} /</p>
+            <input type="text" name="system.level.max" value="{{system.level.max}}" data-dtype="Number"/>
         </div>
       </div>
     </div>
@@ -30,8 +35,8 @@
 
   {{! Sheet Tab Navigation }}
   <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
+    <a class='item' data-tab='description'>{{captalizeFirstLetter (localize @root.config.tabName.description)}}</a>
+    <a class='item' data-tab='attributes'>{{captalizeFirstLetter (localize @root.config.tabName.attributes)}}</a>
   </nav>
 
   {{! Sheet Body }}
@@ -52,15 +57,48 @@
     {{! Attributes Tab }}
     <div class='tab attributes' data-group='primary' data-tab='attributes'>
       {{! As you add new fields, add them in here! }}
-      <div class='resource'>
-        <label class='resource-label'>Ability Level</label>
-        <input
-          type='text'
-          name='system.spellLevel'
-          value='{{system.spellLevel}}'
-          data-dtype='Number'
-        />
-      </div>
+      <fieldset class="weapon-quality-container">
+      <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.rollMethod)}}</legend>
+        <div class='resource'>
+          <select name="system.rollInfo.method">
+              {{#select system.rollInfo.method}}
+                {{#each @root.config.enums.rollMethods.ability as |name key|}}
+                  <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.rollMethods name))}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+        </div>
+
+        <div class="{{#unless (eq system.rollInfo.method @root.config.enums.rollMethods.ability.LEVEL)}} hidden-container {{/unless}}">
+          <div class="resource-content flexrow flex-center flex-between">
+            <p>{{system.level.actual}} * <input class="inline-input" type="text" name="system.rollInfo.levelBonus" value="{{system.rollInfo.levelBonus}}" data-dtype="Number"/></p>
+          </div>
+        </div>
+
+        <div class="{{#unless (eq system.rollInfo.method @root.config.enums.rollMethods.ability.ATTR)}} hidden-container {{/unless}}">
+          <br>
+          {{#each system.rollInfo.attr as |attr key|}}
+            <select name="system.rollInfo.attr.{{key}}">
+              {{#select attr}}
+                <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
+                {{#each  @root.config.enums.attributes as |name type|}}
+                  <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.attributes name))}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          {{/each}}
+          +
+          <input type="text" class="input-block" name="system.rollInfo.attrBonus" value="{{system.rollInfo.attrBonus}}" data-dtype="Number"/>
+        </div>
+
+        <div class="{{#unless (eq system.rollInfo.method @root.config.enums.rollMethods.ability.CUSTOM)}} hidden-container {{/unless}}">
+          <p>Insira uma fórmula válida.</p>
+          <p>Exemplo: 2d6+5</p>
+          <input type="text" class="input-block" name="system.rollInfo.free" value="{{system.rollInfo.free}}"/>
+        </div>
+      </fieldset>
     </div>
   </section>
+
+  
 </form>
