@@ -539,6 +539,12 @@ visibility: visible;
   gap: 10px;
 }
 
+.container-1grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
 .container-2grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);

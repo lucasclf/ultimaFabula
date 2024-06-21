@@ -170,3 +170,8 @@ function _isTrained(level){
 function _isUntrained(level){
     return level === 0;
 }
+
+export function recoverGlobalJobList(){
+    const jobs = game.items.filter(i => i.type === "job");
+    return jobs;
+}

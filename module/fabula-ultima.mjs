@@ -11,7 +11,7 @@ import { FABULA_ULTIMA } from './helpers/config.mjs';
 import * as models from './data/_module.mjs';
 import { insertIconIfAttrLowered } from './helpers/characterSheetHelper.mjs';
 import { captalizeFirstLetter, captalizeFirstLetterOfWords, captalizeText } from './helpers/stringHelper.mjs';
-import { groupJobs, hasJobsType, recoverFreeBenefits, recoverJobQuantity } from './helpers/jobHelper.mjs';
+import { groupJobs, hasJobsType, recoverFreeBenefits, recoverGlobalJobList, recoverJobQuantity } from './helpers/jobHelper.mjs';
 import { hasProficiency } from './helpers/utils/proficiencyHelper.mjs';
 import { recoverQualityInfo, recoverQualityName } from './helpers/utils/qualityHelper.mjs';
 import { isEquiped, recoverAccuracyWeapon, recoverDefense } from './helpers/utils/gearHelper.mjs';
@@ -164,6 +164,12 @@ Handlebars.registerHelper('isEquiped', function(gearId, actorGearId) {
 Handlebars.registerHelper('recoverDefense', function(defenseGear, defenseType) {
   return recoverDefense(defenseGear, defenseType);
 })
+
+Handlebars.registerHelper('recoverGlobalJobList', function() {
+  console.log(recoverGlobalJobList())
+  return recoverGlobalJobList();
+})
+
 
 
 /* -------------------------------------------- */

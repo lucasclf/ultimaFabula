@@ -40,6 +40,7 @@
 ## [1.0.4] | 2024-06-XX
 ### Added
 - Fichas de Escudo, Acessorio e Armadura criadas;
+- Iniciado a ficha de habilidades;
 ### Changed
 - Refatorada a classe gearHelper para melhor legibilidade;
 - Criado as flags de preferência do usuário(jobTab e gearTab);
