@@ -510,13 +510,6 @@ visibility: visible;
   justify-self: end;
 }
 
-.hidden-job-button{
-  justify-self: end;
-  display: unset;
-  font-size: x-large !important;
-  transform:rotate(90deg);
-}
-
 .hidden-container{
   display: none;
 }

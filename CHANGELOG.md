@@ -42,3 +42,5 @@
 - Fichas de Escudo, Acessorio e Armadura criadas;
 ### Changed
 - Refatorada a classe gearHelper para melhor legibilidade;
+- Criado as flags de preferência do usuário(jobTab e gearTab);
+- Segregada as jobs por abas;

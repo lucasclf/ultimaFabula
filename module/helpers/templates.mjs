@@ -13,6 +13,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/fabula-ultima/templates/actor/parts/gears/actor-gears-accessories.hbs',
     'systems/fabula-ultima/templates/actor/parts/gears/actor-gears-armors.hbs',
     'systems/fabula-ultima/templates/actor/parts/actor-jobs.hbs',
+    'systems/fabula-ultima/templates/actor/parts/jobs/actor-jobs-job.hbs',
     'systems/fabula-ultima/templates/actor/parts/actor-spells.hbs',
     'systems/fabula-ultima/templates/actor/parts/actor-actions.hbs',
     // Item partials

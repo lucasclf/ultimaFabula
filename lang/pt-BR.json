@@ -284,7 +284,7 @@
       "status_weak": {"name": "Condição Fraco", "cost": "1500", "effect": "Cada alvo acertado por essa arma fica fraco."},
       "status_enraged": {"name": "Condição Enfurecido", "cost": "2000", "effect": "Cada alvo acertado por essa arma fica enfurecido."},
       "status_poisoned": {"name": "Condição Envenado", "cost": "2000", "effect": "Cada alvo acertado por essa arma fica envenenado."},
-      "initiative_up": {"name": "Iniciativa Aprimorada", "cost": "500", "effect": "Você recebe +4 no seu modificador de Iniciativa."},
+      "initiative_up": {"name": "Iniciativa Aprimorada", "cost": "500", "effect": "Você recebe +4 no seu modificador de Iniciativa(Contabilizado manualmente)."},
       "accuracy_up": {"name": "Acerto Aprimorado", "cost": "1000", "effect": "Você recebe +1 nos testes de acerto."},
       "magic_up": {"name": "Magia Aprimorada", "cost": "1000", "effect": "Você recebe +1 nos testes de lançar feitiços."},
       "vitality_up": {"name": "Vitalidade Aprimorada", "cost": "1000", "effect": "Quando você recuperar PVs, recupere 5 PVs adcionais."},
@@ -301,6 +301,10 @@
       "damage_change_light": {"name": "Mudança de Dano(Luz)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Luz."},
       "damage_change_poison": {"name": "Mudança de Dano(Veneno)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Veneno."},
       "damage_change_physical": {"name": "Mudança de Dano(Físico)", "cost": "300", "effect": "Todo dano causado por suas armas, feitiços e habilidades se tornam do tipo Físico."}  
+    },
+
+    "utils": {
+      "none": "nenhum"
     },
 
     "SheetLabels": {

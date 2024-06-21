@@ -283,7 +283,7 @@
       "status_weak": {"name": "Status Weak", "cost": "1500", "effect": "Each target hit by the weapon suffers weak."},
       "status_enraged": {"name": "Status Enraged", "cost": "2000", "effect": "Each target hit by the weapon suffers enraged."},
       "status_poisoned": {"name": "Status Poisoned", "cost": "2000", "effect": "Each target hit by the weapon suffers poisoned)."},
-      "initiative_up": {"name": "Initiative Up", "cost": "500", "effect": "You gain a +4 bonus to your Initiative modifier."},
+      "initiative_up": {"name": "Initiative Up", "cost": "500", "effect": "You gain a +4 bonus to your Initiative modifier(Accounted manually)."},
       "accuracy_up": {"name": "Accuracy Up", "cost": "1000", "effect": "You gain a +1 bonus to your Accuracy Checks."},
       "magic_up": {"name": "Magic Up", "cost": "1000", "effect": "You gain a +1 bonus to your Magic Checks."},
       "vitality_up": {"name": "Vitality Up", "cost": "1000", "effect": "When you recover HP, you recover 5 extra HP."},
@@ -300,6 +300,10 @@
       "damage_change_light": {"name": "Damage Change(Light)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Light type."},
       "damage_change_poison": {"name": "Damage Change(Poison)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Poison type."},
       "damage_change_physical": {"name": "Damage Change(Physical)", "cost": "300", "effect": "All damage dealt by your weapons, spells, and Skills becomes of a Physical type."}
+    },
+
+    "utils": {
+      "none": "none"
     },
 
     "SheetLabels": {

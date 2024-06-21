@@ -178,7 +178,9 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
   static _definePreferencesSchema(fields){
     return new fields.SchemaField({
       sheetFlags: new fields.SchemaField({
-        gearTabFlag: new fields.StringField({ initial:"hands"})
+        gearTabFlag: new fields.StringField({ initial:"hands"}),
+        jobTabFlag: new fields.StringField({ initial: "trained"}),
+        ability: new fields.StringField({ initial: "nobody"})
       })
     })
   }

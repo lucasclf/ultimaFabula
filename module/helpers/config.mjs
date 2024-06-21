@@ -428,4 +428,8 @@ FABULA_ULTIMA.qualities = {
   'weapon_up_ranged': {name: 'FABULA_ULTIMA.qualities.weapon_up_ranged.name', cost: 'FABULA_ULTIMA.qualities.weapon_up_ranged.cost', effect: 'FABULA_ULTIMA.qualities.weapon_up_ranged.effect'}
 }
 
+FABULA_ULTIMA.utils = {
+  none: 'FABULA_ULTIMA.utils.none'
+}
+
 FABULA_ULTIMA.enums = enums;
