@@ -59,6 +59,7 @@ Hooks.once('init', function () {
     armor: models.FabulaUltimaArmor,
     shield: models.FabulaUltimaShield,
     accessory: models.FabulaUltimaAccessory,
+    ability: models.FabulaUltimaAbility,
     spell: models.FabulaUltimaSpell
   }
 

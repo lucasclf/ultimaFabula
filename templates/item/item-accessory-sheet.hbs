@@ -34,7 +34,7 @@
       <legend>{{captalizeText (localize @root.config.uiHeader.quality)}}</legend>
         <select name="system.quality">
           {{#select system.quality}}
-            {{#each  @root.config.enums.weaponQualities as |name key|}}
+            {{#each  @root.config.enums.accessoryQualities as |name key|}}
               <option value="{{name}}">{{recoverQualityName name}}</option>
             {{/each}}
           {{/select}}

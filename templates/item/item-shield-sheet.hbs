@@ -34,7 +34,7 @@
 
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <div class="container-3grid">
+      <div class="container-2grid">
         <fieldset class="weapon-attributes-container">
         <legend>{{captalizeText (localize @root.config.uiHeader.defense)}}</legend>
           <input type="text" class="input-block" name="system.bonus.defense" value="{{system.bonus.defense}}" data-dtype="Number"/>
@@ -43,16 +43,12 @@
         <legend>{{captalizeText (localize @root.config.uiHeader.mDefense)}}</legend>
           <input type="text" class="input-block" name="system.bonus.magicDefense" value="{{system.bonus.magicDefense}}" data-dtype="Number"/>
         </fieldset>
-        <fieldset class="weapon-attributes-container">
-        <legend>{{captalizeText (localize @root.config.uiHeader.initiative)}}</legend>
-          <input type="text" class="input-block" name="system.initiative" value="{{system.initiative}}" data-dtype="Number"/>
-        </fieldset>
       </div>
       <fieldset class="weapon-quality-container">
       <legend>{{captalizeText (localize @root.config.uiHeader.quality)}}</legend>
         <select name="system.quality">
           {{#select system.quality}}
-            {{#each  @root.config.enums.weaponQualities as |name key|}}
+            {{#each  @root.config.enums.defenseQualities as |name key|}}
               <option value="{{name}}">{{recoverQualityName name}}</option>
             {{/each}}
           {{/select}}

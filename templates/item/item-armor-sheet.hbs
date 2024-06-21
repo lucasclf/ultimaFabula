@@ -39,6 +39,7 @@
         <legend>{{captalizeText (localize @root.config.uiHeader.defense)}}</legend>
           <select name="system.attr.defense">
             {{#select system.attr.defense}}
+              <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
               {{#each  @root.config.enums.attributes as |name type|}}
                 <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.attributes name))}}</option>
               {{/each}}
@@ -51,6 +52,7 @@
         <legend>{{captalizeText (localize @root.config.uiHeader.mDefense)}}</legend>
           <select name="system.attr.magicDefense">
             {{#select system.attr.magicDefense}}
+                <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
               {{#each  @root.config.enums.attributes as |name type|}}
                 <option value="{{name}}">{{captalizeFirstLetter (localize (lookup @root.config.attributes name))}}</option>
               {{/each}}
@@ -69,7 +71,7 @@
       <legend>{{captalizeText (localize @root.config.uiHeader.quality)}}</legend>
         <select name="system.quality">
           {{#select system.quality}}
-            {{#each  @root.config.enums.weaponQualities as |name key|}}
+            {{#each  @root.config.enums.defenseQualities as |name key|}}
               <option value="{{name}}">{{recoverQualityName name}}</option>
             {{/each}}
           {{/select}}

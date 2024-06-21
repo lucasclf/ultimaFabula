@@ -118,6 +118,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     const shields = [];
     const armors = [];
     const accessories = [];
+    const abilities = [];
     const spells = {
       0: [],
       1: [],
@@ -158,6 +159,9 @@ export class FabulaUltimaActorSheet extends ActorSheet {
       else if (i.type === 'accessory'){
         accessories.push(i)
       }
+      else if (i.type === 'ability'){
+        abilities.push(i)
+      }
       // Append to spells.
       else if (i.type === 'spell') {
         if (i.system.spellLevel != undefined) {
@@ -174,6 +178,7 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     context.shields = shields;
     context.armors = armors;
     context.accessories = accessories;
+    context.abilities = abilities;
 
   }
 
@@ -244,15 +249,9 @@ export class FabulaUltimaActorSheet extends ActorSheet {
     html.on('click', '.hidden-job-button', (ev) => {
 
       const hiddenJobButton = ev.currentTarget;
-      const jobContainer = hiddenJobButton.closest('.job-header').nextElementSibling;
-      if(jobContainer.classList.contains('hidden-container')){
-        jobContainer.classList.remove('hidden-container');
-        hiddenJobButton.textContent = '>'
-      } else {
-        jobContainer.classList.add('hidden-container');
-        hiddenJobButton.textContent = '<'
-      }
+      const jobData = hiddenJobButton.dataset.jobType;
 
+      this.actor.update({'system.preferencesFlags.sheetFlags.jobTabFlag': jobData})
     })
 
     html.on('click', '.hidden-gear-button', (ev) => {
