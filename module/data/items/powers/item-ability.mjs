@@ -24,6 +24,22 @@ export default class FabulaUltimaAbility extends FabulaUltimaItemBase {
       free: new fields.StringField({ blank: true })
     });
 
+    schema.booleanBonus = new fields.SchemaField({
+      dualShield: new fields.BooleanField({ initial: false}),
+      castArcana: new fields.BooleanField({ initial: false}),
+      gadgets: new fields.BooleanField({ initial: false})
+    })
+    
+    schema.gadgetsInfo = new fields.SchemaField({
+      alchemy: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE}),
+      infusions: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE}),
+      magitech: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE})
+    })
+
+    schema.numericalBonus = new fields.SchemaField({
+      health: new fields.NumberField({ ...requiredInteger, initial: 0 })
+    })
+
     schema.job = new fields.StringField({ blank: true });
 
     return schema;

@@ -298,5 +298,11 @@ export const enums = Object.freeze({
       ATTR: "attr",
       CUSTOM: "custom"
     }
+  },
+  gadgetsLevel: {
+    NONE: "none",
+    BASIC: "basic",
+    ADVANCED: "advanced",
+    SUPERIOR: "superior"
   }
 });

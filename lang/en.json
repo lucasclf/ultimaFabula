@@ -341,6 +341,22 @@
     "project": "project"
   },
 
+  "abilityBonus": {
+    "dualShield": "dual shield",
+    "castArcana": "cast arcana",
+    "gadgets": "gadgets",
+    "alchemy": "alchemy",
+    "infusions": "infusions",
+    "magitech": "magitech"
+  },
+
+  "gadgetsLevel": {
+    "none": "none",
+    "basic": "basic",
+    "advanced": "advanced",
+    "superior": "superior"
+  },
+
   "TYPES": {
     "Actor": {
       "character": "Character",

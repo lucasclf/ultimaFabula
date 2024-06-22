@@ -441,4 +441,20 @@ FABULA_ULTIMA.rollMethods = {
   custom: "FABULA_ULTIMA.rollMethods.custom"
 }
 
+FABULA_ULTIMA.abilityBonus = {
+  dualShield: "FABULA_ULTIMA.abilityBonus.dualShield",
+  castArcana: "FABULA_ULTIMA.abilityBonus.castArcana",
+  gadgets: "FABULA_ULTIMA.abilityBonus.gadgets",
+  alchemy: "FABULA_ULTIMA.abilityBonus.alchemy",
+  infusions: "FABULA_ULTIMA.abilityBonus.infusions",
+  magitech: "FABULA_ULTIMA.abilityBonus.magitech"
+}
+
+FABULA_ULTIMA.gadgetsLevel = {
+  none: "FABULA_ULTIMA.gadgetsLevel.none",
+  basic: "FABULA_ULTIMA.gadgetsLevel.basic",
+  advanced: "FABULA_ULTIMA.gadgetsLevel.advanced",
+  superior: "FABULA_ULTIMA.gadgetsLevel.superior"
+}
+
 FABULA_ULTIMA.enums = enums;

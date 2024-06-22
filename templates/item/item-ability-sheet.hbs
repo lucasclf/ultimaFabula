@@ -59,6 +59,29 @@
       {{! As you add new fields, add them in here! }}
       <fieldset class="weapon-quality-container">
       <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.rollMethod)}}</legend>
+        <div>
+          {{#each system.booleanBonus as |bonus key|}}
+            <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
+            <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
+          {{/each}}
+        </div>
+        <br>
+        <div class="{{#unless system.booleanBonus.gadgets}} hidden-container {{/unless}}">
+          {{#each system.gadgetsInfo as |gadgets key|}}
+            <label for="">{{captalizeFirstLetter (localize (lookup @root.config.abilityBonus key))}} </label>
+            <select name="system.gadgetsInfo.{{key}}">
+              {{#select gadgets}}
+                {{#each @root.config.enums.gadgetsLevel as |level key|}}
+                  <option value="{{key}}">{{captalizeFirstLetter (localize (lookup @root.config.gadgetsLevel level)) }}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          {{/each}}
+        </div>
+      </fieldset>
+
+      <fieldset class="weapon-quality-container">
+      <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.rollMethod)}}</legend>
         <div class='resource'>
           <select name="system.rollInfo.method">
               {{#select system.rollInfo.method}}

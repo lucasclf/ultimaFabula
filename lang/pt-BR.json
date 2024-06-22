@@ -316,6 +316,22 @@
       "custom": "customizado"
     },
 
+  "abilityBonus": {
+    "dualShield": "dupla escuderia",
+    "castArcana": "invoca arcana",
+    "gadgets": "engenhocas",
+    "alchemy": "alquimia",
+    "infusions": "infusões",
+    "magitech": "magitecnologia"
+  },
+
+  "gadgetsLevel": {
+    "none": "nenhum",
+    "basic": "basico",
+    "advanced": "avançado",
+    "superior": "superior"
+  },
+
     "SheetLabels": {
       "Actor": "FabulaUltima Actor Sheet",
       "Item": "FabulaUltima Item Sheet"
