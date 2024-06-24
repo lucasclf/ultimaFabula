@@ -180,7 +180,7 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       sheetFlags: new fields.SchemaField({
         gearTabFlag: new fields.StringField({ initial:"hands"}),
         jobTabFlag: new fields.StringField({ initial: "trained"}),
-        ability: new fields.StringField({ initial: "nobody"})
+        abilityFlag: new fields.StringField({ initial: "none"})
       })
     })
   }

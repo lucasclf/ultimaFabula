@@ -20,7 +20,7 @@
                 <label>{{captalizeFirstLetter (localize @root.config.uiHeader.job)}}</label>
                 <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
                 {{#each (recoverGlobalJobList) as |job key|}}
-                  <option value="{{job._id}}">{{captalizeFirstLetter job.name}}</option>
+                  <option value="{{job.name}}">{{captalizeFirstLetter job.name}}</option>
                 {{/each}}
               {{/select}}
             </select>

@@ -431,7 +431,8 @@ FABULA_ULTIMA.qualities = {
 }
 
 FABULA_ULTIMA.utils = {
-  none: 'FABULA_ULTIMA.utils.none'
+  none: 'FABULA_ULTIMA.utils.none',
+  all: 'FABULA_ULTIMA.utils.all'
 }
 
 FABULA_ULTIMA.rollMethods = {

@@ -306,7 +306,8 @@
     },
 
     "utils": {
-      "none": "nenhum"
+      "none": "nenhum",
+      "all": "todas"
     },
 
     "rollMethods": {

@@ -305,7 +305,8 @@
     },
 
     "utils": {
-      "none": "none"
+      "none": "none",
+      "all": "all"
     },
 
     "rollMethods": {

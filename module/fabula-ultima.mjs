@@ -15,6 +15,7 @@ import { groupJobs, hasJobsType, recoverFreeBenefits, recoverGlobalJobList, reco
 import { hasProficiency } from './helpers/utils/proficiencyHelper.mjs';
 import { recoverQualityInfo, recoverQualityName } from './helpers/utils/qualityHelper.mjs';
 import { isEquiped, recoverAccuracyWeapon, recoverDefense } from './helpers/utils/gearHelper.mjs';
+import { recoverAbilitiesByJob } from './helpers/utils/abilityHelper.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -167,6 +168,15 @@ Handlebars.registerHelper('recoverDefense', function(defenseGear, defenseType) {
 
 Handlebars.registerHelper('recoverGlobalJobList', function() {
   return recoverGlobalJobList();
+})
+
+Handlebars.registerHelper('recoverAbilitiesByJob', function(abilityFlag, abilities) {
+  return recoverAbilitiesByJob(abilityFlag, abilities);
+})
+
+Handlebars.registerHelper('compareTwoNumbers', function(firstNumber, operation, secondNumber) {
+  const expression = `${firstNumber} ${operation} ${secondNumber}`;
+  return eval(expression);
 })
 
 
