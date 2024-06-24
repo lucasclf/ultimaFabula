@@ -4,7 +4,7 @@ const ARMOR = 'armor';
 const ACCESSORY = 'accessory';
 const NO_QUALITY = 'no_quality';
 const DEFENSE = 'defense';
-const MAGIC_DEFENSE = 'magicDefense'
+const MAGIC_DEFENSE = 'magicDefense';
 
 
 export function recoverAccuracyWeapon(weapon){
@@ -44,7 +44,7 @@ export function recoverDefense(defenseGear, defenseType){
 function _equipMainHand(gear, actorGears) {
    let updateData = {};
    const gearId = gear._id;
-   const gearGrip = gear.system.qualifications.weaponGrip;
+   const gearGrip = gear.system?.qualifications?.weaponGrip || CONFIG.FABULA_ULTIMA.enums.weaponGrip.ONE_HAND;
    const gearQuality = gear.system.quality;
    const gearType = gear.type;
 
@@ -140,5 +140,5 @@ function _isTwoHandsGrip(gearGrip) {
 
 function _recoverGearGrip(gearId, actor){
    const gear = actor.items.get(gearId);
-   return gear?.system.qualifications.weaponGrip || "";
+   return gear?.system?.qualifications?.weaponGrip || CONFIG.FABULA_ULTIMA.enums.weaponGrip.ONE_HAND;
 };

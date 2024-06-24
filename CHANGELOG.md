@@ -39,9 +39,11 @@
 - Alterada lógica dos recursos vindo do job(item);
 ## [1.0.4] | 2024-06-XX
 ### Added
-- Fichas de Escudo, Acessorio e Armadura criadas;
-- Iniciado a ficha de habilidades;
+- Fichas e abas de Escudo, Acessorio e Armadura criadas;
+- Finalizada a ficha de habilidades;
+- Finalizada a aba de habilidades;
 ### Changed
 - Refatorada a classe gearHelper para melhor legibilidade;
 - Criado as flags de preferência do usuário(jobTab e gearTab);
 - Segregada as jobs por abas;
+- Criada lógica de dualShield;

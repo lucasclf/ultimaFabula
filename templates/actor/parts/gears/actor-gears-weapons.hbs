@@ -100,7 +100,12 @@
           {{recoverDefense shield.system 'defense'}}
         </div>
         <div class="gear-prop">
+          {{#if (hasDualShield @root.abilities)}}
+            <a data-slot-type="mainHand" data-item-id="{{shield._id}}" class="gear-equip equip-symbol gear-equiped-{{isEquiped shield._id @root.actor.system.gears.mainHand.gearId}}">&#9686</a>
+            <a data-slot-type="offHand" data-item-id="{{shield._id}}" class="gear-equip equip-symbol gear-equiped-{{isEquiped shield._id @root.actor.system.gears.offHand.gearId}}">&#9687</a>
+          {{else}}
           <a data-slot-type="offHand" data-item-id="{{shield._id}}" class="gear-equip equip-symbol gear-equiped-{{isEquiped shield._id @root.actor.system.gears.offHand.gearId}}">&#9687</a>
+          {{/if}}
         </div>
         <div class='item-controls'>
           <a
