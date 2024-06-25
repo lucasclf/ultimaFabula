@@ -346,9 +346,11 @@
     "dualShield": "dual shield",
     "castArcana": "cast arcana",
     "gadgets": "gadgets",
+    "gravePoints": "grave points",
     "alchemy": "alchemy",
     "infusions": "infusions",
-    "magitech": "magitech"
+    "magitech": "magitech",
+    "ambiambidexterity": "ambiambidexterity"
   },
 
   "gadgetsLevel": {
@@ -356,6 +358,10 @@
     "basic": "basic",
     "advanced": "advanced",
     "superior": "superior"
+  },
+
+  "skill": {
+    "heroic": "heroic"
   },
 
   "TYPES": {

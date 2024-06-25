@@ -22,6 +22,7 @@
                 {{#each (recoverGlobalJobList) as |job key|}}
                   <option value="{{job.name}}">{{captalizeFirstLetter job.name}}</option>
                 {{/each}}
+                <option value="{{@root.config.enums.skill.HEROIC}}">{{captalizeFirstLetter (localize @root.config.skill.heroic)}}</option>
               {{/select}}
             </select>
           </div>
@@ -59,10 +60,20 @@
       {{! As you add new fields, add them in here! }}
       <fieldset class="weapon-quality-container">
       <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.rollMethod)}}</legend>
-        <div>
+        <div class="container-2grid">
+          {{#if (eq system.job @root.config.enums.skill.HEROIC)}}
+            {{#each system.heroicBooleanBonus as |bonus key|}}
+              <div>
+                <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
+                <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
+              </div>
+            {{/each}}
+          {{/if}}
           {{#each system.booleanBonus as |bonus key|}}
-            <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
-            <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
+            <div>
+              <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
+              <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
+            </div>
           {{/each}}
         </div>
         <br>

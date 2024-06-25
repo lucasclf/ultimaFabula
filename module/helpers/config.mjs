@@ -446,9 +446,11 @@ FABULA_ULTIMA.abilityBonus = {
   dualShield: "FABULA_ULTIMA.abilityBonus.dualShield",
   castArcana: "FABULA_ULTIMA.abilityBonus.castArcana",
   gadgets: "FABULA_ULTIMA.abilityBonus.gadgets",
+  gravePoints: "FABULA_ULTIMA.abilityBonus.gravePoints",
   alchemy: "FABULA_ULTIMA.abilityBonus.alchemy",
   infusions: "FABULA_ULTIMA.abilityBonus.infusions",
-  magitech: "FABULA_ULTIMA.abilityBonus.magitech"
+  magitech: "FABULA_ULTIMA.abilityBonus.magitech",
+  ambiambidexterity: "FABULA_ULTIMA.abilityBonus.ambiambidexterity"
 }
 
 FABULA_ULTIMA.gadgetsLevel = {
@@ -459,3 +461,7 @@ FABULA_ULTIMA.gadgetsLevel = {
 }
 
 FABULA_ULTIMA.enums = enums;
+
+FABULA_ULTIMA.skill = {
+  heroic: "FABULA_ULTIMA.skill.heroic"
+}

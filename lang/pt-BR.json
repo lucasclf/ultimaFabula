@@ -321,9 +321,11 @@
     "dualShield": "dupla escuderia",
     "castArcana": "invoca arcana",
     "gadgets": "engenhocas",
+    "gravePoints": "pontos tumulares",
     "alchemy": "alquimia",
     "infusions": "infusões",
-    "magitech": "magitecnologia"
+    "magitech": "magitecnologia",
+    "ambiambidexterity": "ambidestria"
   },
 
   "gadgetsLevel": {
@@ -331,6 +333,10 @@
     "basic": "basico",
     "advanced": "avançado",
     "superior": "superior"
+  },
+
+  "skill": {
+    "heroic": "heróica"
   },
 
     "SheetLabels": {

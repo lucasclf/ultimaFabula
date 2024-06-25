@@ -305,5 +305,8 @@ export const enums = Object.freeze({
     BASIC: "basic",
     ADVANCED: "advanced",
     SUPERIOR: "superior"
+  },
+  skill: {
+    HEROIC: "heroic"
   }
 });

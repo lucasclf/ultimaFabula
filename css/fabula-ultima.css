@@ -557,6 +557,12 @@ visibility: visible;
   gap: 10px;
 }
 
+.container-4grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
 /*GEAR ACTOR SHEET*/
 .gear-prop{
   text-align: center;
