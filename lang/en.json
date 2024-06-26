@@ -123,7 +123,8 @@
       "mDefense": "magic defense",
       "initiative": "initiative",
       "job": "job",
-      "rollMethod": "roll method"
+      "rollMethod": "roll method",
+      "bonus": "bonus"
     },
 
     "martialGear": {
@@ -306,7 +307,10 @@
 
     "utils": {
       "none": "none",
-      "all": "all"
+      "all": "all",
+      "requirements": "requirements",
+      "job": "job",
+      "skill": "skill"
     },
 
     "rollMethods": {
@@ -350,7 +354,13 @@
     "alchemy": "alchemy",
     "infusions": "infusions",
     "magitech": "magitech",
-    "ambiambidexterity": "ambiambidexterity"
+    "ambiambidexterity": "ambiambidexterity",
+    "powerGrip": "power grip",
+    "powerShoot": "power shoot",
+    "powerStrike": "power strike",
+    "powerSpell": "power spell",
+    "conditionImmunity": "condition immunity",
+    "vanguardCard": "vanguard card"
   },
 
   "gadgetsLevel": {

@@ -290,7 +290,16 @@ export const enums = Object.freeze({
   },
   utils: {
     none: "none",
+    NONE: "none",
     ALL: "all"
+  },
+  conditions: {
+    WEAK: "weak" ,
+    DAZED: "dazed" ,
+    SHAKEN: "shaken" ,
+    SLOW: "slow" ,
+    ENRAGED: "enraged" ,
+    POISONED: "poisoned" 
   },
   rollMethods: {
     ability: {

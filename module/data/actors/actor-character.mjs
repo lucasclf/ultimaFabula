@@ -65,7 +65,11 @@ export default class FabulaUltimaCharacter extends FabulaUltimaActorBase {
       zenit: new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
       }),
-      level: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      level: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+      grave: new fields.SchemaField({
+        value: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
+        max:  new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+      })
     })
   }
 

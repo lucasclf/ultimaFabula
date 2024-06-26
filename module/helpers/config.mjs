@@ -230,7 +230,8 @@ FABULA_ULTIMA.uiHeader = {
   mDefense: 'FABULA_ULTIMA.uiHeader.mDefense',
   initiative: 'FABULA_ULTIMA.uiHeader.initiative',
   job: 'FABULA_ULTIMA.uiHeader.job',
-  rollMethod: 'FABULA_ULTIMA.uiHeader.rollMethod'
+  rollMethod: 'FABULA_ULTIMA.uiHeader.rollMethod',
+  bonus: 'FABULA_ULTIMA.uiHeader.bonus'
 }
 
 FABULA_ULTIMA.uiJob = {
@@ -432,7 +433,10 @@ FABULA_ULTIMA.qualities = {
 
 FABULA_ULTIMA.utils = {
   none: 'FABULA_ULTIMA.utils.none',
-  all: 'FABULA_ULTIMA.utils.all'
+  all: 'FABULA_ULTIMA.utils.all',
+  requirements: 'FABULA_ULTIMA.utils.requirements',
+  job: 'FABULA_ULTIMA.utils.job',
+  skill: 'FABULA_ULTIMA.utils.skill'
 }
 
 FABULA_ULTIMA.rollMethods = {
@@ -450,7 +454,16 @@ FABULA_ULTIMA.abilityBonus = {
   alchemy: "FABULA_ULTIMA.abilityBonus.alchemy",
   infusions: "FABULA_ULTIMA.abilityBonus.infusions",
   magitech: "FABULA_ULTIMA.abilityBonus.magitech",
-  ambiambidexterity: "FABULA_ULTIMA.abilityBonus.ambiambidexterity"
+  ambiambidexterity: "FABULA_ULTIMA.abilityBonus.ambiambidexterity",
+  health: "FABULA_ULTIMA.Resources.healthPoints.abbr",
+  mana: "FABULA_ULTIMA.Resources.manaPoints.abbr",
+  inventory: "FABULA_ULTIMA.Resources.inventoryPoints.abbr",
+  powerGrip: "FABULA_ULTIMA.abilityBonus.powerGrip",
+  powerShoot: "FABULA_ULTIMA.abilityBonus.powerShoot",  
+  powerSpell: "FABULA_ULTIMA.abilityBonus.powerSpell",
+  powerStrike: "FABULA_ULTIMA.abilityBonus.powerStrike",
+  conditionImmunity: "FABULA_ULTIMA.abilityBonus.conditionImmunity",
+  vanguardCard: "FABULA_ULTIMA.abilityBonus.vanguardCard"
 }
 
 FABULA_ULTIMA.gadgetsLevel = {

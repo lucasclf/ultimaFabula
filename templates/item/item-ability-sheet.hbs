@@ -45,34 +45,61 @@
 
     {{! Description Tab }}
     <div class='tab' data-group='primary' data-tab='description'>
-      {{! Editors must receive enriched text data from getData to properly handle rolls }}
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
-      }}
+        {{#if (eq system.job @root.config.enums.skill.HEROIC)}}
+        <p>{{captalizeFirstLetter (localize @root.config.utils.requirements)}}:</p>
+          {{#each system.heroicRequirements as |requirements key|}}
+            <div class="container-2grid">
+              <p>{{captalizeFirstLetter (localize (lookup @root.config.utils key))}}: </p>
+              <input type="text" name="system.heroicRequirements.{{key}}" value="{{requirements}}"/>
+            </div>
+          {{/each}}
+        <hr>
+        {{/if}}
+        {{! Editors must receive enriched text data from getData to properly handle rolls }}
+        {{editor
+          enrichedDescription
+          target='system.description'
+          engine='prosemirror'
+          button=true
+          editable=editable
+        }}
     </div>
 
     {{! Attributes Tab }}
     <div class='tab attributes' data-group='primary' data-tab='attributes'>
       {{! As you add new fields, add them in here! }}
       <fieldset class="weapon-quality-container">
-      <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.rollMethod)}}</legend>
+      <legend>{{captalizeFirstLetter (localize @root.config.uiHeader.bonus)}}</legend>
         <div class="container-2grid">
-          {{#if (eq system.job @root.config.enums.skill.HEROIC)}}
-            {{#each system.heroicBooleanBonus as |bonus key|}}
-              <div>
-                <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
-                <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
-              </div>
-            {{/each}}
-          {{/if}}
           {{#each system.booleanBonus as |bonus key|}}
             <div>
               <input type="checkbox" id="{{key}}" name="system.booleanBonus.{{key}}" {{checked bonus}}>
-              <label for="{{key}}" >{{localize (lookup @root.config.abilityBonus key)}}</label>
+              <label for="{{key}}" >{{captalizeFirstLetterOfWords (localize (lookup @root.config.abilityBonus key))}}</label>
+            </div>
+          {{/each}}
+          {{#if (eq system.job @root.config.enums.skill.HEROIC)}}
+            {{#each system.heroicBooleanBonus as |bonus key|}}
+              <div>
+                <input type="checkbox" id="{{key}}" name="system.heroicBooleanBonus.{{key}}" {{checked bonus}}>
+                <label for="{{key}}" >{{captalizeFirstLetterOfWords (localize (lookup @root.config.abilityBonus key))}}</label>
+              </div>
+            {{/each}}
+            <div class="container-2grid">
+              <label for="{{key}}" >{{captalizeFirstLetterOfWords (localize @root.config.abilityBonus.conditionImmunity)}}:</label>
+              <select name="system.selectBonus.conditionImmunity">
+                {{#select system.selectBonus.conditionImmunity}}
+                    <option value="{{@root.config.enums.utils.none}}">{{captalizeFirstLetter (localize @root.config.utils.none)}}</option>
+                  {{#each @root.config.enums.conditions as |condition key|}}
+                    <option value="{{condition}}">{{captalizeFirstLetter (localize (lookup @root.config.conditions condition)) }}</option>
+                  {{/each}}
+                {{/select}}
+              </select>
+            </div>
+          {{/if}}
+          {{#each system.numericalBonus as |bonus key|}}
+            <div class="container-2grid">
+              <input type="text" name="system.numericalBonus.{{key}}" value="{{bonus}}" data-dtype="Number"/>
+              <label for="{{key}}" >{{captalizeFirstLetterOfWords (localize (lookup @root.config.abilityBonus key))}}</label>
             </div>
           {{/each}}
         </div>

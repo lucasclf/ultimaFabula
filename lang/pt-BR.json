@@ -117,7 +117,8 @@
       "mDefense": "defese magica",
       "initiative": "iniciativa",
       "job": "classe",
-      "rollMethod": "método de rolagem"
+      "rollMethod": "método de rolagem",
+      "bonus": "bonus"
     },
 
     "martialGear": {
@@ -307,7 +308,10 @@
 
     "utils": {
       "none": "nenhum",
-      "all": "todas"
+      "all": "todas",
+      "requirements": "requisitos",
+      "job": "classes",
+      "skill": "habilidades"
     },
 
     "rollMethods": {
@@ -325,7 +329,13 @@
     "alchemy": "alquimia",
     "infusions": "infusões",
     "magitech": "magitecnologia",
-    "ambiambidexterity": "ambidestria"
+    "ambiambidexterity": "ambidestria",
+    "powerGrip": "empunhadura poderosa",
+    "powerShoot": "tiro poderoso",
+    "powerStrike": "golpe poderoso",
+    "powerSpell": "feitiço poderoso",
+    "conditionImmunity": "imunidade",
+    "vanguardCard": "reserva de cartas"
   },
 
   "gadgetsLevel": {

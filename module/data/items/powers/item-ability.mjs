@@ -32,17 +32,33 @@ export default class FabulaUltimaAbility extends FabulaUltimaItemBase {
     })
     
     schema.heroicBooleanBonus = new fields.SchemaField({
-      ambiambidexterity: new fields.BooleanField({ initial: false})
+      ambiambidexterity: new fields.BooleanField({ initial: false}),
+      health: new fields.BooleanField({ initial: false}),
+      mana: new fields.BooleanField({ initial: false}),
+      inventory: new fields.BooleanField({ initial: false}),
+      powerGrip: new fields.BooleanField({ initial: false}),
+      powerShoot: new fields.BooleanField({ initial: false}),
+      powerStrike: new fields.BooleanField({ initial: false}),
+      powerSpell: new fields.BooleanField({ initial: false}),
+      vanguardCard: new fields.BooleanField({ initial: false})
     })
 
     schema.gadgetsInfo = new fields.SchemaField({
-      alchemy: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE}),
-      infusions: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE}),
-      magitech: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.gadgetsLevel.NONE})
+      alchemy: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.utils.NONE}),
+      infusions: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.utils.NONE}),
+      magitech: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.utils.NONE})
+    })
+
+    schema.selectBonus = new fields.SchemaField({
+      conditionImmunity: new fields.StringField({ initial: CONFIG.FABULA_ULTIMA.enums.utils.NONE})
     })
 
     schema.numericalBonus = new fields.SchemaField({
-      health: new fields.NumberField({ ...requiredInteger, initial: 0 })
+    })
+
+    schema.heroicRequirements = new fields.SchemaField({
+      job: new fields.StringField({ required: true, blank: true }),
+      skill: new fields.StringField({ required: true, blank: true })
     })
 
     schema.job = new fields.StringField({ blank: true });
